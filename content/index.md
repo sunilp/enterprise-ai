@@ -114,3 +114,11 @@ This playbook is written for the people who own the outcomes, not the experiment
 This is not a guide to selecting vendors, tuning models, or configuring infrastructure. Those are implementation details. They matter, but they are not why AI programs fail. The problems this playbook addresses are organizational: strategy, governance, operating models, workforce design, and measurement.
 
 45 pages. No vendor pitches. No tutorials. Decisions and tradeoffs.
+
+---
+
+## Start Here
+
+**[AI for Business Leaders Framework](/enterprise-ai/framework/)** -- The definitive takeaway. Five operating principles and four maturity stages distilled from this entire playbook.
+
+**[AI Readiness Assessment](/enterprise-ai/assessment/tool/)** -- Assess your organization across five dimensions. Get a personalized scorecard and reading path.
