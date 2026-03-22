@@ -26,7 +26,7 @@ The companies in the 5% do not have better strategy documents. They have better 
 
 ---
 
-## Technology Is 20% of the Problem
+## The Organizational Share of the Problem
 
 When AI programs fail, the post-mortem usually finds:
 
@@ -36,11 +36,17 @@ When AI programs fail, the post-mortem usually finds:
 - Middle management that did not adopt the tool because adoption was never designed, only announced
 - Measurement that was defined after deployment, making it impossible to attribute outcomes
 
-None of these are technology failures. They are organizational failures. The model performed as specified. The organization did not change in the way that would allow the model's output to flow into a business result.
+In each case, the model performed as specified. The organization did not change in the way that would allow the model's output to flow into a business result.
 
-The technology share of the enterprise AI problem is roughly 20%. The organization share is 80%. This ratio holds across industries and company sizes. It is the consistent finding across McKinsey, BCG, and Gartner research spanning the last three years.
+Consistently, the organizational factors -- data readiness, process design, workforce adoption, measurement discipline -- outweigh the technical ones. Technology selection is rarely the binding constraint.
 
 This means that the primary job of a CIO or CAIO is not to evaluate models or select platforms. It is to design the organizational system that converts AI capability into business outcomes.
+
+### The Deployment Speed Problem
+
+There is a compounding pressure that makes this harder. Enterprises face real urgency to deploy fast: competitive anxiety, vendor marketing cycles, board expectations set by peer benchmarks. That pressure is legitimate. The problem is that deploying before the organization is ready produces exactly the failure patterns listed above, at scale.
+
+Speed of deployment and organizational readiness are in genuine tension. The enterprises that resolve it well do not move slower. They build the readiness infrastructure in parallel, so that when they deploy, the organization can absorb the capability. The enterprises that move fast without that infrastructure get pilot purgatory, or worse: a large deployed system that no one uses correctly and no one can measure.
 
 ---
 
@@ -49,6 +55,8 @@ This means that the primary job of a CIO or CAIO is not to evaluate models or se
 The modal enterprise AI program looks like this: a team identifies a compelling use case, runs a 6-to-12-week pilot, demonstrates promising results, and then the use case stalls. It never reaches production. Or it reaches production in a limited form, used by a small group, never integrated into the core workflow, never measured, never scaled.
 
 This is pilot purgatory. The program is not failing in an obvious way. There are demos to show. There are teams working. There is progress being reported. But the organization is not changing. The work is not changing. The P&L is not changing.
+
+The average enterprise AI program that stalls in pilot purgatory represents $2-5M in sunk cost, not counting opportunity cost and the organizational cynicism that makes the next attempt harder.
 
 Pilot purgatory is so common because the conditions that make a pilot succeed are almost perfectly misaligned with the conditions required for production deployment.
 
@@ -77,9 +85,9 @@ This is why the 5% who are future-built have such a durable advantage. They are 
 
 ## The Real Question
 
-The question facing every CIO, CAIO, and VP of AI is not "what AI should we be using?" It is: "what organizational system do we need to build to convert AI capability into business results?"
+The question facing every CIO, CAIO, and VP of AI is not "what AI should we be using?"
 
-This playbook is about answering that question.
+It is: "what organizational system do we need to build to convert AI capability into business results?"
 
 ---
 
