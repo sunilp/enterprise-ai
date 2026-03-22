@@ -45,6 +45,10 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
 
+validation:
+  nav:
+    not_in_nav: warn
+
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
