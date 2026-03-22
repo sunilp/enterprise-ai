@@ -1,0 +1,12 @@
+<script src="{{basePath}}/js/core/atmosphere.js"></script>
+<script src="{{basePath}}/js/core/nav.js"></script>
+<script src="{{basePath}}/js/core/engagement.js"></script>
+<script src="{{basePath}}/js/core/share.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof initAtmosphere === 'function') initAtmosphere();
+  if (typeof initNav === 'function') initNav();
+  if (typeof initEngagement === 'function') initEngagement();
+  if (typeof initShare === 'function') initShare();
+});
+</script>

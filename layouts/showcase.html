@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{{> head}}</head>
+<body class="showcase atmosphere" data-section="{{section}}" data-page="{{slug}}"{{hasMermaidAttr}}>
+<a href="#main-content" class="skip-link">Skip to content</a>
+{{> nav}}
+<main id="main-content" class="showcase-content">
+<article>
+{{content}}
+{{interactiveSlot}}
+</article>
+</main>
+{{> footer}}
+{{> particles}}
+{{> engagement}}
+<script src="{{basePath}}/js/vendor/d3.v7.min.js"></script>
+<script src="{{basePath}}/js/pages/{{slug}}.js" type="module"></script>
+</body>
+</html>
