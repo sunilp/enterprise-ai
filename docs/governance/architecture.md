@@ -2,7 +2,7 @@
 
 AI governance is not a policy document. It is an operating system. Most enterprises have built the document. Almost none have built the operating system.
 
-Only 18% of enterprises have fully implemented AI governance frameworks, despite 90% using AI in daily operations (McKinsey, 2024). That gap is not a knowledge problem. It is an architectural problem.
+Fewer than one in five enterprises have fully implemented AI governance frameworks, despite the majority using AI in daily operations. That gap is not a knowledge problem. It is an architectural problem.
 
 ## Why "Governance as a Document" Fails
 
@@ -10,19 +10,19 @@ The traditional governance model works like this: a committee writes principles,
 
 This fails for AI for one reason: deployment velocity.
 
-A capable engineering team can deploy a new AI model, integrate a third-party API, or ship a GenAI feature in days. Manual governance processes operate on timescales of weeks. The math does not work. Governance that cannot keep pace with deployment is governance that does not exist in practice.
+A capable engineering team can deploy a new AI model, integrate a third-party API, or ship a GenAI feature in days. Manual governance processes operate on timescales of weeks. Governance that cannot keep pace with deployment does not exist in practice.
 
-The patterns that follow from document-only governance are predictable:
+The patterns that follow are predictable:
 
 - Teams route around the process because it takes too long
 - Governance is applied retrospectively after incidents occur
-- Risk assessments are checkbox exercises, not real evaluations
+- Risk assessments become checkbox exercises, not real evaluations
 - No one can tell you what AI systems are running in production right now
 
 This is not a failure of intent. It is a failure of architecture.
 
 !!! warning "The Retrofit Tax"
-    Organizations that deploy AI without embedded governance consistently face a retrofit problem. Applying governance controls after deployment requires auditing undocumented systems, negotiating with teams who have built processes on ungoverned tools, and often renegotiating vendor contracts. The cost of retrofitting governance is typically 3 to 5 times the cost of building it in from the start. This is the AI equivalent of technical debt, but with regulatory and reputational dimensions.
+    Retrofitting governance after deployment costs 3 to 5 times more than building it in from the start. Auditing undocumented systems, negotiating with teams that have built workflows on ungoverned tools, and renegotiating vendor contracts compounds quickly. This is technical debt with regulatory and reputational dimensions. The organizations that paid the upfront cost are now deploying faster, not slower.
 
 ## The Three-Layer Governance Architecture
 
@@ -106,11 +106,17 @@ At deployment velocity, you cannot rely on humans to check every model output, r
 !!! info "Automation is Not Optional"
     An organization deploying 20 AI systems can govern them manually. An organization deploying 200 cannot. The technical layer is what makes governance scale. Build the automation before you need it, not after.
 
+For the full technical control plane -- identity, entitlements, audit, policy enforcement, observability -- see [Control Architecture](../architecture/control-architecture.md).
+
 ## Governance Velocity Must Match Deployment Velocity
 
 This is the governing principle of the architecture. It is also the most commonly violated.
 
-Governance teams often see their role as providing friction: slowing down deployment to ensure adequate review. This framing is wrong, and it is why governance teams lose influence over time.
+There is a real tradeoff here. Lightweight governance enables speed but misses edge cases. Heavy governance catches everything but teams route around it. Neither extreme works.
+
+The answer is tiered governance by risk level. Low-risk systems get fast-track or self-service approval. High-risk systems get full review. The tiers are defined in policy, not decided case by case. This preserves thoroughness where it matters and removes friction where it does not.
+
+Governance teams often frame their role as providing friction: slowing deployment to ensure adequate review. That framing is wrong, and it is why governance teams lose influence over time.
 
 The goal is not to slow deployment. The goal is to make safe deployment fast. Those are different objectives with different architectures.
 
@@ -144,12 +150,10 @@ The organizations that invested in governance architecture early are not slowing
 
 Governance architecture is an engineering problem as much as it is a policy problem. The three-layer model separates concerns clearly: policy sets the rules, process operationalizes them, and technology enforces them at scale. Any organization treating governance as a document is not governing its AI. It is hoping nothing goes wrong.
 
-The 82% of enterprises without fully implemented governance frameworks are not lacking principles. They are lacking architecture.
+The majority of enterprises without fully implemented governance frameworks are not lacking principles. They are lacking architecture.
 
 ---
 
 ## Sources
-
-1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).
