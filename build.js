@@ -11,6 +11,14 @@ const path = require('path');
 const YAML = require('yaml');
 const { marked } = require('marked');
 
+// sharp is optional — OG generation degrades gracefully if unavailable
+let sharp = null;
+try {
+  sharp = require('sharp');
+} catch (_) {
+  // sharp not available; OG images will use default.png fallback
+}
+
 // ─── Configuration ──────────────────────────────────────────────────────────
 
 const ROOT = __dirname;
@@ -414,9 +422,177 @@ function generate404(navDataJson) {
   return renderTemplate(layout, data);
 }
 
+// ─── OG Image Generation ──────────────────────────────────────────────────
+
+const OG_W = 1200;
+const OG_H = 630;
+const OG_BG = '#0a0a0a';
+const OG_GOLD = '#c8b48c';
+const OG_CREAM = '#f0ece4';
+const OG_MUTED = '#6b6560';
+
+function buildOgSvg({ title, section }) {
+  // Wrap title at ~40 chars per line, max 2 lines
+  const words = title.split(' ');
+  const lines = [];
+  let current = '';
+  for (const w of words) {
+    const test = current ? `${current} ${w}` : w;
+    if (test.length > 40 && current) {
+      lines.push(current);
+      current = w;
+    } else {
+      current = test;
+    }
+    if (lines.length === 2) { current = ''; break; }
+  }
+  if (current && lines.length < 2) lines.push(current);
+  if (lines.length === 0) lines.push(title.substring(0, 40));
+
+  const titleFontSize = 36;
+  const lineHeight = 52;
+  const totalTitleH = lines.length * lineHeight;
+  const titleStartY = Math.round((OG_H - totalTitleH) / 2) + 10;
+
+  const titleLines = lines.map((line, i) =>
+    `<text x="600" y="${titleStartY + i * lineHeight}" font-family="Georgia, 'Times New Roman', serif" font-size="${titleFontSize}" font-weight="600" fill="${OG_CREAM}" text-anchor="middle" dominant-baseline="middle">${escHtml(line)}</text>`
+  ).join('\n    ');
+
+  // Section label — positioned above title block
+  const sectionY = titleStartY - 70;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">
+  <defs>
+    <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="${OG_GOLD}" stop-opacity="1"/>
+      <stop offset="100%" stop-color="${OG_GOLD}" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="${OG_W}" height="${OG_H}" fill="${OG_BG}"/>
+
+  <!-- Gold gradient bar at top -->
+  <rect x="0" y="0" width="${OG_W}" height="10" fill="url(#goldBar)"/>
+
+  <!-- Corner accents — top-left -->
+  <line x1="40" y1="40" x2="100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="40" x2="40" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+
+  <!-- Corner accents — top-right -->
+  <line x1="1160" y1="40" x2="1100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="1160" y1="40" x2="1160" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+
+  <!-- Corner accents — bottom-left -->
+  <line x1="40" y1="590" x2="100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="590" x2="40" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+
+  <!-- Corner accents — bottom-right -->
+  <line x1="1160" y1="590" x2="1100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="1160" y1="590" x2="1160" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+
+  <!-- Section label -->
+  <text x="600" y="${sectionY}" font-family="'Courier New', Courier, monospace, sans-serif" font-size="14" fill="${OG_GOLD}" text-anchor="middle" dominant-baseline="middle" letter-spacing="3" text-transform="uppercase">${escHtml((section || '').toUpperCase())}</text>
+
+  <!-- Page title -->
+  ${titleLines}
+
+  <!-- Footer -->
+  <text x="600" y="530" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="${OG_MUTED}" text-anchor="middle" dominant-baseline="middle">Enterprise AI Playbook | Sunil Prakash</text>
+</svg>`;
+}
+
+function buildDefaultOgSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">
+  <defs>
+    <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="${OG_GOLD}" stop-opacity="1"/>
+      <stop offset="100%" stop-color="${OG_GOLD}" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="${OG_W}" height="${OG_H}" fill="${OG_BG}"/>
+  <rect x="0" y="0" width="${OG_W}" height="10" fill="url(#goldBar)"/>
+  <line x1="40" y1="40" x2="100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="40" x2="40" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="1160" y1="40" x2="1100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="1160" y1="40" x2="1160" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="590" x2="100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="590" x2="40" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="1160" y1="590" x2="1100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <line x1="1160" y1="590" x2="1160" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
+  <text x="600" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="600" fill="${OG_CREAM}" text-anchor="middle" dominant-baseline="middle">Enterprise AI Playbook</text>
+  <text x="600" y="360" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="${OG_MUTED}" text-anchor="middle" dominant-baseline="middle">sunilprakash.com</text>
+</svg>`;
+}
+
+async function ensureDefaultOgImage(ogDistDir) {
+  const dest = path.join(ogDistDir, 'default.png');
+  const staticSrc = path.join(ROOT, 'static', 'og', 'default.png');
+
+  // If a hand-crafted static version exists, use it
+  if (fs.existsSync(staticSrc)) {
+    fs.copyFileSync(staticSrc, dest);
+    return;
+  }
+
+  // Generate from SVG using sharp
+  if (sharp) {
+    try {
+      await sharp(Buffer.from(buildDefaultOgSvg())).png().toFile(dest);
+      return;
+    } catch (err) {
+      console.warn(`  WARN: Could not generate default.png via sharp: ${err.message}`);
+    }
+  }
+
+  // Last resort: write a 1x1 transparent PNG so the file always exists
+  const minimalPng = Buffer.from(
+    'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+    'base64'
+  );
+  fs.writeFileSync(dest, minimalPng);
+}
+
+async function generateOGImages(pages) {
+  const ogDistDir = path.join(DIST_DIR, 'og');
+  fs.mkdirSync(ogDistDir, { recursive: true });
+
+  // Always produce default.png first
+  await ensureDefaultOgImage(ogDistDir);
+
+  if (!sharp) {
+    console.warn('  WARN: sharp not available — copying default.png for all OG images');
+    for (const page of pages) {
+      const dest = path.join(ogDistDir, `${page.meta.slug}.png`);
+      fs.copyFileSync(path.join(ogDistDir, 'default.png'), dest);
+    }
+    console.log(`  OG images: ${pages.length} fallback copies written`);
+    return;
+  }
+
+  const defaultPng = path.join(ogDistDir, 'default.png');
+
+  const tasks = pages.map(async (page) => {
+    const dest = path.join(ogDistDir, `${page.meta.slug}.png`);
+    try {
+      const svg = buildOgSvg({
+        title: page.meta.title,
+        section: page.meta.section,
+      });
+      await sharp(Buffer.from(svg)).png().toFile(dest);
+    } catch (err) {
+      console.warn(`  WARN: OG image failed for "${page.meta.slug}": ${err.message}`);
+      try { fs.copyFileSync(defaultPng, dest); } catch (_) {}
+    }
+  });
+
+  await Promise.all(tasks);
+  console.log(`  Generated: og/ (${pages.length} image(s))`);
+}
+
 // ─── Main Build ────────────────────────────────────────────────────────────
 
-function build() {
+async function build() {
   const startTime = Date.now();
   console.log('Building Enterprise AI Playbook...\n');
 
@@ -547,7 +723,10 @@ function build() {
     console.log('  Generated: 404.html');
   }
 
-  // 9. Copy static assets
+  // 9. Generate OG images
+  await generateOGImages(pages);
+
+  // 10. Copy static assets
   for (const dir of STATIC_DIRS) {
     const src = path.join(ROOT, dir);
     const dest = path.join(DIST_DIR, dir);
@@ -561,4 +740,7 @@ function build() {
   if (errors > 0) process.exitCode = 1;
 }
 
-build();
+build().catch(err => {
+  console.error('FATAL build error:', err);
+  process.exitCode = 1;
+});
