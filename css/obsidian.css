@@ -1,0 +1,1280 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Obsidian Design System
+   Enterprise AI Playbook — sunilprakash.com/enterprise-ai
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ─── 0. Custom Properties ────────────────────────────────────────────────── */
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #141210;
+  --gold: #c8b48c;
+  --gold-light: #e8d8b8;
+  --gold-deep: #a09070;
+  --text: #a09888;
+  --heading: #f0ece4;
+  --label: #6b6560;
+  --focus-bg: #1a1816;
+  --focus-text: #b8b0a0;
+  --content-width: 760px;
+  --content-wide: 900px;
+  --base-path: '/enterprise-ai';
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Mermaid theming */
+  --mermaid-bg: transparent;
+  --mermaid-node-bg: rgba(200, 180, 140, 0.06);
+  --mermaid-node-border: rgba(200, 180, 140, 0.2);
+  --mermaid-text: #a09888;
+  --mermaid-edge: rgba(200, 180, 140, 0.3);
+  --mermaid-label: #a09888;
+}
+
+
+/* ─── 1. Font Loading ─────────────────────────────────────────────────────── */
+
+/* Fraunces Variable (optical-size + weight axes) */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/enterprise-ai/fonts/Fraunces-Variable.woff2') format('woff2');
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+  font-optical-sizing: auto;
+}
+
+/* IBM Plex Sans — 300 Light */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/enterprise-ai/fonts/IBMPlexSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* IBM Plex Sans — 400 Regular */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/enterprise-ai/fonts/IBMPlexSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* IBM Plex Sans — 500 Medium */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/enterprise-ai/fonts/IBMPlexSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* IBM Plex Sans — 600 SemiBold */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/enterprise-ai/fonts/IBMPlexSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* IBM Plex Mono — 400 Regular */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/enterprise-ai/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* IBM Plex Mono — 500 Medium */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/enterprise-ai/fonts/IBMPlexMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ─── 2. Reset + Base ─────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+::-moz-selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+
+/* ─── 3. Typography ───────────────────────────────────────────────────────── */
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.2em;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--heading);
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+  margin-top: 56px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(200, 180, 140, 0.12);
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--heading);
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--label);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--heading);
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 180, 140, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-color: var(--gold);
+}
+
+ul,
+ol {
+  margin-bottom: 20px;
+  padding-left: 24px;
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 8px;
+  margin-bottom: 8px;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+ol li {
+  margin-bottom: 8px;
+}
+
+ol li::marker {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(200, 180, 140, 0.08);
+  margin: 48px 0;
+}
+
+
+/* ─── 4. Layout ───────────────────────────────────────────────────────────── */
+
+.reading-content,
+.showcase-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.content-wide {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+
+/* ─── 5. Skip Link ────────────────────────────────────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 300;
+  padding: 8px 16px;
+  background: var(--gold);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
+
+/* ─── 6. Navigation — Top Bar ─────────────────────────────────────────────── */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.9);
+  border-bottom: 1px solid rgba(200, 180, 140, 0.06);
+}
+
+@supports (backdrop-filter: blur(16px)) {
+  .topbar {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: none;
+  white-space: nowrap;
+}
+
+.logo:hover {
+  border-bottom: none;
+}
+
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 16px;
+}
+
+.breadcrumb-section {
+  color: var(--label);
+}
+
+.breadcrumb-page {
+  color: var(--text);
+}
+
+.separator {
+  color: rgba(107, 101, 96, 0.4);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cmd-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(200, 180, 140, 0.15);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--label);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.cmd-trigger:hover {
+  border-color: var(--gold);
+  color: var(--text);
+}
+
+.cmd-trigger kbd {
+  display: inline-block;
+  border: 1px solid rgba(200, 180, 140, 0.1);
+  border-radius: 2px;
+  padding: 1px 4px;
+  font-size: 9px;
+  color: rgba(107, 101, 96, 0.6);
+}
+
+.focus-toggle,
+.share-trigger {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 180, 140, 0.15);
+  background: transparent;
+  color: var(--label);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  position: relative;
+}
+
+.focus-toggle:hover,
+.share-trigger:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+
+/* ─── 7. Progress Bar ─────────────────────────────────────────────────────── */
+
+.progress-bar {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(200, 180, 140, 0.06);
+  z-index: 99;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
+  transition: width 0.3s ease-out;
+}
+
+
+/* ─── 8. Bottom Section Pills ─────────────────────────────────────────────── */
+
+.section-pills {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 16px;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.95);
+  border-top: 1px solid rgba(200, 180, 140, 0.06);
+  transition: transform 0.3s ease;
+}
+
+@supports (backdrop-filter: blur(16px)) {
+  .section-pills {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+.pills-hidden {
+  transform: translateY(100%);
+}
+
+.sec-pill {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--label);
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.sec-pill:hover {
+  color: var(--text);
+  border-bottom: none;
+}
+
+.sec-pill.active {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(200, 180, 140, 0.06);
+}
+
+
+/* ─── 9. Command Palette ──────────────────────────────────────────────────── */
+
+.cmd-palette {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 10, 10, 0.95);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20vh;
+}
+
+@supports (backdrop-filter: blur(20px)) {
+  .cmd-palette {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+.cmd-palette.open {
+  display: flex;
+}
+
+.cmd-search-box {
+  max-width: 600px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.cmd-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--gold);
+  color: var(--heading);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  padding: 16px 0;
+  caret-color: var(--gold);
+}
+
+.cmd-input::placeholder {
+  color: var(--label);
+}
+
+.cmd-results {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 16px;
+}
+
+.cmd-results::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cmd-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cmd-results::-webkit-scrollbar-thumb {
+  background: rgba(200, 180, 140, 0.15);
+  border-radius: 2px;
+}
+
+.cmd-section-header {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  padding: 12px 16px 6px;
+  opacity: 0.7;
+}
+
+.cmd-result {
+  padding: 10px 16px;
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.cmd-result:hover,
+.cmd-result.selected {
+  background: rgba(200, 180, 140, 0.04);
+  border-left-color: var(--gold);
+}
+
+.cmd-result-title {
+  color: var(--heading);
+  font-weight: 400;
+}
+
+.cmd-result-section {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--label);
+  margin-left: 8px;
+}
+
+
+/* ─── 10. Page Header ─────────────────────────────────────────────────────── */
+
+.page-header {
+  padding: 120px 0 60px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  opacity: 0.8;
+  margin-bottom: 24px;
+  display: block;
+}
+
+
+/* ─── 11. Content Elements ────────────────────────────────────────────────── */
+
+/* Insight Box */
+.insight-box {
+  position: relative;
+  border-left: 2px solid rgba(200, 180, 140, 0.4);
+  padding: 20px 24px;
+  margin: 32px 0;
+  background: rgba(200, 180, 140, 0.03);
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.insight-box p {
+  color: var(--gold);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.insight-box p:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(200, 180, 140, 0);
+  }
+  50% {
+    box-shadow: 0 0 30px 0 rgba(200, 180, 140, 0.08);
+  }
+}
+
+/* Tradeoff Panel */
+.tradeoff-panel {
+  border: 1px solid rgba(200, 180, 140, 0.1);
+  border-radius: 4px;
+  padding: 24px;
+  margin: 32px 0;
+  background: rgba(200, 180, 140, 0.02);
+}
+
+.tradeoff-content h3 {
+  margin-top: 0;
+}
+
+/* Warning Box */
+.warning-box {
+  border-left: 2px solid rgba(200, 160, 100, 0.5);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: rgba(200, 160, 100, 0.03);
+}
+
+.warning-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Note Box */
+.note-box {
+  border-left: 2px solid rgba(200, 180, 140, 0.2);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: rgba(200, 180, 140, 0.02);
+}
+
+.note-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tables */
+.obsidian-table-wrap {
+  overflow-x: auto;
+  margin: 32px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.obsidian-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.obsidian-table th {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  background: rgba(200, 180, 140, 0.04);
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(200, 180, 140, 0.12);
+  white-space: nowrap;
+}
+
+.obsidian-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(200, 180, 140, 0.06);
+  font-size: 14px;
+}
+
+.obsidian-table tr:hover td {
+  background: rgba(200, 180, 140, 0.02);
+}
+
+/* Blockquotes */
+.obsidian-quote.gold-border {
+  border-left: 3px solid var(--gold);
+  padding: 16px 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--focus-text);
+}
+
+.obsidian-quote.gold-border p {
+  margin-bottom: 0;
+}
+
+.obsidian-quote.gold-border p:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+/* Code Blocks */
+pre code {
+  display: block;
+  background: var(--surface);
+  border: 1px solid rgba(200, 180, 140, 0.08);
+  border-radius: 6px;
+  padding: 20px 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+pre {
+  margin: 24px 0;
+}
+
+/* Inline Code */
+code {
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Prevent double-styling for code inside pre */
+pre code {
+  padding: 20px 24px;
+}
+
+
+/* ─── 12. Mermaid ─────────────────────────────────────────────────────────── */
+
+pre.mermaid {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 32px 0;
+  text-align: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon {
+  fill: var(--mermaid-node-bg);
+  stroke: var(--mermaid-node-border);
+}
+
+.mermaid .nodeLabel {
+  color: var(--mermaid-text);
+  fill: var(--mermaid-text);
+}
+
+.mermaid .edgePath path {
+  stroke: var(--mermaid-edge);
+}
+
+.mermaid .edgeLabel {
+  color: var(--mermaid-label);
+  background: var(--bg);
+}
+
+
+/* ─── 13. Shimmer Text ────────────────────────────────────────────────────── */
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--gold-light) 40%,
+    var(--gold) 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+
+/* ─── 14. Ribbon Divider ──────────────────────────────────────────────────── */
+
+.ribbon-divider {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  margin: 48px 0;
+}
+
+.ribbon-divider svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ─── 15. Scroll Reveal ───────────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal:nth-child(2) { transition-delay: 80ms; }
+.reveal:nth-child(3) { transition-delay: 160ms; }
+.reveal:nth-child(4) { transition-delay: 240ms; }
+.reveal:nth-child(5) { transition-delay: 320ms; }
+.reveal:nth-child(6) { transition-delay: 400ms; }
+.reveal:nth-child(7) { transition-delay: 480ms; }
+.reveal:nth-child(8) { transition-delay: 560ms; }
+.reveal:nth-child(9) { transition-delay: 640ms; }
+.reveal:nth-child(10) { transition-delay: 720ms; }
+
+
+/* ─── 16. Progress Ring ───────────────────────────────────────────────────── */
+
+.progress-ring {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 50;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.progress-ring:hover {
+  transform: scale(1.3);
+}
+
+.progress-ring svg {
+  width: 24px;
+  height: 24px;
+}
+
+.progress-ring-circle {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: rgba(200, 180, 140, 0.1);
+  stroke-width: 2;
+}
+
+.progress-ring-tooltip {
+  position: absolute;
+  left: 32px;
+  bottom: 0;
+  background: var(--surface);
+  border: 1px solid rgba(200, 180, 140, 0.15);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gold);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.progress-ring:hover .progress-ring-tooltip {
+  opacity: 1;
+}
+
+
+/* ─── 17. Interactive Mount ───────────────────────────────────────────────── */
+
+.interactive-mount {
+  min-height: 200px;
+  position: relative;
+  margin: 40px 0;
+}
+
+
+/* ─── 18. Page Footer ─────────────────────────────────────────────────────── */
+
+.page-footer {
+  max-width: var(--content-width);
+  margin: 80px auto;
+  padding: 0 32px;
+}
+
+.next-suggestion {
+  border-top: 1px solid rgba(200, 180, 140, 0.06);
+  padding-top: 32px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.next-suggestion a {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--font-heading);
+  font-size: 1.3em;
+  color: var(--heading);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid rgba(200, 180, 140, 0.1);
+  padding-bottom: 4px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.next-suggestion a:hover {
+  border-color: var(--gold);
+}
+
+.page-copyright {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--label);
+  margin-top: 48px;
+}
+
+
+/* ─── 19. Share Dropdown ──────────────────────────────────────────────────── */
+
+.share-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 8px;
+  background: var(--surface);
+  border: 1px solid rgba(200, 180, 140, 0.15);
+  border-radius: 4px;
+  padding: 8px 0;
+  min-width: 160px;
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.share-dropdown.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.share-option {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border: none;
+  background: none;
+}
+
+.share-option:hover {
+  background: rgba(200, 180, 140, 0.04);
+}
+
+.share-copied {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 8px 16px;
+  animation: fade-out 1.5s ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  0%, 70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* ─── 20. Focus Indicators ────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ─── 21. Responsive Breakpoints ──────────────────────────────────────────── */
+
+/* Large screens (default): content-width 760px, content-wide 900px */
+
+@media (max-width: 1199px) {
+  :root {
+    --content-width: 700px;
+    --content-wide: 800px;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --content-width: calc(100% - 64px);
+    --content-wide: calc(100% - 64px);
+  }
+
+  .section-pills {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --content-width: calc(100% - 48px);
+    --content-wide: calc(100% - 48px);
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin-top: 40px;
+  }
+
+  .topbar {
+    height: 44px;
+    padding: 0 16px;
+  }
+
+  .progress-bar {
+    top: 44px;
+  }
+
+  .page-header {
+    padding: 100px 0 40px;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .cmd-trigger span {
+    display: none;
+  }
+
+  .reading-content,
+  .showcase-content,
+  .content-wide {
+    padding: 0 20px;
+  }
+
+  .page-footer {
+    padding: 0 20px;
+  }
+
+  .insight-box,
+  .tradeoff-panel,
+  .warning-box,
+  .note-box {
+    padding: 16px 20px;
+  }
+
+  .obsidian-table-wrap {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 0 20px;
+  }
+
+  .progress-ring {
+    bottom: 16px;
+    left: 16px;
+  }
+}
+
+
+/* ─── 22. @supports backdrop-filter (mobile reduction) ────────────────────── */
+
+@media (max-width: 767px) {
+  @supports (backdrop-filter: blur(8px)) {
+    .topbar {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .section-pills {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .cmd-palette {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  }
+}
+
+
+/* ─── 23. Reduced Motion ──────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .shimmer-text {
+    animation: none;
+    background: none;
+    -webkit-text-fill-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .insight-box {
+    animation: none;
+  }
+}
+
+
+/* ─── 24. Print ───────────────────────────────────────────────────────────── */
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+    border-bottom: none;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000;
+  }
+
+  .topbar,
+  .progress-bar,
+  .section-pills,
+  .progress-ring,
+  .page-footer,
+  .cmd-palette,
+  .share-dropdown,
+  canvas {
+    display: none !important;
+  }
+
+  .reading-content,
+  .showcase-content,
+  .content-wide {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .page-header {
+    padding: 0 0 20px;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .insight-box,
+  .tradeoff-panel,
+  .warning-box,
+  .note-box {
+    break-inside: avoid;
+    border-color: #ccc;
+    background: none;
+  }
+
+  pre code {
+    border-color: #ccc;
+    background: #f5f5f5;
+  }
+}
