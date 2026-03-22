@@ -1,0 +1,541 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Showcase CSS
+   Styles for interactive components on showcase and assessment pages
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ─── 1. Interactive Mount ────────────────────────────────────────────────── */
+
+.interactive-mount {
+  min-height: 300px;
+  position: relative;
+  margin: 60px 0;
+}
+
+
+/* ─── 2. Showcase Hero ────────────────────────────────────────────────────── */
+
+.showcase-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 96px 32px 80px; /* top accounts for 48px topbar */
+  text-align: center;
+  overflow: hidden;
+}
+
+.showcase-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(200, 180, 140, 0.06) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+
+/* ─── 3. Gold Line ────────────────────────────────────────────────────────── */
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold) 50%,
+    transparent 100%
+  );
+  margin-bottom: 32px;
+  flex-shrink: 0;
+}
+
+
+/* ─── 4. Stat Row ─────────────────────────────────────────────────────────── */
+
+.stat-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--label);
+}
+
+
+/* ─── 5. Scroll Hint ──────────────────────────────────────────────────────── */
+
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--label);
+  animation: scroll-pulse 2.5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(-50%) translateY(4px);
+  }
+}
+
+
+/* ─── 6. D3 Chart Containers ──────────────────────────────────────────────── */
+
+.chart-container {
+  min-height: 300px;
+  position: relative;
+  width: 100%;
+}
+
+.chart-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Chart axis / tick labels */
+.chart-container .tick text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--label);
+}
+
+.chart-container .axis-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  fill: var(--label);
+}
+
+
+/* ─── 7. Layer Stack (Capability Stack) ───────────────────────────────────── */
+
+.layer-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid rgba(200, 180, 140, 0.1);
+  border-radius: 3px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+  position: relative;
+}
+
+.layer-item:hover {
+  border-color: rgba(200, 180, 140, 0.25);
+  background: rgba(200, 180, 140, 0.02);
+}
+
+.layer-item.expanded {
+  border-color: rgba(200, 180, 140, 0.3);
+  background: rgba(200, 180, 140, 0.03);
+}
+
+.layer-num {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.6;
+  flex-shrink: 0;
+  min-width: 28px;
+}
+
+.layer-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading);
+  flex: 1;
+}
+
+.layer-desc {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--label);
+  margin-left: auto;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.layer-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  width: 100%;
+}
+
+/* Detail sits below the flex row — make layer-item wrap */
+.layer-item {
+  flex-wrap: wrap;
+}
+
+.layer-item .layer-detail {
+  flex-basis: 100%;
+  padding: 0;
+}
+
+.layer-item.expanded .layer-detail {
+  max-height: 500px;
+  padding-top: 12px;
+}
+
+.layer-detail-inner {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding: 12px 0 4px;
+  border-top: 1px solid rgba(200, 180, 140, 0.08);
+}
+
+.layer-detail-inner p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ─── 8. Assessment — Question Cards ──────────────────────────────────────── */
+
+.assessment-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.assessment-stage {
+  margin-bottom: 64px;
+}
+
+.assessment-stage-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.question-card {
+  border: 1px solid rgba(200, 180, 140, 0.1);
+  border-radius: 3px;
+  padding: 24px;
+  margin-bottom: 16px;
+  background: rgba(200, 180, 140, 0.02);
+  transition: border-color 0.2s ease;
+}
+
+.question-card:hover {
+  border-color: rgba(200, 180, 140, 0.2);
+}
+
+.question-text {
+  font-size: 14px;
+  color: var(--heading);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.question-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.question-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(200, 180, 140, 0.08);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.question-option:hover {
+  border-color: rgba(200, 180, 140, 0.2);
+  background: rgba(200, 180, 140, 0.02);
+  color: var(--heading);
+}
+
+.question-option.selected {
+  border-color: var(--gold);
+  background: rgba(200, 180, 140, 0.05);
+  color: var(--heading);
+}
+
+.question-option-marker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--label);
+  flex-shrink: 0;
+  min-width: 18px;
+  transition: color 0.15s ease;
+}
+
+.question-option.selected .question-option-marker {
+  color: var(--gold);
+}
+
+
+/* ─── 9. Assessment — Radar Chart ─────────────────────────────────────────── */
+
+.assessment-radar {
+  min-height: 400px;
+  position: relative;
+  margin: 40px 0;
+}
+
+.assessment-radar svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.radar-axis-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  fill: var(--label);
+}
+
+.radar-grid {
+  stroke: rgba(200, 180, 140, 0.08);
+  stroke-width: 1;
+  fill: none;
+}
+
+.radar-area {
+  fill: rgba(200, 180, 140, 0.08);
+  stroke: var(--gold);
+  stroke-width: 1.5;
+}
+
+.radar-point {
+  fill: var(--gold);
+  r: 3;
+}
+
+
+/* ─── 10. Assessment — Score Bars ──────────────────────────────────────────── */
+
+.score-bars {
+  margin: 32px 0;
+}
+
+.score-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.score-bar-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--label);
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.score-bar-track {
+  flex: 1;
+  height: 2px;
+  background: rgba(200, 180, 140, 0.1);
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold));
+  border-radius: 1px;
+  transition: width 0.8s ease;
+  width: 0%; /* JS sets this */
+}
+
+.score-bar-value {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold);
+  min-width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+
+/* ─── 11. Assessment — Results Panel ──────────────────────────────────────── */
+
+.assessment-results {
+  border: 1px solid rgba(200, 180, 140, 0.15);
+  border-radius: 3px;
+  padding: 40px;
+  margin-top: 48px;
+  background: rgba(200, 180, 140, 0.02);
+}
+
+.results-headline {
+  font-family: var(--font-heading);
+  font-size: 1.8em;
+  font-weight: 300;
+  color: var(--heading);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.results-subheadline {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 32px;
+  display: block;
+}
+
+.results-summary {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.results-cta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  border: 1px solid rgba(200, 180, 140, 0.3);
+  border-radius: 2px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.results-cta:hover {
+  border-color: var(--gold);
+  background: rgba(200, 180, 140, 0.05);
+}
+
+
+/* ─── 12. Responsive ──────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .showcase-hero {
+    padding: 88px 20px 64px;
+  }
+
+  .stat-row {
+    gap: 32px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .layer-item {
+    padding: 14px 16px;
+  }
+
+  .layer-desc {
+    display: none;
+  }
+
+  .assessment-content {
+    padding: 64px 20px;
+  }
+
+  .question-card {
+    padding: 16px;
+  }
+
+  .score-bar-label {
+    min-width: 100px;
+    font-size: 9px;
+  }
+
+  .assessment-results {
+    padding: 24px 20px;
+  }
+}
+
+
+/* ─── 13. Reduced Motion ──────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint {
+    animation: none;
+    opacity: 0.6;
+  }
+
+  .score-bar-fill {
+    transition: none;
+  }
+
+  .layer-detail {
+    transition: none;
+  }
+}
