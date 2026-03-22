@@ -150,4 +150,4 @@ The following statistics appear throughout the playbook. Each is cited with its 
 
 [Sunil Prakash](https://sunilprakash.com) is an AI and data platform leader with experience building enterprise AI programs, governance frameworks, and agent infrastructure. His research on multi-agent systems includes the [Lightweight Delegation Protocol](https://arxiv.org/abs/2603.08852) (LDP) for agent identity and governance, and [Deliberative Collective Intelligence](https://arxiv.org/abs/2603.11781) (DCI) for structured multi-agent reasoning.
 
-This playbook reflects the intersection of that research with operational experience: what the data says about enterprise AI transformation, and what actually works when you try to do it.
+This playbook covers the full transformation lifecycle: strategy, operating model, assessment, architecture, governance, agentic deployment, measurement, and proof. It reflects the intersection of that research with operational experience: what the data says about enterprise AI transformation, and what actually works when you try to do it.

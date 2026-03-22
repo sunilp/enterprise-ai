@@ -200,6 +200,8 @@ Use these indicators to assess where your organization currently sits and whethe
 
 ---
 
+For team roles and decision ownership within these structures, see [Operating Architecture](../architecture/operating-architecture.md).
+
 ---
 
 ## Sources

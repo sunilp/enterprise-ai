@@ -162,6 +162,8 @@ This is concrete. Organizations that have reached genuine data readiness for AI 
 
 Data readiness is not achieved in a single initiative. It is built through consistent investment in platform capability, governance practice, and organizational accountability over 18-36 months. The organizations that have done this work are seeing compound returns on AI investment. The organizations that skipped it are running the data cleansing trap on repeat.
 
+For how data foundation fits within the full AI capability stack, see [Capability Stack](../architecture/capability-stack.md). For a comprehensive treatment of enterprise data architecture, see [Enterprise Data Architecture](https://sunilprakash.com/enterprise-data-architecture/).
+
 The three investments that move the needle most, in order of impact:
 
 1. **A unified data platform** with automated quality monitoring. This removes the per-project data engineering bottleneck.

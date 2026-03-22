@@ -4,6 +4,8 @@ Architecture Decision Records (ADRs) are a structured format for documenting sig
 
 These templates are designed for AI transformation decisions specifically. Adapt the fields to your organization's existing ADR format if one exists.
 
+For operational executive templates (board memos, scorecards, inventories), see [Decision Artifacts](decision-artifacts.md).
+
 ---
 
 ## ADR-001: AI Operating Model Selection

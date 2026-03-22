@@ -25,6 +25,15 @@ The documented rules that govern which AI agents or AI systems are permitted to 
 **CAIO (Chief AI Officer)**
 The executive responsible for the organization's AI strategy, governance, and deployment program. The CAIO role is distinct from the CTO (who owns technology infrastructure) and the CDO (who owns data strategy), though there is overlap in all three. In organizations without a dedicated CAIO, the CIO or CTO typically assumes this mandate with delegated authority.
 
+**Capability Stack**
+The layered architecture model for enterprise AI, from infrastructure through applications. Each layer requires investment, ownership, and governance.
+
+**Control Architecture**
+The technical control plane that enforces governance policy at deployment speed. Covers identity, entitlements, audit, policy enforcement, human override, retention, and observability.
+
+**Control Plane**
+The system layer responsible for policy enforcement, access control, audit, and observability across AI deployments. Distinct from the data plane (where models run) and the management plane (where humans set policy).
+
 **Data Readiness**
 An assessment of whether the data assets required for a specific AI use case meet the quality, accessibility, governance, and volume standards required for effective AI deployment. A use case with low data readiness is not a candidate for near-term deployment regardless of business value potential. See [Assessment](assessment/ai-readiness.md).
 
@@ -58,6 +67,9 @@ A protocol for tracking the origin, transformation history, and chain of custody
 **MCP (Model Context Protocol)**
 A protocol that standardizes how AI models access and interact with external data sources, tools, and services. MCP defines the interface between AI models and the systems they need to use, enabling more reliable and auditable tool use in agentic systems.
 
+**Operating Architecture**
+The team structure and decision ownership model for building and running enterprise AI. Defines platform teams, domain AI teams, governance function, production support, and incident ownership.
+
 **Measurement Stack**
 The three-layer measurement system used to connect AI activity to business value: activity metrics (adoption, usage) feed outcome metrics (time saved, error reduction), which feed value metrics (P&L impact). The measurement stack makes explicit the causal chain from AI usage to financial result. See [Measurement Design](measurement/design.md).
 
@@ -75,6 +87,12 @@ The accumulated inconsistency, undocumentation, and variation in business proces
 
 **Shadow AI**
 The use of AI tools by employees outside of approved organizational channels, without the knowledge or authorization of the AI governance function. Shadow AI is universal in AI-capable organizations. The appropriate response is not prohibition (which is ineffective) but managed tolerance combined with a fast-track approval process and a competitive approved tool portfolio. See [ADR-005](proof/decision-records.md#adr-005-shadow-ai-response-strategy).
+
+**System of Action**
+The architectural layer where AI executes operations: workflow orchestration, agent execution, automated processes. Distinct from the System of Intelligence (where AI reasons) and System of Engagement (where users interact).
+
+**System of Intelligence**
+The architectural layer where AI reasons: analytics, ML models, knowledge bases, decision engines. Most AI investment concentrates here, but value requires integration with Systems of Engagement and Action.
 
 **Trust Boundary**
 The defined limit of what an AI system or agent is permitted to access, act upon, or influence. Trust boundaries are technical controls (access permissions, API scope, data classification enforcement) as well as policy controls (authorization framework, use policy). Every agent deployment must have explicit, enforced trust boundaries.
