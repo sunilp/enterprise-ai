@@ -6,11 +6,9 @@ The Chief AI Officer role is no longer experimental. As of 2025, 26% of organiza
 
 ## What the CAIO Is Not
 
-The CAIO is not a senior data scientist. Not a chief evangelist. Not a technology translator whose job is to help the board understand machine learning.
+The CAIO is not a senior data scientist, a chief evangelist, or a technology translator who helps the board understand machine learning. Those functions matter. They are not the mandate.
 
-Those functions matter. They are not the mandate.
-
-The CAIO mandate is operational and structural: sequence the AI portfolio, govern the model inventory, drive testing and monitoring, manage incidents, and coordinate across CIO, CDO, CISO, Finance, and Legal. It is, above all, a coordination and accountability function at the executive level.
+The CAIO mandate is operational and structural: sequence the AI portfolio, govern the model inventory, drive testing and monitoring, manage incidents, and coordinate across CIO, CDO, CISO, Finance, and Legal. A coordination and accountability function at the executive level.
 
 !!! warning "The Advisory Trap"
     Many organizations hire a CAIO and then treat the role as advisory. The CAIO participates in steering committees, reviews vendor proposals, produces strategy documents, and issues guidance that other functions may or may not follow. This is the advisory trap. An advisory CAIO has no accountability for outcomes and no authority to enforce alignment. The result is the appearance of AI governance without the substance.
@@ -90,12 +88,26 @@ The CAIO tracks the regulatory environment: EU AI Act, US executive orders, sect
 
 IBM's research across 2,300 organizations found that a hub-and-spoke CAIO structure produces 36% higher AI ROI compared to centralized or fully distributed models (IBM Institute for Business Value, 2025).
 
-The hub is the CAIO function: strategy, governance standards, portfolio oversight, tooling, and coordination mechanisms. The spokes are embedded AI leads within each business unit or major function who operate within the governance framework while owning execution locally.
+The hub is the CAIO function. It owns the decisions that must be consistent across the enterprise: use case approval gates, governance standards, model inventory policy, tooling selection, and incident classification. The spokes are embedded AI leads within each business unit who own the decisions that must be local: implementation sequencing, domain-specific data sourcing, and execution trade-offs within their context. Spokes operate within the governance framework the hub sets. They do not redefine it.
 
 This structure solves the core tension in enterprise AI: the need for consistent governance and the need for domain-specific speed. Centralized control creates bottlenecks. Full decentralization creates fragmentation. Hub-and-spoke creates accountability at both levels.
 
+The 36% ROI advantage translates to real capital. For an enterprise spending $50M annually on AI, that is $18M in additional return, or $18M left on the table by choosing the wrong structure.
+
+For a detailed RACI matrix, see [Operating Architecture](../architecture/operating-architecture.md).
+
 !!! success "Hub-and-Spoke Outcome"
     Organizations with hub-and-spoke CAIO structures report 36% higher AI ROI than those with purely centralized or distributed models (IBM IBV, 2025). The mechanism is coordination efficiency: less rework, faster approvals for pre-cleared use case patterns, and shared infrastructure that business units do not have to rebuild independently.
+
+---
+
+## The Authority-Autonomy Tradeoff
+
+Every organization setting CAIO scope faces the same tradeoff directly. A strong CAIO with real authority over use case approval, vendor selection, and model standards produces better governance, consistent risk posture, and less fragmentation. It also creates friction for business units that want to move on their own timeline.
+
+A weak CAIO with advisory status and limited mandate removes that friction. Business units move faster in the short term. Governance gaps accumulate in the background.
+
+Neither position is inherently wrong. The right calibration depends on the organization's risk exposure, regulatory context, and AI maturity. The mistake is failing to make the choice explicitly. Organizations that leave the CAIO scope ambiguous get the worst of both: governance overhead without the authority to enforce it, and business unit frustration without the speed advantage.
 
 ---
 
@@ -130,7 +142,7 @@ Second, the cross-functional coordination mechanism does not naturally persist w
 The CAIO becomes a permanent executive function, not a temporary transformation role. The scope evolves, but the accountability structure remains.
 
 !!! note "Transition vs. Permanent"
-    The debate about whether the CAIO is transitional often reflects a misunderstanding of the role. If the CAIO is defined as "the person who explains AI to the board," then yes, that function eventually becomes unnecessary. If the CAIO is defined as the executive accountable for AI portfolio performance, governance, and cross-functional coordination, then the role does not expire. It matures.
+    The debate about whether the CAIO is transitional reflects a misunderstanding of the role. If the CAIO is defined as "the person who explains AI to the board," that function eventually becomes unnecessary. If the CAIO is defined as the executive accountable for AI portfolio performance, governance, and cross-functional coordination, the role does not expire. It matures. The question is not whether to keep the role. It is whether the organization is willing to define it with enough authority to matter.
 
 ---
 
