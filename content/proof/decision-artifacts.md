@@ -13,6 +13,13 @@ For architectural decision rationale (why we chose this approach), see [Decision
 
 ---
 
+<div class="board-document">
+<div class="doc-header">
+  <span class="doc-type">Executive Template</span>
+  <span class="doc-classification">Sample</span>
+</div>
+<div class="doc-body">
+
 ## Board AI Status Memo
 
 **TO:** Board of Directors
@@ -69,7 +76,18 @@ Projected value figures are excluded from the payback ratio. Only finance-signed
 
 [Download template](templates/board-memo-template.md)
 
+</div>
+<div class="doc-footer">Enterprise AI Playbook | Decision Artifact</div>
+</div>
+
 ---
+
+<div class="board-document">
+<div class="doc-header">
+  <span class="doc-type">Executive Template</span>
+  <span class="doc-classification">Sample</span>
+</div>
+<div class="doc-body">
 
 ## AI Investment Scorecard
 
@@ -102,6 +120,10 @@ Use this scorecard to evaluate and compare AI use case candidates before committ
 **Note on governance complexity:** Lower scores indicate higher complexity, not lower importance. A score of 2 on governance complexity means governance requirements are substantial and must be factored into sequencing and resource allocation.
 
 [Download template](templates/investment-scorecard-template.md)
+
+</div>
+<div class="doc-footer">Enterprise AI Playbook | Decision Artifact</div>
+</div>
 
 ---
 

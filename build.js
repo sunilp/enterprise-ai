@@ -724,6 +724,7 @@ async function build() {
       nextSuggestion: nextPage
         ? `<div class="next-suggestion"><span class="next-label">Continue with</span><a href="${BASE_PATH}/${nextPage.path}/" class="next-link">${nextPage.title}</a></div>`
         : '',
+      flagshipClass: ['homepage', 'framework', 'governance-architecture', 'measurement-design', 'capability-stack'].includes(page.meta.slug) ? ' flagship' : '',
     };
 
     // Post-process: convert .md links to proper HTML paths

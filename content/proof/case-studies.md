@@ -43,6 +43,21 @@ The exit process was difficult. Business unit leaders defended their application
 - Vendor consolidation from three contracts to one negotiated enterprise agreement eliminated the cost of redundant access to the same underlying models
 - Two consolidation projects surfaced use cases that had been developed independently in different regions; the merged versions outperformed both predecessors
 
+<div class="metric-strip">
+  <div class="metric">
+    <div class="metric-value">253 → 89</div>
+    <div class="metric-label">Applications</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">-34%</div>
+    <div class="metric-label">Per-App Cost</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">6mo → 7wk</div>
+    <div class="metric-label">Time to Pilot</div>
+  </div>
+</div>
+
 ### Lessons Learned
 
 **An AI inventory is an act of leadership.** Knowing what you have requires asking questions that expose uncomfortable answers. Most organizations avoid the inventory because they do not want to know. The ones that succeed do the inventory first.
@@ -83,6 +98,21 @@ The redesign process took four months. It required buy-in from plant managers wh
 - Quality escape rate (defects reaching customers) declined 31%, eliminating rework costs and warranty exposure
 - Three plants avoided planned headcount additions by absorbing volume growth through AI-augmented throughput
 - Balance sheet impact: $14M in avoided costs in the first full year post-redesign, across throughput gains, quality escape reduction, and avoided headcount
+
+<div class="metric-strip">
+  <div class="metric">
+    <div class="metric-value">+18%</div>
+    <div class="metric-label">Throughput</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">-31%</div>
+    <div class="metric-label">Quality Escapes</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">$14M</div>
+    <div class="metric-label">Avoided Costs Y1</div>
+  </div>
+</div>
 
 ### Lessons Learned
 
