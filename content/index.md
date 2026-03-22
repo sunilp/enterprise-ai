@@ -5,13 +5,28 @@ section: "Home"
 layout: showcase
 slug: "homepage"
 ---
-# Enterprise AI Transformation Playbook
 
-Global enterprises will spend $644 billion on AI in 2025. Fewer than 40% will see measurable impact on earnings. The gap is not technological. It is organizational.
-
-> **Enterprise AI underperforms not because models are weak, but because firms lack the management system to convert model capability into economic value.**
-
----
+<section class="showcase-hero">
+  <div class="gold-line"></div>
+  <div class="section-label">Enterprise AI Transformation</div>
+  <h1>The Management System for Enterprise AI</h1>
+  <p class="hero-thesis">Enterprise AI underperforms not because models are weak, but because firms lack the management system to convert model capability into economic value.</p>
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-number shimmer-text" data-count-to="644" data-prefix="$" data-suffix="B">$0B</div>
+      <div class="stat-label">Global AI Spending</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number shimmer-text" data-count-to="42" data-suffix="%">0%</div>
+      <div class="stat-label">Scrapped Initiatives</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number shimmer-text" data-count-to="5" data-suffix="%">0%</div>
+      <div class="stat-label">Future-Built</div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll to explore</div>
+</section>
 
 ## What Separates the 5% Who Succeed
 
@@ -39,19 +54,7 @@ The companies that extract real returns from AI do not have better models. They 
 
 This playbook follows the decisions leaders face, in the order they face them.
 
-```mermaid
-graph TD
-    A[Position] --> B[Operating Model]
-    B --> C[Assessment]
-    C --> D[Portfolio]
-    D --> E[Governance]
-    E --> F[Architecture]
-    F --> G[Agentic Strategy]
-    G --> H[Workforce]
-    H --> I[Measurement]
-    I --> J[Transformation]
-    J --> K[Proof]
-```
+<div id="decision-flow" class="interactive-mount content-wide"></div>
 
 - **Position** -- why transformation fails and what it actually requires
 - **Operating Model** -- how to structure the AI function, the CAIO role, decision rights
