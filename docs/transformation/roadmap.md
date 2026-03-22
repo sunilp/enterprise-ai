@@ -6,6 +6,12 @@ The phases are not calendar-driven. They are milestone-driven. An organization t
 
 ---
 
+## Speed vs. Foundation: The Core Tradeoff
+
+The most common and most expensive sequencing mistake in AI transformation is rushing Phase 1 to get to Phase 2 faster. Phase 1 feels slow. It produces assessments, not AI. But skipping it means Phase 2 pilots lack baselines, governance, and operating model alignment, producing the pilot purgatory described in [The Problem](../position/the-problem.md). The pilots run. The results are unmeasurable. The board asks what was learned. The honest answer is: not much. Phase 1 is not overhead. It is the investment that makes everything downstream credible.
+
+---
+
 ## Overview
 
 ```mermaid
@@ -46,6 +52,8 @@ gantt
 
 **Purpose:** Understand where you are. Build the structures that make everything else possible. Do not deploy anything to users yet.
 
+**Phase owner:** CAIO, supported by CIO and Legal. CEO accountability for leadership alignment deliverable.
+
 The most common mistake in AI transformation is skipping this phase or treating it as overhead. Organizations that move directly to pilots without foundation work create problems that take 18 months to untangle.
 
 ### Key Activities
@@ -85,6 +93,15 @@ Get explicit, documented commitment from the C-suite on: the operating model, th
 | Baseline Measurement Set | Finance / CAIO | Documented baselines for Phase 2 target processes |
 | Leadership Charter | CEO | Signed commitment to transformation program scope and investment |
 
+### Governance Cadence
+
+| Cadence | Forum | Purpose |
+|---|---|---|
+| Monthly | Steering Committee | Progress against Phase 1 milestones, decision escalations, blocker resolution |
+| End of Phase | Phase-Gate Review | Go/no-go decision with CAIO, CIO, CFO, and at least one business unit leader |
+
+Board visibility in Phase 1 is through the CEO, not a formal board report. The first board AI update occurs at the Phase 2 gate.
+
 ### Decision Points
 
 - Operating model: centralized vs. hub-and-spoke vs. federated
@@ -103,6 +120,8 @@ Get explicit, documented commitment from the C-suite on: the operating model, th
 ## Phase 2: Focus (Months 4-6)
 
 **Purpose:** Select the right use cases. Launch controlled pilots. Learn what works before committing to scale.
+
+**Phase owner:** CAIO for portfolio and measurement. Business unit leaders for use case design and workforce planning. Platform team for technical deployment infrastructure.
 
 ### Key Activities
 
@@ -134,6 +153,14 @@ Work with process owners to redesign workflows before deployment. Time saved by 
 | Skills Gap Analysis | HR / CAIO | Capability gaps by role, with learning path recommendations |
 | Pilot Launch Report | CAIO | Status at end of Phase 2: adoption, early signals, issues |
 
+### Governance Cadence
+
+| Cadence | Forum | Purpose |
+|---|---|---|
+| Monthly | Steering Committee | Pilot status, measurement readings, risk flags, workforce planning progress |
+| Quarterly | Board Update | First board AI update: program status, Phase 1 findings, Phase 2 pilot portfolio |
+| End of Phase | Phase-Gate Review | Gate 2 decision: which pilots proceed to Scale, with CAIO, business unit leaders, and CFO |
+
 ### Decision Points
 
 - Which 3-5 use cases proceed to pilot (explicit selection and rejection decisions)
@@ -151,6 +178,8 @@ Work with process owners to redesign workflows before deployment. Time saved by 
 ## Phase 3: Scale (Months 7-9)
 
 **Purpose:** Promote pilots that passed Gate 2 to production. Validate the measurement framework. Begin governance automation. Define the agent strategy.
+
+**Phase owner:** CTO and CAIO jointly for production deployment and agent strategy. Finance for measurement validation. Legal / Compliance for governance systematization.
 
 ### Key Activities
 
@@ -180,6 +209,14 @@ As production deployments mature, the natural next question is: where do agents 
 | Agent Strategy Document | CTO / CAIO | Criteria, authorization model, and oversight framework for agents |
 | Workforce Transition Update | HR | Progress against skills development and role transition plans |
 
+### Governance Cadence
+
+| Cadence | Forum | Purpose |
+|---|---|---|
+| Monthly | Steering Committee | Production deployment status, measurement validation, governance audit results |
+| Quarterly | Board Update | Q3 board AI report: production outcomes, measurement actuals vs. projections, agent strategy |
+| End of Phase | Phase-Gate Review | Gate 3 decision: portfolio promotion decisions, agent authorization, Phase 4 investment level |
+
 ### Decision Points
 
 - Which pilots promote to production (Gate 2 decisions)
@@ -198,6 +235,8 @@ As production deployments mature, the natural next question is: where do agents 
 ## Phase 4: Optimize (Months 10-12)
 
 **Purpose:** Rebalance the portfolio based on evidence. Establish permanent board reporting. Deploy agents where authorized. Build the continuous improvement system.
+
+**Phase owner:** CAIO for portfolio management and board reporting. CFO for investment decisions. CTO for agent deployment. Business unit leaders for continuous improvement embedding within their functions.
 
 ### Key Activities
 
@@ -226,6 +265,14 @@ By the end of Month 12, the transformation program should be self-sustaining: a 
 | Agentic Deployment Record | CTO | Deployed agents with authorization documentation |
 | Year 2 Roadmap | CAIO | Next 12-month plan based on Year 1 learnings |
 | Transformation Retrospective | CAIO | Honest assessment of what worked, what did not, and what changed |
+
+### Governance Cadence
+
+| Cadence | Forum | Purpose |
+|---|---|---|
+| Monthly | Steering Committee | Portfolio performance review, continuous improvement prioritization, Year 2 planning |
+| Quarterly | Board Update | Q4 full-format board AI report: Year 1 actuals, Year 2 roadmap, investment recommendation |
+| End of Phase | Annual Retrospective | CAIO-led review of Year 1: what worked, what did not, operating model assessment |
 
 ### Decision Points
 

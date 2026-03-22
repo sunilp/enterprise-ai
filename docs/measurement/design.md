@@ -1,8 +1,10 @@
 # Measurement Design
 
-91% of organizations report that AI has "improved productivity." Only 23% can quantify it with hard data.[^1] That gap is not a communication problem. It is a measurement failure. Organizations deployed AI first and tried to prove value afterward. That approach does not work.
+91% of organizations report that AI has "improved productivity." Only 23% can quantify it with hard data.[^1] That gap is where CFOs lose confidence and AI budgets get cut. It is not a communication problem. It is a measurement failure. Organizations deployed AI first and tried to prove value afterward. That approach does not work.
 
 This section explains how to build a measurement system that produces numbers boards will believe and business leaders can act on.
+
+For a sample board-level scorecard and KPI tree, see [Decision Artifacts](../proof/decision-artifacts.md).
 
 [^1]: Forbes AI Study 2025.
 
@@ -122,25 +124,15 @@ The transition from outcome to value requires financial modeling. Time saved mus
 
 ## Common Measurement Anti-Patterns
 
-### Vanity Metrics
+**Vanity metrics.** Model accuracy, token counts, API call volumes, user satisfaction scores. These say nothing about whether the business is better off.
 
-Reporting model accuracy, token counts, API call volumes, or user satisfaction scores as evidence of business value. These numbers say nothing about whether the business is better off.
+**Adoption as success.** Celebrating 80% adoption without measuring what changed in work output. Adoption is a precondition for value, not evidence of it.
 
-### Measuring Adoption, Not Impact
+**Post-hoc rationalization.** Deploying AI, then searching for metrics that happened to move in the right direction during the same period. This is confirmation bias with a spreadsheet.
 
-Celebrating 80% adoption without measuring what changed in work output. Adoption is a precondition for value, not evidence of it.
+**Single-metric reporting.** Choosing the most favorable metric and ignoring contradicting signals. Track a balanced portfolio that includes both leading and lagging indicators.
 
-### Post-Hoc Rationalization
-
-Deploying AI, then searching for metrics that happened to move in the right direction during the same period. This is not measurement. It is confirmation bias with a spreadsheet.
-
-### The Single-Metric Trap
-
-Choosing one metric (usually the most favorable one) and ignoring contradicting signals. A rigorous measurement system tracks a balanced portfolio of metrics that includes leading and lagging indicators.
-
-### Projected vs. Actual
-
-Reporting projected value as though it were realized. Boards lose confidence in AI programs when projections consistently exceed actuals. Report what has been measured. Flag what is projected.
+**Projected vs. actual.** Reporting projected value as though it were realized. Boards lose confidence when projections consistently exceed actuals. Report what has been measured. Flag what is projected.
 
 !!! tip "The Measurement Charter"
     Before any pilot launches, publish a one-page measurement charter that documents: the business outcome being targeted, the metrics at each layer, the baseline values, the data sources, the measurement period, and the threshold that defines success. Get sign-off from the business owner and the finance partner. This document becomes the single source of truth for post-deployment evaluation.
@@ -166,6 +158,14 @@ Reporting projected value as though it were realized. Boards lose confidence in 
 4. Run a measurement retrospective on your most recent completed pilot. What did you actually measure? What would you measure differently?
 
 The organizations that get this right are not more sophisticated analysts. They are more disciplined planners. Measurement design is a pre-deployment activity, not a post-deployment one.
+
+---
+
+## The Measurement Rigor Tradeoff
+
+Heavy measurement frameworks produce better evidence. They also slow adoption. Requiring a three-layer measurement system, a signed measurement charter, and a finance-approved baseline for every pilot creates friction that causes teams to avoid measurement entirely or work around it.
+
+The right calibration: apply full rigor to your first two or three pilots. This builds the data quality required to make a credible board case. For subsequent use cases in well-understood domains, use a lighter version of the same framework anchored to the same metrics. The goal is a consistent methodology at reduced setup cost, not a different methodology for each team. Light frameworks that teams actually use beat rigorous frameworks that teams route around.
 
 ---
 

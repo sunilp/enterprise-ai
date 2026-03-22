@@ -8,6 +8,16 @@ The organizations that navigate this well are not the ones that either ignore th
 
 Only **46% of organizations integrate workforce planning into their AI roadmaps** (WEF, 2025). That gap is where transformation programs fail. You cannot deploy agents that change how work gets done without simultaneously changing how work is organized and who does it.
 
+Organizations that integrate workforce planning into their AI roadmap avoid the most expensive transformation failure: deploying AI that works technically but is rejected operationally. The technology succeeds. The adoption fails. The business case evaporates.
+
+---
+
+## The Reskilling vs. Hiring Tradeoff
+
+Organizations face a genuine tradeoff when building AI capability in the workforce. Reskilling existing employees preserves institutional knowledge, maintains culture, and is often cheaper per person. But it is slower, and not every employee can make the transition. Hiring new talent brings skills immediately but at high cost, and new hires lack the process knowledge and organizational context that makes AI implementations actually work.
+
+The practical answer is not either/or. It is sequenced: reskill for roles where institutional knowledge matters most (process architects, governance specialists), hire or contract for roles where specialized technical depth is required fast (platform engineering, model evaluation). The mistake is defaulting entirely to hiring because it feels faster, and discovering 12 months later that the new hires cannot get adoption because they do not understand how the business actually operates.
+
 ---
 
 ## Roles That Shrink
@@ -16,7 +26,7 @@ These roles are not eliminated overnight. They shrink through attrition, headcou
 
 **Manual data processing:** Data entry, format conversion, extraction from unstructured documents, report compilation from multiple sources. Agents handle these at near-zero marginal cost with acceptable accuracy for most business contexts.
 
-**Routine analysis:** Standard variance analysis, templated reporting, first-cut competitive intelligence from public sources, summary generation from structured data. These tasks represent a significant fraction of analyst time at most organizations. Agents do not do analysis better than skilled analysts. They do the routine 60% faster and cheaper, which means fewer analysts are needed for the same throughput.
+**Routine analysis:** Standard variance analysis, templated reporting, first-cut competitive intelligence from public sources, summary generation from structured data. These tasks represent a significant fraction of analyst time at most organizations. Agents do not do analysis better than skilled analysts. They do the routine 60% faster and cheaper, which means the headcount required for the same throughput shrinks — not the work, the people.
 
 **First-level support:** Tier-1 customer service, IT helpdesk triage, HR policy lookups, internal knowledge retrieval. Well-designed agents resolve a large fraction of these interactions without human involvement. The fraction depends heavily on the quality of the underlying knowledge architecture.
 
