@@ -1,15 +1,15 @@
-<nav role="navigation" aria-label="Main navigation" class="top-bar">
-  <div class="nav-inner">
-    <a href="{{basePath}}/" class="logo">Enterprise AI</a>
-    <div class="breadcrumb">
-      <span class="breadcrumb-section">{{section}}</span> / <span class="breadcrumb-page">{{title}}</span>
-    </div>
-    <div class="nav-actions">
-      <button class="cmd-trigger" aria-label="Open command palette"><kbd>Ctrl+K</kbd></button>
-      <button class="focus-toggle" aria-label="Toggle focus mode">&#9789;</button>
-      <button class="share-trigger" aria-label="Share this page">Share</button>
-    </div>
+<nav role="navigation" aria-label="Main navigation" class="topbar">
+  <a href="{{basePath}}/" class="logo"><img src="{{basePath}}/img/logo-light.svg" alt="" class="logo-icon" width="20" height="20">Enterprise AI</a>
+  <div class="breadcrumb">
+    <span class="breadcrumb-section">{{section}}</span>
+    <span class="separator">/</span>
+    <span class="breadcrumb-page">{{title}}</span>
   </div>
-  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="nav-right">
+    <button class="cmd-trigger" aria-label="Open command palette"><span>Navigate...</span><kbd>&#8984;K</kbd></button>
+    <button class="focus-toggle" aria-label="Toggle focus mode">&#9789;</button>
+    <button class="share-trigger" aria-label="Share this page">&#8599;</button>
+  </div>
 </nav>
+<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
 <script>window.__NAV_DATA__={{navDataJson}};window.__BASE_PATH__='{{basePath}}';</script>
