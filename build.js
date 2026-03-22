@@ -26,7 +26,7 @@ const CONTENT_DIR = path.join(ROOT, 'content');
 const LAYOUTS_DIR = path.join(ROOT, 'layouts');
 const PARTIALS_DIR = path.join(ROOT, 'partials');
 const DIST_DIR = path.join(ROOT, 'dist');
-const STATIC_DIRS = ['css', 'js', 'static'];
+const STATIC_DIRS = ['css', 'js', 'fonts', 'static'];
 const BASE_PATH = '/enterprise-ai';
 const SITE_URL = 'https://sunilprakash.com/enterprise-ai';
 
