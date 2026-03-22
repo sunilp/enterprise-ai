@@ -114,7 +114,7 @@ The following checklist covers the minimum readiness requirements for organizati
 
 The EU AI Act is one dimension of regulatory pressure. Data sovereignty is a parallel and rapidly growing dimension.
 
-60% of enterprises are building AI stacks that favor local or regional vendors, driven by regulatory and sovereignty concerns (Deloitte, 2024). 77% of enterprise AI decision-makers say the country of origin of AI infrastructure factors into vendor selection (Deloitte, 2024). By 2028, 65% of national governments will have introduced explicit technological sovereignty requirements (Gartner, 2024).
+A significant share of enterprises are building AI stacks that favor local or regional vendors, driven by regulatory and sovereignty concerns. Vendor country-of-origin is now a factor in infrastructure selection decisions for a majority of enterprise AI decision-makers, according to survey data from Deloitte (2024). Gartner projected in 2024 that by 2028, a majority of national governments will have introduced explicit technological sovereignty requirements -- the trend is directionally clear even where exact figures vary by survey methodology.
 
 This is not just European. It spans every major economy:
 
@@ -193,6 +193,8 @@ The practical implication for AI architecture: design for portability from the s
 ## Getting Ahead of the Curve
 
 The organizations that will navigate the regulatory environment successfully are not the ones with the best lawyers. They are the ones with the cleanest AI systems: well-documented, well-monitored, with clear accountability chains and technically enforced controls.
+
+There is a real tradeoff between compliance investment now and regulatory risk later. Early compliance is expensive, the regulatory guidance is still maturing in several areas, and there is a genuine risk of investing heavily in the wrong controls before requirements are finalized. Late compliance carries different costs: penalty exposure, forced retrofitting of systems not designed for auditability, and the reputational damage of a public enforcement action. Neither extreme is right. The practical answer is to sequence compliance investment by enforcement date and risk category. The prohibited practices provisions are already enforceable. The high-risk system obligations land in August 2026. Build to those deadlines rather than trying to be comprehensively compliant on day one.
 
 Regulatory readiness is a governance architecture problem. The same investment in AI governance architecture that improves operational performance also produces the documentation, audit trails, and monitoring capabilities that regulators require. These are not separate workstreams.
 

@@ -4,6 +4,8 @@ Traditional ML made predictions. GenAI made text. Agentic AI takes actions.
 
 That is not an incremental upgrade. It is a categorical change in what AI systems do inside your organization, and it demands a different governance model, a different cost structure, and a different relationship between humans and machines.
 
+Agentic AI is delegated operational authority. An agent acts on behalf of your organization, against your systems, with your data. Governing it as a software feature is a category error. The correct frame is closer to how you govern an employee with elevated access: defined scope, auditable actions, clear escalation paths, and the ability to revoke authority.
+
 If you are still evaluating agentic AI the way you evaluated your last ML project, you are measuring the wrong things and asking the wrong questions.
 
 ---
@@ -62,7 +64,7 @@ When a human uses a BI tool, they direct every step. When a human collaborates w
 
 Agents are not a future-state curiosity. They are already generating enterprise value.
 
-- Agents now account for **17% of total AI value** captured by organizations, up from near zero two years ago. Projected to reach **29% by 2028** (BCG, 2025).
+- Agents now account for **17% of total AI value** captured by organizations, up from near zero two years ago. Projected to reach **29% by 2028** (BCG, 2025). That growth trajectory represents hundreds of billions in enterprise value, but only for organizations that deploy agents with the control architecture to sustain them.
 - **23% of organizations** are scaling at least one agentic system into production (McKinsey, 2025).
 - But only **11% of organizations actively use agents in production** (Deloitte, 2025). The gap between those scaling and those actually operating tells you how many pilot projects are stalled.
 - **Gartner projects that more than 40% of agentic AI projects will be cancelled by 2027**, primarily due to cost overruns, unclear ROI, and governance failures.
@@ -104,8 +106,12 @@ Characteristics of good early deployment targets:
 
 High-stakes, irreversible environments are not good starting points regardless of technical readiness. The governance and human oversight infrastructure required for those settings takes time to build correctly.
 
+There is a direct tradeoff between agent autonomy and control overhead. A fully supervised agent that checks with a human at every decision point is safe but slow. A fully autonomous agent that acts without human checkpoints is fast but fragile. More autonomous agents generate higher value potential and require proportionally more governance infrastructure: richer audit trails, tighter permission scopes, faster anomaly detection, and more robust rollback mechanisms. The right autonomy level is not a technical decision. It depends on organizational maturity, risk tolerance, and the quality of the oversight infrastructure you have actually built. Organizations that skip the infrastructure and go straight to full autonomy accumulate risk they cannot see until something goes wrong.
+
 !!! tip "Starting Point Criteria"
     Score each candidate use case on three dimensions: error recoverability (high/medium/low), task fluidity (how much variation exists in how the task is done), and volume (enough to measure). High recoverability plus high fluidity plus sufficient volume is your best early deployment profile.
+
+For detailed architectural requirements by deployment pattern, see [Reference Patterns](../architecture/reference-patterns.md).
 
 ---
 
