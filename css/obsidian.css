@@ -1067,6 +1067,270 @@ pre.mermaid {
 }
 
 
+/* ─── 19b. Signature Visual Blocks ────────────────────────────────────────── */
+
+/* Flagship page heading scale */
+body.flagship .showcase-content h1,
+body.flagship .reading-content h1 {
+  font-size: 2.8em;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+body.flagship .showcase-content h2,
+body.flagship .reading-content h2 {
+  font-size: 1.7em;
+  margin-top: 80px;
+}
+
+/* Alternate panel background (surface sections) */
+.surface-panel {
+  background: #141210;
+  border-top: 1px solid rgba(200, 180, 140, 0.06);
+  border-bottom: 1px solid rgba(200, 180, 140, 0.06);
+  padding: 64px 0;
+  margin: 64px calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+.surface-panel .panel-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Board-style metric strip */
+.metric-strip {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(200, 180, 140, 0.08);
+  border-bottom: 1px solid rgba(200, 180, 140, 0.08);
+  margin: 48px 0;
+  flex-wrap: wrap;
+}
+
+.metric-strip .metric {
+  text-align: center;
+  min-width: 100px;
+}
+
+.metric-strip .metric-value {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.metric-strip .metric-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--label);
+  margin-top: 8px;
+}
+
+.metric-strip .metric-source {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(107, 101, 96, 0.5);
+  margin-top: 4px;
+}
+
+/* Decision matrix card */
+.decision-card {
+  background: rgba(200, 180, 140, 0.02);
+  border: 1px solid rgba(200, 180, 140, 0.12);
+  border-radius: 4px;
+  padding: 32px;
+  margin: 40px 0;
+  position: relative;
+}
+
+.decision-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.4;
+}
+
+.decision-card .card-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.decision-card .card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3em;
+  color: var(--heading);
+  margin-bottom: 12px;
+}
+
+/* Board document style */
+.board-document {
+  background: var(--surface);
+  border: 1px solid rgba(200, 180, 140, 0.1);
+  border-radius: 4px;
+  margin: 48px 0;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(200, 180, 140, 0.04);
+}
+
+.board-document .doc-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(200, 180, 140, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.board-document .doc-type {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+.board-document .doc-classification {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--label);
+  padding: 2px 8px;
+  border: 1px solid rgba(200, 180, 140, 0.1);
+  border-radius: 2px;
+}
+
+.board-document .doc-body {
+  padding: 24px;
+}
+
+.board-document .doc-footer {
+  padding: 12px 24px;
+  border-top: 1px solid rgba(200, 180, 140, 0.06);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--label);
+  opacity: 0.5;
+}
+
+/* Executive quote / callout block */
+.executive-callout {
+  font-family: var(--font-heading);
+  font-size: 1.4em;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--heading);
+  padding: 48px 0;
+  margin: 48px 0;
+  border-top: 1px solid rgba(200, 180, 140, 0.1);
+  border-bottom: 1px solid rgba(200, 180, 140, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.executive-callout .callout-source {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--label);
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Section rhythm helpers */
+
+/* Full-bleed gold rule between major sections */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 140, 0.15), transparent);
+  margin: 80px 0;
+  max-width: none;
+}
+
+/* Breathing space between dense sections */
+.section-breath {
+  padding: 32px 0;
+}
+
+/* Compact section (tighter spacing for metric strips, quick-reference) */
+.section-compact {
+  margin: 24px 0;
+}
+.section-compact h3 {
+  margin-bottom: 12px;
+}
+.section-compact p {
+  margin-bottom: 8px;
+}
+
+/* Reading path cards (homepage CIO / CEO / CAIO / CDO entry points) */
+.path-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.path-card {
+  background: rgba(200, 180, 140, 0.02);
+  border: 1px solid rgba(200, 180, 140, 0.1);
+  border-radius: 4px;
+  padding: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.path-card:hover {
+  border-color: rgba(200, 180, 140, 0.25);
+  background: rgba(200, 180, 140, 0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.path-card .path-role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.path-card .path-desc {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.path-card:hover .path-role {
+  color: var(--gold-light);
+}
+
+
 /* ─── 20. Focus Indicators ────────────────────────────────────────────────── */
 
 :focus-visible {
@@ -1222,6 +1486,11 @@ pre.mermaid {
 
   .insight-box {
     animation: none;
+  }
+
+  .path-card {
+    transition: none;
+    transform: none;
   }
 }
 

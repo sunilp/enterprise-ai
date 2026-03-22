@@ -95,7 +95,22 @@ body.focus .reveal:nth-child(10) {
 }
 
 
-/* ─── 9. Mode Transition on body ──────────────────────────────────────────── */
+/* ─── 9. Signature Visual Block Overrides ─────────────────────────────────── */
+
+body.focus .metric-strip {
+  border-color: rgba(200, 180, 140, 0.04);
+}
+
+body.focus .board-document {
+  box-shadow: none;
+}
+
+body.focus .executive-callout {
+  font-size: 1.2em;
+}
+
+
+/* ─── 10. Mode Transition on body ─────────────────────────────────────────── */
 
 /*
  * Applied to body when switching modes (toggled by JS).
