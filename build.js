@@ -326,6 +326,40 @@ function escHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
+// ─── Markdown Link Converter ──────────────────────────────────────────────
+
+function convertMdLinks(html, pages) {
+  // Convert href="...something.md" and href="../something.md" to proper paths
+  return html.replace(/href="([^"]*\.md)"/g, function(match, mdLink) {
+    // Strip ../ prefixes and normalize
+    var cleaned = mdLink.replace(/^(\.\.\/)+/, '');
+    // Remove .md extension
+    var withoutExt = cleaned.replace(/\.md$/, '');
+    // Try to find matching page by output path or filename
+    for (var i = 0; i < pages.length; i++) {
+      var p = pages[i];
+      if (p.outputPath === withoutExt || p.outputPath.endsWith('/' + withoutExt) || p.outputPath.endsWith(withoutExt)) {
+        return 'href="' + BASE_PATH + '/' + (p.outputPath || '') + '/"';
+      }
+    }
+    // Try matching just the filename part
+    var fileName = withoutExt.split('/').pop();
+    for (var j = 0; j < pages.length; j++) {
+      var pg = pages[j];
+      if (pg.meta.slug === fileName || pg.outputPath.split('/').pop() === fileName) {
+        return 'href="' + BASE_PATH + '/' + (pg.outputPath || '') + '/"';
+      }
+    }
+    // Template download links -> static path
+    if (mdLink.indexOf('templates/') !== -1) {
+      return 'href="' + BASE_PATH + '/static/proof/' + cleaned + '"';
+    }
+    // If no match found, return as-is but log warning
+    console.log('  WARN: Could not resolve .md link: ' + mdLink);
+    return match;
+  });
+}
+
 // ─── Output Path Helpers ───────────────────────────────────────────────────
 
 function computeOutputPath(filePath) {
@@ -687,9 +721,13 @@ async function build() {
       interactiveSlot: layoutName === 'showcase'
         ? '<div id="interactive" class="interactive-mount"></div>'
         : '',
-      nextSlug: nextPage ? nextPage.slug : '',
-      nextTitle: nextPage ? nextPage.title : '',
+      nextSuggestion: nextPage
+        ? `<div class="next-suggestion"><span class="next-label">Continue with</span><a href="${BASE_PATH}/${nextPage.path}/" class="next-link">${nextPage.title}</a></div>`
+        : '',
     };
+
+    // Post-process: convert .md links to proper HTML paths
+    data.content = convertMdLinks(data.content, pages);
 
     const html = renderTemplate(layout, data);
 
