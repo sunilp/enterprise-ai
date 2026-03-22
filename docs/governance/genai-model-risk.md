@@ -172,3 +172,11 @@ The most important monitoring practice: review a random sample of real outputs r
 GenAI model risk is not a harder version of traditional model risk. It is a different problem. Non-deterministic outputs, emergent capabilities, prompt sensitivity, and the confidence-accuracy gap all require new frameworks, new validation approaches, and new monitoring infrastructure.
 
 The 84% of organizations not tracking GenAI accuracy are not cutting corners. They are applying a traditional monitoring philosophy to a system that breaks its assumptions. The first step is acknowledging the difference.
+
+---
+
+## Sources
+
+1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -169,3 +169,12 @@ The failure mode is treating both as separate workstreams that can be addressed 
 - [AI Readiness Assessment](ai-readiness.md): Strategy, leadership, and infrastructure dimensions
 - [Data Readiness Assessment](data-readiness.md): The data foundation process and talent work depends on
 - [AI Maturity Model](maturity-model.md): How process and talent maturity map to overall AI maturity levels
+
+---
+
+## Sources
+
+1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+2. PwC. "2026 AI Business Predictions." 2026.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -166,3 +166,11 @@ Review the portfolio quarterly. Use case scores change as organizational conditi
 - [Value Concentration](value-concentration.md): Why fewer, deeper investments outperform broad experimentation
 - [From Pilot to Production](pilot-to-production.md): The stage-gate framework for moving prioritized use cases forward
 - [AI Readiness Assessment](../assessment/ai-readiness.md): Whether organizational conditions support the portfolio you are building
+
+---
+
+## Sources
+
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

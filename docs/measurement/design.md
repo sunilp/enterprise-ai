@@ -166,3 +166,11 @@ Reporting projected value as though it were realized. Boards lose confidence in 
 4. Run a measurement retrospective on your most recent completed pilot. What did you actually measure? What would you measure differently?
 
 The organizations that get this right are not more sophisticated analysts. They are more disciplined planners. Measurement design is a pre-deployment activity, not a post-deployment one.
+
+---
+
+## Sources
+
+1. Forbes. "AI Productivity Study." 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -161,3 +161,11 @@ The organizations that will handle that well are the ones building the collabora
 The organizations that will struggle are the ones treating collaboration patterns as implementation details to be figured out later.
 
 Human-agent collaboration is a design discipline. It requires the same intentionality as user experience design, system architecture, or process engineering. Treat it that way.
+
+---
+
+## Sources
+
+1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

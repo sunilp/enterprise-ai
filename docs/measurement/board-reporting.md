@@ -161,3 +161,11 @@ When leading indicators are strong and lagging indicators are absent, report it 
 **Decisions, not updates.** Structure board material around decisions the board is being asked to make or ratify. "Here is what happened" is an update. "Here is what happened and here is what we need from you" is a board-ready report.
 
 **Consistent format.** Use the same report structure every quarter. Boards develop the ability to read reports quickly when the format is stable. Format changes force re-orientation and suggest the team is uncertain about what matters.
+
+---
+
+## Sources
+
+1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

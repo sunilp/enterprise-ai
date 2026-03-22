@@ -200,4 +200,10 @@ Use these indicators to assess where your organization currently sits and whethe
 
 ---
 
-*Sources: IBM Institute for Business Value, "AI in Action" (2025), n=2,300 organizations.*
+---
+
+## Sources
+
+1. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

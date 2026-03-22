@@ -171,3 +171,12 @@ For organizations planning agent deployment in the next 12 months, the minimum v
 5. Set runtime cost controls enforced at the infrastructure level
 
 That is not the complete framework. It is the floor below which no agent should be deployed in a production environment.
+
+---
+
+## Sources
+
+1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

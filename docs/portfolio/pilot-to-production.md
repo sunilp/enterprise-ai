@@ -253,3 +253,12 @@ Organizations that build this infrastructure before scaling their AI portfolio c
 - [Value Concentration](value-concentration.md): Why concentrated investment increases production success rates
 - [Use Case Prioritization](prioritization.md): Selecting the use cases worth building production infrastructure for
 - [AI Maturity Model](../assessment/maturity-model.md): The Level 2 to Level 3 transition that the stage-gate framework enables
+
+---
+
+## Sources
+
+1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

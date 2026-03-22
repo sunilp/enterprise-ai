@@ -119,3 +119,11 @@ Shadow AI is a demand problem with a supply solution. The demand is real: employ
 The supply response is building a sanctioned AI program that is genuinely better than the shadow alternative: better tools, faster access, clearer policies, and lower friction than routing around the process.
 
 Organizations that treat shadow AI as a behavior problem to be policed will spend resources on enforcement while the underlying demand continues. Organizations that treat it as a product problem to be solved will spend resources on building a paved road, and they will find that most employees will use it.
+
+---
+
+## Sources
+
+1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -121,3 +121,12 @@ graph TD
 The 5% who are future-built have reached J on this diagram. The 95% are distributed across C, F, and I. Each position requires different interventions, and the path from each position to transformation is different.
 
 The first step is being honest about where you are.
+
+---
+
+## Sources
+
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
+2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

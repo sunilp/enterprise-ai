@@ -148,3 +148,11 @@ The assessment is an input to the transformation roadmap, not an end in itself. 
 - [Data Readiness Assessment](data-readiness.md): The most common and most underestimated gap
 - [Process and Talent Readiness](process-talent.md): The dimensions most assessments miss entirely
 - [AI Maturity Model](maturity-model.md): Where your organization sits and what the transition to the next level requires
+
+---
+
+## Sources
+
+1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

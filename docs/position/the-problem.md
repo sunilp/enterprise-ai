@@ -80,3 +80,14 @@ This is why the 5% who are future-built have such a durable advantage. They are 
 The question facing every CIO, CAIO, and VP of AI is not "what AI should we be using?" It is: "what organizational system do we need to build to convert AI capability into business results?"
 
 This playbook is about answering that question.
+
+---
+
+## Sources
+
+1. IDC. Enterprise AI spending forecast. 2025.
+2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+3. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
+4. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

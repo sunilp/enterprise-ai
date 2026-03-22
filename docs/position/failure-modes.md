@@ -124,3 +124,12 @@ graph TD
 Every failure mode in this list has a technical surface and an organizational root. The technology symptoms are what get reported. The organizational causes are what need to be addressed.
 
 This is why technology-first approaches to AI transformation systematically underperform. You cannot tool your way out of an operating model problem. The seven failure modes are organizational problems that require organizational solutions.
+
+---
+
+## Sources
+
+1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+2. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." February 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

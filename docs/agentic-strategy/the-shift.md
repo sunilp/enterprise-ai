@@ -118,3 +118,14 @@ The right question is: "What workflows, if redesigned around agent capabilities,
 That is a different analysis. It requires understanding what agents are good at (dynamic task execution, parallel processing, tireless execution of well-defined steps), what they are bad at (novel judgment, ethical nuance, stakeholder relationships), and where the combination of human and agent produces something neither could achieve alone.
 
 That is the analysis your leadership team should be doing now.
+
+---
+
+## Sources
+
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
+2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+3. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+4. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

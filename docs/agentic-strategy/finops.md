@@ -132,3 +132,11 @@ flowchart LR
 **Treat runaway costs as a signal, not a billing problem.** An agent that is consuming twenty times the expected budget for a task type is not primarily a finance issue. It is a signal about task decomposition failures, tool misuse, or adversarial inputs. Investigate the root cause before just raising the cap.
 
 **Build cost visibility into every dashboard that shows agent performance.** Task completion rate without cost is a vanity metric. Cost-per-outcome is the metric that connects agent performance to business value.
+
+---
+
+## Sources
+
+1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

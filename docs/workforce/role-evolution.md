@@ -102,3 +102,12 @@ Workforce planning that is integrated with AI roadmaps looks like this: every ag
 Workforce planning that is not integrated looks like: technology teams deploy agents, business units manage headcount decisions separately, HR runs generic AI literacy training that is unconnected to actual role changes, and the organization navigates the friction through attrition and quiet restructuring.
 
 The second approach is the default. The first approach is the one that works.
+
+---
+
+## Sources
+
+1. World Economic Forum. "Scaling AI with Strategy, Data and Workforce Readiness." October 2025.
+2. PwC. "2026 AI Business Predictions." 2026.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

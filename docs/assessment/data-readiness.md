@@ -175,3 +175,11 @@ The three investments that move the needle most, in order of impact:
 - [AI Readiness Assessment](ai-readiness.md): The broader organizational context that data readiness sits within
 - [Process and Talent Readiness](process-talent.md): The capability gaps that compound data problems
 - [AI Maturity Model](maturity-model.md): How data maturity maps to overall organizational AI maturity
+
+---
+
+## Sources
+
+1. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." February 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

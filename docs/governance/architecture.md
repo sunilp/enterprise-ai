@@ -145,3 +145,11 @@ The organizations that invested in governance architecture early are not slowing
 Governance architecture is an engineering problem as much as it is a policy problem. The three-layer model separates concerns clearly: policy sets the rules, process operationalizes them, and technology enforces them at scale. Any organization treating governance as a document is not governing its AI. It is hoping nothing goes wrong.
 
 The 82% of enterprises without fully implemented governance frameworks are not lacking principles. They are lacking architecture.
+
+---
+
+## Sources
+
+1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

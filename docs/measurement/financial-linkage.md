@@ -155,3 +155,12 @@ Engage finance before the pilot launches. Agree on:
 - The threshold that defines a successful outcome
 
 This conversation is uncomfortable for AI teams that are not certain of results. That discomfort is appropriate. If you cannot define what success looks like before you start, you are not ready to start.
+
+---
+
+## Sources
+
+1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

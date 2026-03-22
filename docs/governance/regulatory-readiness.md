@@ -197,3 +197,13 @@ The organizations that will navigate the regulatory environment successfully are
 Regulatory readiness is a governance architecture problem. The same investment in AI governance architecture that improves operational performance also produces the documentation, audit trails, and monitoring capabilities that regulators require. These are not separate workstreams.
 
 Start with the inventory. Everything else follows from knowing what you have.
+
+---
+
+## Sources
+
+1. Cloud Security Alliance. "EU AI Act High-Risk Compliance Deadline." March 2026.
+2. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+3. Gartner. "Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." March 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

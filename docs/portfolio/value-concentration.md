@@ -163,3 +163,11 @@ Concentration is not just a strategic decision. It has operational implications 
 - [Use Case Prioritization](prioritization.md): The scoring framework for identifying concentration candidates
 - [From Pilot to Production](pilot-to-production.md): How concentrated investment moves through the stage-gate framework
 - [AI Maturity Model](../assessment/maturity-model.md): Why concentration is a characteristic of Level 3 and above organizations
+
+---
+
+## Sources
+
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

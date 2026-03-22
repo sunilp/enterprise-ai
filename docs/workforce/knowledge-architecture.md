@@ -151,3 +151,11 @@ Effective knowledge externalization requires:
     Start with one domain, one expert, and one well-scoped task type. Capture decision traces, build the evaluation criteria, document the actual process, resolve semantic ambiguities. Deploy an agent. Measure the accuracy improvement. That case study is your organizational argument for expanding the investment.
 
 Knowledge architecture is how you convert your organization's accumulated institutional intelligence into a durable, scalable asset. Without it, that intelligence retires when your experts do. With it, you compound it.
+
+---
+
+## Sources
+
+1. Alation. "The Agentic AI Era: 5 Strategic Shifts Every CIO Must Navigate in 2026." 2026.
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).
