@@ -9,24 +9,46 @@ slug: "homepage"
 <section class="showcase-hero">
   <div class="gold-line"></div>
   <div class="section-label">Enterprise AI Transformation</div>
-  <h1>The Management System for Enterprise AI</h1>
+  <h1>The Management System<br>for Enterprise AI</h1>
   <p class="hero-thesis">Enterprise AI underperforms not because models are weak, but because firms lack the management system to convert model capability into economic value.</p>
-  <div class="stat-row">
-    <div class="stat">
-      <div class="stat-number shimmer-text" data-count-to="644" data-prefix="$" data-suffix="B">$0B</div>
-      <div class="stat-label">Global AI Spending</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number shimmer-text" data-count-to="42" data-suffix="%">0%</div>
-      <div class="stat-label">Scrapped Initiatives</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number shimmer-text" data-count-to="5" data-suffix="%">0%</div>
-      <div class="stat-label">Future-Built</div>
-    </div>
-  </div>
-  <div class="scroll-hint">Scroll to explore</div>
 </section>
+
+<div class="metric-strip">
+  <div class="metric">
+    <div class="metric-value shimmer-text" data-count-to="644" data-prefix="$" data-suffix="B">$0B</div>
+    <div class="metric-label">Global AI Spend, 2025</div>
+    <div class="metric-source">IDC</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value shimmer-text" data-count-to="42" data-suffix="%">0%</div>
+    <div class="metric-label">Scrapped Initiatives</div>
+    <div class="metric-source">BCG, 2025</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value shimmer-text" data-count-to="5" data-suffix="%">0%</div>
+    <div class="metric-label">Future-Built Enterprises</div>
+    <div class="metric-source">BCG, 2025</div>
+  </div>
+</div>
+
+<div class="path-cards">
+  <a href="/enterprise-ai/framework/" class="path-card">
+    <div class="path-role">Start Here</div>
+    <div class="path-desc">The AI for Business Leaders Framework. Five principles. Four maturity stages.</div>
+  </a>
+  <a href="/enterprise-ai/assessment/tool/" class="path-card">
+    <div class="path-role">Assess</div>
+    <div class="path-desc">AI Readiness Assessment. 25 questions. Shareable scorecard.</div>
+  </a>
+  <a href="/enterprise-ai/reading-paths/" class="path-card">
+    <div class="path-role">Your Path</div>
+    <div class="path-desc">Curated reading paths for CIOs, CEOs, CDOs, and CAIOs.</div>
+  </a>
+  <a href="/enterprise-ai/proof/case-studies/" class="path-card">
+    <div class="path-role">Evidence</div>
+    <div class="path-desc">Four transformation case studies with decision-grade specifics.</div>
+  </a>
+</div>
 
 ## What Separates the 5% Who Succeed
 
@@ -39,38 +61,23 @@ The companies that extract real returns from AI do not have better models. They 
 
 ---
 
-## What This Playbook Equips You to Do
-
-- **Sequence AI investments** by business value, not by technical novelty
-- **Design governance** that scales with deployment velocity
-- **Structure the CAIO function** with real authority and accountability
-- **Build the control architecture** for autonomous AI agents
-- **Tie AI outcomes to P&L** with baseline-first measurement
-- **Govern AI across regulatory jurisdictions** with precision
+<div class="executive-callout">
+  <p>Enterprise AI underperforms not because models are weak, but because firms lack the management system to convert model capability into economic value.</p>
+</div>
 
 ---
 
-## The Decision Sequence
+## What This Playbook Covers
 
 This playbook follows the decisions leaders face, in the order they face them.
 
 <div id="decision-flow" class="interactive-mount content-wide"></div>
 
-- **Position** -- why transformation fails and what it actually requires
-- **Operating Model** -- how to structure the AI function, the CAIO role, decision rights
-- **Assessment** -- readiness across data, process, talent, and organizational maturity
-- **Portfolio** -- where to invest, what to prioritize, how to move from pilots to production
-- **Governance** -- architecture, model risk, agent governance, regulatory compliance
-- **Architecture** -- capability stack, systems model, control plane, operating architecture
-- **Agentic Strategy** -- the shift to autonomous AI, protocols, human-agent collaboration
-- **Workforce** -- role evolution, middle management, knowledge architecture
-- **Measurement** -- design, financial linkage, board reporting
-- **Transformation** -- 12-month roadmap and phase gates
-- **Proof** -- case studies, decision records, artifacts, checklists
-
-Not sure where to start? See [Reading Paths](reading-paths.md) for role-specific guides.
+Written for CIOs, CAIOs, CDOs, and senior business leaders who own the outcomes, not the experiments. 47 pages. No vendor pitches. No tutorials. Decisions and tradeoffs.
 
 ---
+
+<div class="board-document">
 
 ## The Evidence
 
@@ -84,6 +91,8 @@ Not sure where to start? See [Reading Paths](reading-paths.md) for role-specific
 
 The money is moving. The results are not.
 
+</div>
+
 ---
 
 ## About This Work
@@ -96,24 +105,6 @@ Related research on AI agent protocols and reasoning infrastructure:
 - Dynamic Contextual Identity: [arXiv:2603.11781](https://arxiv.org/abs/2603.11781)
 
 For methodology and full source list, see [Sources and Methodology](sources.md).
-
----
-
-## Who This Is For
-
-This playbook is written for the people who own the outcomes, not the experiments.
-
-- **Chief Information Officers** leading AI integration across enterprise systems
-- **Chief AI Officers** building and scaling AI programs from the center
-- **Chief Data Officers** who know the data problems are the real blocker
-- **VPs of AI, Data, and Engineering** who have to make strategy operational
-- **Senior business leaders** who own P&L and need to evaluate AI investment decisions
-
-## What This Is Not
-
-This is not a guide to selecting vendors, tuning models, or configuring infrastructure. Those are implementation details. They matter, but they are not why AI programs fail. The problems this playbook addresses are organizational: strategy, governance, operating models, workforce design, and measurement.
-
-45 pages. No vendor pitches. No tutorials. Decisions and tradeoffs.
 
 ---
 

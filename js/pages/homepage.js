@@ -27,28 +27,32 @@
     var hero = document.querySelector('.showcase-hero');
     if (!hero) return;
 
-    var targets = [
+    // Hero internal elements
+    var heroTargets = [
       { sel: '.gold-line',      delay: 0 },
       { sel: '.section-label',  delay: 200 },
       { sel: 'h1',              delay: 400 },
       { sel: '.hero-thesis',    delay: 600 },
     ];
 
-    // Add hero-hidden class to all children initially
-    var allTargets = targets.map(function (t) {
+    var heroElements = heroTargets.map(function (t) {
       return hero.querySelector(t.sel);
     }).filter(Boolean);
 
-    // Stat items get individual delays
-    var statItems = hero.querySelectorAll('.stat');
-    var scrollHint = hero.querySelector('.scroll-hint');
+    // Metric strip items (outside hero, below it)
+    var metricItems = document.querySelectorAll('.metric-strip .metric');
+
+    // Path cards (outside hero, below metric strip)
+    var pathCards = document.querySelectorAll('.path-cards .path-card');
 
     // Collect all elements to hide initially
-    var allElements = allTargets.slice();
-    for (var si = 0; si < statItems.length; si++) {
-      allElements.push(statItems[si]);
+    var allElements = heroElements.slice();
+    for (var mi = 0; mi < metricItems.length; mi++) {
+      allElements.push(metricItems[mi]);
     }
-    if (scrollHint) allElements.push(scrollHint);
+    for (var pi = 0; pi < pathCards.length; pi++) {
+      allElements.push(pathCards[pi]);
+    }
 
     // Apply hidden state
     for (var h = 0; h < allElements.length; h++) {
@@ -63,30 +67,32 @@
       return;
     }
 
-    // Stagger reveal
-    for (var ti = 0; ti < targets.length; ti++) {
+    // Stagger reveal: hero elements
+    for (var ti = 0; ti < heroTargets.length; ti++) {
       (function (el, delay) {
         if (!el) return;
         setTimeout(function () {
           el.classList.remove('hero-hidden');
         }, delay);
-      })(hero.querySelector(targets[ti].sel), targets[ti].delay);
+      })(hero.querySelector(heroTargets[ti].sel), heroTargets[ti].delay);
     }
 
-    // Stat items: base 800ms + 200ms stagger each
-    for (var sj = 0; sj < statItems.length; sj++) {
+    // Metric items: base 800ms + 150ms stagger each
+    for (var mj = 0; mj < metricItems.length; mj++) {
       (function (el, delay) {
         setTimeout(function () {
           el.classList.remove('hero-hidden');
         }, delay);
-      })(statItems[sj], 800 + sj * 200);
+      })(metricItems[mj], 800 + mj * 150);
     }
 
-    // Scroll hint: 1600ms
-    if (scrollHint) {
-      setTimeout(function () {
-        scrollHint.classList.remove('hero-hidden');
-      }, 1600);
+    // Path cards: base 1300ms + 100ms stagger each
+    for (var pj = 0; pj < pathCards.length; pj++) {
+      (function (el, delay) {
+        setTimeout(function () {
+          el.classList.remove('hero-hidden');
+        }, delay);
+      })(pathCards[pj], 1300 + pj * 100);
     }
   }
 
