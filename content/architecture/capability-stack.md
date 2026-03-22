@@ -11,6 +11,8 @@ A layered view of AI architecture is not an academic exercise. It is the basis f
 
 The capability stack is a capital allocation framework. Each layer requires investment. Skipping a layer does not save money -- it creates hidden costs that surface as incidents, rework, and regulatory exposure.
 
+<div id="capability-stack-interactive" class="interactive-mount content-wide"></div>
+
 ---
 
 ## The Seven Layers
