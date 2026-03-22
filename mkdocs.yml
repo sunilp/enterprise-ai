@@ -1,9 +1,9 @@
 site_name: Enterprise AI
 site_url: https://sunilprakash.com/enterprise-ai/
-site_description: The enterprise AI transformation playbook for CIOs, CAIOs, and technology leaders. Operating models, governance architecture, agentic strategy, workforce evolution, and measurement frameworks for moving AI from pilots to P&L impact.
+site_description: An executive playbook for converting AI capability into enterprise value. Operating model, governance architecture, target architecture, workforce design, measurement, and transformation sequencing.
 site_author: Sunil Prakash
-repo_url: https://github.com/sunilp/enterprise-ai-transformation
-repo_name: sunilp/enterprise-ai-transformation
+repo_url: https://github.com/sunilp/enterprise-ai
+repo_name: sunilp/enterprise-ai
 edit_uri: edit/main/docs/
 
 theme:
@@ -45,10 +45,6 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
 
-validation:
-  nav:
-    not_in_nav: warn
-
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
@@ -68,6 +64,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Reading Paths: reading-paths.md
   - Position:
     - The Problem: position/the-problem.md
     - Seven Failure Modes: position/failure-modes.md
@@ -92,6 +89,13 @@ nav:
     - Agent Governance: governance/agent-governance.md
     - Shadow AI: governance/shadow-ai.md
     - Regulatory Readiness: governance/regulatory-readiness.md
+  - Architecture:
+    - architecture/index.md
+    - Capability Stack: architecture/capability-stack.md
+    - Systems Model: architecture/systems-model.md
+    - Control Architecture: architecture/control-architecture.md
+    - Operating Architecture: architecture/operating-architecture.md
+    - Reference Patterns: architecture/reference-patterns.md
   - Agentic Strategy:
     - The Agentic Shift: agentic-strategy/the-shift.md
     - Protocol Landscape: agentic-strategy/protocol-landscape.md
@@ -111,8 +115,9 @@ nav:
   - Proof:
     - Case Studies: proof/case-studies.md
     - Decision Records: proof/decision-records.md
+    - Decision Artifacts: proof/decision-artifacts.md
     - Assessment Checklists: proof/checklists.md
-  - Sources & Methodology: sources.md
+  - Sources &amp; Methodology: sources.md
   - Glossary: glossary.md
 
 extra:
