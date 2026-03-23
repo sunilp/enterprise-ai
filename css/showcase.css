@@ -56,6 +56,37 @@
 }
 
 
+/* ─── 3b. Hero Text ──────────────────────────────────────────────────────── */
+
+.hero-thesis {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 560px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.hero-support {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--label);
+  max-width: 520px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.metric-interpretation {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--gold-deep);
+  margin-top: -8px;
+  margin-bottom: 48px;
+}
+
+
 /* ─── 4. Stat Row ─────────────────────────────────────────────────────────── */
 
 .stat-row {

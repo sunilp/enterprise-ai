@@ -1,6 +1,6 @@
 ---
 title: "Enterprise AI"
-description: "A strategic operating manual for enterprise AI transformation, covering capability assessment, governance, architecture, and production deployment at scale."
+description: "The management system for enterprise AI. Operating model, governance architecture, target architecture, workforce design, measurement, and transformation sequencing."
 section: "Home"
 layout: showcase
 slug: "homepage"
@@ -10,106 +10,114 @@ slug: "homepage"
   <div class="gold-line"></div>
   <div class="section-label">Enterprise AI Transformation</div>
   <h1>The Management System<br>for Enterprise AI</h1>
-  <p class="hero-thesis">Enterprise AI underperforms not because models are weak, but because firms lack the management system to convert model capability into economic value.</p>
+  <p class="hero-thesis">Enterprise AI underperforms not because models are weak, but because most firms lack the operating system to turn AI capability into business value.</p>
+  <p class="hero-support">The winners do not deploy more AI. They make better decisions about where to use it, how to govern it, and how to scale it.</p>
 </section>
 
 <div class="metric-strip">
   <div class="metric">
-    <div class="metric-value shimmer-text" data-count-to="644" data-prefix="$" data-suffix="B">$0B</div>
-    <div class="metric-label">Global AI Spend, 2025</div>
-    <div class="metric-source">IDC</div>
+    <div class="metric-value shimmer-text">$644B</div>
+    <div class="metric-label">Projected Enterprise AI Spend</div>
+    <div class="metric-source">IDC, 2025</div>
   </div>
   <div class="metric">
-    <div class="metric-value shimmer-text" data-count-to="42" data-suffix="%">0%</div>
-    <div class="metric-label">Scrapped Initiatives</div>
+    <div class="metric-value shimmer-text">42%</div>
+    <div class="metric-label">Scrapped Most AI Initiatives</div>
     <div class="metric-source">BCG, 2025</div>
   </div>
   <div class="metric">
-    <div class="metric-value shimmer-text" data-count-to="5" data-suffix="%">0%</div>
-    <div class="metric-label">Future-Built Enterprises</div>
+    <div class="metric-value shimmer-text">5%</div>
+    <div class="metric-label">Classified as Future-Built</div>
     <div class="metric-source">BCG, 2025</div>
   </div>
 </div>
+
+<p class="metric-interpretation">Spending is scaling faster than management capability.</p>
 
 <div class="path-cards">
   <a href="/enterprise-ai/framework/" class="path-card">
-    <div class="path-role">Start Here</div>
-    <div class="path-desc">The AI for Business Leaders Framework. Five principles. Four maturity stages.</div>
+    <div class="path-role">Framework</div>
+    <div class="path-desc">Five operating principles. Four maturity stages. The management system distilled.</div>
   </a>
   <a href="/enterprise-ai/assessment/tool/" class="path-card">
-    <div class="path-role">Assess</div>
-    <div class="path-desc">AI Readiness Assessment. 25 questions. Shareable scorecard.</div>
+    <div class="path-role">Assessment</div>
+    <div class="path-desc">Measure readiness across leadership, governance, data, and execution. Shareable scorecard.</div>
   </a>
   <a href="/enterprise-ai/reading-paths/" class="path-card">
-    <div class="path-role">Your Path</div>
-    <div class="path-desc">Curated reading paths for CIOs, CEOs, CDOs, and CAIOs.</div>
+    <div class="path-role">Reading Paths</div>
+    <div class="path-desc">Curated routes for CIOs, CEOs, CDOs, and CAIOs.</div>
   </a>
   <a href="/enterprise-ai/proof/case-studies/" class="path-card">
-    <div class="path-role">Evidence</div>
-    <div class="path-desc">Four transformation case studies with decision-grade specifics.</div>
+    <div class="path-role">Proof</div>
+    <div class="path-desc">Case studies, decision records, and decision-grade artifacts.</div>
   </a>
 </div>
 
-## What Separates the 5% Who Succeed
+---
 
-The companies that extract real returns from AI do not have better models. They make better organizational decisions.
+## What the Winners Do Differently
 
-- They design operating models before selecting tools
-- They build governance as infrastructure, not as policy documents
-- They measure AI by business outcomes, not by adoption metrics
-- They treat agentic AI as delegated authority requiring control architecture, not as smarter automation
+The firms that capture value from AI do not have better models. They make better organizational decisions.
+
+- They design operating models before selecting tools.
+- They build governance into delivery, not around it.
+- They measure AI in business terms, not usage terms.
+- They govern agents as delegated authority, not enhanced software.
 
 ---
 
-<div class="executive-callout">
-  <p>Enterprise AI underperforms not because models are weak, but because firms lack the management system to convert model capability into economic value.</p>
-</div>
-
----
-
-## What This Playbook Covers
+## What Leaders Will Be Able to Decide
 
 This playbook follows the decisions leaders face, in the order they face them.
 
 <div id="decision-flow" class="interactive-mount content-wide"></div>
 
-Written for CIOs, CAIOs, CDOs, and senior business leaders who own the outcomes, not the experiments. 47 pages. No vendor pitches. No tutorials. Decisions and tradeoffs.
+Written for CIOs, CAIOs, CDOs, and business leaders making investment, governance, operating model, and scaling decisions under real enterprise constraints. No hype, no tool theatre, no vendor templates.
 
 ---
 
-<div class="board-document">
-
 ## The Evidence
 
-| Metric | Figure | Source |
-|--------|--------|--------|
-| Global enterprise AI spending, 2025 | $644B | IDC |
-| Companies that scrapped most AI initiatives | 42% (up from 17% in 2024) | BCG |
-| Companies classified as "future-built" | 5% | BCG |
-| GenAI POCs abandoned after pilot | 30% | Gartner |
-| Enterprises reporting meaningful EBIT impact | 39% | McKinsey |
+**$644B** in projected enterprise AI spending in 2025. The largest technology investment cycle since cloud computing. <span class="metric-source">IDC</span>
 
-The money is moving. The results are not.
+**42%** of companies scrapped most of their AI initiatives in 2025, up from 17% one year earlier. The failure rate is accelerating. <span class="metric-source">BCG</span>
 
-</div>
+**30%** of GenAI proofs of concept are abandoned after pilot. They work in the lab. They stall in production. <span class="metric-source">Gartner</span>
+
+**39%** of enterprises report meaningful EBIT impact from AI. Fewer than two in five can trace AI to the income statement. <span class="metric-source">McKinsey</span>
+
+**5%** of organizations qualify as future-built. The rest are still experimenting. <span class="metric-source">BCG</span>
+
+Capital is flowing into AI faster than enterprises are building the management systems required to capture returns.
 
 ---
 
 ## About This Work
 
-This playbook synthesizes large-scale research from McKinsey, BCG, Deloitte, Gartner, IBM, and academic sources with direct experience building AI platforms, governance frameworks, and agent infrastructure at enterprise scale.
+This playbook combines large-scale industry research with direct experience designing AI platforms, governance systems, and agent infrastructure in enterprise environments.
 
-Related research on AI agent protocols and reasoning infrastructure:
+**Related research**
 
-- Lightweight Decision Protocol: [arXiv:2603.08852](https://arxiv.org/abs/2603.08852)
-- Dynamic Contextual Identity: [arXiv:2603.11781](https://arxiv.org/abs/2603.11781)
+- [Lightweight Decision Protocol](https://arxiv.org/abs/2603.08852) (arXiv:2603.08852)
+- [Dynamic Contextual Identity](https://arxiv.org/abs/2603.11781) (arXiv:2603.11781)
 
 For methodology and full source list, see [Sources and Methodology](sources.md).
 
 ---
 
-## Start Here
+## Choose Your Next Step
 
-**[AI for Business Leaders Framework](/enterprise-ai/framework/)** -- The definitive takeaway. Five operating principles and four maturity stages distilled from this entire playbook.
-
-**[AI Readiness Assessment](/enterprise-ai/assessment/tool/)** -- Assess your organization across five dimensions. Get a personalized scorecard and reading path.
+<div class="path-cards">
+  <a href="/enterprise-ai/framework/" class="path-card">
+    <div class="path-role">Read the Framework</div>
+    <div class="path-desc">Five principles and four maturity stages for enterprise AI.</div>
+  </a>
+  <a href="/enterprise-ai/assessment/tool/" class="path-card">
+    <div class="path-role">Run the Assessment</div>
+    <div class="path-desc">25 questions. Personalized scorecard. Recommended reading path.</div>
+  </a>
+  <a href="/enterprise-ai/reading-paths/" class="path-card">
+    <div class="path-role">Follow Your Role Path</div>
+    <div class="path-desc">CIO, CEO, CDO, or CAIO. Six pages in the right sequence.</div>
+  </a>
+</div>
