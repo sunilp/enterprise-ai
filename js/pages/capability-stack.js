@@ -169,7 +169,7 @@ function drawConnections(svg, layerEls) {
     line.setAttribute('y2', to.top);
     line.setAttribute('stroke', '#c8b48c');
     line.setAttribute('stroke-width', '1');
-    line.setAttribute('opacity', '0.15');
+    line.setAttribute('opacity', '0.08');
     line.setAttribute('data-from', i);
     line.setAttribute('data-to', i + 1);
     line.classList.add('conn-line');
@@ -177,17 +177,20 @@ function drawConnections(svg, layerEls) {
     lines.push(line);
   }
 
-  // Governance (index 1) connects to ALL other layers
+  // Governance cross-cutting connections removed -- they created a distracting
+  // vertical gold stripe through the stack. The adjacent lines are sufficient.
+  // The text content explains that Governance is cross-cutting.
+
+  // Keep reference for hover highlighting
+  if (false) {
   const govIdx = 1;
   const govMid = midpoints[govIdx];
   for (let i = 0; i < midpoints.length; i++) {
     if (i === govIdx) continue;
-    // Skip adjacent connections already drawn (index 0 and 2)
     if (i === govIdx - 1 || i === govIdx + 1) continue;
 
     const other = midpoints[i];
     const line = document.createElementNS(ns, 'line');
-    // Offset the x slightly for governance lines to distinguish them
     const offsetX = 24;
     line.setAttribute('x1', govMid.x - offsetX);
     line.setAttribute('y1', i < govIdx ? govMid.top : govMid.bottom);
@@ -202,6 +205,7 @@ function drawConnections(svg, layerEls) {
     svg.appendChild(line);
     lines.push(line);
   }
+  } // end if (false) -- governance cross-cutting disabled
 
   return lines;
 }
