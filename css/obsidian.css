@@ -1221,7 +1221,27 @@ body.flagship .reading-content h2 {
 }
 
 .board-document .doc-body {
-  padding: 24px;
+  padding: 32px 40px;
+}
+
+/* When board-document wraps raw markdown (no doc-body wrapper) */
+.board-document > h2,
+.board-document > h3,
+.board-document > p,
+.board-document > .obsidian-table-wrap,
+.board-document > ul,
+.board-document > ol {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.board-document > h2:first-child,
+.board-document > h2:first-of-type {
+  padding-top: 32px;
+}
+
+.board-document > p:last-child {
+  padding-bottom: 24px;
 }
 
 .board-document .doc-footer {
