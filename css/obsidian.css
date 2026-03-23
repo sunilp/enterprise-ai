@@ -385,6 +385,23 @@ hr {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: auto;
+}
+
+.nav-site-link {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--label);
+  border-bottom: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  margin-right: 4px;
+}
+
+.nav-site-link:hover {
+  opacity: 1;
+  color: var(--gold);
+  border-bottom: none;
 }
 
 .cmd-trigger {
@@ -1006,13 +1023,48 @@ pre.mermaid {
   border-color: var(--gold);
 }
 
+.footer-author {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(200, 180, 140, 0.06);
+}
+
+.footer-line {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.footer-line a {
+  color: var(--gold);
+  border-bottom: 1px solid rgba(200, 180, 140, 0.3);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--label);
+  border-bottom: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
 .copyright,
 .page-copyright {
   font-family: var(--font-mono);
   font-size: 9px;
   color: var(--label);
-  margin-top: 32px;
-  opacity: 0.5;
+  margin-top: 24px;
+  opacity: 0.4;
 }
 
 
