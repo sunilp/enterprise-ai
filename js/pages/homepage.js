@@ -205,8 +205,8 @@
       var isMobile = containerWidth < 600;
 
       // Dimensions
-      var nodeW = isMobile ? Math.min(containerWidth - 40, 200) : 120;
-      var nodeH = 36;
+      var nodeW = isMobile ? Math.min(containerWidth - 40, 200) : 105;
+      var nodeH = 34;
       var nodeCount = DECISION_NODES.length;
 
       var svgWidth, svgHeight, nodePositions;
@@ -225,20 +225,32 @@
           };
         });
       } else {
-        // Horizontal flow with slight arc
-        var horizPadX = 20;
-        var horizPadY = 50;
-        var gap = (containerWidth - 2 * horizPadX - nodeW) / Math.max(nodeCount - 1, 1);
+        // Two-row staggered layout: row 1 has 6 nodes, row 2 has 5
+        var row1Count = 6;
+        var row2Count = nodeCount - row1Count;
+        var padX = 10;
+        var padY = 20;
+        var rowGap = 24;
+        var row1Gap = (containerWidth - 2 * padX - nodeW) / Math.max(row1Count - 1, 1);
+        var row2Gap = (containerWidth - 2 * padX - nodeW) / Math.max(row2Count - 1, 1);
         svgWidth = containerWidth;
-        var arcHeight = 40;
-        svgHeight = nodeH + 2 * horizPadY + arcHeight;
+        svgHeight = padY * 2 + nodeH * 2 + rowGap;
+
         nodePositions = DECISION_NODES.map(function (_, i) {
-          var t = nodeCount > 1 ? i / (nodeCount - 1) : 0.5;
-          var arcY = -Math.sin(t * Math.PI) * arcHeight;
-          return {
-            x: horizPadX + i * gap,
-            y: horizPadY + arcHeight + arcY,
-          };
+          if (i < row1Count) {
+            return {
+              x: padX + i * row1Gap,
+              y: padY,
+            };
+          } else {
+            var j = i - row1Count;
+            // Offset row 2 to center it under row 1
+            var row2Offset = (containerWidth - (row2Count - 1) * row2Gap - nodeW) / 2;
+            return {
+              x: row2Offset + j * row2Gap,
+              y: padY + nodeH + rowGap,
+            };
+          }
         });
       }
 
