@@ -208,9 +208,42 @@ function findMarkdownFiles(dir) {
 
 // ─── Navigation Builder ────────────────────────────────────────────────────
 
+// Editorial section order: follows the executive decision journey
+const SECTION_ORDER = [
+  'Position',
+  'Framework',
+  'Assessment',
+  'Architecture',
+  'Operating Model',
+  'Governance',
+  'Agentic Strategy',
+  'Measurement',
+  'Portfolio',
+  'Transformation',
+  'Workforce',
+  'Proof',
+  'Reading Paths',
+  'Glossary',
+  'Sources',
+];
+
+// Page order within each section (by slug). Pages not listed sort to end alphabetically.
+const PAGE_ORDER = {
+  'Position': ['the-problem', 'what-transformation-means', 'failure-modes'],
+  'Assessment': ['ai-readiness', 'data-readiness', 'process-talent', 'maturity-model', 'assessment'],
+  'Architecture': ['architecture-index', 'capability-stack', 'systems-model', 'control-architecture', 'operating-architecture', 'reference-patterns'],
+  'Operating Model': ['caio-mandate', 'structural-models', 'decision-rights', 'coordination'],
+  'Governance': ['governance-architecture', 'genai-model-risk', 'agent-governance', 'shadow-ai', 'regulatory-readiness'],
+  'Agentic Strategy': ['the-shift', 'protocol-landscape', 'human-agent-collaboration', 'finops'],
+  'Measurement': ['measurement-design', 'financial-linkage', 'board-reporting'],
+  'Portfolio': ['prioritization', 'value-concentration', 'pilot-to-production'],
+  'Transformation': ['roadmap', 'phase-gates'],
+  'Workforce': ['role-evolution', 'middle-management', 'knowledge-architecture'],
+  'Proof': ['case-studies', 'decision-records', 'decision-artifacts', 'checklists'],
+};
+
 function buildNavigation(pages) {
   const sections = {};
-  const sectionOrder = [];
   let homePage = null;
 
   for (const page of pages) {
@@ -221,14 +254,20 @@ function buildNavigation(pages) {
     const sec = page.meta.section;
     if (!sections[sec]) {
       sections[sec] = [];
-      sectionOrder.push(sec);
     }
     sections[sec].push(page);
   }
 
-  // Sort pages within sections by order
+  // Sort pages within sections by editorial order, then by frontmatter order
   for (const sec of Object.keys(sections)) {
-    sections[sec].sort((a, b) => (a.meta.order || 99) - (b.meta.order || 99));
+    const orderList = PAGE_ORDER[sec] || [];
+    sections[sec].sort((a, b) => {
+      const ai = orderList.indexOf(a.meta.slug);
+      const bi = orderList.indexOf(b.meta.slug);
+      const aOrder = ai >= 0 ? ai : 100 + (a.meta.order || 99);
+      const bOrder = bi >= 0 ? bi : 100 + (b.meta.order || 99);
+      return aOrder - bOrder;
+    });
   }
 
   const nav = [];
@@ -241,7 +280,16 @@ function buildNavigation(pages) {
     });
   }
 
-  for (const sec of sectionOrder) {
+  // Use editorial order, then append any sections not in the list
+  const orderedSections = [...SECTION_ORDER];
+  for (const sec of Object.keys(sections)) {
+    if (!orderedSections.includes(sec)) {
+      orderedSections.push(sec);
+    }
+  }
+
+  for (const sec of orderedSections) {
+    if (!sections[sec] || sections[sec].length === 0) continue;
     nav.push({
       title: sec,
       pages: sections[sec].map(p => ({
