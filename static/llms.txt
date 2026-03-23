@@ -1,0 +1,61 @@
+# Enterprise AI Transformation Playbook
+
+> The management system for enterprise AI. By Sunil Prakash.
+
+## About
+A 47-page interactive executive playbook on why 95% of enterprise AI programs fail to deliver P&L impact and what the 5% do differently. The gap is organizational, not technological. This playbook provides the operating model, governance architecture, target architecture, workforce design, measurement frameworks, and transformation sequencing required to convert AI capability into enterprise value.
+
+## Author
+Sunil Prakash — VP, Cloud & Platform Architecture at Deutsche Bank. Published researcher in multi-agent AI systems (LDP, DCI). Built AI platforms, governance frameworks, and agent infrastructure in regulated financial services.
+- Website: https://sunilprakash.com
+- LinkedIn: https://www.linkedin.com/in/sunilprakash
+- Google Scholar: https://scholar.google.com/citations?user=RdrGjZQAAAAJ
+
+## Core Thesis
+Enterprise AI underperforms not because models are weak, but because most firms lack the operating system to turn AI capability into business value.
+
+## Five Operating Principles
+1. Operating Model Before Technology — define how the organization will govern, fund, and scale AI before selecting tools
+2. Governance as Infrastructure — build governance that runs at deployment speed, not review-cycle speed
+3. Architecture That Connects Intelligence to Action — bridge Systems of Intelligence to Systems of Engagement and Action
+4. Measurement That Reaches the Balance Sheet — baselines before deployment, financial linkage through traceable chains
+5. Workforce Designed for Human-Agent Collaboration — design the new composition of work before deploying the AI that changes it
+
+## Four Maturity Stages
+- Stage 1 Foundational (1.0-2.0): AI is experimental. No shared infrastructure or governance.
+- Stage 2 Developing (2.1-3.0): Centralized AI function emerging. Governance defined but not automated.
+- Stage 3 Established (3.1-4.0): AI at scale with governed infrastructure. Measurement connects to financials.
+- Stage 4 Optimized (4.1-5.0): AI is an operating capability with the maturity of finance or HR.
+
+## Key Evidence
+- $644B projected enterprise AI spending in 2025 (IDC)
+- 42% of companies scrapped most AI initiatives in 2025, up from 17% in 2024 (BCG)
+- 30% of GenAI POCs abandoned after pilot (Gartner)
+- 39% of enterprises report meaningful EBIT impact from AI (McKinsey)
+- 5% of organizations classified as future-built (BCG)
+
+## Key Pages
+- Homepage: https://sunilprakash.com/enterprise-ai/
+- Framework: https://sunilprakash.com/enterprise-ai/framework/
+- AI Readiness Assessment: https://sunilprakash.com/enterprise-ai/assessment/tool/
+- The Problem: https://sunilprakash.com/enterprise-ai/position/the-problem/
+- Capability Stack: https://sunilprakash.com/enterprise-ai/architecture/capability-stack/
+- Systems Model: https://sunilprakash.com/enterprise-ai/architecture/systems-model/
+- Control Architecture: https://sunilprakash.com/enterprise-ai/architecture/control-architecture/
+- Governance Architecture: https://sunilprakash.com/enterprise-ai/governance/architecture/
+- CAIO Mandate: https://sunilprakash.com/enterprise-ai/operating-model/caio-mandate/
+- Measurement Design: https://sunilprakash.com/enterprise-ai/measurement/design/
+- 12-Month Roadmap: https://sunilprakash.com/enterprise-ai/transformation/roadmap/
+- Case Studies: https://sunilprakash.com/enterprise-ai/proof/case-studies/
+- Reading Paths: https://sunilprakash.com/enterprise-ai/reading-paths/
+
+## Sections
+Position, Framework, Assessment, Architecture, Operating Model, Governance, Agentic Strategy, Measurement, Portfolio, Transformation, Workforce, Proof, Reading Paths, Glossary, Sources
+
+## Research Sources
+McKinsey (State of AI 2025), BCG (Are You Generating Value from AI), Deloitte (State of AI 7th Edition), IBM IBV (How CAIOs Deliver ROI), Gartner (GenAI blind spots, agentic forecasts), HBR, MIT Sloan, PwC, WEF
+
+## Related Research
+- LDP: An Identity-Aware Protocol for Multi-Agent LLM Systems — arXiv:2603.08852
+- DCI: Structured Collective Reasoning with Typed Epistemic Acts — arXiv:2603.11781
+- The Provenance Paradox in Multi-Agent LLM Routing — arXiv:2603.18043
