@@ -385,9 +385,19 @@
     appEl.focus();
   }
 
+  function fireEvent(name, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', name, params || {});
+    }
+  }
+
   function selectRating(rating) {
+    var wasFirstAnswer = currentQ === 0 && answers[0] === 0;
     answers[currentQ] = rating;
     saveProgress();
+    if (wasFirstAnswer) {
+      fireEvent('assessment_started');
+    }
     renderQuestion(); // Re-render to show fill state
 
     if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
@@ -457,6 +467,11 @@
     // Save results to engagement state
     if (!fromUrl) {
       saveResults(dimScores, overall, tierNum);
+      fireEvent('assessment_completed', {
+        overall_score: overall,
+        tier: tier.name,
+        tier_number: tierNum
+      });
     }
 
     // Update URL hash for shareability
@@ -591,12 +606,14 @@
 
     var downloadBtn = el('button', 'results-cta', 'Download Scorecard');
     downloadBtn.addEventListener('click', function () {
+      fireEvent('scorecard_downloaded', { tier: tier.name });
       generateScorecard(dimScores, overall, tierNum);
     });
     shareSection.appendChild(downloadBtn);
 
     var copyBtn = el('button', 'results-cta', 'Copy Link');
     copyBtn.addEventListener('click', function () {
+      fireEvent('assessment_shared', { method: 'copy_link' });
       var url = buildShareUrl();
       navigator.clipboard.writeText(url).then(function () {
         copyBtn.textContent = 'Copied';
@@ -610,6 +627,7 @@
 
     var liBtn = el('button', 'results-cta', 'Share on LinkedIn');
     liBtn.addEventListener('click', function () {
+      fireEvent('assessment_shared', { method: 'linkedin' });
       var url = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(buildShareUrl());
       window.open(url, '_blank', 'noopener,noreferrer');
     });
@@ -617,6 +635,7 @@
 
     var twBtn = el('button', 'results-cta', 'Share on Twitter');
     twBtn.addEventListener('click', function () {
+      fireEvent('assessment_shared', { method: 'twitter' });
       var url = 'https://twitter.com/intent/tweet?url=' +
         encodeURIComponent(buildShareUrl()) +
         '&text=' +
