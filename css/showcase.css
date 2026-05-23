@@ -16,13 +16,13 @@
 /* ─── 2. Showcase Hero ────────────────────────────────────────────────────── */
 
 .showcase-hero {
-  min-height: 100vh;
+  min-height: 72vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 96px 32px 80px; /* top accounts for 48px topbar */
+  padding: 88px 32px 56px; /* top accounts for 48px topbar */
   text-align: center;
   overflow: hidden;
 }
