@@ -25,6 +25,8 @@ The control plane spans seven domains. Each operates continuously, not at review
 
 **Failure mode:** Without agent identity, an orchestration pipeline running with a shared service account has effectively inherited every permission ever granted to that account. Blast radius is unlimited.
 
+**Protocol anchor:** The [Agent Identity Protocol](https://sunilprakash.com/aip/) provides the primitives this domain needs at the agent layer: signed identity tokens distinct from the underlying service account, cryptographically chained delegation between agents, and scoped attenuation so a downstream agent cannot widen the authority it received. Hook-level verification inside the agent runtime enforces the chain at every tool call and task handoff.
+
 ---
 
 ### Entitlements

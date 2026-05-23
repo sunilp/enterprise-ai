@@ -119,6 +119,8 @@ At deployment velocity, you cannot rely on humans to check every model output, r
 An organization deploying 20 AI systems can govern them manually. An organization deploying 200 cannot. The technical layer is what makes governance scale. Build the automation before you need it, not after.
 :::
 
+For autonomous agents, the technical layer increasingly relies on a dedicated identity and policy protocol rather than ad hoc tokens. The [Agent Identity Protocol](https://sunilprakash.com/aip/) defines signed agent identity, cryptographically chained delegation, and hook-level policy verification that runs inside the agent runtime before a tool call or task handoff executes. Treat it as a primitive of the technical layer, not as a separate workstream.
+
 For the full technical control plane -- identity, entitlements, audit, policy enforcement, observability -- see [Control Architecture](../architecture/control-architecture.md).
 
 ## Governance Velocity Must Match Deployment Velocity

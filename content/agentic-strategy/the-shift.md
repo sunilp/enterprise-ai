@@ -138,6 +138,8 @@ That is a different analysis. It requires understanding what agents are good at 
 
 That is the analysis your leadership team should be doing now.
 
+The architectural consequence of this shift is that the runtime around the model, the harness, becomes the platform. The model is interchangeable. The harness is where identity, policy, tools, memory, and oversight live. For a longer treatment, see [The Model Is Not the Product. The Harness Is.](https://sunilprakash.com/writing/harness-is-the-platform/) and the Field Note [Anthropic just told you the harness is the product](https://sunilprakash.com/agentic-ai/field-notes/003-anthropic-told-you-harness-is-product/).
+
 ---
 
 ## Sources

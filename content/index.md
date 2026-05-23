@@ -96,10 +96,14 @@ Capital is flowing into AI faster than enterprises are building the management s
 
 This playbook combines large-scale industry research with direct experience designing AI platforms, governance systems, and agent infrastructure in enterprise environments.
 
-**Related research**
+**Related research and writing**
 
 - [Lightweight Decision Protocol](https://arxiv.org/abs/2603.08852) (arXiv:2603.08852)
 - [Dynamic Contextual Identity](https://arxiv.org/abs/2603.11781) (arXiv:2603.11781)
+- [Agent Identity Protocol (AIP)](https://sunilprakash.com/aip/). Open specification and reference implementations for signed agent identity, delegation chains, and hook-level policy verification.
+- [Agent Engineering Lab](https://sunilprakash.com/agentic-ai/). Editorial publication on agent engineering practice, with Field Notes, Signal, and Recipes.
+- [The Model Is Not the Product. The Harness Is.](https://sunilprakash.com/writing/harness-is-the-platform/). Long-form essay on why the runtime around the model is the platform.
+- *Agentic AI for Serious Engineers*. Book on building production agent systems, available on Amazon.
 
 For methodology and full source list, see [Sources and Methodology](sources.md).
 

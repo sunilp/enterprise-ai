@@ -15,7 +15,7 @@ Protocols give multi-agent systems the same thing HTTP gave the web: a shared la
 
 ## The Emerging Protocol Stack
 
-Three protocols have emerged as the foundation of enterprise multi-agent infrastructure. They are complementary, not competing.
+Four protocols have emerged as the foundation of enterprise multi-agent infrastructure. They are complementary, not competing.
 
 ### MCP: Model Context Protocol
 
@@ -40,6 +40,25 @@ Developed by Google and supported by a growing ecosystem, A2A defines how agents
 - Structured communication between heterogeneous agent systems
 
 **Why it matters for enterprises:** Complex workflows involve multiple agents with specialized capabilities. A2A means your orchestration agent does not need to be built by the same team as your execution agents. It enables composition across independently developed systems, which is how large organizations actually build software.
+
+### AIP: Agent Identity Protocol
+
+[AIP](https://sunilprakash.com/aip/) addresses a question MCP and A2A intentionally leave open: when an agent calls a tool or hands a task to another agent, who is acting, with what authority, and how is that authority verified at the boundary. The protocol defines signed identity tokens for agents, cryptographically chained delegation, scoped attenuation as authority moves down the chain, and policy verification at hook boundaries in the runtime.
+
+**What AIP handles:**
+- Signed agent identity tokens with explicit issuer, subject, and scope
+- Delegation chains that cryptographically bind each handoff to its predecessor
+- Scoped attenuation, so a delegated agent cannot widen the authority it received
+- Hook-level policy verification inside the agent runtime, before a tool call or task handoff executes
+- A2A task verification middleware that validates the inbound identity and chain on every received task
+
+**Why it matters for enterprises:** Regulators, internal audit, and risk functions all need to answer the same question: who authorized this action, and what was the chain of authority behind it. AIP makes that question answerable with cryptographic evidence rather than log archaeology. It also removes the need for bilateral pre-coordination between agent systems. Two agents from different teams, or different vendors, can establish trust through a verifiable chain rather than through a private contract negotiated in advance.
+
+**How AIP composes with MCP and A2A:** The three protocols sit at different layers and are designed to compose, not compete. MCP defines the tool and resource interface. A2A defines the agent-to-agent task interface. AIP defines the identity and policy layer that runs underneath both. An agent issuing an MCP tool call carries an AIP identity that the runtime can verify before the call reaches the tool. An agent sending an A2A task attaches a delegation chain that the receiving agent's middleware verifies before accepting the work. Identity and policy are concerns AIP handles once, instead of being re-invented inside each protocol.
+
+**Implementation maturity:** Reference implementations exist across the major agent ecosystems. Python (`aip-core`, `aip-agents`), Rust (the `aip` crate), and TypeScript (`@aip-sdk/*`) cover the SDK surface. An OpenClaw plugin and a Claude Code plugin demonstrate the hook-level policy verification model inside real agent runtimes. A separate policy gateway (`aip-gateway`) acts as a drop-in MCP and A2A proxy that enforces YAML-defined policy, which is the pattern most useful for retrofitting existing deployments without changing application code.
+
+**Standards path:** AIP is on the IETF draft track (the `draft-prakash-aip-NN` series), with the specification developed in the open. That matters for enterprise adoption because the identity and authorization layer for autonomous systems is the part of the stack least tolerable as a proprietary dependency. An identity protocol that one vendor controls is not a trust layer; it is a single point of failure.
 
 ### LDP: Lightweight Delegation Protocol
 
@@ -68,7 +87,8 @@ These protocols operate at different layers of the stack. They are designed to w
 ```mermaid
 graph TD
     subgraph "Governance Layer"
-        LDP["LDP<br/>Identity · Authorization · Provenance"]
+        AIP["AIP<br/>Identity · Delegation · Policy Enforcement"]
+        LDP["LDP<br/>Provenance · Authorization Research"]
     end
 
     subgraph "Coordination Layer"
@@ -83,14 +103,16 @@ graph TD
         Tools["Tools, APIs, Databases, Services"]
     end
 
-    Human["Human / Orchestrator"] --> LDP
-    LDP --> A2A
+    Human["Human / Orchestrator"] --> AIP
+    AIP --> A2A
+    AIP -.-> LDP
     A2A --> Agent1["Specialized Agent"]
     A2A --> Agent2["Specialized Agent"]
     Agent1 --> MCP
     Agent2 --> MCP
     MCP --> Tools
 
+    style AIP fill:#4a4a6a,color:#fff
     style LDP fill:#4a4a6a,color:#fff
     style A2A fill:#3a5a4a,color:#fff
     style MCP fill:#5a3a3a,color:#fff
@@ -99,9 +121,10 @@ graph TD
 
 **Reading the diagram:**
 
-- A human or orchestrating system initiates a workflow. LDP attaches identity and authorization scope to that initiation.
-- A2A handles the coordination between agents: who does what, in what sequence, with what handoff conditions.
-- MCP handles each agent's access to the tools and data it needs to execute.
+- A human or orchestrating system initiates a workflow. AIP attaches a signed identity and a scoped delegation to that initiation.
+- A2A handles the coordination between agents: who does what, in what sequence, with what handoff conditions. Each handoff carries the AIP chain forward.
+- MCP handles each agent's access to the tools and data it needs to execute. Each tool call carries the AIP identity that the runtime can verify at the hook boundary.
+- LDP sits alongside AIP at the governance layer as the research foundation on provenance and authorization in multi-agent systems.
 - Every layer is observable, auditable, and standards-compliant.
 
 This composition gives you a multi-agent system where every action is attributable, every delegation is authorized, and every tool call is mediated through a defined interface.
@@ -124,7 +147,7 @@ This is not theoretical. Organizations that built deeply proprietary RAG pipelin
 
 ### Audit Trails
 
-In regulated environments, audit trails are non-negotiable. Standard protocols, especially LDP, are designed with auditability as a first-class concern. Proprietary systems require custom audit infrastructure built on top of an opaque foundation.
+In regulated environments, audit trails are non-negotiable. Standard protocols, especially AIP, are designed with auditability as a first-class concern. The delegation chain is the audit trail. Proprietary systems require custom audit infrastructure built on top of an opaque foundation.
 
 :::warning
 **The Proprietary Lock-In Risk**
@@ -138,13 +161,13 @@ Several major platform vendors are offering "managed agent orchestration" with p
 
 The practical question for most enterprises is not which protocol to adopt in isolation. It is how to introduce protocol-aware infrastructure into an existing technology estate.
 
-Most organizations will start with MCP because tool access is the immediate need. A2A becomes relevant when you have multiple agents coordinating on complex tasks. LDP becomes non-negotiable when you need to answer regulators, auditors, or executives about who authorized an action taken by an autonomous system.
+Most organizations will start with MCP because tool access is the immediate need. A2A becomes relevant when you have multiple agents coordinating on complex tasks. AIP and LDP become non-negotiable when you need to answer regulators, auditors, or executives about who authorized an action taken by an autonomous system, and the audit trail needs to be cryptographically verifiable rather than reconstructed from logs.
 
 The sequencing typically looks like this:
 
 1. **MCP first:** Standardize tool access for your first agent deployments. Build your tool library against MCP interfaces from day one.
 2. **A2A when coordinating:** As you build workflows that span multiple specialized agents, adopt A2A for coordination rather than building custom orchestration.
-3. **LDP from the start for regulated workloads:** Do not wait until you have a compliance problem to introduce provenance tracking. Retrofit is expensive.
+3. **AIP from the start for regulated workloads:** Identity, delegation, and policy enforcement are the parts of the stack that are most expensive to retrofit. Introduce signed identity and verifiable delegation chains before the first production agent ships, not after. A policy gateway in front of existing MCP and A2A endpoints is the lowest-friction starting point.
 
 ---
 
@@ -156,6 +179,6 @@ The sequencing typically looks like this:
 
 **Build protocol-aware infrastructure.** Your developer platforms, CI/CD pipelines, and monitoring infrastructure should be designed to work with these protocols natively, not as afterthoughts.
 
-**Require protocol compliance in vendor evaluations.** When evaluating agent platforms, orchestration tools, or managed agent services, require MCP compatibility, A2A support, and LDP-compatible audit trails as evaluation criteria. Vendors who resist this are selling proprietary lock-in.
+**Require protocol compliance in vendor evaluations.** When evaluating agent platforms, orchestration tools, or managed agent services, require MCP compatibility, A2A support, AIP-compatible identity and delegation, and audit trails that preserve the delegation chain. Vendors who resist this are selling proprietary lock-in.
 
 The protocol layer is boring infrastructure work. It is also the foundation that determines whether your multi-agent architecture is maintainable, auditable, and vendor-portable five years from now.

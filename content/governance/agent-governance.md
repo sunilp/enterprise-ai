@@ -116,6 +116,8 @@ Trust boundaries operate at two levels:
 **Multi-Agent Trust Amplification**
 
 In multi-agent systems, trust boundaries compound. If Agent A can instruct Agent B, Agent B's action space becomes Agent A's effective action space. Governance must address the full agent graph, not just individual agents. An orchestrator agent with broad permissions that can spawn sub-agents with additional permissions creates a privilege escalation path.
+
+Identity protocols for autonomous systems address this directly. The [Agent Identity Protocol](https://sunilprakash.com/aip/) defines signed identity tokens, cryptographically chained delegation, and scoped attenuation that prevents a downstream agent from widening the authority it received. The trust boundary becomes a verifiable property of the chain rather than a per-deployment configuration that has to be audited by hand.
 :::
 
 ### 6. Cost Controls: Runtime Budget Enforcement
