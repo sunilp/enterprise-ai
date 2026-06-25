@@ -7,7 +7,7 @@ slug: "shadow-ai"
 ---
 # Shadow AI
 
-69% of organizations suspect their employees are using prohibited public GenAI tools (Gartner, 2024). By 2030, more than 40% of organizations will experience a security or compliance incident directly attributable to shadow AI (Gartner, 2024). These are not predictions about a future state. They are descriptions of conditions already in place.
+69% of organizations suspect their employees are using prohibited public GenAI tools (Gartner, 2025). By 2030, more than 40% of organizations will experience a security or compliance incident directly attributable to shadow AI (Gartner, 2024). These are not predictions about a future state. They are descriptions of conditions already in place.
 
 Shadow AI is the enterprise AI problem that most leadership teams misframe. They frame it as a behavior problem. It is a demand signal.
 

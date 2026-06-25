@@ -33,7 +33,7 @@ These roles are not eliminated overnight. They shrink through attrition, headcou
 
 **Manual data processing:** Data entry, format conversion, extraction from unstructured documents, report compilation from multiple sources. Agents handle these at near-zero marginal cost with acceptable accuracy for most business contexts.
 
-**Routine analysis:** Standard variance analysis, templated reporting, first-cut competitive intelligence from public sources, summary generation from structured data. These tasks represent a significant fraction of analyst time at most organizations. Agents do not do analysis better than skilled analysts. They do the routine 60% faster and cheaper, which means the headcount required for the same throughput shrinks — not the work, the people.
+**Routine analysis:** Standard variance analysis, templated reporting, first-cut competitive intelligence from public sources, summary generation from structured data. These tasks represent a significant fraction of analyst time at most organizations. Agents do not do analysis better than skilled analysts. They do the routine 60% faster and cheaper, which means the headcount required for the same throughput shrinks, not the work, the people.
 
 **First-level support:** Tier-1 customer service, IT helpdesk triage, HR policy lookups, internal knowledge retrieval. Well-designed agents resolve a large fraction of these interactions without human involvement. The fraction depends heavily on the quality of the underlying knowledge architecture.
 

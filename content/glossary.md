@@ -68,8 +68,8 @@ An AI operating model in which a central hub function (typically the CAIO's team
 **Knowledge Architecture**
 The design of how organizational knowledge is structured, stored, retrieved, and maintained for use by AI systems, particularly retrieval-augmented generation (RAG) systems. Knowledge architecture decisions affect AI output quality, freshness, and accuracy. Poor knowledge architecture is a primary cause of enterprise AI systems producing stale or inaccurate outputs.
 
-**LDP (Layered Data Provenance)**
-A protocol for tracking the origin, transformation history, and chain of custody of data as it moves through AI systems and multi-agent pipelines. LDP enables auditable AI by making it possible to answer "where did this output come from?" for any AI-generated artifact.
+**LDP (LLM Delegate Protocol)**
+An identity-aware communication protocol for multi-agent LLM systems. LDP exposes model identity, negotiates payload formats, maintains governed sessions, tracks provenance, and enforces trust boundaries, so the audit trail can answer who authorized an action, under what conditions, and through what chain of delegation.
 
 **MCP (Model Context Protocol)**
 A protocol that standardizes how AI models access and interact with external data sources, tools, and services. MCP defines the interface between AI models and the systems they need to use, enabling more reliable and auditable tool use in agentic systems.

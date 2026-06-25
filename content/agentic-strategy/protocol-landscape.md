@@ -60,7 +60,7 @@ Developed by Google and supported by a growing ecosystem, A2A defines how agents
 
 **Standards path:** AIP is on the IETF draft track (the `draft-prakash-aip-NN` series), with the specification developed in the open. That matters for enterprise adoption because the identity and authorization layer for autonomous systems is the part of the stack least tolerable as a proprietary dependency. An identity protocol that one vendor controls is not a trust layer; it is a single point of failure.
 
-### LDP: Lightweight Delegation Protocol
+### LDP: LLM Delegate Protocol
 
 LDP addresses the governance layer that MCP and A2A leave open: identity, authorization, and provenance in multi-agent systems. When Agent A delegates a task to Agent B, and Agent B calls a tool, the audit trail needs to answer: who authorized this action, under what conditions, and what is the chain of delegation that led here?
 

@@ -34,7 +34,7 @@ The gaps this creates are significant:
 
 GenAI error rates in production deployments hover around 20% (Gartner, 2024). This means roughly one in five outputs contains a meaningful inaccuracy. For a system answering customer questions, writing internal reports, or summarizing contracts, a 20% error rate is not a statistical footnote. It is a material operational and legal risk.
 
-The more alarming figure: 84% of organizations are not systematically tracking GenAI accuracy in production (Gartner, 2024). Most organizations have deployed systems they cannot tell you are working correctly.
+The more alarming figure: 84% of organizations are not systematically tracking GenAI accuracy in production (Gartner, 2025). Most organizations have deployed systems they cannot tell you are working correctly.
 
 :::warning
 **The Confidence-Accuracy Gap**
@@ -135,7 +135,7 @@ Key exposure points:
 - **Verbatim reproduction**: the model reproduces copyrighted text, code, or other content in its outputs
 - **Derivative works**: outputs are substantially similar to copyrighted works even if not verbatim copies
 - **Training data liability**: your use of a model trained on data that was scraped without license could create downstream liability
-- **Code generation**: AI-generated code may reproduce GPL or other copylicensed code in ways that trigger license obligations
+- **Code generation**: AI-generated code may reproduce GPL or other copyleft-licensed code in ways that trigger license obligations
 
 Controls:
 - Use models from vendors with clear IP indemnification policies

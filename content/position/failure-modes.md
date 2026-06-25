@@ -97,7 +97,7 @@ If managers are not involved in designing the workflow change, they will not rei
 
 **What it looks like:** Use cases are identified. Business cases are approved. Technical teams begin implementation. Then the data problems surface: fragmented sources, inconsistent schemas, missing labels, governance gaps that prevent data sharing across business units, and quality issues that were not visible until AI started making decisions based on the data.
 
-**Root cause:** 57% of organizations say their data is not AI-ready (Gartner, 2024). Most organizations know this abstractly but underestimate it concretely. A data warehouse that supports excellent reporting can be completely inadequate for AI. Reporting tolerates stale, incomplete, and inconsistently defined data in ways that AI cannot. AI surfaces data quality problems that existed for years but were never visible because humans were filling in the gaps.
+**Root cause:** 57% of organizations say their data is not AI-ready (Gartner, 2025). Most organizations know this abstractly but underestimate it concretely. A data warehouse that supports excellent reporting can be completely inadequate for AI. Reporting tolerates stale, incomplete, and inconsistently defined data in ways that AI cannot. AI surfaces data quality problems that existed for years but were never visible because humans were filling in the gaps.
 
 **The structural tell:** Use cases stall in the data preparation phase. Data engineering becomes the bottleneck for every AI initiative. The same data problems appear in different forms across multiple use cases. Each initiative builds its own data preparation layer rather than fixing the underlying issue.
 

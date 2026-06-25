@@ -1,6 +1,6 @@
 ---
 title: "The Problem"
-description: "$644 billion in enterprise AI spending with fewer than 40% seeing measurable impact. The gap is organizational, not technological."
+description: "$644 billion in generative AI spending with fewer than 40% seeing measurable impact. The gap is organizational, not technological."
 section: "Position"
 layout: showcase
 slug: "the-problem"
@@ -9,11 +9,11 @@ slug: "the-problem"
 
 ## $644 Billion and Not Much to Show For It
 
-Global enterprise AI spending reached $644 billion in 2025 (IDC). This is not seed-stage experimentation money. This is board-approved capital, deployed by companies that believe AI is a strategic imperative.
+Global generative AI spending reached $644 billion in 2025 (Gartner). This is not seed-stage experimentation money. This is board-approved capital, deployed by companies that believe AI is a strategic imperative.
 
 The results do not match the investment.
 
-Only 39% of companies report that AI has delivered meaningful impact on EBIT (McKinsey, 2024). BCG found that 42% of companies scrapped most of their AI initiatives in 2025, up from 17% the year prior. Gartner projects that 30% of generative AI proof-of-concepts will be abandoned after the pilot phase. And across all of this, only 5% of enterprises qualify as "future-built," meaning AI is embedded in their operating model at a level that creates durable competitive advantage (BCG).
+Only 39% of companies report that AI has delivered meaningful impact on EBIT (McKinsey, 2025). S&P Global found that 42% of companies scrapped most of their AI initiatives in 2025, up from 17% the year prior. Gartner projects that 30% of generative AI proof-of-concepts will be abandoned after the pilot phase. And across all of this, only 5% of enterprises qualify as "future-built," meaning AI is embedded in their operating model at a level that creates durable competitive advantage (BCG).
 
 The gap is not a technology problem. The models work. The platforms work. The gap is between what organizations believe they are doing and what they are actually doing.
 
@@ -63,7 +63,7 @@ The modal enterprise AI program looks like this: a team identifies a compelling 
 
 This is pilot purgatory. The program is not failing in an obvious way. There are demos to show. There are teams working. There is progress being reported. But the organization is not changing. The work is not changing. The P&L is not changing.
 
-The average enterprise AI program that stalls in pilot purgatory represents $2-5M in sunk cost, not counting opportunity cost and the organizational cynicism that makes the next attempt harder.
+An enterprise AI program that stalls in pilot purgatory represents significant sunk cost, before counting the opportunity cost and the organizational cynicism that make the next attempt harder.
 
 Pilot purgatory is so common because the conditions that make a pilot succeed are almost perfectly misaligned with the conditions required for production deployment.
 
@@ -83,7 +83,7 @@ If your organization has more AI pilots running simultaneously than use cases in
 
 The year-over-year data tells a story worth sitting with.
 
-In 2024, 17% of companies reported scrapping most of their AI initiatives. In 2025, that figure is 42% (BCG). This is not a maturation curve where early experiments were weeded out and survivors are scaling. This is an acceleration of failure at a moment when AI capability is genuinely increasing.
+In 2024, 17% of companies reported scrapping most of their AI initiatives. In 2025, that figure is 42% (S&P Global). This is not a maturation curve where early experiments were weeded out and survivors are scaling. This is an acceleration of failure at a moment when AI capability is genuinely increasing.
 
 The most capable AI tools in history are available right now. The enterprise failure rate is going up, not down.
 
@@ -103,7 +103,7 @@ It is: "what organizational system do we need to build to convert AI capability 
 
 ## Sources
 
-1. IDC. Enterprise AI spending forecast. 2025.
+1. Gartner. "Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." March 2025.
 2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
 3. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
 4. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.

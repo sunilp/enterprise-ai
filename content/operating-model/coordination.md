@@ -41,7 +41,7 @@ The isolation risk: the CAIO produces strategy documents and governance framewor
 
 Business units are closest to the problems AI can solve and most motivated to move quickly. In the absence of a functioning central process, they sign vendor agreements for AI-enabled SaaS tools, run pilots with minimal oversight, and build local data science capability that duplicates work happening elsewhere.
 
-The isolation risk: 69% of organizations suspect their employees are using prohibited AI tools (IBM IBV, 2025). This is not a security failure. It is a demand signal. Business units are telling the organization that the central process is not meeting their needs. Treating it as a security problem without addressing the underlying demand guarantees continued shadow AI growth.
+The isolation risk: 69% of organizations suspect their employees are using prohibited AI tools (Gartner, 2025). This is not a security failure. It is a demand signal. Business units are telling the organization that the central process is not meeting their needs. Treating it as a security problem without addressing the underlying demand guarantees continued shadow AI growth.
 
 ### Legal and Compliance: Late Engagement, Bottleneck Role
 
@@ -150,7 +150,7 @@ Integrated roadmaps require a governance process to maintain. They need a quarte
 
 ## Shadow AI as a Demand Signal
 
-69% of organizations suspect that their employees are using AI tools that are prohibited by policy (IBM IBV, 2025). The instinct is to treat this as a security and compliance problem, to tighten access controls, increase monitoring, and communicate policy more aggressively.
+69% of organizations suspect that their employees are using AI tools that are prohibited by policy (Gartner, 2025). The instinct is to treat this as a security and compliance problem, to tighten access controls, increase monitoring, and communicate policy more aggressively.
 
 This approach will not work. It does not address the reason employees are using prohibited tools.
 

@@ -40,15 +40,15 @@ The stack reads top to bottom as delivery and bottom to top as dependency. The C
 
 ## What This Section Covers
 
-**[Capability Stack](capability-stack.md)** — What each layer does, who owns it, and what goes wrong without it.
+**[Capability Stack](capability-stack.md)**: What each layer does, who owns it, and what goes wrong without it.
 
-**[Systems Model](systems-model.md)** — Four enterprise systems (Record, Engagement, Intelligence, Action) and why the architecture challenge is integration between them, not intelligence alone.
+**[Systems Model](systems-model.md)**: Four enterprise systems (Record, Engagement, Intelligence, Action) and why the architecture challenge is integration between them, not intelligence alone.
 
-**[Control Architecture](control-architecture.md)** — The technical control plane: identity, entitlements, audit, policy enforcement, human override, and observability.
+**[Control Architecture](control-architecture.md)**: The technical control plane: identity, entitlements, audit, policy enforcement, human override, and observability.
 
-**[Operating Architecture](operating-architecture.md)** — Team structure and decision ownership: platform teams, domain AI teams, governance function, production support, and incident ownership.
+**[Operating Architecture](operating-architecture.md)**: Team structure and decision ownership: platform teams, domain AI teams, governance function, production support, and incident ownership.
 
-**[Reference Patterns](reference-patterns.md)** — Four deployment patterns (assistive, workflow automation, agentic, regulated human-in-loop) with their control requirements and maturity thresholds.
+**[Reference Patterns](reference-patterns.md)**: Four deployment patterns (assistive, workflow automation, agentic, regulated human-in-loop) with their control requirements and maturity thresholds.
 
 ---
 

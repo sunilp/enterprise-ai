@@ -64,7 +64,7 @@ Governance is not a policy document reviewed annually. It is an operating system
 - Self-service risk assessment for standard patterns so teams stop routing around governance
 - An incident response playbook exists before the first incident occurs
 
-**The cost of skipping this:** Organizations deploying AI without embedded governance pay 3-5x the cost of retrofitting it later. This is technical debt with regulatory and reputational dimensions.
+**The cost of skipping this:** Organizations deploying AI without embedded governance pay significantly more to retrofit it later. This is technical debt with regulatory and reputational dimensions.
 
 **Key metric:** Percentage of AI systems in production with governance coverage. Below 80% means shadow AI is growing faster than governed AI.
 

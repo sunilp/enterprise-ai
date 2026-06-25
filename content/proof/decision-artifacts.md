@@ -25,7 +25,7 @@ For architectural decision rationale (why we chose this approach), see [Decision
 **TO:** Board of Directors
 **FROM:** Chief AI Officer
 **DATE:** Q1 2026
-**RE:** AI Program Status — Quarterly Update
+**RE:** AI Program Status, Quarterly Update
 
 ### Executive Summary
 
@@ -39,7 +39,7 @@ The AI portfolio delivered $18.2M in realized value in Q1 against $11.4M in tota
 | Claims triage automation | Production | $5.6M (measured, finance-signed) | Medium |
 | Procurement spend analysis | Production | $3.5M (measured, finance-signed) | Low |
 | Customer churn prediction | Pilot | $0 (not yet promoted) | Medium |
-| Contract review assist | Paused — data quality | $0 | High |
+| Contract review assist | Paused (data quality) | $0 | High |
 
 ### Investment vs. Return
 
@@ -64,7 +64,7 @@ Projected value figures are excluded from the payback ratio. Only finance-signed
 
 | Jurisdiction | Status | Notes |
 |---|---|---|
-| EU AI Act | Compliant — current obligations | Q3 obligation for high-risk systems requires updated risk classification policy (see Decisions Required) |
+| EU AI Act | Compliant (current obligations) | Q3 obligation for high-risk systems requires updated risk classification policy (see Decisions Required) |
 | MAS (Singapore) | Compliant | Annual attestation filed February 2026 |
 | GDPR | Compliant | Data handling agreements in place for all production use cases |
 
@@ -181,7 +181,7 @@ The model inventory is a living register of all AI systems in production or acti
 - [x] Incident response runbook tested
 - [x] User training complete (94% completion rate)
 - [x] Rollback procedure documented and tested
-- [ ] External fairness audit complete — *scheduled Q2, required before Phase 3 gate*
+- [ ] External fairness audit complete, *scheduled Q2, required before Phase 3 gate*
 
 ### Go/No-Go Recommendation
 

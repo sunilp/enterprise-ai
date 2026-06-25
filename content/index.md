@@ -17,13 +17,13 @@ slug: "homepage"
 <div class="metric-strip">
   <div class="metric">
     <div class="metric-value shimmer-text">$644B</div>
-    <div class="metric-label">Projected Enterprise AI Spend</div>
-    <div class="metric-source">IDC, 2025</div>
+    <div class="metric-label">Projected GenAI Spend</div>
+    <div class="metric-source">Gartner, 2025</div>
   </div>
   <div class="metric">
     <div class="metric-value shimmer-text">42%</div>
     <div class="metric-label">Scrapped Most AI Initiatives</div>
-    <div class="metric-source">BCG, 2025</div>
+    <div class="metric-source">S&P Global, 2025</div>
   </div>
   <div class="metric">
     <div class="metric-value shimmer-text">5%</div>
@@ -78,9 +78,9 @@ Written for CIOs, CAIOs, CDOs, and business leaders making investment, governanc
 
 ## The Evidence
 
-**$644B** in projected enterprise AI spending in 2025. The largest technology investment cycle since cloud computing. <span class="metric-source">IDC</span>
+**$644B** in projected generative AI spending in 2025. The largest technology investment cycle since cloud computing. <span class="metric-source">Gartner</span>
 
-**42%** of companies scrapped most of their AI initiatives in 2025, up from 17% one year earlier. The failure rate is accelerating. <span class="metric-source">BCG</span>
+**42%** of companies scrapped most of their AI initiatives in 2025, up from 17% one year earlier. The failure rate is accelerating. <span class="metric-source">S&P Global</span>
 
 **30%** of GenAI proofs of concept are abandoned after pilot. They work in the lab. They stall in production. <span class="metric-source">Gartner</span>
 
@@ -98,8 +98,8 @@ This playbook combines large-scale industry research with direct experience desi
 
 **Related research and writing**
 
-- [Lightweight Decision Protocol](https://arxiv.org/abs/2603.08852) (arXiv:2603.08852)
-- [Dynamic Contextual Identity](https://arxiv.org/abs/2603.11781) (arXiv:2603.11781)
+- [LLM Delegate Protocol](https://arxiv.org/abs/2603.08852) (arXiv:2603.08852)
+- [Deliberative Collective Intelligence](https://arxiv.org/abs/2603.11781) (arXiv:2603.11781)
 - [Agent Identity Protocol (AIP)](https://sunilprakash.com/aip/). Open specification and reference implementations for signed agent identity, delegation chains, and hook-level policy verification.
 - [Agent Engineering Lab](https://sunilprakash.com/agentic-ai/). Editorial publication on agent engineering practice, with Field Notes, Signal, and Recipes.
 - [The Model Is Not the Product. The Harness Is.](https://sunilprakash.com/writing/harness-is-the-platform/). Long-form essay on why the runtime around the model is the platform.
