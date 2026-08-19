@@ -55,6 +55,8 @@ The default posture must be: deny unless explicitly permitted. An agent should n
 | Financial actions | Purchase orders, contract execution | Requires human approval above defined threshold |
 | System access changes | Permission modifications, new service accounts | Prohibited without explicit human request |
 
+**Blueprint anchor:** [ARCH-004 The Decision Layer](https://agenticlab.sunilprakash.com/architecture/004-the-decision-layer/) specifies the runtime form of this table. It keys the decision on the reversal cost of the action and the confidence band rather than on the action category alone, because the same category can be reversible in one system and not in another, and it adds exposure as a separate axis so that a reversible draft and an irreversible send are not treated as one control.
+
 ### 2. Escalation: What Triggers Handoff to Human Judgment?
 
 Even within its authorized action space, an agent will encounter situations where it should stop and ask. The escalation framework defines these triggers explicitly.
@@ -164,6 +166,8 @@ flowchart TD
     style O fill:#1a4a1a,color:#fff
 ```
 
+The flow above is the decision logic. [ARCH-004](https://agenticlab.sunilprakash.com/architecture/004-the-decision-layer/) specifies the service that runs it, including the branch this diagram leaves open: what happens when the approval request times out. An approval queue with no expiry policy converts every unattended request into an indefinite hold, and that is where agent workflows quietly stall.
+
 ## Governance Maturity Levels
 
 The 79% of organizations without mature agent governance are not at zero. They are at different stages of the maturity curve. Understanding where you are determines what to build first.
@@ -175,6 +179,8 @@ The 79% of organizations without mature agent governance are not at zero. They a
 | Level 3: Managed | Authorization technically enforced; audit trails complete; no escalation framework | Build escalation paths and incident response playbooks |
 | Level 4: Measured | Full controls in place; monitored continuously; incident response tested | Extend to multi-agent governance and trust boundary management |
 | Level 5: Optimized | Governance embedded in agent development lifecycle; continuous improvement | Industry leadership position; focus on emerging agent capabilities |
+
+**Blueprint anchor:** Moving between these levels is lifecycle work. [ARCH-006 The Guardrail Lifecycle](https://agenticlab.sunilprakash.com/architecture/006-the-guardrail-lifecycle/) sets out the eight gates a control passes through and which of them can stop a release, plus a tier model scored on authority, data sensitivity and exposure independently, so a read-only assistant and an agent that can move money are not governed identically. [ARCH-005 Ownership and Decision Rights](https://agenticlab.sunilprakash.com/architecture/005-ownership-and-decision-rights/) covers the question every level above 1 runs into: who is accountable for the threshold, as distinct from who built the detector.
 
 ## Getting Started
 

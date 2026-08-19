@@ -38,6 +38,8 @@ Retrofitting governance after deployment costs 3 to 5 times more than building i
 
 Effective AI governance requires three distinct layers that operate simultaneously and reinforce each other. Treating them as a single layer is the most common structural mistake.
 
+**Blueprint anchor:** [ARCH-005 Ownership and Decision Rights](https://agenticlab.sunilprakash.com/architecture/005-ownership-and-decision-rights/) works the same separation at the level of a single control, where it bites hardest. One guardrail contains five separable decisions: which categories are in scope, how they are detected, how hard, what happens when one fires, and who reads the output. They do not all belong to the same team, and programmes stall when the threshold ends up owned by whoever built the classifier.
+
 ```mermaid
 graph TD
     subgraph Policy["Policy Layer"]

@@ -101,7 +101,7 @@ This playbook combines large-scale industry research with direct experience desi
 - [LLM Delegate Protocol](https://arxiv.org/abs/2603.08852) (arXiv:2603.08852)
 - [Deliberative Collective Intelligence](https://arxiv.org/abs/2603.11781) (arXiv:2603.11781)
 - [Agent Identity Protocol (AIP)](https://sunilprakash.com/aip/). Open specification and reference implementations for signed agent identity, delegation chains, and hook-level policy verification.
-- [Agent Engineering Lab](https://sunilprakash.com/agentic-ai/). Editorial publication on agent engineering practice, with Field Notes, Signal, and Recipes.
+- [Agent Engineering Lab](https://agenticlab.sunilprakash.com/). Editorial publication on agent engineering practice, with Field Notes, Signal, and Recipes. Its [Architecture blueprints](https://agenticlab.sunilprakash.com/architecture/) are the engineering specification behind several sections of this playbook: where controls sit in a request path, what a detector returns, how to measure one, and who owns the threshold.
 - [The Model Is Not the Product. The Harness Is.](https://sunilprakash.com/writing/harness-is-the-platform/). Long-form essay on why the runtime around the model is the platform.
 - *Agentic AI for Serious Engineers*. Book on building production agent systems, available on Amazon.
 
