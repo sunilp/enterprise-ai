@@ -1,9 +1,10 @@
 ---
-title: "Agent Governance"
-description: "Governance frameworks for autonomous AI agents, covering delegation boundaries, audit trails, and multi-agent trust chains."
-section: "Governance"
+title: Agent Governance
+description: Governance frameworks for autonomous AI agents, covering delegation boundaries, audit trails, and multi-agent trust chains.
 layout: standard
-slug: "agent-governance"
+slug: agent-governance
+discipline: govern
+order: 3
 ---
 # Agent Governance
 

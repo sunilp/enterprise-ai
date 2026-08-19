@@ -1,9 +1,8 @@
 ---
-title: "Enterprise AI"
-description: "The management system for enterprise AI. Operating model, governance architecture, target architecture, workforce design, measurement, and transformation sequencing."
-section: "Home"
-layout: showcase
-slug: "homepage"
+title: Enterprise AI
+description: The management system for enterprise AI. Operating model, governance architecture, target architecture, workforce design, measurement, and transformation sequencing.
+layout: cover
+slug: homepage
 ---
 
 <section class="showcase-hero">

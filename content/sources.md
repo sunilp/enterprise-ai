@@ -1,9 +1,10 @@
 ---
-title: "Sources and Methodology"
-description: "Primary sources, research methodology, and citations underpinning the Enterprise AI Playbook."
-section: "Sources"
+title: Sources and Methodology
+description: Primary sources, research methodology, and citations underpinning the Enterprise AI Playbook.
 layout: standard
-slug: "sources"
+slug: sources
+group: reference
+order: 2
 ---
 # Sources & Methodology
 

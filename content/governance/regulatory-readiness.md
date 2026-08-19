@@ -1,9 +1,10 @@
 ---
-title: "Regulatory Readiness"
-description: "Navigating AI regulation across the EU AI Act, US executive orders, and emerging frameworks, with practical compliance architecture."
-section: "Governance"
+title: Regulatory Readiness
+description: Navigating AI regulation across the EU AI Act, US executive orders, and emerging frameworks, with practical compliance architecture.
 layout: standard
-slug: "regulatory-readiness"
+slug: regulatory-readiness
+discipline: govern
+order: 5
 ---
 # Regulatory Readiness
 

@@ -1,9 +1,10 @@
 ---
-title: "Operating Architecture"
-description: "The operating architecture for enterprise AI, covering MLOps, platform engineering, and production deployment patterns."
-section: "Architecture"
+title: Operating Architecture
+description: The operating architecture for enterprise AI, covering MLOps, platform engineering, and production deployment patterns.
 layout: standard
-slug: "operating-architecture"
+slug: operating-architecture
+discipline: design
+order: 4
 ---
 # Operating Architecture
 

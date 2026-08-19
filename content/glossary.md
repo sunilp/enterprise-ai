@@ -1,9 +1,10 @@
 ---
-title: "Glossary"
-description: "Definitions of key terms used throughout the Enterprise AI Playbook, from CAIO mandate to shadow AI."
-section: "Glossary"
+title: Glossary
+description: Definitions of key terms used throughout the Enterprise AI Playbook, from CAIO mandate to shadow AI.
 layout: standard
-slug: "glossary"
+slug: glossary
+group: reference
+order: 1
 ---
 # Glossary
 

@@ -1,9 +1,10 @@
 ---
-title: "Pilot to Production"
-description: "Bridging the pilot-to-production gap with production readiness criteria, scaling frameworks, and leading indicators."
-section: "Portfolio"
+title: Pilot to Production
+description: Bridging the pilot-to-production gap with production readiness criteria, scaling frameworks, and leading indicators.
 layout: standard
-slug: "pilot-to-production"
+slug: pilot-to-production
+discipline: prepare
+order: 7
 ---
 # From Pilot to Production
 

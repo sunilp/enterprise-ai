@@ -1,9 +1,10 @@
 ---
-title: "Knowledge Architecture"
-description: "Building the knowledge architecture that makes AI systems work, from tacit knowledge capture to retrieval quality floors."
-section: "Workforce"
+title: Knowledge Architecture
+description: Building the knowledge architecture that makes AI systems work, from tacit knowledge capture to retrieval quality floors.
 layout: standard
-slug: "knowledge-architecture"
+slug: knowledge-architecture
+discipline: organize
+order: 7
 ---
 # Knowledge Architecture
 

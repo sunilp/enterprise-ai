@@ -1,9 +1,10 @@
 ---
-title: "Control Architecture"
-description: "The technical control plane for autonomous AI agents, covering delegation boundaries, circuit breakers, and audit infrastructure."
-section: "Architecture"
+title: Control Architecture
+description: The technical control plane for autonomous AI agents, covering delegation boundaries, circuit breakers, and audit infrastructure.
 layout: showcase
-slug: "control-architecture"
+slug: control-architecture
+discipline: design
+order: 3
 ---
 # Control Architecture
 

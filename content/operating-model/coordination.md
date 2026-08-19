@@ -1,9 +1,10 @@
 ---
-title: "Cross-Functional Coordination"
-description: "How to structure cross-functional coordination for AI, including steering committees, legal integration, and shadow AI management."
-section: "Operating Model"
+title: Cross-Functional Coordination
+description: How to structure cross-functional coordination for AI, including steering committees, legal integration, and shadow AI management.
 layout: standard
-slug: "coordination"
+slug: coordination
+discipline: organize
+order: 4
 ---
 # Cross-Functional Coordination
 

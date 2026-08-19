@@ -1,9 +1,10 @@
 ---
-title: "Decision Artifacts"
-description: "Templates and frameworks for the key decision artifacts in enterprise AI transformation."
-section: "Proof"
+title: Decision Artifacts
+description: Templates and frameworks for the key decision artifacts in enterprise AI transformation.
 layout: standard
-slug: "decision-artifacts"
+slug: decision-artifacts
+group: proof
+order: 3
 ---
 # Decision Artifacts
 

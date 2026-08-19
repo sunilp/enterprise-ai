@@ -1,9 +1,10 @@
 ---
-title: "Value Concentration"
-description: "Why enterprise AI value concentrates in a small number of use cases and how to identify and double down on the right ones."
-section: "Portfolio"
+title: Value Concentration
+description: Why enterprise AI value concentrates in a small number of use cases and how to identify and double down on the right ones.
 layout: standard
-slug: "value-concentration"
+slug: value-concentration
+discipline: prepare
+order: 6
 ---
 # Value Concentration
 

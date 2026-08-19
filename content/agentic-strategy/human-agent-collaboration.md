@@ -1,9 +1,10 @@
 ---
-title: "Human-Agent Collaboration"
-description: "Designing effective human-agent collaboration patterns, avoiding the full autonomy trap, and managing delegation levels."
-section: "Agentic Strategy"
+title: Human-Agent Collaboration
+description: Designing effective human-agent collaboration patterns, avoiding the full autonomy trap, and managing delegation levels.
 layout: standard
-slug: "human-agent-collaboration"
+slug: human-agent-collaboration
+discipline: organize
+order: 8
 ---
 # Human-Agent Collaboration
 

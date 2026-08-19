@@ -1,9 +1,10 @@
 ---
-title: "Reading Paths"
-description: "Curated reading paths through the playbook for CIOs, CEOs, governance leaders, data architects, and transformation leads."
-section: "Reading Paths"
-layout: showcase
-slug: "reading-paths"
+title: Reading Paths
+description: Curated reading paths through the playbook for CIOs, CEOs, governance leaders, data architects, and transformation leads.
+layout: standard
+slug: reading-paths
+group: start
+order: 2
 ---
 # Reading Paths
 

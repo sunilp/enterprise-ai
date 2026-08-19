@@ -1,9 +1,10 @@
 ---
-title: "Financial Linkage"
-description: "Connecting AI outcomes to P&L with attribution methodology, baseline measurement, and the redistribution problem."
-section: "Measurement"
+title: Financial Linkage
+description: Connecting AI outcomes to P&L with attribution methodology, baseline measurement, and the redistribution problem.
 layout: standard
-slug: "financial-linkage"
+slug: financial-linkage
+discipline: operate
+order: 2
 ---
 # Financial Linkage
 

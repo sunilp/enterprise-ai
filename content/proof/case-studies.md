@@ -1,9 +1,10 @@
 ---
-title: "Case Studies"
-description: "Patterns from real enterprise AI transformations, showing what worked, what failed, and what the 5% do differently."
-section: "Proof"
+title: Case Studies
+description: Patterns from real enterprise AI transformations, showing what worked, what failed, and what the 5% do differently.
 layout: showcase
-slug: "case-studies"
+slug: case-studies
+group: proof
+order: 1
 ---
 # Case Studies
 

@@ -1,9 +1,10 @@
 ---
-title: "What Transformation Means"
+title: What Transformation Means
 description: "What enterprise AI transformation actually requires beyond strategy documents: portfolio logic, governance infrastructure, and measurement design."
-section: "Position"
 layout: standard
-slug: "what-transformation-means"
+slug: what-transformation-means
+discipline: diagnose
+order: 3
 ---
 # What Transformation Actually Means
 

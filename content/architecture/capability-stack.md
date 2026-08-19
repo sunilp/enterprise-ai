@@ -1,9 +1,10 @@
 ---
-title: "Capability Stack"
-description: "The six-layer enterprise AI capability stack from data foundations through organizational integration."
-section: "Architecture"
+title: Capability Stack
+description: The six-layer enterprise AI capability stack from data foundations through organizational integration.
 layout: showcase
-slug: "capability-stack"
+slug: capability-stack
+discipline: design
+order: 1
 ---
 # Capability Stack
 

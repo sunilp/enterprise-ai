@@ -1,9 +1,10 @@
 ---
-title: "Governance Architecture"
-description: "Designing AI governance as infrastructure rather than policy documents, with three-layer architecture and automated controls."
-section: "Governance"
+title: Governance Architecture
+description: Designing AI governance as infrastructure rather than policy documents, with three-layer architecture and automated controls.
 layout: showcase
-slug: "governance-architecture"
+slug: governance-architecture
+discipline: govern
+order: 1
 ---
 # Governance Architecture
 

@@ -1,9 +1,10 @@
 ---
-title: "Structural Models"
-description: "Comparing centralized, federated, and hub-and-spoke AI operating models, with evidence for why hub-and-spoke outperforms."
-section: "Operating Model"
+title: Structural Models
+description: Comparing centralized, federated, and hub-and-spoke AI operating models, with evidence for why hub-and-spoke outperforms.
 layout: standard
-slug: "structural-models"
+slug: structural-models
+discipline: organize
+order: 2
 ---
 # Structural Models for Enterprise AI
 

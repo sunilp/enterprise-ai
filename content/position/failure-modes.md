@@ -1,9 +1,10 @@
 ---
-title: "Seven Failure Modes"
-description: "The seven organizational failure modes that kill enterprise AI programs, from vanity metrics to middle management resistance."
-section: "Position"
+title: Seven Failure Modes
+description: The seven organizational failure modes that kill enterprise AI programs, from vanity metrics to middle management resistance.
 layout: standard
-slug: "failure-modes"
+slug: failure-modes
+discipline: diagnose
+order: 2
 ---
 # Seven Failure Modes
 

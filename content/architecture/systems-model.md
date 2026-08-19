@@ -1,9 +1,10 @@
 ---
-title: "Systems Model"
-description: "How enterprise AI components interact as a system, with feedback loops, bottlenecks, and failure cascades."
-section: "Architecture"
+title: Systems Model
+description: How enterprise AI components interact as a system, with feedback loops, bottlenecks, and failure cascades.
 layout: showcase
-slug: "systems-model"
+slug: systems-model
+discipline: design
+order: 2
 ---
 # Systems Model
 

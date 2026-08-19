@@ -1,9 +1,10 @@
 ---
-title: "The Middle Management Gap"
-description: "Why middle management is the critical bottleneck in AI adoption and how to convert resistance into championship."
-section: "Workforce"
+title: The Middle Management Gap
+description: Why middle management is the critical bottleneck in AI adoption and how to convert resistance into championship.
 layout: standard
-slug: "middle-management"
+slug: middle-management
+discipline: organize
+order: 6
 ---
 # The Middle Management Gap
 

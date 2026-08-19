@@ -1,9 +1,10 @@
 ---
-title: "AI Readiness"
-description: "Diagnostic framework for assessing enterprise AI readiness across data, infrastructure, process, and organizational dimensions."
-section: "Assessment"
+title: AI Readiness
+description: Diagnostic framework for assessing enterprise AI readiness across data, infrastructure, process, and organizational dimensions.
 layout: standard
-slug: "ai-readiness"
+slug: ai-readiness
+discipline: prepare
+order: 1
 ---
 # AI Readiness Assessment
 

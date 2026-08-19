@@ -1,9 +1,10 @@
 ---
-title: "Role Evolution"
-description: "How AI transforms enterprise roles from data entry through middle management, with evidence on displacement versus augmentation."
-section: "Workforce"
+title: Role Evolution
+description: How AI transforms enterprise roles from data entry through middle management, with evidence on displacement versus augmentation.
 layout: standard
-slug: "role-evolution"
+slug: role-evolution
+discipline: organize
+order: 5
 ---
 # Role Evolution
 

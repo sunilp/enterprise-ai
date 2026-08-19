@@ -1,9 +1,10 @@
 ---
-title: "FinOps for Agents"
-description: "Financial operations for agentic AI, covering cost attribution, budget controls, and preventing runaway agent spending."
-section: "Agentic Strategy"
+title: FinOps for Agents
+description: Financial operations for agentic AI, covering cost attribution, budget controls, and preventing runaway agent spending.
 layout: standard
-slug: "finops"
+slug: finops
+discipline: operate
+order: 4
 ---
 # FinOps for Agents
 

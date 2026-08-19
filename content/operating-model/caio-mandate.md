@@ -1,9 +1,10 @@
 ---
-title: "The CAIO Mandate"
-description: "Why the CAIO role fails without structural authority, and how to design the mandate for real organizational impact."
-section: "Operating Model"
+title: The CAIO Mandate
+description: Why the CAIO role fails without structural authority, and how to design the mandate for real organizational impact.
 layout: showcase
-slug: "caio-mandate"
+slug: caio-mandate
+discipline: organize
+order: 1
 ---
 # The CAIO Mandate
 

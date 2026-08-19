@@ -1,9 +1,10 @@
 ---
-title: "GenAI Model Risk"
-description: "Managing generative AI model risk across hallucination, prompt injection, confidence calibration, and model update instability."
-section: "Governance"
+title: GenAI Model Risk
+description: Managing generative AI model risk across hallucination, prompt injection, confidence calibration, and model update instability.
 layout: standard
-slug: "genai-model-risk"
+slug: genai-model-risk
+discipline: govern
+order: 2
 ---
 # GenAI Model Risk
 

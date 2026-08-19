@@ -1,9 +1,10 @@
 ---
-title: "Assessment Checklists"
-description: "Actionable checklists for AI readiness assessment, governance review, deployment approval, and transformation phase gates."
-section: "Proof"
+title: Assessment Checklists
+description: Actionable checklists for AI readiness assessment, governance review, deployment approval, and transformation phase gates.
 layout: standard
-slug: "checklists"
+slug: checklists
+group: proof
+order: 4
 ---
 # Assessment Checklists
 

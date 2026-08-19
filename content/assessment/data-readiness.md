@@ -1,9 +1,10 @@
 ---
-title: "Data Readiness"
-description: "Assessing data readiness for enterprise AI, covering quality, lineage, governance, and the heightened requirements of agentic systems."
-section: "Assessment"
+title: Data Readiness
+description: Assessing data readiness for enterprise AI, covering quality, lineage, governance, and the heightened requirements of agentic systems.
 layout: standard
-slug: "data-readiness"
+slug: data-readiness
+discipline: prepare
+order: 2
 ---
 # Data Readiness
 

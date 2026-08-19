@@ -1,9 +1,10 @@
 ---
-title: "Shadow AI"
-description: "Managing unsanctioned AI usage across the enterprise, from compliance exposure to channeling shadow AI into governed pathways."
-section: "Governance"
+title: Shadow AI
+description: Managing unsanctioned AI usage across the enterprise, from compliance exposure to channeling shadow AI into governed pathways.
 layout: standard
-slug: "shadow-ai"
+slug: shadow-ai
+discipline: govern
+order: 4
 ---
 # Shadow AI
 

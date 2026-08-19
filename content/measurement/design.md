@@ -1,9 +1,10 @@
 ---
-title: "Measurement Design"
-description: "Baseline-first measurement frameworks that connect AI activity to business outcomes before deployment begins."
-section: "Measurement"
+title: Measurement Design
+description: Baseline-first measurement frameworks that connect AI activity to business outcomes before deployment begins.
 layout: showcase
-slug: "measurement-design"
+slug: measurement-design
+discipline: operate
+order: 1
 ---
 # Measurement Design
 

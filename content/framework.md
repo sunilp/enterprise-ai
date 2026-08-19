@@ -1,12 +1,12 @@
 ---
-title: "AI for Business Leaders Framework"
-description: "The definitive framework for enterprise AI transformation. Five operating principles, four maturity stages, and the decision architecture that separates the 5% who succeed from the 95% who stall."
-section: "Framework"
+title: AI for Business Leaders Framework
+description: The definitive framework for enterprise AI transformation. Five operating principles, four maturity stages, and the decision architecture that separates the 5% who succeed from the 95% who stall.
 layout: showcase
 slug: framework
-og_title: "AI for Business Leaders Framework"
-og_description: "Five operating principles and four maturity stages for converting AI capability into enterprise value"
-order: 0
+og_title: AI for Business Leaders Framework
+og_description: Five operating principles and four maturity stages for converting AI capability into enterprise value
+order: 1
+group: start
 ---
 
 <section class="showcase-hero">

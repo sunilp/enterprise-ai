@@ -1,9 +1,10 @@
 ---
-title: "Use Case Prioritization"
-description: "Frameworks for prioritizing AI use cases by business value, feasibility, and strategic alignment, with kill criteria and governance."
-section: "Portfolio"
+title: Use Case Prioritization
+description: Frameworks for prioritizing AI use cases by business value, feasibility, and strategic alignment, with kill criteria and governance.
 layout: standard
-slug: "prioritization"
+slug: prioritization
+discipline: prepare
+order: 5
 ---
 # Use Case Prioritization
 

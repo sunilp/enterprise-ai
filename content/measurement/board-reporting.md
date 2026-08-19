@@ -1,9 +1,10 @@
 ---
-title: "Board Reporting"
-description: "What boards need to see on AI, covering metrics that matter, shadow AI disclosure, and the two-cadence reporting model."
-section: "Measurement"
+title: Board Reporting
+description: What boards need to see on AI, covering metrics that matter, shadow AI disclosure, and the two-cadence reporting model.
 layout: standard
-slug: "board-reporting"
+slug: board-reporting
+discipline: operate
+order: 3
 ---
 # Board Reporting
 

@@ -1,9 +1,10 @@
 ---
-title: "The Problem"
-description: "$644 billion in generative AI spending with fewer than 40% seeing measurable impact. The gap is organizational, not technological."
-section: "Position"
+title: The Problem
+description: $644 billion in generative AI spending with fewer than 40% seeing measurable impact. The gap is organizational, not technological.
 layout: showcase
-slug: "the-problem"
+slug: the-problem
+discipline: diagnose
+order: 1
 ---
 # The Problem
 

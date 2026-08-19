@@ -1,9 +1,10 @@
 ---
-title: "Phase Gates"
-description: "Gate criteria for each transformation phase, with clear go/no-go thresholds and exit decision frameworks."
-section: "Transformation"
+title: Phase Gates
+description: Gate criteria for each transformation phase, with clear go/no-go thresholds and exit decision frameworks.
 layout: standard
-slug: "phase-gates"
+slug: phase-gates
+discipline: sustain
+order: 2
 ---
 # Phase Gates
 

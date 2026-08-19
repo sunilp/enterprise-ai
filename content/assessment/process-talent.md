@@ -1,9 +1,10 @@
 ---
-title: "Process and Talent Readiness"
-description: "Evaluating process maturity and talent readiness for AI adoption, including the access-usage gap and workflow redesign requirements."
-section: "Assessment"
+title: Process and Talent Readiness
+description: Evaluating process maturity and talent readiness for AI adoption, including the access-usage gap and workflow redesign requirements.
 layout: standard
-slug: "process-talent"
+slug: process-talent
+discipline: prepare
+order: 3
 ---
 # Process and Talent Readiness
 

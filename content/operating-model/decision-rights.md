@@ -1,9 +1,10 @@
 ---
-title: "Decision Rights"
-description: "Mapping AI decision rights across model selection, data access, deployment authority, and vendor procurement."
-section: "Operating Model"
+title: Decision Rights
+description: Mapping AI decision rights across model selection, data access, deployment authority, and vendor procurement.
 layout: standard
-slug: "decision-rights"
+slug: decision-rights
+discipline: organize
+order: 3
 ---
 # Decision Rights
 

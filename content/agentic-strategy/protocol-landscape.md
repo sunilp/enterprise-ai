@@ -1,9 +1,10 @@
 ---
-title: "Protocol Landscape"
-description: "The emerging protocol landscape for multi-agent systems, including MCP, A2A, and the role of trust and provenance protocols."
-section: "Agentic Strategy"
+title: Protocol Landscape
+description: The emerging protocol landscape for multi-agent systems, including MCP, A2A, and the role of trust and provenance protocols.
 layout: standard
-slug: "protocol-landscape"
+slug: protocol-landscape
+discipline: design
+order: 7
 ---
 # Protocol Landscape
 

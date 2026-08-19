@@ -1,9 +1,10 @@
 ---
-title: "Reference Patterns"
-description: "Production-tested architectural patterns for enterprise AI deployment, from retrieval-augmented generation to multi-agent orchestration."
-section: "Architecture"
+title: Reference Patterns
+description: Production-tested architectural patterns for enterprise AI deployment, from retrieval-augmented generation to multi-agent orchestration.
 layout: showcase
-slug: "reference-patterns"
+slug: reference-patterns
+discipline: design
+order: 5
 ---
 # Reference Patterns
 

@@ -1,9 +1,10 @@
 ---
-title: "12-Month Roadmap"
-description: "A four-phase enterprise AI transformation roadmap from foundation through optimization, with phase gates and risk signals."
-section: "Transformation"
+title: 12-Month Roadmap
+description: A four-phase enterprise AI transformation roadmap from foundation through optimization, with phase gates and risk signals.
 layout: showcase
-slug: "roadmap"
+slug: roadmap
+discipline: sustain
+order: 1
 ---
 # 12-Month Roadmap
 

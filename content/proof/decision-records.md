@@ -1,9 +1,10 @@
 ---
-title: "Decision Records"
-description: "Structured decision records for enterprise AI, documenting key choices with context, alternatives, and rationale."
-section: "Proof"
+title: Decision Records
+description: Structured decision records for enterprise AI, documenting key choices with context, alternatives, and rationale.
 layout: standard
-slug: "decision-records"
+slug: decision-records
+group: proof
+order: 2
 ---
 # Decision Records
 

@@ -1,9 +1,10 @@
 ---
-title: "The Agentic Shift"
-description: "How agentic AI changes enterprise architecture from request-response to delegated authority, and what organizations must do differently."
-section: "Agentic Strategy"
+title: The Agentic Shift
+description: How agentic AI changes enterprise architecture from request-response to delegated authority, and what organizations must do differently.
 layout: standard
-slug: "the-shift"
+slug: the-shift
+discipline: design
+order: 6
 ---
 # The Agentic Shift
 

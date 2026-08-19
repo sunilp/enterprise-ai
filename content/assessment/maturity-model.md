@@ -1,9 +1,10 @@
 ---
-title: "Maturity Model"
-description: "Five-level AI maturity model from ad-hoc experimentation to embedded capability, with diagnostic criteria and common traps."
-section: "Assessment"
+title: Maturity Model
+description: Five-level AI maturity model from ad-hoc experimentation to embedded capability, with diagnostic criteria and common traps.
 layout: standard
-slug: "maturity-model"
+slug: maturity-model
+discipline: prepare
+order: 4
 ---
 # AI Maturity Model
 
