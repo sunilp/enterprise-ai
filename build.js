@@ -65,6 +65,9 @@ function renderTemplate(template, data) {
   let result = template.replace(/\{\{>\s*(\w+)\s*\}\}/g, (_, name) => {
     return loadPartial(name);
   });
+  // Phase 1b: sections {{#key}}...{{/key}} and {{^key}}...{{/key}}
+  result = result.replace(/\{\{#(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, key, inner) => data[key] ? inner : '');
+  result = result.replace(/\{\{\^(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, key, inner) => data[key] ? '' : inner);
   // Phase 2: replace variables {{variableName}}
   result = result.replace(/\{\{(\w+)\}\}/g, (match, key) => {
     return data[key] !== undefined ? data[key] : '';
