@@ -25,11 +25,11 @@ Four protocols have emerged as the foundation of enterprise multi-agent infrastr
 
 ### MCP: Model Context Protocol
 
-Developed by Anthropic and now broadly adopted, MCP defines how agents access tools and share context. It is the interface layer between an agent and the resources it needs: databases, APIs, file systems, code execution environments.
+Developed by Anthropic, donated to the Linux Foundation's Agentic AI Foundation in December 2025 and now broadly adopted, MCP defines how agents access tools and share context. It is the interface layer between an agent and the resources it needs: databases, APIs, file systems, code execution environments.
 
 **What MCP handles:**
 - Tool discovery and invocation
-- Context window management across tool calls
+- Context sharing across tool calls
 - Structured resource access with defined permissions
 - Consistent interface regardless of underlying tool implementation
 
@@ -37,7 +37,7 @@ Developed by Anthropic and now broadly adopted, MCP defines how agents access to
 
 ### A2A: Agent-to-Agent Protocol
 
-Developed by Google and supported by a growing ecosystem, A2A defines how agents communicate with each other, delegate tasks, and coordinate on multi-step workflows.
+Developed by Google, donated to the Linux Foundation in June 2025 and supported by a growing ecosystem, A2A defines how agents communicate with each other, delegate tasks, and coordinate on multi-step workflows.
 
 **What A2A handles:**
 - Task delegation between agents
@@ -62,9 +62,9 @@ Developed by Google and supported by a growing ecosystem, A2A defines how agents
 
 **How AIP composes with MCP and A2A:** The three protocols sit at different layers and are designed to compose, not compete. MCP defines the tool and resource interface. A2A defines the agent-to-agent task interface. AIP defines the identity and policy layer that runs underneath both. An agent issuing an MCP tool call carries an AIP identity that the runtime can verify before the call reaches the tool. An agent sending an A2A task attaches a delegation chain that the receiving agent's middleware verifies before accepting the work. Identity and policy are concerns AIP handles once, instead of being re-invented inside each protocol.
 
-**Implementation maturity:** Reference implementations exist across the major agent ecosystems. Python (`aip-core`, `aip-agents`), Rust (the `aip` crate), and TypeScript (`@aip-sdk/*`) cover the SDK surface. An OpenClaw plugin and a Claude Code plugin demonstrate the hook-level policy verification model inside real agent runtimes. A separate policy gateway (`aip-gateway`) acts as a drop-in MCP and A2A proxy that enforces YAML-defined policy, which is the pattern most useful for retrofitting existing deployments without changing application code.
+**Implementation maturity:** Reference implementations exist across the major agent ecosystems. Python (`agent-identity-protocol`, `aip-agents`), Rust (the `aip` crate), and TypeScript (`@aip-sdk/*`) cover the SDK surface. An OpenClaw plugin and a Claude Code plugin demonstrate the hook-level policy verification model inside real agent runtimes. A separate policy gateway (`aip-gateway`) acts as a drop-in MCP and A2A proxy that enforces YAML-defined policy, which is the pattern most useful for retrofitting existing deployments without changing application code.
 
-**Standards path:** AIP is on the IETF draft track (the `draft-prakash-aip-NN` series), with the specification developed in the open. That matters for enterprise adoption because the identity and authorization layer for autonomous systems is the part of the stack least tolerable as a proprietary dependency. An identity protocol that one vendor controls is not a trust layer; it is a single point of failure.
+**Standards path:** AIP is published as an individual Internet-Draft at the IETF (the `draft-prakash-aip-NN` series), with the specification developed in the open. That matters for enterprise adoption because the identity and authorization layer for autonomous systems is the part of the stack least tolerable as a proprietary dependency. An identity protocol that one vendor controls is not a trust layer; it is a single point of failure.
 
 ### LDP: LLM Delegate Protocol
 
@@ -81,7 +81,7 @@ LDP addresses the governance layer that MCP and A2A leave open: identity, author
 :::insight
 **LDP Research Background**
 
-LDP originated from academic research on the provenance paradox in multi-agent systems: the challenge of maintaining meaningful human accountability when chains of agent delegation obscure who authorized what. See: arXiv:2603.08852 (protocol) and arXiv:2603.18043 (provenance paradox).
+LDP is grounded in research on the provenance paradox in multi-agent systems: the challenge of maintaining meaningful human accountability when chains of agent delegation obscure who authorized what. See the preprints: arXiv:2603.08852 (protocol) and arXiv:2603.18043 (provenance paradox).
 :::
 
 ---

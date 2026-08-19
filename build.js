@@ -498,6 +498,7 @@ function generate404(common) {
   const layout = fs.readFileSync(layoutPath, 'utf-8');
   const data = Object.assign({}, common, {
     title: 'Page not found',
+    pageTitle: 'Page not found · The Enterprise AI Operating System',
     description: 'The page you are looking for does not exist.',
     slug: '404',
     dek: '',
@@ -731,6 +732,7 @@ function pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common) 
   const nb = neighbours(nav, page);
   const data = Object.assign({}, common, {
     title: meta.title,
+    pageTitle: meta.slug === 'homepage' ? 'The Enterprise AI Operating System: the management system for enterprise AI' : `${meta.title} · The Enterprise AI Operating System`,
     description: meta.description || '',
     dek: meta.dek || '',
     slug: meta.slug,
