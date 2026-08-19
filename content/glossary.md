@@ -1,6 +1,6 @@
 ---
 title: Glossary
-description: Definitions of key terms used throughout the Enterprise AI Playbook, from CAIO mandate to shadow AI.
+description: Definitions of key terms used throughout The Enterprise AI Operating System, from CAIO mandate to shadow AI.
 layout: standard
 slug: glossary
 group: reference
@@ -9,7 +9,7 @@ dek: Definitions of the terms the playbook relies on, from CAIO mandate and deci
 ---
 # Glossary
 
-This glossary defines key terms used throughout the Enterprise AI Transformation playbook. Terms are organized alphabetically. Cross-references point to the relevant sections of the playbook for deeper treatment.
+This glossary defines key terms used throughout The Enterprise AI Operating System. Terms are organized alphabetically. Cross-references point to the relevant sections of the playbook for deeper treatment.
 
 ---
 

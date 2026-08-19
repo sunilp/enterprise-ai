@@ -445,6 +445,34 @@ ${urls.join('\n')}
 </urlset>`;
 }
 
+function generateLlmsTxt(nav, pages) {
+  const url = p => pageUrl(p);
+  const lines = [];
+  lines.push('# The Enterprise AI Operating System');
+  lines.push('');
+  lines.push('> The management system for enterprise AI, by Sunil Prakash. Seven disciplines (Diagnose, Prepare, Govern, Design, Operate, Organize, Sustain), each owning a question the leadership team has to answer. Every page opens with an executive summary: the decision, the cost of skipping it, the metric. Includes the Readiness Diagnostic, proof artifacts, and role-based reading paths.');
+  lines.push('');
+  lines.push(`Cover: ${url('')}`);
+  lines.push(`The operating system on one page: ${url('framework')}`);
+  lines.push(`Start by role: ${url('reading-paths')}`);
+  lines.push('');
+  for (const d of nav.disciplines) {
+    lines.push(`## ${pad2(d.number)} ${d.name}: ${d.question}`);
+    lines.push(`- Hub: ${url(d.path)}`);
+    for (const p of d.pages) lines.push(`- ${p.title}: ${url(p.path)}${p.dek ? ' : ' + p.dek : ''}`);
+    lines.push('');
+  }
+  for (const g of nav.groups) {
+    if (g.key === 'start' || !g.pages.length) continue;
+    lines.push(`## ${g.name}`);
+    for (const p of g.pages) lines.push(`- ${p.title}: ${url(p.path)}${p.dek ? ' : ' + p.dek : ''}`);
+    lines.push('');
+  }
+  lines.push('## Author');
+  lines.push('Sunil Prakash, https://sunilprakash.com, sunil@sunilprakash.com. Related: Agent Engineering Lab https://agenticlab.sunilprakash.com, Agent Identity Protocol https://sunilprakash.com/aip/');
+  return lines.join('\n') + '\n';
+}
+
 function generateRobotsTxt() {
   return `User-agent: *
 Allow: /
@@ -492,114 +520,61 @@ function generate404(common) {
 
 const OG_W = 1200;
 const OG_H = 630;
-const OG_BG = '#0a0a0a';
-const OG_GOLD = '#c8b48c';
-const OG_CREAM = '#f0ece4';
-const OG_MUTED = '#6b6560';
+const OG_PAPER = '#f5f1e8';
+const OG_INK = '#16130e';
+const OG_BRONZE = '#7a5c1e';
+const OG_MUTED = '#7d766a';
+const OG_RULE = '#d9d2c3';
 
-function buildOgSvg({ title, section }) {
-  // Wrap title at ~40 chars per line, max 2 lines
-  const words = title.split(' ');
+function wrapTitle(title, maxChars, maxLines) {
+  const words = String(title).split(' ');
   const lines = [];
-  let current = '';
+  let cur = '';
   for (const w of words) {
-    const test = current ? `${current} ${w}` : w;
-    if (test.length > 40 && current) {
-      lines.push(current);
-      current = w;
-    } else {
-      current = test;
-    }
-    if (lines.length === 2) { current = ''; break; }
+    const t = cur ? `${cur} ${w}` : w;
+    if (t.length > maxChars && cur) { lines.push(cur); cur = w; } else cur = t;
+    if (lines.length === maxLines) { cur = ''; break; }
   }
-  if (current && lines.length < 2) lines.push(current);
-  if (lines.length === 0) lines.push(title.substring(0, 40));
+  if (cur && lines.length < maxLines) lines.push(cur);
+  if (!lines.length) lines.push(String(title).substring(0, maxChars));
+  return lines;
+}
 
-  const titleFontSize = 36;
-  const lineHeight = 52;
-  const totalTitleH = lines.length * lineHeight;
-  const titleStartY = Math.round((OG_H - totalTitleH) / 2) + 10;
-
-  const titleLines = lines.map((line, i) =>
-    `<text x="600" y="${titleStartY + i * lineHeight}" font-family="Georgia, 'Times New Roman', serif" font-size="${titleFontSize}" font-weight="600" fill="${OG_CREAM}" text-anchor="middle" dominant-baseline="middle">${escHtml(line)}</text>`
-  ).join('\n    ');
-
-  // Section label — positioned above title block
-  const sectionY = titleStartY - 70;
-
+function ogFrame(inner) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">
-  <defs>
-    <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="${OG_GOLD}" stop-opacity="1"/>
-      <stop offset="100%" stop-color="${OG_GOLD}" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background -->
-  <rect width="${OG_W}" height="${OG_H}" fill="${OG_BG}"/>
-
-  <!-- Gold gradient bar at top -->
-  <rect x="0" y="0" width="${OG_W}" height="10" fill="url(#goldBar)"/>
-
-  <!-- Corner accents — top-left -->
-  <line x1="40" y1="40" x2="100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="40" x2="40" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Corner accents — top-right -->
-  <line x1="1160" y1="40" x2="1100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="40" x2="1160" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Corner accents — bottom-left -->
-  <line x1="40" y1="590" x2="100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="590" x2="40" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Corner accents — bottom-right -->
-  <line x1="1160" y1="590" x2="1100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="590" x2="1160" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Section label -->
-  <text x="600" y="${sectionY}" font-family="'Courier New', Courier, monospace, sans-serif" font-size="14" fill="${OG_GOLD}" text-anchor="middle" dominant-baseline="middle" letter-spacing="3" text-transform="uppercase">${escHtml((section || '').toUpperCase())}</text>
-
-  <!-- Page title -->
-  ${titleLines}
-
-  <!-- Footer -->
-  <text x="600" y="530" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="${OG_MUTED}" text-anchor="middle" dominant-baseline="middle">Enterprise AI Playbook | Sunil Prakash</text>
+  <rect width="${OG_W}" height="${OG_H}" fill="${OG_PAPER}"/>
+  <rect x="0" y="0" width="${OG_W}" height="10" fill="${OG_BRONZE}"/>
+  <line x1="72" y1="548" x2="1128" y2="548" stroke="${OG_RULE}" stroke-width="1"/>
+  <text x="72" y="582" font-family="'Courier New', Courier, monospace" font-size="15" fill="${OG_MUTED}" letter-spacing="1">THE ENTERPRISE AI OPERATING SYSTEM  ·  sunilprakash.com/enterprise-ai</text>
+  ${inner}
 </svg>`;
 }
 
+function buildOgSvg({ title, label, sub }) {
+  const lines = wrapTitle(title, 30, 2);
+  const size = lines.length > 1 ? 56 : 64;
+  const lh = Math.round(size * 1.15);
+  const subLines = sub ? wrapTitle(sub, 78, 2) : [];
+  const startY = (subLines.length ? 270 : 300) - Math.round(((lines.length - 1) * lh) / 2);
+  const subSvg = subLines.map((l, i) => `<text x="72" y="${startY + (lines.length - 1) * lh + 52 + i * 30}" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="${OG_MUTED}">${escHtml(l)}</text>`).join('\n  ');
+  const titleLines = lines.map((line, i) =>
+    `<text x="72" y="${startY + i * lh}" font-family="Georgia, 'Times New Roman', serif" font-size="${size}" font-weight="400" fill="${OG_INK}">${escHtml(line)}</text>`
+  ).join('\n  ');
+  const labelText = label ? `<text x="72" y="${startY - size - 18}" font-family="'Courier New', Courier, monospace" font-size="16" fill="${OG_BRONZE}" letter-spacing="3">${escHtml(String(label).toUpperCase())}</text>` : '';
+  return ogFrame(`${labelText}\n  ${titleLines}\n  ${subSvg}`);
+}
+
 function buildDefaultOgSvg() {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">
-  <defs>
-    <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="${OG_GOLD}" stop-opacity="1"/>
-      <stop offset="100%" stop-color="${OG_GOLD}" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <rect width="${OG_W}" height="${OG_H}" fill="${OG_BG}"/>
-  <rect x="0" y="0" width="${OG_W}" height="10" fill="url(#goldBar)"/>
-  <line x1="40" y1="40" x2="100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="40" x2="40" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="40" x2="1100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="40" x2="1160" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="590" x2="100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="590" x2="40" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="590" x2="1100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="590" x2="1160" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <text x="600" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="600" fill="${OG_CREAM}" text-anchor="middle" dominant-baseline="middle">Enterprise AI Playbook</text>
-  <text x="600" y="360" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="${OG_MUTED}" text-anchor="middle" dominant-baseline="middle">sunilprakash.com</text>
-</svg>`;
+  return ogFrame(`
+  <text x="72" y="180" font-family="'Courier New', Courier, monospace" font-size="16" fill="${OG_BRONZE}" letter-spacing="3">THE MANAGEMENT SYSTEM FOR ENTERPRISE AI</text>
+  <text x="72" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="${OG_INK}">The Enterprise AI</text>
+  <text x="72" y="356" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="${OG_INK}">Operating System</text>
+  <text x="72" y="430" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="${OG_MUTED}">Seven disciplines. An executive summary on every page. Diagnostics and proof.</text>`);
 }
 
 async function ensureDefaultOgImage(ogDistDir) {
   const dest = path.join(ogDistDir, 'default.png');
   const staticSrc = path.join(ROOT, 'static', 'og', 'default.png');
-
-  // If a hand-crafted static version exists, use it
-  if (fs.existsSync(staticSrc)) {
-    fs.copyFileSync(staticSrc, dest);
-    return;
-  }
 
   // Generate from SVG using sharp
   if (sharp) {
@@ -641,10 +616,11 @@ async function generateOGImages(pages) {
   const tasks = pages.map(async (page) => {
     const dest = path.join(ogDistDir, `${page.meta.slug}.png`);
     try {
-      const svg = buildOgSvg({
-        title: page.meta.title,
-        section: page.meta.section,
-      });
+      const d = DISCIPLINES.find(x => x.key === page.meta.discipline);
+      const g = GROUPS.find(x => x.key === page.meta.group);
+      const label = page.meta.hub ? `Discipline ${pad2(d.number)}` : d ? `${pad2(d.number)} · ${d.name}` : g ? g.name : '';
+      const sub = page.meta.hub ? page.meta.question : (page.meta.dek || page.meta.og_description || '');
+      const svg = page.meta.slug === 'homepage' ? buildDefaultOgSvg() : buildOgSvg({ title: page.meta.og_title || page.meta.title, label, sub });
       await sharp(Buffer.from(svg)).png().toFile(dest);
     } catch (err) {
       console.warn(`  WARN: OG image failed for "${page.meta.slug}": ${err.message}`);
@@ -907,6 +883,9 @@ async function build() {
     copyDirSync(src, dest);
   }
   console.log(`  Copied: ${STATIC_DIRS.join(', ')}`);
+  fs.mkdirSync(path.join(DIST_DIR, 'static'), { recursive: true });
+  fs.writeFileSync(path.join(DIST_DIR, 'static', 'llms.txt'), generateLlmsTxt(nav, pages), 'utf-8');
+  console.log('  Generated: static/llms.txt');
 
   const elapsed = Date.now() - startTime;
   console.log(`\nBuild complete: ${rendered} page(s), ${errors} error(s) in ${elapsed}ms`);

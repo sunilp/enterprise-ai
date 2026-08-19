@@ -83,7 +83,7 @@ Projected value figures are excluded from the payback ratio. Only finance-signed
 [Download template](templates/board-memo-template.md)
 
 </div>
-<div class="doc-footer">Enterprise AI Playbook | Decision Artifact</div>
+<div class="doc-footer">The Enterprise AI Operating System | Decision Artifact</div>
 </div>
 
 ---
@@ -128,7 +128,7 @@ Use this scorecard to evaluate and compare AI use case candidates before committ
 [Download template](templates/investment-scorecard-template.md)
 
 </div>
-<div class="doc-footer">Enterprise AI Playbook | Decision Artifact</div>
+<div class="doc-footer">The Enterprise AI Operating System | Decision Artifact</div>
 </div>
 
 ---

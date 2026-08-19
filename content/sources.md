@@ -1,6 +1,6 @@
 ---
 title: Sources and Methodology
-description: Primary sources, research methodology, and citations underpinning the Enterprise AI Playbook.
+description: Primary sources, research methodology, and citations underpinning The Enterprise AI Operating System.
 layout: standard
 slug: sources
 group: reference

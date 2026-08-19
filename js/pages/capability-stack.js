@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    capability-stack.js — Interactive 7-layer capability stack diagram
-   Enterprise AI Playbook — sunilprakash.com/enterprise-ai
+   The Enterprise AI Operating System -- sunilprakash.com/enterprise-ai
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const LAYERS = [
