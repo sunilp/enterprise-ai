@@ -167,7 +167,7 @@ function drawConnections(svg, layerEls) {
     line.setAttribute('y1', from.bottom);
     line.setAttribute('x2', to.x);
     line.setAttribute('y2', to.top);
-    line.setAttribute('stroke', '#c8b48c');
+    line.setAttribute('stroke', '#7a5c1e');
     line.setAttribute('stroke-width', '1');
     line.setAttribute('opacity', '0.08');
     line.setAttribute('data-from', i);
@@ -196,7 +196,7 @@ function drawConnections(svg, layerEls) {
     line.setAttribute('y1', i < govIdx ? govMid.top : govMid.bottom);
     line.setAttribute('x2', other.x - offsetX);
     line.setAttribute('y2', i < govIdx ? other.bottom : other.top);
-    line.setAttribute('stroke', '#c8b48c');
+    line.setAttribute('stroke', '#7a5c1e');
     line.setAttribute('stroke-width', '1');
     line.setAttribute('opacity', '0.15');
     line.setAttribute('data-from', govIdx);
@@ -237,10 +237,10 @@ function createBuildBuyBar(buildPct) {
   bar.style.cssText = 'display:flex;height:2px;width:100%;margin-top:6px;border-radius:1px;overflow:hidden;';
 
   const buildPart = el('div');
-  buildPart.style.cssText = `width:${buildPct}%;height:100%;background:var(--gold);opacity:0.5;`;
+  buildPart.style.cssText = `width:${buildPct}%;height:100%;background:var(--bronze);opacity:0.5;`;
 
   const buyPart = el('div');
-  buyPart.style.cssText = `width:${100 - buildPct}%;height:100%;background:var(--label);opacity:0.2;`;
+  buyPart.style.cssText = `width:${100 - buildPct}%;height:100%;background:var(--ink-3);opacity:0.2;`;
 
   bar.appendChild(buildPart);
   bar.appendChild(buyPart);
@@ -346,9 +346,9 @@ function createLegend() {
   const buildItem = el('div');
   buildItem.style.cssText = 'display:flex;align-items:center;gap:6px;';
   const buildSwatch = el('div');
-  buildSwatch.style.cssText = 'width:20px;height:2px;background:var(--gold);opacity:0.5;border-radius:1px;';
+  buildSwatch.style.cssText = 'width:20px;height:2px;background:var(--bronze);opacity:0.5;border-radius:1px;';
   const buildLabel = el('span');
-  buildLabel.style.cssText = 'font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--label);';
+  buildLabel.style.cssText = 'font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-3);';
   buildLabel.textContent = 'Build';
   buildItem.appendChild(buildSwatch);
   buildItem.appendChild(buildLabel);
@@ -356,9 +356,9 @@ function createLegend() {
   const buyItem = el('div');
   buyItem.style.cssText = 'display:flex;align-items:center;gap:6px;';
   const buySwatch = el('div');
-  buySwatch.style.cssText = 'width:20px;height:2px;background:var(--label);opacity:0.2;border-radius:1px;';
+  buySwatch.style.cssText = 'width:20px;height:2px;background:var(--ink-3);opacity:0.2;border-radius:1px;';
   const buyLabel = el('span');
-  buyLabel.style.cssText = 'font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--label);';
+  buyLabel.style.cssText = 'font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-3);';
   buyLabel.textContent = 'Buy';
   buyItem.appendChild(buySwatch);
   buyItem.appendChild(buyLabel);
