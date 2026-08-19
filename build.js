@@ -500,7 +500,7 @@ function generate404(common) {
     description: 'The page you are looking for does not exist.',
     slug: '404',
     dek: '',
-    content: '<div class="error-page"><h1>404</h1><p>This page does not exist. Use search (<kbd>⌘K</kbd>) or start from the <a href="' + BASE_PATH + '/">cover</a>.</p></div>',
+    content: '<div class="error-page"><p class="label">Error 404</p><p>This page does not exist. Use search (<kbd>⌘K</kbd>) or start from the <a href="' + BASE_PATH + '/">cover</a>.</p></div>',
     ogTags: '',
     jsonLd: '',
     canonicalPath: '404',
