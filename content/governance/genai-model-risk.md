@@ -88,6 +88,8 @@ Controls:
 - Output monitoring for anomalous behavior patterns
 - Regular red team exercises with adversarial prompting
 
+**Blueprint anchor:** Where those controls sit decides how well they can work. [ARCH-001 The Control Plane](https://agenticlab.sunilprakash.com/architecture/001-the-control-plane/) makes the case that indirect injection is a retrieval-layer problem rather than a prompt-layer one: by the time the payload reaches the prompt, everything is visible and nothing is attributable, so the detector cannot tell an instruction in a retrieved PDF from one the user typed. [ARCH-002 Detector Architecture](https://agenticlab.sunilprakash.com/architecture/002-detector-architecture/) covers the techniques and the trap in using an LLM to judge attacker-controlled text.
+
 ### 3. Data Leakage and Privacy Risk
 
 GenAI introduces privacy risks at multiple points in the stack:
@@ -167,6 +169,8 @@ Effective GenAI validation requires:
 - System prompt changes require re-validation
 - RAG corpus updates require re-validation of retrieval accuracy
 
+**Blueprint anchor:** [ARCH-006 The Guardrail Lifecycle](https://agenticlab.sunilprakash.com/architecture/006-the-guardrail-lifecycle/) turns validation into gates that can stop a release, including the one most often compressed: running a control in shadow against real traffic before it enforces anything, which is the only place the true base rate and the real alert volume can be measured. [ARCH-003](https://agenticlab.sunilprakash.com/architecture/003-measuring-detectors/) covers what a test set of a given size can and cannot support.
+
 ## Continuous Monitoring Requirements
 
 The monitoring stack for GenAI must cover what traditional model monitoring misses.
@@ -176,12 +180,14 @@ The monitoring stack for GenAI must cover what traditional model monitoring miss
 | Hallucination rate | Percentage of outputs containing factual errors | Depends on use case; set at deployment |
 | Retrieval accuracy (RAG) | Percentage of retrievals that are relevant and correct | Degradation from baseline |
 | Refusal rate | Percentage of inputs refused by safety filters | Sudden spikes or drops |
-| Prompt injection detection rate | Flagged injection attempts per 1000 calls | Any significant volume |
+| Prompt injection detection rate | Flagged attempts per 1000 calls, and the share of those confirmed real on review | Change against the established baseline, not absolute volume |
 | PII in outputs | Percentage of outputs containing PII | Zero tolerance for unapproved cases |
 | Latency and cost per call | P95 latency; cost per 1000 calls | Budget and SLA thresholds |
 | User-reported accuracy | Error reports and corrections | Trend over time |
 
 The most important monitoring practice: review a random sample of real outputs regularly. Metrics can mask problems that a human reviewer would catch immediately. No dashboard replaces direct observation.
+
+One caution on the injection and PII rows. Flagged is not the same as real. Against a rare attack, a detector with strong recall and a low false positive rate can still be wrong the large majority of times it fires, because precision depends on how rare the attack is in your traffic and not on the quality of the detector. Alerting on raw flagged volume therefore produces a queue that reviewers learn to dismiss. Track the confirmed share alongside the flagged count, and set the alert on movement against a baseline. [ARCH-003 Measuring Detectors](https://agenticlab.sunilprakash.com/architecture/003-measuring-detectors/) works the arithmetic through, and [ARCH-007](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) covers routing low-precision output to automatic mitigation instead of to people.
 
 ## Summary
 

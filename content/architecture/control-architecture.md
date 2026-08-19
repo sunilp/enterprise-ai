@@ -37,6 +37,8 @@ The control plane spans seven domains. Each operates continuously, not at review
 
 **Failure mode:** Without entitlements, agent authorization defaults to whatever the underlying service account can do, which is usually everything the platform was ever connected to. A misconfigured agent does not just fail -- it takes consequential action in the wrong scope.
 
+**Blueprint anchor:** [ARCH-001 The Control Plane](https://agenticlab.sunilprakash.com/architecture/001-the-control-plane/) argues that a retrieval-layer entitlement check is the highest-value control in an enterprise RAG system, because it is the only point where content and the requesting principal are both present. [ARCH-004 The Decision Layer](https://agenticlab.sunilprakash.com/architecture/004-the-decision-layer/) specifies the tool-registry properties an entitlement decision needs at runtime: reversal cost, exposure and blast radius, declared rather than inferred.
+
 ---
 
 ### Audit & Lineage
@@ -46,6 +48,8 @@ The control plane spans seven domains. Each operates continuously, not at review
 **Why it matters:** Without audit trails, incident response is reconstruction from memory, and compliance queries cannot be answered with evidence.
 
 **Failure mode:** When an AI-assisted decision produces a harmful outcome and the organization cannot reconstruct how it happened, the regulatory and legal exposure is compounded by the inability to respond. Audit gaps turn incidents into crises.
+
+**Blueprint anchor:** [ARCH-007 Telemetry, Audit and the Review Loop](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) specifies what "immutable record" has to mean in practice: three separate stores rather than one, a decision record that carries identifiers and versions but no prompts, tamper evidence, and trace and span correlation so a single request can be reconstructed across every chokepoint it touched.
 
 ---
 
@@ -57,6 +61,8 @@ The control plane spans seven domains. Each operates continuously, not at review
 
 **Failure mode:** Organizations that rely on post-deployment review to catch policy violations will always be discovering violations after users have already encountered them. The review cycle is measured in days; the deployment cycle is measured in hours.
 
+**Blueprint anchor:** [ARCH-004 The Decision Layer](https://agenticlab.sunilprakash.com/architecture/004-the-decision-layer/) specifies policy as versioned data the service loads rather than conditionals compiled into it, with six actions instead of the usual two. [ARCH-002 Detector Architecture](https://agenticlab.sunilprakash.com/architecture/002-detector-architecture/) fixes the interface every input and output filter returns, and the composition rules for combining them.
+
 ---
 
 ### Human Override
@@ -66,6 +72,8 @@ The control plane spans seven domains. Each operates continuously, not at review
 **Why it matters:** Autonomous systems that cannot be stopped quickly are not autonomous -- they are uncontrolled. Override capability is what makes escalating autonomy organizationally defensible.
 
 **Failure mode:** A system with no designed override path is a system where the only available intervention is shutting down the infrastructure it runs on. That is not a control. It is a last resort.
+
+**Blueprint anchor:** [ARCH-004 The Decision Layer](https://agenticlab.sunilprakash.com/architecture/004-the-decision-layer/) treats human approval as one of six actions rather than the exception, and specifies the part most designs omit: what happens when the approver does not respond. [ARCH-007](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) covers the review queue itself, and why a queue fed by raw detector output gets abandoned.
 
 ---
 
@@ -77,6 +85,8 @@ The control plane spans seven domains. Each operates continuously, not at review
 
 **Failure mode:** Retention and disposal is the most commonly neglected control domain until a regulatory inquiry arrives. Organizations then discover they are holding AI artifacts they did not know existed, cannot locate, and cannot demonstrate were used appropriately. Remediation at that point is expensive and adversarial.
 
+**Blueprint anchor:** [ARCH-007 Telemetry, Audit and the Review Loop](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) sets retention per store rather than per system: evidence of a decision is kept on the records-retention rule, and the prompts and responses that decision was about are kept only as long as their purpose requires. Those two obligations point in opposite directions, which is why they cannot share a store.
+
 ---
 
 ### Observability
@@ -86,6 +96,8 @@ The control plane spans seven domains. Each operates continuously, not at review
 **Why it matters:** Traditional APM answers: is the system running? AI observability must additionally answer: is the system performing correctly, and has its behavior changed since deployment?
 
 **Failure mode:** AI systems degrade silently. A model that was accurate at deployment can drift over months as underlying data distributions shift, without producing errors that surface through conventional monitoring. Without AI-specific observability, organizations discover degradation through user complaints or business outcome metrics, not through the system that should have caught it first.
+
+**Blueprint anchor:** [ARCH-007](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) separates operational telemetry from the evidence trail and names the earliest silent-degradation signal, a rising detector abstention rate. [ARCH-008 Production Execution](https://agenticlab.sunilprakash.com/architecture/008-production-execution/) covers the runtime side: timeout isolation, circuit breakers per detector, and degradation that marks itself rather than failing quietly open.
 
 ---
 

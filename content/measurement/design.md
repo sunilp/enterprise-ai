@@ -142,6 +142,8 @@ The transition from outcome to value requires financial modeling. Time saved mus
 
 **Single-metric reporting.** Choosing the most favorable metric and ignoring contradicting signals. Track a balanced portfolio that includes both leading and lagging indicators.
 
+**Accuracy on a rare event.** Reporting the accuracy of a safety or quality control against something that almost never happens. A detector that flags nothing at all is over 99 percent accurate against an attack that occurs once in a thousand requests, and is worth nothing. Precision and recall, reported with the size of the sample they rest on, are the numbers that mean something. [ARCH-003 Measuring Detectors](https://agenticlab.sunilprakash.com/architecture/003-measuring-detectors/) covers the arithmetic and what a test set of a given size can actually support.
+
 **Projected vs. actual.** Reporting projected value as though it were realized. Boards lose confidence when projections consistently exceed actuals. Report what has been measured. Flag what is projected.
 
 :::insight
