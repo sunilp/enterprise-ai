@@ -9,7 +9,9 @@
 .metric-strip .metric:last-child { border-right: 0; }
 .metric-value { font: 300 52px/1 var(--font-display); color: var(--gold); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .metric-label { font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px; color: var(--board-ink); }
-.metric-source { font: 400 12px/1.4 var(--font-mono); color: rgba(240, 236, 228, .55); margin-top: 6px; }
+.metric-source { font: 400 12px/1.4 var(--font-mono); color: var(--ink-3); margin-top: 6px; }
+.metric-strip .metric-source { color: rgba(240, 236, 228, .6); }
+li .metric-source, p .metric-source { margin-left: 6px; }
 .metric-interpretation { font: 400 14px var(--font-mono); color: var(--ink-3); text-align: center; margin: -24px 0 40px; }
 
 /* ─── 2. Executive summary box ────────────────────────────────────────────── */
@@ -99,7 +101,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 48px 0; }
 .page-actions button:hover { border-color: var(--bronze); color: var(--ink); }
 .share { position: relative; display: inline-block; }
 .share-menu { position: absolute; left: 0; top: 100%; background: var(--surface); border: 1px solid var(--rule); min-width: 190px; display: none; z-index: 20; box-shadow: 0 12px 32px rgba(22, 19, 14, .08); }
-.share[aria-expanded="true"] .share-menu { display: block; }
+.share.open .share-menu { display: block; }
 .share-menu button { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 10px 14px; font: 400 14px var(--font-body); color: var(--ink); cursor: pointer; }
 .share-menu button:hover { background: var(--ledger); }
 .book-strip { border: 1px solid var(--rule); background: var(--surface); padding: 14px 18px; margin: 32px 0 0; font-size: 15px; }

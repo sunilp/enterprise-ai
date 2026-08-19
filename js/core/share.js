@@ -21,10 +21,11 @@
       var menu = wrap.querySelector('.share-menu');
       if (!btn || !menu) return;
       menu.innerHTML = '<button type="button" data-act="linkedin">Share on LinkedIn</button><button type="button" data-act="x">Share on X</button><button type="button" data-act="copy">Copy link</button>';
-      function close() { wrap.setAttribute('aria-expanded', 'false'); }
+      function close() { wrap.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
-        wrap.setAttribute('aria-expanded', wrap.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        var isOpen = wrap.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
       menu.addEventListener('click', function (e) {
         var b = e.target.closest('button'); if (!b) return;

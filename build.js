@@ -656,9 +656,11 @@ function renderBreadcrumb(meta, nav, d) {
 
 function renderRail(meta, nav) {
   const d = nav.disciplines.find(x => x.key === meta.discipline);
-  if (!d) return '';
-  const items = d.pages.map(p => `<li class="${p.slug === meta.slug ? 'current' : ''}"><a href="${BASE_PATH}/${p.path}/">${escHtml(p.title)}</a></li>`).join('');
-  return `<span class="label">In ${escHtml(d.name)}</span><ol>${items}</ol>`;
+  const g = !d && meta.group !== 'start' ? nav.groups.find(x => x.key === meta.group) : null;
+  const src = d || g;
+  if (!src || src.pages.length < 2) return '';
+  const items = src.pages.map(p => `<li class="${p.slug === meta.slug ? 'current' : ''}"><a href="${BASE_PATH}/${p.path}/">${escHtml(p.title)}</a></li>`).join('');
+  return `<span class="label">In ${escHtml(src.name)}</span><ol>${items}</ol>`;
 }
 
 function renderSummaryBox(summary) {
@@ -738,6 +740,9 @@ function pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common) 
     canonicalPath: page.outputPath === '' ? '' : page.outputPath + '/',
     hasMermaidAttr: hasMermaid ? ' data-has-mermaid="true"' : '',
     interactiveSlot: layoutName === 'showcase' ? '<div id="interactive" class="interactive-mount"></div>' : '',
+    showcaseHeader: (layoutName === 'showcase' && !/showcase-hero/.test(contentHtml))
+      ? `<header class="page-header"><h1>${escHtml(meta.title)}</h1>${meta.dek ? `<p class="dek">${escHtml(meta.dek)}</p>` : ''}<div class="page-actions"><span class="meta">${readingTime(page.body)}</span><div class="share"><button type="button" class="share-btn" aria-haspopup="true" aria-expanded="false">Share</button><div class="share-menu"></div></div><button type="button" class="print-btn">Print brief</button></div></header>`
+      : '',
     disciplineKey: d ? d.key : (meta.group || ''),
     disciplineName: d ? d.name : '',
     disciplineNumber: d ? pad2(d.number) : '',

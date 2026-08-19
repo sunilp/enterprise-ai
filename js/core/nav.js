@@ -23,11 +23,11 @@
     menu.innerHTML = NAV.disciplines.map(function (d) {
       return '<a role="menuitem" href="' + href(d.path) + '"><span class="n">' + pad2(d.number) + '</span><span>' + esc(d.name) + '<span class="q">' + esc(d.question) + '</span></span></a>';
     }).join('');
-    function open() { wrap.setAttribute('aria-expanded', 'true'); }
-    function close() { wrap.setAttribute('aria-expanded', 'false'); }
+    function open() { wrap.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    function close() { wrap.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
-      wrap.getAttribute('aria-expanded') === 'true' ? close() : open();
+      wrap.classList.contains('open') ? close() : open();
     });
     document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });

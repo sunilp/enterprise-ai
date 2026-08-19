@@ -11,7 +11,7 @@
   --rule: #d9d2c3;
   --ink: #16130e;
   --ink-2: #4a443a;
-  --ink-3: #7d766a;
+  --ink-3: #6a6357;
   --bronze: #7a5c1e;
   --board: #0b0a08;
   --board-ink: #f0ece4;
@@ -81,7 +81,7 @@ strong { font-weight: 600; }
 .topnav a:hover, .topnav button:hover { color: var(--ink); }
 .topnav .has-menu { position: relative; }
 .menu { position: absolute; top: 100%; left: -16px; min-width: 400px; background: var(--surface); border: 1px solid var(--rule); box-shadow: 0 12px 32px rgba(22, 19, 14, .08); padding: 10px 0; display: none; }
-.has-menu[aria-expanded="true"] .menu { display: block; }
+.has-menu.open .menu { display: block; }
 .menu a { display: grid; grid-template-columns: 32px 1fr; gap: 10px; padding: 9px 18px; text-decoration: none; color: var(--ink); font-size: 15px; }
 .menu a:hover { background: var(--ledger); }
 .menu .n { font: 500 12px/1.6 var(--font-mono); color: var(--bronze); }

@@ -198,7 +198,6 @@
         var b = el('button', '');
         b.type = 'button';
         b.setAttribute('role', 'radio');
-        b.setAttribute('aria-pressed', answers[currentQ] === rating ? 'true' : 'false');
         b.setAttribute('aria-checked', answers[currentQ] === rating ? 'true' : 'false');
         b.appendChild(el('span', 'k', String(rating)));
         b.appendChild(document.createTextNode(SCALE_LABELS[rating]));
