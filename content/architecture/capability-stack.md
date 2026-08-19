@@ -1,10 +1,15 @@
 ---
 title: Capability Stack
-description: The six-layer enterprise AI capability stack from data foundations through organizational integration.
+description: The seven-layer enterprise AI capability stack from data foundations through organizational integration.
 layout: showcase
 slug: capability-stack
 discipline: design
 order: 1
+dek: "The seven-layer enterprise AI capability stack as a capital allocation framework: what each layer does, who owns it, and where to build or buy."
+summary:
+  decide: Where capital goes across the seven layers, who owns each one, and which layers to build versus buy.
+  cost: Capital flows to visible layers (applications, models) and away from data, knowledge and control; skipped layers return as incidents, rework and regulatory exposure.
+  metric: Share of AI investment reaching the foundational layers (data, knowledge, control plane) relative to applications and models.
 ---
 # Capability Stack
 

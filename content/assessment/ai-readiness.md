@@ -5,6 +5,11 @@ layout: standard
 slug: ai-readiness
 discipline: prepare
 order: 1
+dek: A four-dimension readiness assessment with scoring bands, red flags, and what to do with the result before you scale.
+summary:
+  decide: Whether to scale AI now, run selective pilots only, or fix strategy, leadership, infrastructure and capacity gaps first.
+  cost: AI surfaces and amplifies existing dysfunction; a score of 16 at launch can fall to 11 within a year if capacity gaps are left alone.
+  metric: Total assessment score out of 20, calibrated against practitioner input; most leadership teams overestimate by 2-3 points.
 ---
 # AI Readiness Assessment
 

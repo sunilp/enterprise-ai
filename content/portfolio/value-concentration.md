@@ -5,6 +5,11 @@ layout: standard
 slug: value-concentration
 discipline: prepare
 order: 6
+dek: Why a few deeply resourced use cases outperform broad experimentation, where AI value sits by function, and how to make the concentration decision.
+summary:
+  decide: Which two or three business outcomes AI will deliver, which 3-5 use cases get deep investment, and what you will stop doing to fund them.
+  cost: Spread produces fragmented capability, diluted expertise and a portfolio of use cases none of which are deep enough to generate transformational value.
+  metric: "The concentration test: leadership names the same three use cases committed to full production in 18 months; more than five, or disagreement, means spread."
 ---
 # Value Concentration
 

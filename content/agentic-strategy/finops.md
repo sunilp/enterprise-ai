@@ -5,6 +5,11 @@ layout: standard
 slug: finops
 discipline: operate
 order: 4
+dek: "Financial operations for agents: per-task cost attribution, budget caps enforced in the runtime, and cost measured per outcome rather than per call."
+summary:
+  decide: Where to enforce agent budget caps (the runtime, not the prompt), how to attribute cost by task and business unit, and which outcome each workflow is costed against.
+  cost: A single misbehaving agent can exhaust a monthly budget in hours; uncontrolled spend is one reason Gartner projects over 40% of agentic AI projects will be cancelled by 2027.
+  metric: Cost per completed outcome, reported alongside task completion rate; cost per call is meaningless for agents.
 ---
 # FinOps for Agents
 

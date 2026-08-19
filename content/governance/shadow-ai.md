@@ -5,6 +5,11 @@ layout: standard
 slug: shadow-ai
 discipline: govern
 order: 4
+dek: Why unsanctioned AI use is a demand signal rather than a discipline problem, and how to channel it onto a sanctioned paved road.
+summary:
+  decide: Whether to ban, monitor or channel shadow AI, and what sanctioned tools, approval paths and acceptable use policy the paved road needs.
+  cost: 69% of organizations suspect prohibited GenAI use (Gartner, 2025); bans push it underground, and data already processed through shadow tools is live exposure.
+  metric: "Time for an employee to access and start using an approved AI tool: under an hour, or adoption loses to the shadow alternative."
 ---
 # Shadow AI
 

@@ -5,6 +5,11 @@ layout: showcase
 slug: systems-model
 discipline: design
 order: 2
+dek: How AI fits across the four systems every enterprise already runs, record, engagement, intelligence and action, and where value leaks between them.
+summary:
+  decide: How tightly to couple the four systems, as a deliberate bet on pace of change rather than a choice made by default.
+  cost: Budget concentrates in the intelligence layer, about 20% of the problem, while the integration work that realizes value goes unfunded; undocumented tight coupling compounds into rewrites.
+  metric: Share of the AI budget going to integration work (data engineering, APIs, engagement design, governance) versus model selection.
 ---
 # Systems Model
 

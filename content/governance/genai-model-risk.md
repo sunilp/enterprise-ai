@@ -5,6 +5,11 @@ layout: standard
 slug: genai-model-risk
 discipline: govern
 order: 2
+dek: Why traditional model risk management breaks on generative AI, and the five risk categories, validation gates and monitoring that replace it.
+summary:
+  decide: Which validation and monitoring controls each GenAI system needs before and after deployment, and what triggers re-validation.
+  cost: Around 20% of production GenAI outputs contain a meaningful inaccuracy (Gartner, 2024), and the model never signals when it is wrong; unmeasured systems fail silently.
+  metric: Hallucination rate on a domain-specific evaluation set, tracked continuously, with automatic re-evaluation on every model version change.
 ---
 # GenAI Model Risk
 

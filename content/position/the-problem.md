@@ -5,6 +5,11 @@ layout: showcase
 slug: the-problem
 discipline: diagnose
 order: 1
+dek: Why $644 billion of generative AI spending has produced measurable impact for fewer than 40% of companies, and why the gap is organizational, not technical.
+summary:
+  decide: Whether your binding constraint is technology selection or the organizational system that converts AI capability into business results.
+  cost: "Pilot purgatory: significant sunk cost, plus the opportunity cost and organizational cynicism that make the next attempt harder."
+  metric: The ratio of AI pilots running to use cases in production. More pilots than production deployments means the system is broken, however good the pilots look.
 ---
 # The Problem
 

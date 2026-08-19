@@ -5,6 +5,11 @@ layout: standard
 slug: pilot-to-production
 discipline: prepare
 order: 7
+dek: A stage-gate framework with decision criteria, artifacts and approvers, and the funding, change and operations capability pilots need to reach production.
+summary:
+  decide: Whether a use case passes each gate from discovery to scale, and which business unit owns the system and its budget once it is in production.
+  cost: Successful pilots that never become anything more; Gartner puts the full-scale production rate at 5%, and most that get there report 2-4 year ROI timelines.
+  metric: Share of AI experiments that reach production; only 25% of organizations have moved 40% or more of theirs (Deloitte, 2026).
 ---
 # From Pilot to Production
 

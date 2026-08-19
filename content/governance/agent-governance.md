@@ -5,6 +5,11 @@ layout: standard
 slug: agent-governance
 discipline: govern
 order: 3
+dek: "Six controls for agents that act rather than recommend: authorization, escalation, audit trails, incident response, trust boundaries and cost limits."
+summary:
+  decide: What each agent may do unaided, what needs human approval, what it may never do, and whether those limits are enforced in the runtime.
+  cost: An agent governed like a chatbot acts in the world before anyone reviews it; 51% of organizations already report negative AI incidents (McKinsey, 2025).
+  metric: "Share of production agents meeting the floor: enforced authorization scope, tested kill switch, full audit trail, escalation path, runtime cost limits."
 ---
 # Agent Governance
 

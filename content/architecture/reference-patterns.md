@@ -5,6 +5,11 @@ layout: showcase
 slug: reference-patterns
 discipline: design
 order: 5
+dek: Four deployment patterns, assistive, workflow automation, agentic and regulated human-in-loop, with the control, governance and maturity each requires.
+summary:
+  decide: Which deployment pattern each use case fits, and therefore how much control and governance overhead it carries.
+  cost: Uniform controls either under-control autonomous systems or bury low-risk tools in overhead; agents deployed before the control architecture exists are the most common source of serious incidents.
+  metric: Share of production deployments classified to a pattern whose controls match its autonomy, with no agentic system running ahead of its control architecture.
 ---
 # Reference Patterns
 

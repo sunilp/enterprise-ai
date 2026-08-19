@@ -5,6 +5,11 @@ layout: standard
 slug: role-evolution
 discipline: organize
 order: 5
+dek: Which roles shrink, which grow, which emerge, and why workforce planning belongs inside the AI roadmap rather than beside it.
+summary:
+  decide: Which roles to reskill and which to hire for, and how to attach a role impact analysis and transition path to every agent deployment decision.
+  cost: AI that works technically but is rejected operationally; 89% of workers worry about job security (WEF, 2025) and generic AI training unconnected to real role changes does not resolve it.
+  metric: Whether people from shrinking roles land in new ones, tracked per deployment; only 46% of organizations integrate workforce planning into AI roadmaps (WEF, 2025).
 ---
 # Role Evolution
 

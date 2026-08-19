@@ -5,6 +5,11 @@ layout: standard
 slug: human-agent-collaboration
 discipline: organize
 order: 8
+dek: Five collaboration patterns from copilot to full autonomy, how to match each to the task, and why full autonomy is an end state, not a start.
+summary:
+  decide: Which of the five patterns each task starts in, based on error reversibility, stakes, frequency, agent reliability and regulatory exposure, and what criteria move it rightward.
+  cost: Over-scoped agents act where human judgment was needed and make expensive mistakes; under-scoped ones add little; full autonomy deployed early produces embarrassing failures.
+  metric: Documented reliability rate over a defined period, with audit coverage, that justifies moving a task to the next pattern; reviewed by governance, not decided ad hoc.
 ---
 # Human-Agent Collaboration
 

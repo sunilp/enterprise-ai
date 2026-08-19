@@ -5,6 +5,11 @@ layout: showcase
 slug: case-studies
 group: proof
 order: 1
+dek: Four anonymized composites, from financial services to healthcare, on where AI programs stalled, what leadership changed, and what the numbers did next.
+summary:
+  decide: Decide whether to pause and fix the portfolio, the workflow or the underlying process before scaling AI further, and accept what that pause costs in momentum.
+  cost: "Without the patterns in view, AI lands on unchanged workflows and inconsistent processes: high adoption, nothing on the balance sheet, pilots that burn credibility."
+  metric: Whether task-level gains show up as finance-visible outcomes; in the cases, throughput up 18%, quality escapes down 31%, accuracy 61% to 94%, portfolio 253 to 89.
 ---
 # Case Studies
 

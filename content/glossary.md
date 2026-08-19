@@ -5,6 +5,7 @@ layout: standard
 slug: glossary
 group: reference
 order: 1
+dek: Definitions of the terms the playbook relies on, from CAIO mandate and decision rights to pilot purgatory, process debt and shadow AI, with cross-references.
 ---
 # Glossary
 

@@ -5,6 +5,11 @@ layout: standard
 slug: coordination
 discipline: organize
 order: 4
+dek: "How CIO, CDO, CISO, Legal, Finance and CHRO actually align: steering committee, shared OKRs, joint funding and one integrated roadmap."
+summary:
+  decide: "Which coordination mechanisms to run with binding authority: a steering committee that decides, shared OKRs no single function can hit alone, a CFO-protected joint fund, one integrated roadmap."
+  cost: Each function does its job and nobody coordinates; Legal engages late and becomes a bottleneck, CHRO is absent from AI planning, and shadow AI grows as a demand signal nobody reads.
+  metric: Time from approved use case to production deployment, tracked as a shared OKR; 69% of organizations suspect employees use prohibited AI tools (Gartner, 2025).
 ---
 # Cross-Functional Coordination
 

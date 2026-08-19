@@ -5,6 +5,11 @@ layout: standard
 slug: data-readiness
 discipline: prepare
 order: 2
+dek: How to assess data quality, accessibility, governance and lineage per use case, and the three investments that move the needle.
+summary:
+  decide: Whether the data a specific use case needs is ready, and whether data remediation has to be the AI program for now.
+  cost: A three-month AI project becomes a six-to-twelve-month data remediation; Gartner projects 60% of agentic AI projects will fail on poor data foundations.
+  metric: "Time to onboard a new data source for an AI project: under two weeks is ready, over four weeks means you are in the data cleansing trap."
 ---
 # Data Readiness
 

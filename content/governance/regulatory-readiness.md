@@ -5,6 +5,11 @@ layout: standard
 slug: regulatory-readiness
 discipline: govern
 order: 5
+dek: The EU AI Act timeline, a readiness checklist, data sovereignty, and the vendor contract terms that now determine regulatory posture.
+summary:
+  decide: How to sequence compliance investment by enforcement date and risk category, and which sovereignty and vendor terms to settle at architecture time.
+  cost: Prohibited practices carry penalties up to EUR 35 million or 7% of global revenue, and missing technical documentation is the most common audit failure point.
+  metric: A complete, current inventory of AI systems in production, each classified by AI Act risk category with a named accountable owner.
 ---
 # Regulatory Readiness
 

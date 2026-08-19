@@ -5,6 +5,11 @@ layout: standard
 slug: what-transformation-means
 discipline: diagnose
 order: 3
+dek: The difference between optimization, automation, and transformation, the five characteristics of future-built programs, and what done looks like.
+summary:
+  decide: Whether your program is optimizing, automating, or transforming, and which of the five characteristics of high performers it is missing.
+  cost: Declaring victory on task-level automation that never reaches the P&L. Two or three of the five characteristics lands you at the 39% EBIT threshold, not above it.
+  metric: Measurable P&L impact from a focused portfolio of AI capabilities embedded in core operating workflows. Not projected savings, not pilot-phase estimates.
 ---
 # What Transformation Actually Means
 

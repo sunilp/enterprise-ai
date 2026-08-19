@@ -5,6 +5,11 @@ layout: standard
 slug: knowledge-architecture
 discipline: organize
 order: 7
+dek: Why agents fail at the boundary of what is written down, and the four components that turn tribal knowledge into something agents can use.
+summary:
+  decide: Whether to run knowledge capture as executive-sponsored change management with protected time and recognition, or as an IT requirements exercise that misses the judgment calls.
+  cost: Agents handle documented cases and fail on the non-standard ones where expert judgment matters; experts then cite those failures as proof AI cannot handle their domain.
+  metric: Agent accuracy on real-world tasks versus benchmark; many organizations see 70-80% in practice, with the gap explained by uncaptured tribal knowledge.
 ---
 # Knowledge Architecture
 

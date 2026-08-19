@@ -5,6 +5,11 @@ layout: standard
 slug: board-reporting
 discipline: operate
 order: 3
+dek: "What boards need to see on AI: portfolio health, risk posture, realized value and strategic alignment, on a two-cadence reporting cycle."
+summary:
+  decide: "What goes in front of the board each quarter, including shadow AI exposure, and which portfolio decision each initiative gets: continue, accelerate, redirect or exit."
+  cost: Boards get model performance instead of business performance, lose confidence in pilot-only updates, and learn about shadow AI through a breach or audit finding.
+  metric: Each quarterly review ends in a documented decision per initiative, and every reported value carries a baseline, delta and attribution confidence.
 ---
 # Board Reporting
 

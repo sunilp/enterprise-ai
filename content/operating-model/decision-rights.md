@@ -5,6 +5,11 @@ layout: standard
 slug: decision-rights
 discipline: organize
 order: 3
+dek: A RACI-style matrix that names one accountable owner for each AI decision, from use case approval to agent action boundaries.
+summary:
+  decide: "Who is accountable for each decision category: strategic fit, risk tier, build vs buy, vendor approval, deployment, budget, and for agents, action boundary, escalation and kill authority."
+  cost: Decisions stall in committee loops or business units deploy anyway; when an agent causes harm, nobody was named as accountable before the incident.
+  metric: Whether every decision category, including the agentic ones, has exactly one accountable owner in the matrix, with rights reviewed quarterly as the portfolio grows.
 ---
 # Decision Rights
 

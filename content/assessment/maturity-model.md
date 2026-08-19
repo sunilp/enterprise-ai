@@ -5,6 +5,11 @@ layout: standard
 slug: maturity-model
 discipline: prepare
 order: 4
+dek: Five levels from Exploring to AI-Native, with indicators per level and the transition triggers that actually move an organization forward.
+summary:
+  decide: Which level you are honestly at across all dimensions, and whether the blockers to the next level are organizational or technical.
+  cost: Deferring operating model, funding and accountability changes keeps organizations at Level 2 for years, producing better pilots with the same structural ceiling.
+  metric: Use cases in production with measured business outcomes; at least one is the trigger from Experimenting to Scaling.
 ---
 # AI Maturity Model
 

@@ -5,6 +5,11 @@ layout: standard
 slug: the-shift
 discipline: design
 order: 6
+dek: Why agentic AI is delegated authority rather than a software feature, and what that changes in governance, cost, metrics and the human role.
+summary:
+  decide: Which workflows, redesigned around agent capabilities, produce materially better outcomes, and how much autonomy the oversight you have actually built can support.
+  cost: Agents that mirror the org chart digitize silos; Gartner projects more than 40% of agentic AI projects cancelled by 2027 on cost overruns, unclear ROI and governance failures.
+  metric: Task completion rate and cost-per-outcome, measured through live task audits rather than offline test sets.
 ---
 # The Agentic Shift
 

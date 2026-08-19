@@ -5,6 +5,11 @@ layout: standard
 slug: financial-linkage
 discipline: operate
 order: 2
+dek: How to turn task-level efficiency gains into P&L impact through workflow redesign, pre-registered attribution and a finance partnership.
+summary:
+  decide: Which financial statement line each use case moves, what the recaptured time will be used for, and which attribution method to agree with finance before measurement begins.
+  cost: Time saved redistributes into scope, review cycles or meetings; the gain is real at task level, invisible on the balance sheet, and the CFO asks why.
+  metric: "Volume handled, or hires avoided, with the same team: released capacity that was redeployed, not hours saved."
 ---
 # Financial Linkage
 

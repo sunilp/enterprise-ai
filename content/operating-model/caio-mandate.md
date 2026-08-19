@@ -5,6 +5,11 @@ layout: showcase
 slug: caio-mandate
 discipline: organize
 order: 1
+dek: What the CAIO role has to own, where it should report, and why an advisory CAIO produces governance in appearance only.
+summary:
+  decide: Whether to give the CAIO real authority over use case approval, vendor selection and model standards, or accept an advisory role and the governance gaps that follow.
+  cost: "Every function does AI independently: duplicate investment, incompatible standards, no consolidated view of AI risk, and regulatory gaps discovered under pressure."
+  metric: Share of use cases and vendor AI purchases that pass through CAIO approval; business units bypassing the office is the failure signal the page names first.
 ---
 # The CAIO Mandate
 

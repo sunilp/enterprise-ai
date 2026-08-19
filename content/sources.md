@@ -5,6 +5,7 @@ layout: standard
 slug: sources
 group: reference
 order: 2
+dek: "The research behind the playbook: strategy firm, analyst and academic studies, every statistic used and where it comes from, and how the analysis was built."
 ---
 # Sources & Methodology
 

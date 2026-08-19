@@ -5,6 +5,11 @@ layout: showcase
 slug: measurement-design
 discipline: operate
 order: 1
+dek: How to build a baseline-first measurement system that produces numbers boards believe and business leaders can act on.
+summary:
+  decide: Which metrics to baseline at each of the three layers, and what threshold defines success, fixed in a measurement charter before the pilot launches.
+  cost: Without a baseline every claim of improvement is an approximation; reconstructed data is always challenged and the investment case is never airtight.
+  metric: Share of active pilots with a documented, signed-off baseline before launch.
 ---
 # Measurement Design
 

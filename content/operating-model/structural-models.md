@@ -5,6 +5,11 @@ layout: standard
 slug: structural-models
 discipline: organize
 order: 2
+dek: "Centralized CoE, hub-and-spoke or federated: when each model fits, how each breaks, and how to move between them."
+summary:
+  decide: Which structural model fits your stage now (centralized early, hub-and-spoke at growth, federated only for mature units) and which signal triggers the transition.
+  cost: Staying centralized too long turns the CoE into a bottleneck that business units route around; shadow AI accumulates and has to be remediated later, at higher cost.
+  metric: CoE backlog in weeks and shadow AI prevalence; hub-and-spoke structures produce 36% higher AI ROI than centralized or distributed models (IBM IBV, 2025).
 ---
 # Structural Models for Enterprise AI
 

@@ -5,6 +5,11 @@ layout: standard
 slug: decision-records
 group: proof
 order: 2
+dek: "Five ADR templates for the choices that shape an AI program: operating model, governance build or buy, agent authorization, measurement, and shadow AI response."
+summary:
+  decide: Decide, and record with context and alternatives, the operating model, how governance is sourced, agent authorization tiers, the measurement standard and the shadow AI response.
+  cost: "Without a record, each unit decides alone: duplicated cost, inconsistent quality, unmanaged risk, and rationale that leaves with the people who held it."
+  metric: "Decisions that survive personnel changes, and review dates kept: annual for operating model, semi-annual for governance and shadow AI, quarterly for agent authorization."
 ---
 # Decision Records
 

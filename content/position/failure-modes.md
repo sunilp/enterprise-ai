@@ -5,6 +5,11 @@ layout: standard
 slug: failure-modes
 discipline: diagnose
 order: 2
+dek: The seven organizational failure modes that recur across enterprise AI programs, with the structural tell and the fix for each.
+summary:
+  decide: Which failure modes your program is carrying right now, and whether the fix is an executive mandate or a portfolio investment.
+  cost: You treat technology symptoms while the organizational cause persists. You cannot tool your way out of an operating model problem.
+  metric: "Business outcomes, not pilot outputs: whether P&L, cost, or output quality has moved downstream of adopted tools, not accuracy or time saved per task."
 ---
 # Seven Failure Modes
 

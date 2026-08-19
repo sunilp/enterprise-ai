@@ -5,6 +5,11 @@ layout: standard
 slug: operating-architecture
 discipline: design
 order: 4
+dek: The five team functions that build and run enterprise AI, who owns which decision, and how broad the platform team should be.
+summary:
+  decide: How to split build and run across platform, domain, governance and production support teams, and how much of the stack the platform owns.
+  cost: Platform teams that own use cases become the CoE bottleneck; domain teams reporting to platform cannot own outcomes; incidents open with a search for who is responsible.
+  metric: Time from approved use case to production, not team utilization or ticket throughput.
 ---
 # Operating Architecture
 

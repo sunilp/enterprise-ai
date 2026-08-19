@@ -5,6 +5,11 @@ layout: standard
 slug: middle-management
 discipline: organize
 order: 6
+dek: Why AI programs stall in the middle layer, what managers actually control, and how to turn passive resistance into championship.
+summary:
+  decide: Whether to measure managers on team outcomes rather than task throughput, and to bring them into agent design from day one instead of informing them afterward.
+  cost: "Passive resistance: reversion to manual workflows, AI efficiency made invisible in team metrics, and leadership receiving a systematically optimistic view of adoption."
+  metric: Whether manager evaluation rewards domain outcomes (satisfaction, revenue, quality, cycle time) instead of tasks completed; the page calls this the single most important lever.
 ---
 # The Middle Management Gap
 

@@ -5,6 +5,11 @@ layout: showcase
 slug: governance-architecture
 discipline: govern
 order: 1
+dek: Why AI governance has to be built as infrastructure, with policy, process and technical layers that run at deployment speed.
+summary:
+  decide: Which rules live in policy, which in process, and which are enforced in the runtime, and how approval is tiered by risk so safe deployment is fast.
+  cost: Retrofitting governance after deployment costs 3 to 5 times more than building it in, and teams route around any process slower than they ship.
+  metric: Risk assessment turnaround in hours, not weeks. If governance is slower than deployment, teams are already routing around it.
 ---
 # Governance Architecture
 

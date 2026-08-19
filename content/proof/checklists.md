@@ -5,6 +5,11 @@ layout: standard
 slug: checklists
 group: proof
 order: 4
+dek: "Five checklists with named assessors and evidence: readiness, pilot launch, production gate, agent deployment and board reporting."
+summary:
+  decide: Decide whether the program, a pilot, a production promotion, an agent or a board report is ready to proceed, or is held until the gaps are closed.
+  cost: Skipped, launches go ahead without a baseline, success threshold or rollback; used as self-assessment, the checklists become compliance theater.
+  metric: Each item assessed by someone independent of the deployment team with authority to delay launch, dated and evidenced; hard stops at the production gate never waived.
 ---
 # Assessment Checklists
 

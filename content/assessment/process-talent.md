@@ -5,6 +5,11 @@ layout: standard
 slug: process-talent
 discipline: prepare
 order: 3
+dek: "The two readiness dimensions most assessments skip: whether processes are stable enough for AI, and whether the talent portfolio goes beyond data science."
+summary:
+  decide: Whether a candidate process needs 3-9 months of remediation before AI, and which neglected roles (program lead, process architect, governance, translator) to charter.
+  cost: AI trained on fragmented process data automates inconsistency at scale; a technical-only talent portfolio succeeds technically and fails organizationally.
+  metric: Daily usage rate among people with access to AI tools, tracked as a management metric; fewer than 60% of those with access use them daily (PwC, 2026).
 ---
 # Process and Talent Readiness
 

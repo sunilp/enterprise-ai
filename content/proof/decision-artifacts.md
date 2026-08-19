@@ -5,6 +5,11 @@ layout: standard
 slug: decision-artifacts
 group: proof
 order: 3
+dek: Worked board memo, investment scorecard, model inventory, phase-gate review and risk classification worksheet, each with a downloadable template.
+summary:
+  decide: Decide what goes to the board, which use cases earn pilot funding, what risk tier each system carries, and whether a program clears its phase gate.
+  cost: Without them, board updates blend projections with actuals, no inventory exists to attest against, and governance is discovered after deployment, if at all.
+  metric: Every value figure labelled measured or projected, payback computed on finance-signed actuals only, and every production system in the inventory with a risk tier.
 ---
 # Decision Artifacts
 

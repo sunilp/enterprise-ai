@@ -5,6 +5,11 @@ layout: standard
 slug: prioritization
 discipline: prepare
 order: 5
+dek: A weighted scoring framework, kill criteria and a three-horizon portfolio structure for choosing which AI use cases to fund, sequence or stop.
+summary:
+  decide: Which use cases enter the active portfolio by value first, which get killed or deferred, and how investment splits across three horizons.
+  cost: Deploying where it is easiest rather than where it matters most; the gap between where AI is deployed and where value is generated is the largest driver of disappointing AI ROI.
+  metric: Share of the portfolio in core revenue functions versus support functions; BCG puts 70% of AI value potential in sales, manufacturing, supply chain and pricing.
 ---
 # Use Case Prioritization
 

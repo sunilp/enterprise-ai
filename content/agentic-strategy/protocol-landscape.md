@@ -5,6 +5,11 @@ layout: standard
 slug: protocol-landscape
 discipline: design
 order: 7
+dek: How MCP, A2A, AIP and LDP compose into a multi-agent stack that is vendor-portable, auditable and interoperable, and in what order to adopt them.
+summary:
+  decide: Which protocols to standardize on for tool access, coordination and identity, and in what sequence, before proprietary integrations set the switching cost.
+  cost: Point-to-point agent integrations become technical debt; proprietary orchestration makes the switching cost your whole multi-agent estate; identity is the costliest layer to retrofit.
+  metric: Share of agents in production and pilot whose tool access, coordination and delegation run on standard protocols, with the delegation chain preserved as the audit trail.
 ---
 # Protocol Landscape
 
