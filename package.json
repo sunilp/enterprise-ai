@@ -4,8 +4,10 @@
   "private": true,
   "description": "Enterprise AI Playbook - Obsidian Framework",
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.js && scripts/check-no-book.sh",
     "serve": "node serve.js",
+    "test": "node --test tests/*.test.js",
+    "check": "scripts/check-no-book.sh",
     "clean": "rm -rf dist"
   },
   "devDependencies": {

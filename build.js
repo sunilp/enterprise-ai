@@ -29,6 +29,21 @@ const DIST_DIR = path.join(ROOT, 'dist');
 const STATIC_DIRS = ['css', 'js', 'fonts', 'static'];
 const BASE_PATH = '/enterprise-ai';
 const SITE_URL = 'https://sunilprakash.com/enterprise-ai';
+const SITE_CONFIG_PATH = path.join(ROOT, 'site.config.json');
+
+// ─── Site Config (book switch) ─────────────────────────────────────────────
+
+function loadSiteConfig() {
+  const defaults = { book: { enabled: false } };
+  if (!fs.existsSync(SITE_CONFIG_PATH)) return defaults;
+  try {
+    const parsed = JSON.parse(fs.readFileSync(SITE_CONFIG_PATH, 'utf-8'));
+    return { ...defaults, ...parsed, book: { ...defaults.book, ...(parsed.book || {}) } };
+  } catch (e) {
+    console.warn(`WARN: site.config.json unreadable (${e.message}); using defaults`);
+    return defaults;
+  }
+}
 
 // ─── Template Engine (< 50 lines) ──────────────────────────────────────────
 
@@ -827,7 +842,11 @@ async function build() {
   if (errors > 0) process.exitCode = 1;
 }
 
-build().catch(err => {
-  console.error('FATAL build error:', err);
-  process.exitCode = 1;
-});
+module.exports = { renderTemplate, parseFrontmatter, buildNavigation, computeOutputPath, loadSiteConfig, build };
+
+if (require.main === module) {
+  build().catch(err => {
+    console.error('FATAL build error:', err);
+    process.exitCode = 1;
+  });
+}
