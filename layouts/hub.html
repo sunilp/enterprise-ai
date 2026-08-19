@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>{{> head}}</head>
+<body class="hub" data-layout="hub" data-discipline="{{disciplineKey}}" data-page="{{slug}}">
+<a href="#main-content" class="skip-link">Skip to content</a>
+{{> nav}}
+<main id="main-content" class="page">
+<header class="hub-hero">
+<span class="label">Discipline {{disciplineNumber}}</span>
+<h1>{{title}}</h1>
+<p class="dek">{{disciplineQuestion}}</p>
+</header>
+<section class="hub-body">
+<div class="intro">{{content}}</div>
+<aside class="hub-decisions"><span class="label">Decisions this discipline owns</span>{{hubDecisions}}</aside>
+</section>
+<section class="hub-pages"><span class="label">Read</span>{{hubPages}}</section>
+{{#hubTools}}<section class="hub-pages"><span class="label">Tools</span>{{hubTools}}</section>{{/hubTools}}
+{{#hubProof}}<section class="hub-pages"><span class="label">Proof</span>{{hubProof}}</section>{{/hubProof}}
+{{> book-strip}}
+<section class="hub-next">{{nextDiscipline}}</section>
+</main>
+{{> footer}}
+</body>
+</html>

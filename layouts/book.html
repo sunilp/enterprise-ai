@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>{{> head}}</head>
+<body class="book" data-layout="book" data-page="{{slug}}">
+<a href="#main-content" class="skip-link">Skip to content</a>
+{{> nav}}
+<main id="main-content" class="reading">
+<article>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{basePath}}/">Operating System</a><span class="sep">/</span><span>Book</span></nav>
+<header class="page-header"><h1>{{title}}</h1>{{#dek}}<p class="dek">{{dek}}</p>{{/dek}}</header>
+{{content}}
+{{> newsletter-cta}}
+</article>
+</main>
+{{> footer}}
+</body>
+</html>

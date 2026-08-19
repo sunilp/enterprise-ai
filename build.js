@@ -157,6 +157,20 @@ function configureMarked() {
           return `<div class="warning-box">${inner}</div>\n`;
         case 'note':
           return `<div class="note-box">${inner}</div>\n`;
+        case 'quote':
+          return `<blockquote class="pull-quote">${inner}</blockquote>\n`;
+        case 'decision-rights': {
+          // Three cells from "**Who decides**", "**Who approves**", "**Who can stop**" paragraphs (or any 3 paragraphs in order)
+          const cells = token.text.split(/\n\s*\n/).map(t => t.trim()).filter(Boolean).slice(0, 3);
+          const labels = ['Who decides', 'Who approves', 'Who can stop'];
+          const html = cells.map((c, i) => {
+            const m = c.match(/^\*\*([^*]+)\*\*\s*[:.]?\s*([\s\S]*)$/);
+            const k = m ? m[1] : labels[i];
+            const v = marked.parse(m ? m[2] : c);
+            return `<div><span class="k">${k}</span>${v}</div>`;
+          }).join('');
+          return `<div class="decision-rights">${html}</div>\n`;
+        }
         default:
           return `<div class="${token.containerType}-box">${inner}</div>\n`;
       }
@@ -280,11 +294,15 @@ function neighbours(nav, page) {
 
 // ─── SEO Generation ────────────────────────────────────────────────────────
 
-function generateOgTags(meta) {
+function pageUrl(outputPath) {
+  return outputPath ? `${SITE_URL}/${outputPath}/` : `${SITE_URL}/`;
+}
+
+function generateOgTags(meta, outputPath) {
   const ogTitle = meta.og_title || meta.title;
   const ogDesc = meta.og_description || meta.description;
   const ogImage = `${SITE_URL}/og/${meta.slug}.png`;
-  const ogUrl = meta.slug === 'homepage' ? SITE_URL + '/' : `${SITE_URL}/${meta.slug}/`;
+  const ogUrl = pageUrl(outputPath);
 
   return [
     `<meta property="og:title" content="${escHtml(ogTitle)}">`,
@@ -292,7 +310,7 @@ function generateOgTags(meta) {
     `<meta property="og:image" content="${ogImage}">`,
     `<meta property="og:url" content="${ogUrl}">`,
     `<meta property="og:type" content="article">`,
-    `<meta property="og:site_name" content="Enterprise AI Playbook">`,
+    `<meta property="og:site_name" content="The Enterprise AI Operating System">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${escHtml(ogTitle)}">`,
     `<meta name="twitter:description" content="${escHtml(ogDesc)}">`,
@@ -300,31 +318,33 @@ function generateOgTags(meta) {
   ].join('\n');
 }
 
-function generateJsonLd(meta) {
-  const url = meta.slug === 'homepage' ? SITE_URL + '/' : `${SITE_URL}/${meta.slug}/`;
-  const ld = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Article',
-        headline: meta.title,
-        description: meta.description,
-        url: url,
-        image: `${SITE_URL}/og/${meta.slug}.png`,
-        author: { '@type': 'Person', name: 'Sunil Prakash' },
-      },
-      {
-        '@type': 'Person',
-        name: 'Sunil Prakash',
-        url: 'https://sunilprakash.com',
-      },
-      {
-        '@type': 'WebSite',
-        name: 'Enterprise AI Playbook',
-        url: SITE_URL,
-      },
-    ],
-  };
+function generateJsonLd(meta, outputPath, cfg) {
+  const url = pageUrl(outputPath);
+  const graph = [
+    {
+      '@type': 'Article',
+      headline: meta.title,
+      description: meta.description,
+      url: url,
+      image: `${SITE_URL}/og/${meta.slug}.png`,
+      author: { '@type': 'Person', name: 'Sunil Prakash', url: 'https://sunilprakash.com' },
+    },
+    {
+      '@type': 'WebSite',
+      name: 'The Enterprise AI Operating System',
+      url: SITE_URL + '/',
+    },
+  ];
+  if (cfg && cfg.book && cfg.book.enabled) {
+    graph.push({
+      '@type': 'Book',
+      name: cfg.book.title || 'The Enterprise AI Operating System',
+      author: { '@type': 'Person', name: 'Sunil Prakash' },
+      publisher: cfg.book.publisher || undefined,
+      url: `${SITE_URL}/book/`,
+    });
+  }
+  const ld = { '@context': 'https://schema.org', '@graph': graph };
   return `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
 }
 
@@ -414,9 +434,7 @@ function copyDirSync(src, dest) {
 
 function generateSitemap(pages) {
   const urls = pages.map(p => {
-    const loc = p.meta.slug === 'homepage'
-      ? SITE_URL + '/'
-      : `${SITE_URL}/${p.outputPath}/`;
+    const loc = pageUrl(p.outputPath);
     return `  <url><loc>${loc}</loc></url>`;
   });
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -436,34 +454,35 @@ function generateSearchIndex(pages) {
   return pages.map(p => ({
     title: p.meta.title,
     description: p.meta.description,
-    section: p.meta.section,
+    discipline: p.meta.discipline || p.meta.group || '',
     slug: p.meta.slug,
     path: p.outputPath,
     body: p.body.replace(/[#*`>\[\](){}|_~-]/g, ' ').substring(0, 500),
   }));
 }
 
-function generate404(navDataJson) {
+function generate404(common) {
   const layoutPath = path.join(LAYOUTS_DIR, 'standard.html');
   if (!fs.existsSync(layoutPath)) return null;
   const layout = fs.readFileSync(layoutPath, 'utf-8');
-  const data = {
-    title: 'Page Not Found',
+  const data = Object.assign({}, common, {
+    title: 'Page not found',
     description: 'The page you are looking for does not exist.',
-    section: 'Error',
     slug: '404',
-    content: '<div class="error-page"><h1>404</h1><p>This page does not exist. Use the command palette (<kbd>Ctrl+K</kbd>) to navigate.</p></div>',
-    basePath: BASE_PATH,
+    dek: '',
+    content: '<div class="error-page"><h1>404</h1><p>This page does not exist. Use search (<kbd>⌘K</kbd>) or start from the <a href="' + BASE_PATH + '/">cover</a>.</p></div>',
     ogTags: '',
     jsonLd: '',
-    showcaseCss: '',
     canonicalPath: '404',
-    navDataJson: navDataJson,
     hasMermaidAttr: '',
-    interactiveSlot: '',
-    nextSlug: '',
-    nextTitle: '',
-  };
+    breadcrumb: `<a href="${BASE_PATH}/">Operating System</a><span class="sep">/</span><span>Not found</span>`,
+    rail: '',
+    summaryBox: '',
+    related: '',
+    prevNext: '',
+    readingTime: '',
+    disciplineKey: '',
+  });
   return renderTemplate(layout, data);
 }
 
@@ -635,11 +654,150 @@ async function generateOGImages(pages) {
   console.log(`  Generated: og/ (${pages.length} image(s))`);
 }
 
+// ─── Page data assembly ────────────────────────────────────────────────────
+
+const pad2 = n => String(n).padStart(2, '0');
+const REDIRECTS = { 'architecture/index': 'design' };
+
+function disciplineOf(meta) { return DISCIPLINES.find(d => d.key === meta.discipline) || null; }
+
+function readingTime(body) {
+  const w = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.round(w / 230))} min read`;
+}
+
+function renderBreadcrumb(meta, nav, d) {
+  const home = `<a href="${BASE_PATH}/">Operating System</a>`;
+  if (d) {
+    const hub = nav.disciplines.find(x => x.key === d.key);
+    return `${home}<span class="sep">/</span><a href="${BASE_PATH}/${hub.path}/">${pad2(d.number)} ${d.name}</a><span class="sep">/</span><span>${escHtml(meta.title)}</span>`;
+  }
+  const g = GROUPS.find(x => x.key === meta.group);
+  return `${home}<span class="sep">/</span><span>${g ? g.name : ''}</span>`;
+}
+
+function renderRail(meta, nav) {
+  const d = nav.disciplines.find(x => x.key === meta.discipline);
+  if (!d) return '';
+  const items = d.pages.map(p => `<li class="${p.slug === meta.slug ? 'current' : ''}"><a href="${BASE_PATH}/${p.path}/">${escHtml(p.title)}</a></li>`).join('');
+  return `<span class="label">In ${escHtml(d.name)}</span><ol>${items}</ol>`;
+}
+
+function renderSummaryBox(summary) {
+  if (!summary || !(summary.decide || summary.cost || summary.metric)) return '';
+  const row = (k, v) => v ? `<div class="k">${k}</div><p class="v">${escHtml(v)}</p>` : '';
+  return `<aside class="summary-box" aria-label="Executive summary">${row('The decision', summary.decide)}${row('Cost of skipping', summary.cost)}${row('The metric', summary.metric)}</aside>`;
+}
+
+function renderPrevNext(nb) {
+  if (!nb.prev && !nb.next) return '';
+  const a = (p, cls, label) => p ? `<a class="${cls}" href="${BASE_PATH}/${p.path}/"><span class="label">${label}</span>${escHtml(p.title)}</a>` : '<span></span>';
+  return `<nav class="prevnext" aria-label="Previous and next">${a(nb.prev, 'prev', 'Previous')}${a(nb.next, 'next', 'Next')}</nav>`;
+}
+
+function renderRelated(meta, pagesBySlug) {
+  const slugs = Array.isArray(meta.related) ? meta.related : [];
+  const items = slugs.map(sl => pagesBySlug[sl]).filter(Boolean)
+    .map(p => `<li><a href="${BASE_PATH}/${p.outputPath}/">${escHtml(p.meta.title)}</a></li>`).join('');
+  return items ? `<section class="related"><span class="label">Related</span><ul>${items}</ul></section>` : '';
+}
+
+function renderFooterLists(nav) {
+  const li = (href, text) => `<li><a href="${BASE_PATH}/${href}">${escHtml(text)}</a></li>`;
+  const group = key => (nav.groups.find(g => g.key === key) || { pages: [] }).pages;
+  return {
+    footerDisciplines: nav.disciplines.map(d => li(d.path + '/', `${pad2(d.number)} ${d.name}`)).join(''),
+    footerStart: [li('', 'Cover'), li('framework/', 'The operating system on one page'), li('reading-paths/', 'Start by role'), li('assessment/tool/', 'Readiness Diagnostic')].join(''),
+    footerProof: group('proof').map(p => li(p.path + '/', p.title)).join(''),
+    footerReference: group('reference').map(p => li(p.path + '/', p.title)).join(''),
+  };
+}
+
+function renderBookStrip(meta, cfg) {
+  if (!cfg.book.enabled || !Array.isArray(cfg.book.chapters)) return '';
+  const chs = cfg.book.chapters.filter(c => c.discipline === meta.discipline);
+  if (!chs.length) return '';
+  const list = chs.map(c => `Chapter ${c.n}${c.title ? ': ' + escHtml(c.title) : ''}`).join(', ');
+  return `<aside class="book-strip"><span class="label">In the book</span> ${list}</aside>`;
+}
+
+function renderHubBits(page, nav, pagesBySlug, cfg) {
+  const d = disciplineOf(page.meta);
+  const disc = nav.disciplines.find(x => x.key === d.key);
+  const decisions = Array.isArray(page.meta.decisions) ? page.meta.decisions : [];
+  const hubDecisions = `<ol>${decisions.map(x => `<li>${escHtml(x)}</li>`).join('')}</ol>`;
+  const card = (p, i, label) => {
+    const src = pagesBySlug[p.slug];
+    const rt = src ? readingTime(src.body) : '';
+    return `<a class="card" href="${BASE_PATH}/${p.path}/"><span class="n">${label || pad2(i + 1)}</span><div><h3>${escHtml(p.title)}</h3>${p.dek ? `<p>${escHtml(p.dek)}</p>` : ''}</div><span class="rt">${rt}</span></a>`;
+  };
+  const readPages = disc.pages.filter(p => !p.tool);
+  const toolPages = disc.pages.filter(p => p.tool);
+  const hubPages = readPages.map((p, i) => card(p, i)).join('');
+  const hubTools = toolPages.map(p => card(p, 0, 'Tool')).join('');
+  const proofSlugs = Array.isArray(page.meta.proof) ? page.meta.proof : [];
+  const hubProof = proofSlugs.map(sl => pagesBySlug[sl]).filter(Boolean)
+    .map(p => card({ path: p.outputPath, title: p.meta.title, dek: p.meta.dek, slug: p.meta.slug }, 0, 'Proof')).join('');
+  const nextD = DISCIPLINES[(d.number) % DISCIPLINES.length];
+  const nextDisc = nav.disciplines.find(x => x.key === nextD.key);
+  const nextDiscipline = `<span class="label">Next discipline</span><a href="${BASE_PATH}/${nextDisc.path}/">${pad2(nextD.number)} ${nextD.name}<span class="q">${escHtml(nextD.question)}</span></a>`;
+  return { hubDecisions, hubPages, hubTools, hubProof, nextDiscipline };
+}
+
+function pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common) {
+  const meta = page.meta;
+  const d = disciplineOf(meta);
+  const nb = neighbours(nav, page);
+  const data = Object.assign({}, common, {
+    title: meta.title,
+    description: meta.description || '',
+    dek: meta.dek || '',
+    slug: meta.slug,
+    layoutName,
+    content: contentHtml,
+    ogTags: generateOgTags(meta, page.outputPath),
+    jsonLd: generateJsonLd(meta, page.outputPath, cfg),
+    canonicalPath: page.outputPath === '' ? '' : page.outputPath + '/',
+    hasMermaidAttr: hasMermaid ? ' data-has-mermaid="true"' : '',
+    interactiveSlot: layoutName === 'showcase' ? '<div id="interactive" class="interactive-mount"></div>' : '',
+    disciplineKey: d ? d.key : (meta.group || ''),
+    disciplineName: d ? d.name : '',
+    disciplineNumber: d ? pad2(d.number) : '',
+    disciplineQuestion: d ? d.question : '',
+    disciplinePath: d ? (nav.disciplines.find(x => x.key === d.key) || {}).path || d.key : '',
+    breadcrumb: renderBreadcrumb(meta, nav, d),
+    rail: meta.hub ? '' : renderRail(meta, nav),
+    summaryBox: renderSummaryBox(meta.summary),
+    prevNext: meta.hub ? '' : renderPrevNext(nb),
+    related: renderRelated(meta, pagesBySlug),
+    readingTime: readingTime(page.body),
+    bookStrip: renderBookStrip(meta, cfg),
+    toolScript: meta.tool_script || 'readiness',
+  });
+  if (meta.hub) Object.assign(data, renderHubBits(page, nav, pagesBySlug, cfg));
+  if (meta.discipline && !meta.tool && !meta.hub && !meta.summary) console.warn(`  WARN: no summary: ${path.relative(ROOT, page.filePath)}`);
+  return data;
+}
+
+function writeRedirects() {
+  let n = 0;
+  for (const [from, to] of Object.entries(REDIRECTS)) {
+    const target = `${BASE_PATH}/${to}/`;
+    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${SITE_URL}/${to}/"><title>Redirecting</title></head><body><a href="${target}">${to}</a></body></html>`;
+    const dest = path.join(DIST_DIR, from, 'index.html');
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.writeFileSync(dest, html, 'utf-8');
+    n++;
+  }
+  if (n) console.log(`  Redirects: ${n}`);
+}
+
 // ─── Main Build ────────────────────────────────────────────────────────────
 
 async function build() {
   const startTime = Date.now();
-  console.log('Building Enterprise AI Playbook...\n');
+  console.log('Building The Enterprise AI Operating System...\n');
+  const cfg = loadSiteConfig();
 
   // 1. Clean dist
   if (fs.existsSync(DIST_DIR)) {
@@ -664,10 +822,17 @@ async function build() {
     const outputPath = computeOutputPath(filePath, meta);
     pages.push({ meta, body, filePath, outputPath });
   }
+  const pagesBySlug = Object.fromEntries(pages.map(p => [p.meta.slug, p]));
 
   // 4. Build navigation
   const nav = buildNavigation(pages);
   const navDataJson = JSON.stringify(nav);
+  const common = Object.assign({
+    basePath: BASE_PATH,
+    navDataJson,
+    bookEnabled: !!cfg.book.enabled,
+    year: new Date().getFullYear(),
+  }, renderFooterLists(nav));
 
   // 5. Configure marked
   configureMarked();
@@ -683,12 +848,14 @@ async function build() {
     if (layoutName === 'showcase') {
       const jsPath = path.join(ROOT, 'js', 'pages', `${page.meta.slug}.js`);
       if (!fs.existsSync(jsPath)) {
-        console.warn(`  WARN: Showcase JS not found for "${page.meta.slug}", falling back to standard layout`);
         layoutName = 'standard';
       }
     }
+    if (layoutName === 'book' && !cfg.book.enabled) {
+      console.log(`  Skipped (book disabled): ${page.outputPath}`);
+      continue;
+    }
 
-    // Load layout
     const layoutPath = path.join(LAYOUTS_DIR, `${layoutName}.html`);
     if (!fs.existsSync(layoutPath)) {
       console.error(`  ERROR: Layout "${layoutName}" not found, skipping ${page.filePath}`);
@@ -697,51 +864,13 @@ async function build() {
     }
     const layout = fs.readFileSync(layoutPath, 'utf-8');
 
-    // Convert markdown to HTML
     hasMermaid = false;
-    const contentHtml = marked.parse(page.body);
+    let contentHtml = marked.parse(page.body);
+    contentHtml = convertMdLinks(contentHtml, pages);
 
-    // Determine next page within the discipline/group
-    const nextPage = neighbours(nav, page).next;
-
-    // Build canonical path
-    const canonicalPath = page.outputPath === '' ? '' : page.outputPath + '/';
-
-    // Showcase CSS
-    const needsShowcaseCss = layoutName === 'showcase' || layoutName === 'assessment';
-    const showcaseCss = needsShowcaseCss
-      ? `<link rel="stylesheet" href="${BASE_PATH}/css/showcase.css">`
-      : '';
-
-    // Build data
-    const data = {
-      title: page.meta.title,
-      description: page.meta.description || '',
-      section: page.meta.section,
-      slug: page.meta.slug,
-      content: contentHtml,
-      basePath: BASE_PATH,
-      ogTags: generateOgTags(page.meta),
-      jsonLd: generateJsonLd(page.meta),
-      showcaseCss: showcaseCss,
-      canonicalPath: canonicalPath,
-      navDataJson: navDataJson,
-      hasMermaidAttr: hasMermaid ? ' data-has-mermaid="true"' : '',
-      interactiveSlot: layoutName === 'showcase'
-        ? '<div id="interactive" class="interactive-mount"></div>'
-        : '',
-      nextSuggestion: nextPage
-        ? `<div class="next-suggestion"><span class="next-label">Continue with</span><a href="${BASE_PATH}/${nextPage.path}/" class="next-link">${nextPage.title}</a></div>`
-        : '',
-      flagshipClass: ['homepage', 'framework', 'governance-architecture', 'measurement-design', 'capability-stack'].includes(page.meta.slug) ? ' flagship' : '',
-    };
-
-    // Post-process: convert .md links to proper HTML paths
-    data.content = convertMdLinks(data.content, pages);
-
+    const data = pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common);
     const html = renderTemplate(layout, data);
 
-    // Write output
     const distPath = computeDistPath(page.outputPath);
     fs.mkdirSync(path.dirname(distPath), { recursive: true });
     fs.writeFileSync(distPath, html, 'utf-8');
@@ -749,40 +878,32 @@ async function build() {
     console.log(`  Rendered: ${page.outputPath || 'index'} (${layoutName})`);
   }
 
-  // 7. Generate sitemap, robots.txt, search index
+  // 7. Sitemap, robots, search index, nav.json, redirects
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), generateSitemap(pages), 'utf-8');
-  console.log('  Generated: sitemap.xml');
-
   fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), generateRobotsTxt(), 'utf-8');
-  console.log('  Generated: robots.txt');
+  fs.writeFileSync(path.join(DIST_DIR, 'search-index.json'), JSON.stringify(generateSearchIndex(pages), null, 2), 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, 'nav.json'), navDataJson, 'utf-8');
+  console.log('  Generated: sitemap.xml, robots.txt, search-index.json, nav.json');
+  writeRedirects();
 
-  const searchIndex = generateSearchIndex(pages);
-  fs.writeFileSync(
-    path.join(DIST_DIR, 'search-index.json'),
-    JSON.stringify(searchIndex, null, 2),
-    'utf-8'
-  );
-  console.log('  Generated: search-index.json');
-
-  // 8. Generate 404
-  const html404 = generate404(navDataJson);
+  // 8. 404
+  const html404 = generate404(common);
   if (html404) {
     fs.writeFileSync(path.join(DIST_DIR, '404.html'), html404, 'utf-8');
     console.log('  Generated: 404.html');
   }
 
-  // 9. Generate OG images
+  // 9. OG images
   await generateOGImages(pages);
 
-  // 10. Copy static assets
+  // 10. Static assets
   for (const dir of STATIC_DIRS) {
     const src = path.join(ROOT, dir);
     const dest = path.join(DIST_DIR, dir);
     copyDirSync(src, dest);
-    console.log(`  Copied: ${dir}/`);
   }
+  console.log(`  Copied: ${STATIC_DIRS.join(', ')}`);
 
-  // Done
   const elapsed = Date.now() - startTime;
   console.log(`\nBuild complete: ${rendered} page(s), ${errors} error(s) in ${elapsed}ms`);
   if (errors > 0) process.exitCode = 1;
