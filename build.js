@@ -103,6 +103,8 @@ function parseFrontmatter(raw, filePath) {
   if (!meta.layout) meta.layout = 'standard';
   if (!meta.slug) meta.slug = fileName === 'index' ? 'homepage' : fileName;
   if (meta.order === undefined) meta.order = 99;
+  meta.summary = meta.summary || null;
+  meta.dek = meta.dek || '';
   return { meta, body: match[2] };
 }
 
@@ -226,112 +228,54 @@ function findMarkdownFiles(dir) {
 
 // ─── Navigation Builder ────────────────────────────────────────────────────
 
-// Editorial section order: follows the executive decision journey
-const SECTION_ORDER = [
-  'Position',
-  'Framework',
-  'Assessment',
-  'Architecture',
-  'Operating Model',
-  'Governance',
-  'Agentic Strategy',
-  'Measurement',
-  'Portfolio',
-  'Transformation',
-  'Workforce',
-  'Proof',
-  'Reading Paths',
-  'Glossary',
-  'Sources',
+// The spine: seven disciplines (names are the book's structure; questions are the site's own wording)
+const DISCIPLINES = [
+  { key: 'diagnose', number: 1, name: 'Diagnose', question: 'Where is the AI program actually stuck, and why?' },
+  { key: 'prepare',  number: 2, name: 'Prepare',  question: 'Which foundations have to be in place before scale?' },
+  { key: 'govern',   number: 3, name: 'Govern',   question: 'How does the enterprise stay in control at deployment speed?' },
+  { key: 'design',   number: 4, name: 'Design',   question: 'What system, at what complexity, does the workflow need?' },
+  { key: 'operate',  number: 5, name: 'Operate',  question: 'Is it working in production, and do the economics hold?' },
+  { key: 'organize', number: 6, name: 'Organize', question: 'Who owns AI, and how does adoption spread?' },
+  { key: 'sustain',  number: 7, name: 'Sustain',  question: 'What survives the next model cycle?' },
+];
+const GROUPS = [
+  { key: 'start',     name: 'Start here' },
+  { key: 'proof',     name: 'Proof' },
+  { key: 'reference', name: 'Reference' },
 ];
 
-// Page order within each section (by slug). Pages not listed sort to end alphabetically.
-const PAGE_ORDER = {
-  'Position': ['the-problem', 'what-transformation-means', 'failure-modes'],
-  'Assessment': ['ai-readiness', 'data-readiness', 'process-talent', 'maturity-model', 'assessment'],
-  'Architecture': ['architecture-index', 'capability-stack', 'systems-model', 'control-architecture', 'operating-architecture', 'reference-patterns'],
-  'Operating Model': ['caio-mandate', 'structural-models', 'decision-rights', 'coordination'],
-  'Governance': ['governance-architecture', 'genai-model-risk', 'agent-governance', 'shadow-ai', 'regulatory-readiness'],
-  'Agentic Strategy': ['the-shift', 'protocol-landscape', 'human-agent-collaboration', 'finops'],
-  'Measurement': ['measurement-design', 'financial-linkage', 'board-reporting'],
-  'Portfolio': ['prioritization', 'value-concentration', 'pilot-to-production'],
-  'Transformation': ['roadmap', 'phase-gates'],
-  'Workforce': ['role-evolution', 'middle-management', 'knowledge-architecture'],
-  'Proof': ['case-studies', 'decision-records', 'decision-artifacts', 'checklists'],
-};
-
 function buildNavigation(pages) {
-  const sections = {};
-  let homePage = null;
-
-  for (const page of pages) {
-    if (page.meta.slug === 'homepage') {
-      homePage = page;
-      continue;
-    }
-    const sec = page.meta.section;
-    if (!sections[sec]) {
-      sections[sec] = [];
-    }
-    sections[sec].push(page);
+  const byDiscipline = Object.fromEntries(DISCIPLINES.map(d => [d.key, []]));
+  const byGroup = Object.fromEntries(GROUPS.map(g => [g.key, []]));
+  const hubs = {};
+  for (const p of pages) {
+    const m = p.meta;
+    if (m.slug === 'homepage' || m.layout === 'cover') continue;
+    if (m.hub) { hubs[m.discipline] = p; continue; }
+    if (m.discipline && byDiscipline[m.discipline]) byDiscipline[m.discipline].push(p);
+    else if (m.group && byGroup[m.group]) byGroup[m.group].push(p);
+    else console.warn(`  WARN: ${p.filePath} has no discipline/group; it will not appear in navigation`);
   }
-
-  // Sort pages within sections by editorial order, then by frontmatter order
-  for (const sec of Object.keys(sections)) {
-    const orderList = PAGE_ORDER[sec] || [];
-    sections[sec].sort((a, b) => {
-      const ai = orderList.indexOf(a.meta.slug);
-      const bi = orderList.indexOf(b.meta.slug);
-      const aOrder = ai >= 0 ? ai : 100 + (a.meta.order || 99);
-      const bOrder = bi >= 0 ? bi : 100 + (b.meta.order || 99);
-      return aOrder - bOrder;
-    });
-  }
-
-  const nav = [];
-  if (homePage) {
-    nav.push({
-      title: 'Home',
-      slug: 'homepage',
-      path: '',
-      section: 'Home',
-    });
-  }
-
-  // Use editorial order, then append any sections not in the list
-  const orderedSections = [...SECTION_ORDER];
-  for (const sec of Object.keys(sections)) {
-    if (!orderedSections.includes(sec)) {
-      orderedSections.push(sec);
-    }
-  }
-
-  for (const sec of orderedSections) {
-    if (!sections[sec] || sections[sec].length === 0) continue;
-    nav.push({
-      title: sec,
-      pages: sections[sec].map(p => ({
-        title: p.meta.title,
-        slug: p.meta.slug,
-        path: p.outputPath,
-        section: sec,
-      })),
-    });
-  }
-
-  return nav;
+  const sortPages = arr => arr.sort((a, b) => ((a.meta.order ?? 99) - (b.meta.order ?? 99)) || String(a.meta.title).localeCompare(String(b.meta.title)));
+  const entry = p => ({ title: p.meta.title, slug: p.meta.slug, path: p.outputPath, dek: p.meta.dek || '', tool: !!p.meta.tool, discipline: p.meta.discipline || null });
+  const disciplines = DISCIPLINES.map(d => ({
+    key: d.key, number: d.number, name: d.name, question: d.question,
+    path: hubs[d.key] ? hubs[d.key].outputPath : d.key,
+    pages: sortPages(byDiscipline[d.key]).map(entry),
+  }));
+  const groups = GROUPS.map(g => ({ key: g.key, name: g.name, pages: sortPages(byGroup[g.key]).map(entry) }));
+  const tools = disciplines.flatMap(d => d.pages.filter(p => p.tool));
+  return { disciplines, groups, tools };
 }
 
-function flattenNav(nav) {
-  const flat = [];
-  for (const item of nav) {
-    if (item.pages) {
-      flat.push(...item.pages);
-    } else {
-      flat.push(item);
-    }
-  }
-  return flat;
+function neighbours(nav, page) {
+  const m = page.meta;
+  const list = m.discipline
+    ? (nav.disciplines.find(d => d.key === m.discipline) || { pages: [] }).pages
+    : (nav.groups.find(g => g.key === m.group) || { pages: [] }).pages;
+  const i = list.findIndex(p => p.slug === m.slug);
+  const pick = p => p ? { title: p.title, path: p.path } : null;
+  return { prev: i > 0 ? pick(list[i - 1]) : null, next: i >= 0 && i < list.length - 1 ? pick(list[i + 1]) : null };
 }
 
 // ─── SEO Generation ────────────────────────────────────────────────────────
@@ -428,7 +372,8 @@ function convertMdLinks(html, pages) {
 
 // ─── Output Path Helpers ───────────────────────────────────────────────────
 
-function computeOutputPath(filePath) {
+function computeOutputPath(filePath, meta) {
+  if (meta && meta.permalink) return String(meta.permalink).replace(/^\/+|\/+$/g, '');
   const rel = path.relative(CONTENT_DIR, filePath);
   const parts = rel.split(path.sep);
   const fileName = parts.pop().replace('.md', '');
@@ -716,14 +661,13 @@ async function build() {
   for (const filePath of mdFiles) {
     const raw = fs.readFileSync(filePath, 'utf-8');
     const { meta, body } = parseFrontmatter(raw, filePath);
-    const outputPath = computeOutputPath(filePath);
+    const outputPath = computeOutputPath(filePath, meta);
     pages.push({ meta, body, filePath, outputPath });
   }
 
   // 4. Build navigation
   const nav = buildNavigation(pages);
   const navDataJson = JSON.stringify(nav);
-  const flatNav = flattenNav(nav);
 
   // 5. Configure marked
   configureMarked();
@@ -757,9 +701,8 @@ async function build() {
     hasMermaid = false;
     const contentHtml = marked.parse(page.body);
 
-    // Determine next page
-    const flatIdx = flatNav.findIndex(n => n.slug === page.meta.slug);
-    const nextPage = flatIdx >= 0 && flatIdx < flatNav.length - 1 ? flatNav[flatIdx + 1] : null;
+    // Determine next page within the discipline/group
+    const nextPage = neighbours(nav, page).next;
 
     // Build canonical path
     const canonicalPath = page.outputPath === '' ? '' : page.outputPath + '/';
@@ -845,7 +788,7 @@ async function build() {
   if (errors > 0) process.exitCode = 1;
 }
 
-module.exports = { renderTemplate, parseFrontmatter, buildNavigation, computeOutputPath, loadSiteConfig, build };
+module.exports = { renderTemplate, parseFrontmatter, buildNavigation, neighbours, computeOutputPath, loadSiteConfig, DISCIPLINES, GROUPS, build };
 
 if (require.main === module) {
   build().catch(err => {
