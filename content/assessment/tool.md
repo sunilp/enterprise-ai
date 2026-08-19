@@ -12,4 +12,4 @@ tool_script: readiness
 dek: "Five dimensions, twenty-five statements, one scorecard you can put in front of the leadership team."
 ---
 
-Rate each statement from "not started" to "optimized" as it is true today, not as planned. The diagnostic scores five dimensions, names the focus area, and points to the pages that address it. Nothing leaves your browser unless you share the link.
+Rate each statement from "not started" to "optimized" as it is true today, not as planned. The diagnostic scores five dimensions, names the focus area, and points to the pages that address it. Your answers stay in your browser unless you share the link.

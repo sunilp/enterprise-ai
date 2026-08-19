@@ -8,14 +8,14 @@ order: 2
 dek: How to assess data quality, accessibility, governance and lineage per use case, and the three investments that move the needle.
 summary:
   decide: Whether the data a specific use case needs is ready, and whether data remediation has to be the AI program for now.
-  cost: A three-month AI project becomes a six-to-twelve-month data remediation; Gartner projects 60% of agentic AI projects will fail on poor data foundations.
+  cost: A three-month AI project becomes a six-to-twelve-month data remediation; Gartner predicts 60% of AI projects without AI-ready data will be abandoned through 2026.
   metric: "Time to onboard a new data source for an AI project: under two weeks is ready, over four weeks means you are in the data cleansing trap."
 ---
 # Data Readiness
 
 Data is the most common blocker of enterprise AI transformation and the least honestly assessed. Organizations invest in models, platforms, and talent while the underlying data remains inconsistent, inaccessible, ungoverned, and untraced. The result is predictable: AI initiatives stall, timelines extend, and leadership confidence erodes.
 
-The numbers are unambiguous. Fifty-seven percent of organizations say their data is not AI-ready (Gartner). Only 14% of leaders believe their data maturity can support AI at scale (Gartner). And Gartner projects that 60% of agentic AI projects will fail because of poor data foundations. These are not edge cases. They are the norm.
+The numbers are unambiguous. Fifty-seven percent of organizations say their data is not AI-ready (Gartner, 2025). Only 14% of leaders believe their data maturity can support AI at scale (Gartner). And Gartner predicts that through 2026 organizations will abandon 60% of AI projects that are not supported by AI-ready data (Gartner, 2025). These are not edge cases. They are the norm.
 
 :::warning
 **The stakes are higher for agentic AI**

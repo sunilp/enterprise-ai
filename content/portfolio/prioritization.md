@@ -20,7 +20,7 @@ The structural bias is predictable: IT, HR, and legal functions are better organ
 :::warning
 **The supporting function trap**
 
-BCG research shows that 70% of AI value potential is concentrated in sales, manufacturing, supply chain, and pricing. Most organizations have their AI investments concentrated in the opposite direction: HR, IT, legal, and finance support. The gap between where AI is deployed and where value is generated is the single largest driver of disappointing AI ROI.
+BCG research shows that 70% of AI value potential is concentrated in sales, manufacturing, supply chain, and pricing (BCG, 2025). Most organizations have their AI investments concentrated in the opposite direction: HR, IT, legal, and finance support. The gap between where AI is deployed and where value is generated is the single largest driver of disappointing AI ROI.
 :::
 
 ---
@@ -34,8 +34,8 @@ quadrantChart
     title AI Use Case Prioritization Matrix
     x-axis Low Feasibility --> High Feasibility
     y-axis Low Business Value --> High Business Value
-    quadrant-1 Strategic Bets
-    quadrant-2 Priority Now
+    quadrant-1 Priority Now
+    quadrant-2 Strategic Bets
     quadrant-3 Kill or Defer
     quadrant-4 Quick Wins
     Demand Forecasting: [0.7, 0.85]
@@ -163,7 +163,7 @@ Target examples: pricing optimization with real-time market signal integration, 
 
 **Horizon 3: Moonshots (24+ months)**
 
-Transformational use cases that depend on capabilities the organization does not yet have and that would fundamentally change the competitive position if they succeed. These carry high uncertainty and should represent a minority of investment. They are not speculative for their own sake; they are aligned to a specific strategic thesis about where the industry is going.
+Transformational use cases that depend on capabilities the organization does not yet have and that would change the competitive position if they succeed. These carry high uncertainty and should represent a minority of investment. They are not speculative for their own sake; they are aligned to a specific strategic thesis about where the industry is going.
 
 Target examples: fully agentic customer acquisition workflows, real-time adaptive pricing at the individual customer level, AI-native product development cycles.
 

@@ -71,7 +71,7 @@ The isolation risk: AI investments are approved based on projected ROI that nobo
 
 ### CHRO: Absent from AI Planning
 
-This is the most consistent and consequential coordination gap in enterprise AI. Only 46% of organizations integrate workforce planning into their AI roadmaps (IBM IBV, 2025). The CHRO is responsible for the people dimension of the transformation: role redesign, reskilling investment, change management, and workforce planning as AI changes the demand for specific skills.
+This is the most consistent and consequential coordination gap in enterprise AI. Only 46% of organizations integrate workforce planning into their AI roadmaps (WEF, 2025). The CHRO is responsible for the people dimension of the transformation: role redesign, reskilling investment, change management, and workforce planning as AI changes the demand for specific skills.
 
 Without CHRO involvement, AI projects are deployed without considering how they change workflows, what happens to the people whose tasks are automated, and what new skills are required to operate AI-assisted processes. The result is resistance, attrition, and adoption failure that technology teams attribute to "change management problems" rather than to the structural absence of the function that owns change management.
 
@@ -205,10 +205,9 @@ Use this table to assess the current coordination state of your organization and
 
 ---
 
----
-
 ## Sources
 
-1. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025.
+1. World Economic Forum. "Scaling AI with Strategy, Data and Workforce Readiness." October 2025.
+2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -18,7 +18,7 @@ Most organizations believe they are more AI-ready than they actually are. The ga
 :::warning
 **The readiness gap is widening**
 
-Only 40% of organizations report high AI strategy readiness, and that figure is declining year-over-year (Deloitte, 2026). Confidence is not dropping. Readiness is. The gap between what leaders believe and what their organizations can actually execute is growing.
+Fewer than half of organizations rate themselves highly prepared on any dimension: 42% on strategy, 43% on technical infrastructure, 40% on data management, 20% on talent (Deloitte, 2026). Strategy confidence rose three points year over year; data, infrastructure and talent preparedness all fell. Confidence is not dropping. Readiness is.
 :::
 
 ---
@@ -178,6 +178,6 @@ Treating the assessment as a one-time gate rather than a continuous diagnostic. 
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

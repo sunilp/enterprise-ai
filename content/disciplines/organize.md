@@ -14,7 +14,7 @@ decisions:
   - Plan which roles change with each deployment, and measure managers on outcomes, not throughput
 proof: [decision-records]
 ---
-Ownership of AI is set by structure, not by title. A CAIO with no authority over use case approval, vendor procurement or model standards produces the appearance of governance without the substance, and a structure chosen by default stops fitting once the portfolio scales. The first half of this discipline covers getting ownership right: what the CAIO mandate has to include, which structural model fits which stage, how decision rights name one accountable owner per call, and what keeps CIO, CDO, CISO, Legal, Finance and CHRO coordinating instead of each running AI on its own timeline.
+Ownership of AI is set by structure, not by title. A CAIO with no authority over use case approval, vendor procurement or model standards produces the appearance of governance without the substance, and a structure chosen by default stops fitting once the portfolio scales. The first half of this discipline covers getting ownership right: what the CAIO mandate has to include, which structural model fits which stage, how decision rights name one accountable owner per decision, and what keeps CIO, CDO, CISO, Legal, Finance and CHRO coordinating instead of each running AI on its own timeline.
 
 Adoption then spreads through people, and it is not self-managing. Roles change composition as agents absorb routine work. Middle managers decide which tools their teams treat as safe and how performance is measured. Experts decide whether their judgment gets captured in forms agents can use. Every task needs a deliberate choice about how humans and agents share the work.
 

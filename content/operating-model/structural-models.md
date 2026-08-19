@@ -160,15 +160,15 @@ The transition requires:
 
 1. Auditing the existing portfolio to identify which capabilities can be productized as shared services vs. which require embedded expertise
 2. Identifying and hiring AI leads within major business units, ideally from people who already understand the domain
-3. Transferring governance accountability while retaining platform ownership in the hub
+3. Transferring execution accountability to the spokes while retaining governance and platform ownership in the hub
 4. Defining the escalation path from spoke to hub for risk decisions, model approvals, and incidents
 
 Expect 9 to 18 months for this transition to stabilize. The governance framework must be ready before spokes go independent, or they will develop local variants that are incompatible with each other.
 
 ```mermaid
 graph LR
-    A["Centralized CoE\n(0-18 months)"]
-    B["Hub-and-Spoke\n(18 months+)"]
+    A["Centralized CoE\n(0-2 years)"]
+    B["Hub-and-Spoke\n(2 years+)"]
     A -- "portfolio growth\nbottleneck signal\nshadow AI emergence" --> B
 ```
 

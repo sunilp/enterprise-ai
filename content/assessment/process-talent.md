@@ -88,7 +88,7 @@ A process is AI-ready when:
 
 ### The Scale of the Gap
 
-Only 20% of organizations report having the AI talent needed to execute their strategy (Deloitte, 2026). This is not a pipeline problem that will resolve itself in 18 months. It is a structural gap that requires deliberate intervention.
+Only 20% of organizations report being ready on AI talent (Deloitte, 2026). This is not a pipeline problem that will resolve itself in 18 months. It is a structural gap that requires deliberate intervention.
 
 The conventional response is to hire data scientists. This is necessary but insufficient. The talent gap in enterprise AI is broader, and the missing roles are less visible.
 
@@ -196,7 +196,7 @@ The failure mode is treating both as separate workstreams that can be addressed 
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
 2. PwC. "2026 AI Business Predictions." 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

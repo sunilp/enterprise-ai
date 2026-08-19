@@ -77,7 +77,7 @@ The agent handles the normal case autonomously. When it encounters something out
 
 No human in the loop. The agent acts, completes tasks, and reports results. Human involvement is retrospective (reviewing logs, auditing outcomes) rather than prospective (approving or monitoring).
 
-**When to use:** Rarely. Appropriate only for well-bounded, reversible, low-stakes tasks with mature agents that have demonstrated high reliability. Requires robust monitoring and rollback capability even if humans are not actively watching.
+**When to use:** Rarely. Appropriate only for well-bounded, reversible, low-stakes tasks with mature agents that have demonstrated high reliability. Requires strong monitoring and rollback capability even if humans are not actively watching.
 
 **Examples:** Automated data pipeline maintenance. Log analysis and alert generation. Routine database optimization. Infrastructure scaling in response to load.
 
@@ -130,7 +130,7 @@ flowchart TD
 
     Maturity -->|Unproven/Emerging| Supervised[Supervised Autonomy\nAgent executes, human monitors]
     Maturity -->|Demonstrated| Exception[Exception-Based\nAgent executes, human handles exceptions]
-    Maturity -->|Proven long-term| Full[Full Autonomy\nRare. Requires robust monitoring.]
+    Maturity -->|Proven long-term| Full[Full Autonomy\nRare. Requires strong monitoring.]
 
     style Copilot fill:#5a3a3a,color:#fff
     style Gate fill:#5a4a2a,color:#fff
@@ -173,7 +173,7 @@ Organizations that keep HR and technology in separate silos will design agent sy
 
 ## What Is Coming
 
-By 2028, **15% of day-to-day work decisions will be made autonomously by agents** without human review (Gartner, 2025). That is not a distant projection. It is three years out.
+By 2028, **15% of day-to-day work decisions will be made autonomously by agents** without human review (Gartner, 2025). That is not a distant projection.
 
 The organizations that will handle that well are the ones building the collaboration infrastructure now: defining patterns, establishing trust criteria, designing exception boundaries, and creating the governance mechanisms that make autonomous decision-making auditable.
 

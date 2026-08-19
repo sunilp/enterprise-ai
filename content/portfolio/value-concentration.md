@@ -55,11 +55,11 @@ Agentic AI is changing the value concentration calculus. Agents, systems that ac
 
 The data reflects this shift:
 
-- Agents accounted for approximately 17% of total enterprise AI value generated in 2025 (BCG)
-- That share is projected to reach 29% by 2028 (BCG)
+- Agents accounted for approximately 17% of total enterprise AI value generated in 2025 (BCG, 2025)
+- That share is projected to reach 29% by 2028 (BCG, 2025)
 - The compound growth rate of agentic AI value is significantly higher than that of copilot and automation AI
 
-The implication for value concentration: the organizations building depth in agentic capability now are positioning for the majority of AI value growth over the next three years. Organizations that have spread their investment across copilot tools and departmental automation will find themselves needing to rebuild their approach to compete.
+The implication for value concentration: the organizations building depth in agentic capability now are positioning for the majority of AI value growth through 2028. Organizations that have spread their investment across copilot tools and departmental automation will find themselves needing to rebuild their approach to compete.
 
 ```mermaid
 xychart-beta
@@ -163,7 +163,7 @@ flowchart TD
 
 ## What Concentration Looks Like Operationally
 
-Concentration is not just a strategic decision. It has operational implications that most organizations underestimate:
+Concentration is a strategic decision with operational implications that most organizations underestimate:
 
 **Dedicated team.** High-value use cases at concentration-level investment require a dedicated team: data engineers, ML engineers, domain experts, and a program lead who owns nothing else. Shared-resource models produce shared mediocrity.
 

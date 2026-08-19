@@ -13,7 +13,7 @@ summary:
 ---
 # Shadow AI
 
-69% of organizations suspect their employees are using prohibited public GenAI tools (Gartner, 2025). By 2030, more than 40% of organizations will experience a security or compliance incident directly attributable to shadow AI (Gartner, 2024). These are not predictions about a future state. They are descriptions of conditions already in place.
+69% of organizations suspect their employees are using prohibited public GenAI tools (Gartner, 2025). By 2030, more than 40% of enterprises will experience a security or compliance incident linked to unauthorized shadow AI (Gartner, 2025). The second is a forecast. The first describes a condition already in place.
 
 Shadow AI is the enterprise AI problem that most leadership teams misframe. They frame it as a behavior problem. It is a demand signal.
 
@@ -130,9 +130,9 @@ Under the EU AI Act, organizations are accountable for AI systems used in their 
 
 Under GDPR and equivalent data protection regimes, personal data processed through an employee's personal ChatGPT account is still personal data that the organization is responsible for protecting. "We did not know" is not a defense.
 
-Under financial services regulations (SR 11-7 equivalents, EBA AI guidelines), organizations are responsible for governance of AI systems they use. A trading desk using an unsanctioned AI tool for market analysis is a model risk management failure, not just an IT policy failure.
+Under financial services regulations (SR 11-7 and its 2026 successor SR 26-2, EBA AI guidelines), organizations are responsible for governance of AI systems they use. A trading desk using an unsanctioned AI tool for market analysis is a model risk management failure as much as an IT policy failure.
 
-The shadow AI inventory and the acceptable use policy are both regulatory requirements, not just operational best practices.
+The shadow AI inventory and the acceptable use policy are regulatory requirements as well as operational best practices.
 
 ## Summary
 

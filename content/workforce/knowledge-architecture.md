@@ -81,7 +81,7 @@ Agents need to know when they are done and whether what they produced is good. F
 
 Evaluation criteria should be made explicit before deployment, not inferred from feedback after deployment. The questions to answer: What does a high-quality output look like for this task type? What are the common failure modes? What would cause an expert to reject an output? What would cause them to accept it despite minor issues?
 
-These criteria become the evaluation harness for agent output and the basis for ongoing quality monitoring.
+These criteria become the evaluation standard for agent output and the basis for ongoing quality monitoring.
 
 ---
 
@@ -132,7 +132,7 @@ Skipping the middle layer means agents operate directly on whatever documentatio
 
 ## The Accuracy Impact
 
-Alation's enterprise data intelligence research suggests that a robust knowledge layer increases agent accuracy by up to 80% on knowledge-intensive tasks. That number should be treated as a directional indicator rather than a universal guarantee: the actual improvement depends heavily on the task type, the quality of knowledge capture, and the baseline accuracy without it.
+Alation's enterprise data intelligence analysis suggests that a well-built knowledge layer increases agent accuracy by up to 80% on knowledge-intensive tasks. That number should be treated as a directional indicator rather than a universal guarantee: the actual improvement depends heavily on the task type, the quality of knowledge capture, and the baseline accuracy without it.
 
 The directional insight is credible and consistent with what most organizations observe: agent performance on knowledge-intensive tasks is bounded by the quality of the knowledge they can access, and most organizations have significant room to improve that knowledge infrastructure.
 

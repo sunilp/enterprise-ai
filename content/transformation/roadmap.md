@@ -31,7 +31,7 @@ The most common and most expensive sequencing mistake in AI transformation is ru
 gantt
     title 12-Month Enterprise AI Transformation Roadmap
     dateFormat  YYYY-MM
-    axisFormat  %b %Y
+    axisFormat  Month %-m
 
     section Phase 1: Foundation
     Current state assessment         :2025-01, 6w

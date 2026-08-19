@@ -108,7 +108,7 @@ The hub is the CAIO function. It owns the decisions that must be consistent acro
 
 This structure solves the core tension in enterprise AI: the need for consistent governance and the need for domain-specific speed. Centralized control creates bottlenecks. Full decentralization creates fragmentation. Hub-and-spoke creates accountability at both levels.
 
-The 36% ROI advantage translates to real capital. For an enterprise spending $50M annually on AI, that is $18M in additional return, or $18M left on the table by choosing the wrong structure.
+At enterprise AI spending levels, a 36% ROI advantage is real capital, and choosing the wrong structure leaves it on the table.
 
 For a detailed RACI matrix, see [Operating Architecture](../architecture/operating-architecture.md).
 
@@ -177,8 +177,6 @@ The debate about whether the CAIO is transitional reflects a misunderstanding of
 - The CAIO is not in the room when the CFO allocates AI budget
 
 These are not edge cases. They are the default failure modes. Recognizing them early is the difference between course-correcting and rebuilding after a significant failure.
-
----
 
 ---
 

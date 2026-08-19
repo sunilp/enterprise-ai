@@ -52,7 +52,7 @@ The first decision is not which AI to use. It is how the organization will gover
 - Decision rights are documented: who approves AI investments, who can deploy to production, who shuts down a failing system
 - The organizational structure (hub-and-spoke recommended) is chosen deliberately, not inherited from the IT org chart
 
-**The cost of skipping this:** Every function does AI independently. Duplicate investments, incompatible standards, no consolidated risk view. The 42% of enterprises that scrapped most AI initiatives in 2025 overwhelmingly lacked a defined operating model.
+**The cost of skipping this:** Every function does AI independently. Duplicate investments, incompatible standards, no consolidated risk view. When 42% of enterprises scrap most of their AI initiatives in a single year (S&P Global, 2025), the missing piece is rarely the model. It is the operating model.
 
 **Key metric:** Time from approved use case to production deployment. If this exceeds 6 months, the operating model is the bottleneck.
 
@@ -86,7 +86,7 @@ Most AI investment concentrates in the System of Intelligence (models, knowledge
 
 ### Principle 4: Measurement That Reaches the Balance Sheet
 
-The measurement gap is where CFOs lose confidence and AI budgets get cut. 91% of organizations claim AI improved productivity. Only 23% can quantify it.
+The measurement gap is where CFOs lose confidence and AI budgets get cut. 91% of organizations claim AI improved productivity. Only 23% can quantify it (Forbes AI Study, 2025).
 
 **What this means in practice:**
 - Baselines established before deployment, not after. You cannot prove impact without knowing where you started.
@@ -188,15 +188,15 @@ Capital is flowing into AI faster than enterprises are building the management s
   <div class="metric"><div class="metric-value">5%</div><div class="metric-label">Classified as future-built</div><div class="metric-source">BCG, 2025</div></div>
 </div>
 
-- **30%** of GenAI proofs of concept are abandoned after pilot. They work in the lab and stall in production. <span class="metric-source">Gartner, 2025</span>
-- **39%** of enterprises report meaningful EBIT impact from AI. Fewer than two in five can trace AI to the income statement. <span class="metric-source">McKinsey, 2025</span>
+- **30%** or more of GenAI proofs of concept abandoned after pilot by the end of 2025, as Gartner predicted. They work in the lab and stall in production. <span class="metric-source">Gartner, 2024</span>
+- **39%** of enterprises report any enterprise-level EBIT impact from AI. Fewer than two in five can trace AI to the income statement. <span class="metric-source">McKinsey, 2025</span>
 
 Full source list and methodology: [Sources and Methodology](/enterprise-ai/sources/).
 
 ## Where to go next
 
 - Run the [Readiness Diagnostic](/enterprise-ai/assessment/tool/): twenty-five statements, a tier, a focus area, and the pages that address it.
-- Follow a [role path](/enterprise-ai/reading-paths/): six to eight pages in the order that builds the picture for your seat.
+- Follow a [role path](/enterprise-ai/reading-paths/): seven or eight pages in the order that builds the picture for your seat.
 - Open the [Proof](/enterprise-ai/proof/case-studies/) shelf: case studies, decision records, and board-ready artifacts.
 
 ## The operating system in one sentence

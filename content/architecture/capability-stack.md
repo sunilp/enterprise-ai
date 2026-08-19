@@ -47,7 +47,7 @@ graph TD
     F --> G
 ```
 
-The stack reads top to bottom as value delivery and bottom to top as dependency. The Governance & Control Plane is not a sequential layer. It operates across all layers simultaneously.
+The stack reads top to bottom as dependency (each layer rests on the one below) and bottom to top as value delivery. The Governance & Control Plane is not a sequential layer. It operates across all layers simultaneously.
 
 ---
 

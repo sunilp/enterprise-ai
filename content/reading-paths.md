@@ -1,13 +1,13 @@
 ---
 title: Start by role
-description: "Four reading paths through the operating system, by seat: CEO and board, CIO and CTO, CDO and CAIO, CFO and CRO. Six to eight pages each, in the order that builds the picture."
+description: "Four reading paths through the operating system, by seat: CEO and board, CIO and CTO, CDO and CAIO, CFO and CRO. Seven or eight pages each, in the order that builds the picture."
 layout: standard
 slug: reading-paths
 group: start
 order: 2
 og_title: Start by role
-og_description: "Four reading paths through The Enterprise AI Operating System, by seat. Six to eight pages each, in the order that builds the picture."
-dek: "Four paths through the operating system, by seat. Six to eight pages each, in the order that builds the picture."
+og_description: "Four reading paths through The Enterprise AI Operating System, by seat. Seven or eight pages each, in the order that builds the picture."
+dek: "Four paths through the operating system, by seat. Seven or eight pages each, in the order that builds the picture."
 ---
 
 Not every page is equally relevant to every seat. These four paths route through the seven disciplines in the order that builds understanding fastest for the decisions you actually own. Each path ends where the next conversation starts: the board pack, the architecture review, the portfolio review, the risk committee.
@@ -50,7 +50,7 @@ You own the technology organization and the platform. You are building the capab
 
 You own readiness, the portfolio, and the operating model that makes the programme coherent. You need the readiness picture, a prioritization method that survives contact with the business, and governance built into delivery.
 
-1. [AI Readiness](/enterprise-ai/assessment/ai-readiness/) (Prepare): the five dimensions and how to read them.
+1. [AI Readiness](/enterprise-ai/assessment/ai-readiness/) (Prepare): the four dimensions and how to read them.
 2. [Data Readiness](/enterprise-ai/assessment/data-readiness/) (Prepare): AI-ready is not the same as analytically adequate.
 3. [Use Case Prioritization](/enterprise-ai/portfolio/prioritization/) (Prepare): concentrate investment where it compounds.
 4. [Pilot to Production](/enterprise-ai/portfolio/pilot-to-production/) (Prepare): the bar a pilot has to clear.

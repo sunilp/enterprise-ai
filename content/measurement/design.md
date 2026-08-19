@@ -132,7 +132,7 @@ flowchart TD
     C --> C1["Revenue impact<br/>Cost reduction<br/>Margin improvement"]
 ```
 
-The transition from activity to outcome requires workflow instrumentation. You need to know not just that people are using the tool, but what they are doing differently as a result.
+The transition from activity to outcome requires workflow instrumentation. Usage alone tells you little; you need to know what people are doing differently as a result.
 
 The transition from outcome to value requires financial modeling. Time saved must be converted to FTE capacity released, then to cost or revenue impact. This is where most measurement programs stall.
 
@@ -174,7 +174,7 @@ Before any pilot launches, publish a one-page measurement charter that documents
 ## Getting Started
 
 1. Before the next pilot launches, document baselines for the three metrics most directly connected to the target business outcome.
-2. Assign a measurement owner who is distinct from the deployment team. Separation of concerns matters.
+2. Assign a measurement owner who is distinct from the deployment team, so the team that built the pilot is not the team scoring it.
 3. Build the reporting structure before you need it. A dashboard that takes six weeks to build will not be ready when the board asks.
 4. Run a measurement retrospective on your most recent completed pilot. What did you actually measure? What would you measure differently?
 

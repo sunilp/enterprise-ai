@@ -8,7 +8,7 @@ order: 4
 dek: "Five checklists with named assessors and evidence: readiness, pilot launch, production gate, agent deployment and board reporting."
 summary:
   decide: Decide whether the program, a pilot, a production promotion, an agent or a board report is ready to proceed, or is held until the gaps are closed.
-  cost: Skipped, launches go ahead without a baseline, success threshold or rollback; used as self-assessment, the checklists become compliance theater.
+  cost: If skipped, launches go ahead without a baseline, success threshold or rollback; if used as self-assessment, the checklists become compliance theater.
   metric: Each item assessed by someone independent of the deployment team with authority to delay launch, dated and evidenced; hard stops at the production gate never waived.
 ---
 # Assessment Checklists
@@ -81,7 +81,7 @@ Use this checklist before launching any AI pilot. All items should be complete b
 
 ## 3. Production Deployment Gate
 
-Use this checklist at Gate 2 to determine whether a pilot is ready to promote to production. Items marked with a star are hard stops: production deployment cannot proceed if these items are incomplete.
+Use this checklist at Gate 2 to determine whether a pilot is ready to promote to production. Items marked (hard stop) cannot be waived: production deployment cannot proceed if any of them is incomplete.
 
 - [ ] **Measured pilot results meet the pre-defined success threshold** (hard stop)
 - [ ] **Attribution methodology is documented and has been reviewed by a finance partner** (hard stop)

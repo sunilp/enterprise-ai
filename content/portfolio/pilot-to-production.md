@@ -280,7 +280,7 @@ Organizations that build this infrastructure before scaling their AI portfolio c
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
 2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

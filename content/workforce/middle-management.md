@@ -55,7 +55,7 @@ Middle managers, particularly those who are genuine domain experts, have spent y
 
 That expertise is their value proposition within the organization. It is why they were promoted. It is why they are consulted.
 
-Now they are being asked to externalize that judgment into process documentation, training data, and evaluation criteria so that an agent can replicate it. This is not just a technical request. It is a request to devalue the asset that made them valuable.
+Now they are being asked to externalize that judgment into process documentation, training data, and evaluation criteria so that an agent can replicate it. This is more than a technical request. It is a request to devalue the asset that made them valuable.
 
 The resistance is not irrational. The expert who declines to fully document their decision logic because "it's too nuanced to capture" is making a rational choice to protect their position. Organizations that do not address this dynamic explicitly will get incomplete knowledge externalization, which means agents that fail at the cases that matter most.
 
@@ -75,7 +75,7 @@ Not in the "we held a meeting and they were informed" sense. In the sense that m
 
 They should be the ones identifying which tasks are good candidates for agent handling. They should be reviewing agent outputs in early testing and providing feedback. They should be defining the exception criteria that determine when the agent escalates to a human.
 
-This changes their relationship with the system from "something being imposed on my team" to "something I helped build." That is not just psychologically important. It produces better systems, because the people with the deepest domain knowledge are actively shaping the agent's behavior.
+This changes their relationship with the system from "something being imposed on my team" to "something I helped build." That is psychologically important, and it produces better systems, because the people with the deepest domain knowledge are actively shaping the agent's behavior.
 
 ### Redefine Their Role as AI Orchestrators, Not Task Dispatchers
 

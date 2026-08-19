@@ -19,7 +19,7 @@ These case studies are anonymized composites drawn from observed patterns across
 
 ## Case Study 1: Financial Services
 
-### Situation: 250 Applications, Zero Standards
+### Situation: 253 Applications, Zero Standards
 
 A global financial services firm had been running AI initiatives for three years before a new CAIO was appointed. On her first week, she asked for an inventory of AI applications in production or active development. The list came back at 253 line items.
 
@@ -138,7 +138,7 @@ A regional healthcare system had grown significantly through acquisitions over e
 
 When the system attempted to deploy AI-assisted clinical documentation support, the deployment team discovered a problem that had nothing to do with AI. The same clinical task was being executed in dozens of different ways across different facilities. Admission workflows had 23 documented variants. Discharge planning followed eight different protocols. Medication reconciliation had no standard at all.
 
-The team ran a pilot before addressing any of this. The AI deployed into unstandardized workflows achieved 61% accuracy. That result wasted four months and damaged clinician trust at the pilot sites. Clinicians who saw the AI perform poorly in that initial deployment were harder to re-engage once the underlying process work was complete. The cost of piloting before standardizing was not just time. It was credibility.
+The team ran a pilot before addressing any of this. The AI deployed into unstandardized workflows achieved 61% accuracy. That result wasted four months and damaged clinician trust at the pilot sites. Clinicians who saw the AI perform poorly in that initial deployment were harder to re-engage once the underlying process work was complete. The credibility cost outlasted the time cost.
 
 AI could not be deployed at scale because there was no consistent process to augment. The system would have needed to build dozens of AI variants or accept that the AI would perform well in some facilities and poorly in others.
 
@@ -201,6 +201,6 @@ The standards process involved regional leads from all major geographies. Each s
 
 **Scale amplifies inconsistency.** A process that works adequately in one context will fail visibly at global scale when AI exposes the variation. AI is a forcing function for standardization in the same way that global expansion is a forcing function for governance.
 
-**Do not scale AI before the process is ready to scale.** The pressure to demonstrate global AI deployment velocity is real. The cost of deploying AI into inconsistent processes at scale is higher than the cost of taking six months to standardize first.
+**Do not scale AI before the process is ready to scale.** The pressure to demonstrate global AI deployment velocity is real. The cost of deploying AI into inconsistent processes at scale is higher than the cost of taking eight months to standardize first.
 
 **Regional buy-in is non-negotiable.** Global standards imposed from the center without regional co-creation will be adopted on paper and ignored in practice. Co-creation is slower. It produces standards that are actually followed. That is worth the time.

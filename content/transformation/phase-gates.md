@@ -192,7 +192,7 @@ flowchart LR
     D -->|No-Go| F[Remediation Plan<br/>with deadline]
     D -->|Extend| G[Time-bounded<br/>extension with criteria]
     F --> H[Re-review<br/>within 4 weeks]
-    G --> H
+    G --> I[Re-review<br/>at the extension deadline]
 ```
 
 **Two weeks before gate:** All required artifacts submitted by owners.

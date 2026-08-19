@@ -13,9 +13,9 @@ summary:
 ---
 # Agent Governance
 
-Only 21% of organizations have mature governance for autonomous agents (Deloitte, 2026). Meanwhile, 75% plan to deploy agents within two years. That combination describes the clearest governance crisis in enterprise AI right now.
+Only 21% of organizations have mature governance for autonomous agents (Deloitte, 2026). Meanwhile, 75% plan to deploy agents within two years (Deloitte, 2026). That combination describes the clearest governance crisis in enterprise AI right now.
 
-The urgency is already validating. 51% of organizations report negative AI incidents, including unauthorized actions by AI systems (McKinsey, 2025). These are not edge cases. They are early signals of a category of risk that most governance frameworks are not built to handle.
+The urgency is already visible in the data. 51% of organizations report negative AI incidents, including unauthorized actions by AI systems (McKinsey, 2025). These are not edge cases. They are early signals of a category of risk that most governance frameworks are not built to handle.
 
 ## Why Agents Are Categorically Different
 
@@ -206,7 +206,7 @@ That is not the complete framework. It is the floor below which no agent should 
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
 2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

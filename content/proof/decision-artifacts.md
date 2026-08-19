@@ -35,7 +35,7 @@ For architectural decision rationale (why we chose this approach), see [Decision
 
 ### Executive Summary
 
-The AI portfolio delivered $18.2M in realized value in Q1 against $11.4M in total program spend year-to-date. Three use cases have been promoted from pilot to production. One use case has been paused pending data quality remediation. Regulatory posture across EU and APAC jurisdictions is compliant; a new obligation under the EU AI Act takes effect in Q3 and requires board ratification of the updated risk classification policy.
+The AI portfolio delivered $18.2M in realized value in Q1 against $11.4M in total program spend year-to-date. Three use cases have been promoted from pilot to production. One use case has been paused pending data quality remediation. Regulatory posture across EU and APAC jurisdictions is compliant; the next EU AI Act obligation for high-risk systems requires board ratification of the updated risk classification policy before its compliance date.
 
 ### Portfolio Status
 
@@ -70,13 +70,13 @@ Projected value figures are excluded from the payback ratio. Only finance-signed
 
 | Jurisdiction | Status | Notes |
 |---|---|---|
-| EU AI Act | Compliant (current obligations) | Q3 obligation for high-risk systems requires updated risk classification policy (see Decisions Required) |
+| EU AI Act | Compliant (current obligations) | Next high-risk obligation requires updated risk classification policy (see Decisions Required) |
 | MAS (Singapore) | Compliant | Annual attestation filed February 2026 |
 | GDPR | Compliant | Data handling agreements in place for all production use cases |
 
 ### Key Decisions Required
 
-1. **Ratify updated AI risk classification policy** to meet Q3 EU AI Act obligations. Legal and compliance have reviewed. Requires board resolution by end of Q2.
+1. **Ratify updated AI risk classification policy** to meet the next EU AI Act high-risk obligations. Legal and compliance have reviewed. Requires board resolution by end of Q2.
 2. **Approve $4.2M incremental investment** for Phase 2 of the credit underwriting program. Business case attached. CFO has reviewed; recommends approval.
 3. **Confirm governance authority** for cross-jurisdictional agent deployments. Current policy is silent on agents operating across regulatory boundaries. CAIO and General Counsel have drafted proposed language for board endorsement.
 

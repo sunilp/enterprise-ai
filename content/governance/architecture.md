@@ -15,7 +15,7 @@ summary:
 
 AI governance is not a policy document. It is an operating system. Most enterprises have built the document. Almost none have built the operating system.
 
-Fewer than one in five enterprises have fully implemented AI governance frameworks, despite the majority using AI in daily operations. That gap is not a knowledge problem. It is an architectural problem.
+Fewer than one in five enterprises have fully implemented AI governance frameworks (industry research, 2025), despite the majority using AI in daily operations. That gap is not a knowledge problem. It is an architectural problem.
 
 ## Why "Governance as a Document" Fails
 
