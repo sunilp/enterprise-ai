@@ -35,9 +35,10 @@ const SITE_CONFIG_PATH = path.join(ROOT, 'site.config.json');
 
 function loadSiteConfig() {
   const defaults = { book: { enabled: false } };
-  if (!fs.existsSync(SITE_CONFIG_PATH)) return defaults;
+  const cfgPath = process.env.SITE_CONFIG_PATH || SITE_CONFIG_PATH;
+  if (!fs.existsSync(cfgPath)) return defaults;
   try {
-    const parsed = JSON.parse(fs.readFileSync(SITE_CONFIG_PATH, 'utf-8'));
+    const parsed = JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
     return { ...defaults, ...parsed, book: { ...defaults.book, ...(parsed.book || {}) } };
   } catch (e) {
     console.warn(`WARN: site.config.json unreadable (${e.message}); using defaults`);
