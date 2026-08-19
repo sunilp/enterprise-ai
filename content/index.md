@@ -1,126 +1,57 @@
 ---
-title: Enterprise AI
-description: The management system for enterprise AI. Operating model, governance architecture, target architecture, workforce design, measurement, and transformation sequencing.
-layout: cover
+title: The Enterprise AI Operating System
+description: "The management system for enterprise AI: seven disciplines, an executive summary on every page, diagnostics, and proof for leaders who own the outcome."
 slug: homepage
+layout: cover
+og_title: The Enterprise AI Operating System
+og_description: "The management system for enterprise AI. Seven disciplines, executive summaries, diagnostics and proof for the leaders who own the outcome."
 ---
 
-<section class="showcase-hero">
-  <div class="gold-line"></div>
-  <div class="section-label">Enterprise AI Transformation</div>
-  <h1>The Management System<br>for Enterprise AI</h1>
-  <p class="hero-thesis">Enterprise AI underperforms not because models are weak, but because most firms lack the operating system to turn AI capability into business value.</p>
-  <p class="hero-support">The winners do not deploy more AI. They make better decisions about where to use it, how to govern it, and how to scale it.</p>
+<section class="cover-hero">
+  <span class="label">The management system for enterprise AI</span>
+  <h1>The Enterprise AI Operating System</h1>
+  <p class="thesis">Enterprise AI underperforms not because models are weak, but because most firms lack the operating system that turns capability into business value.</p>
 </section>
 
-<div class="metric-strip">
-  <div class="metric">
-    <div class="metric-value shimmer-text">$644B</div>
-    <div class="metric-label">Projected GenAI Spend</div>
-    <div class="metric-source">Gartner, 2025</div>
-  </div>
-  <div class="metric">
-    <div class="metric-value shimmer-text">42%</div>
-    <div class="metric-label">Scrapped Most AI Initiatives</div>
-    <div class="metric-source">S&P Global, 2025</div>
-  </div>
-  <div class="metric">
-    <div class="metric-value shimmer-text">5%</div>
-    <div class="metric-label">Classified as Future-Built</div>
-    <div class="metric-source">BCG, 2025</div>
-  </div>
+<div class="metric-strip reveal">
+  <div class="metric"><div class="metric-value" data-count-to="644" data-prefix="$" data-suffix="B">$644B</div><div class="metric-label">Projected GenAI spend</div><div class="metric-source">Gartner, 2025</div></div>
+  <div class="metric"><div class="metric-value" data-count-to="42" data-suffix="%">42%</div><div class="metric-label">Scrapped most AI initiatives</div><div class="metric-source">S&amp;P Global, 2025</div></div>
+  <div class="metric"><div class="metric-value" data-count-to="5" data-suffix="%">5%</div><div class="metric-label">Classified as future-built</div><div class="metric-source">BCG, 2025</div></div>
 </div>
-
 <p class="metric-interpretation">Spending is scaling faster than management capability.</p>
 
-<div class="path-cards">
-  <a href="/enterprise-ai/framework/" class="path-card">
-    <div class="path-role">Framework</div>
-    <div class="path-desc">Five operating principles. Four maturity stages. The management system distilled.</div>
-  </a>
-  <a href="/enterprise-ai/assessment/tool/" class="path-card">
-    <div class="path-role">Assessment</div>
-    <div class="path-desc">Measure readiness across leadership, governance, data, and execution. Shareable scorecard.</div>
-  </a>
-  <a href="/enterprise-ai/reading-paths/" class="path-card">
-    <div class="path-role">Reading Paths</div>
-    <div class="path-desc">Curated routes for CIOs, CEOs, CDOs, and CAIOs.</div>
-  </a>
-  <a href="/enterprise-ai/proof/case-studies/" class="path-card">
-    <div class="path-role">Proof</div>
-    <div class="path-desc">Case studies, decision records, and decision-grade artifacts.</div>
-  </a>
-</div>
+<section class="cover-section">
+  <span class="label">The spine</span>
+  <h2>Seven disciplines, one operating system</h2>
+  <p class="dek">Each discipline owns a question the leadership team has to answer. Follow them in order, or go straight to where the program is stuck.</p>
+  <div class="spine" id="spine" role="navigation" aria-label="Seven disciplines"></div>
+  <noscript>
+  <ol class="spine-list">
+    <li><a href="/enterprise-ai/diagnose/">01 Diagnose</a></li>
+    <li><a href="/enterprise-ai/prepare/">02 Prepare</a></li>
+    <li><a href="/enterprise-ai/govern/">03 Govern</a></li>
+    <li><a href="/enterprise-ai/design/">04 Design</a></li>
+    <li><a href="/enterprise-ai/operate/">05 Operate</a></li>
+    <li><a href="/enterprise-ai/organize/">06 Organize</a></li>
+    <li><a href="/enterprise-ai/sustain/">07 Sustain</a></li>
+  </ol>
+  </noscript>
+</section>
 
----
+<section class="cover-section">
+  <span class="label">Start by role</span>
+  <h2>Where your seat sits in the system</h2>
+  <div class="role-cards">
+    <a class="role-card" data-role="ceo" href="/enterprise-ai/reading-paths/#ceo"><span class="label">CEO and board</span><h3>Own the bet</h3><p>Where value concentrates, what to fund, what to stop, and what to ask for each quarter.</p></a>
+    <a class="role-card" data-role="cio" href="/enterprise-ai/reading-paths/#cio"><span class="label">CIO and CTO</span><h3>Build the system</h3><p>The capability stack, the control architecture, and the production bar for agents.</p></a>
+    <a class="role-card" data-role="cdo" href="/enterprise-ai/reading-paths/#cdo"><span class="label">CDO and CAIO</span><h3>Run the portfolio</h3><p>Readiness, prioritization, governance as infrastructure, and the operating model.</p></a>
+    <a class="role-card" data-role="cfo" href="/enterprise-ai/reading-paths/#cfo"><span class="label">CFO and CRO</span><h3>Hold the line</h3><p>Unit economics, financial linkage, model risk, and regulatory readiness.</p></a>
+  </div>
+</section>
 
-## What the Winners Do Differently
-
-The firms that capture value from AI do not have better models. They make better organizational decisions.
-
-- They design operating models before selecting tools.
-- They build governance into delivery, not around it.
-- They measure AI in business terms, not usage terms.
-- They govern agents as delegated authority, not enhanced software.
-
----
-
-## What Leaders Will Be Able to Decide
-
-This playbook follows the decisions leaders face, in the order they face them.
-
-<div id="decision-flow" class="interactive-mount content-wide"></div>
-
-Written for CIOs, CAIOs, CDOs, and business leaders making investment, governance, operating model, and scaling decisions under real enterprise constraints. No hype, no tool theatre, no vendor templates.
-
----
-
-## The Evidence
-
-**$644B** in projected generative AI spending in 2025. The largest technology investment cycle since cloud computing. <span class="metric-source">Gartner</span>
-
-**42%** of companies scrapped most of their AI initiatives in 2025, up from 17% one year earlier. The failure rate is accelerating. <span class="metric-source">S&P Global</span>
-
-**30%** of GenAI proofs of concept are abandoned after pilot. They work in the lab. They stall in production. <span class="metric-source">Gartner</span>
-
-**39%** of enterprises report meaningful EBIT impact from AI. Fewer than two in five can trace AI to the income statement. <span class="metric-source">McKinsey</span>
-
-**5%** of organizations qualify as future-built. The rest are still experimenting. <span class="metric-source">BCG</span>
-
-Capital is flowing into AI faster than enterprises are building the management systems required to capture returns.
-
----
-
-## About This Work
-
-This playbook combines large-scale industry research with direct experience designing AI platforms, governance systems, and agent infrastructure in enterprise environments.
-
-**Related research and writing**
-
-- [LLM Delegate Protocol](https://arxiv.org/abs/2603.08852) (arXiv:2603.08852)
-- [Deliberative Collective Intelligence](https://arxiv.org/abs/2603.11781) (arXiv:2603.11781)
-- [Agent Identity Protocol (AIP)](https://sunilprakash.com/aip/). Open specification and reference implementations for signed agent identity, delegation chains, and hook-level policy verification.
-- [Agent Engineering Lab](https://agenticlab.sunilprakash.com/). Editorial publication on agent engineering practice, with Field Notes, Signal, and Recipes. Its [Architecture blueprints](https://agenticlab.sunilprakash.com/architecture/) are the engineering specification behind several sections of this playbook: where controls sit in a request path, what a detector returns, how to measure one, and who owns the threshold.
-- [The Model Is Not the Product. The Harness Is.](https://sunilprakash.com/writing/harness-is-the-platform/). Long-form essay on why the runtime around the model is the platform.
-- *Agentic AI for Serious Engineers*. Book on building production agent systems, available on Amazon.
-
-For methodology and full source list, see [Sources and Methodology](sources.md).
-
----
-
-## Choose Your Next Step
-
-<div class="path-cards">
-  <a href="/enterprise-ai/framework/" class="path-card">
-    <div class="path-role">Read the Framework</div>
-    <div class="path-desc">Five principles and four maturity stages for enterprise AI.</div>
-  </a>
-  <a href="/enterprise-ai/assessment/tool/" class="path-card">
-    <div class="path-role">Run the Assessment</div>
-    <div class="path-desc">25 questions. Personalized scorecard. Recommended reading path.</div>
-  </a>
-  <a href="/enterprise-ai/reading-paths/" class="path-card">
-    <div class="path-role">Follow Your Role Path</div>
-    <div class="path-desc">CIO, CEO, CDO, or CAIO. Six pages in the right sequence.</div>
-  </a>
-</div>
+<section class="cover-section">
+  <div class="proof-object">
+    <div><span class="label">Diagnostic</span><h2>Readiness Diagnostic</h2><p>Twenty-five questions across data, process, talent, governance and organization. A shareable scorecard in five minutes.</p><a class="btn" href="/enterprise-ai/assessment/tool/">Run the diagnostic</a></div>
+    <div id="cover-radar" aria-hidden="true"></div>
+  </div>
+</section>
