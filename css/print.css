@@ -1,0 +1,18 @@
+/* Print: hubs and reading pages print as a clean brief */
+@media print {
+  .topbar, .rail, .site-footer, .newsletter-cta, .share, .page-actions, .prevnext, .progress, .palette, .sheet, .menu-toggle, .hub-next, .skip-link { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; line-height: 1.45; }
+  .reading { display: block; padding: 0; }
+  article, .page, .hub-hero, .hub-body, .hub-pages { max-width: none; padding-left: 0; padding-right: 0; }
+  .hub-body { display: block; }
+  .hub-decisions { margin: 12pt 0; }
+  a { color: #000; text-decoration: none; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #444; }
+  .summary-box { border-left: 2pt solid #000; background: #fff; page-break-inside: avoid; }
+  .metric-strip, .scorecard, .proof-object, .board-card { background: #fff !important; color: #000 !important; border: 1pt solid #000; }
+  .metric-value, .scorecard .label, .board-card .label, .metric-label { color: #000 !important; }
+  h1 { font-size: 24pt; } h2 { font-size: 16pt; page-break-after: avoid; } h3 { page-break-after: avoid; }
+  .hub-pages .card, .card, .obsidian-table-wrap, .insight-box, .note-box, .warning-box { page-break-inside: avoid; }
+  .insight-box, .note-box, .warning-box { background: #fff; border-left: 2pt solid #000; }
+  @page { margin: 18mm; }
+}

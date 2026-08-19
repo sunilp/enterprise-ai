@@ -1,0 +1,125 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Signature blocks and content elements
+   The Enterprise AI Operating System — sunilprakash.com/enterprise-ai
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── 1. Board metric strip ───────────────────────────────────────────────── */
+.metric-strip { background: var(--board); color: var(--board-ink); display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 40px 0; border-top: 2px solid var(--gold); }
+.metric-strip .metric { padding: 28px 24px; border-right: 1px solid rgba(200, 180, 140, .18); }
+.metric-strip .metric:last-child { border-right: 0; }
+.metric-value { font: 300 52px/1 var(--font-display); color: var(--gold); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.metric-label { font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px; color: var(--board-ink); }
+.metric-source { font: 400 12px/1.4 var(--font-mono); color: rgba(240, 236, 228, .55); margin-top: 6px; }
+.metric-interpretation { font: 400 14px var(--font-mono); color: var(--ink-3); text-align: center; margin: -24px 0 40px; }
+
+/* ─── 2. Executive summary box ────────────────────────────────────────────── */
+.summary-box { border-left: 3px solid var(--bronze); background: var(--surface); padding: 20px 24px; margin: 28px 0 40px; display: grid; grid-template-columns: 150px 1fr; row-gap: 10px; column-gap: 20px; font-size: 16px; line-height: 1.5; }
+.summary-box .k { font: 500 11px/1.8 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+.summary-box .v { color: var(--ink); margin: 0; }
+
+/* ─── 3. Decision-rights card ─────────────────────────────────────────────── */
+.decision-rights { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule); background: var(--surface); margin: 32px 0; }
+.decision-rights > div { padding: 18px 20px; border-right: 1px solid var(--rule); }
+.decision-rights > div:last-child { border-right: 0; }
+.decision-rights .k { display: block; font: 500 11px/1.6 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); margin-bottom: 8px; }
+.decision-rights p { margin: 0; font-size: 15px; line-height: 1.5; }
+.decision-rights p + p { margin-top: 8px; }
+
+/* ─── 4. Scorecard (board panel) ──────────────────────────────────────────── */
+.scorecard { background: var(--board); color: var(--board-ink); padding: 28px; border-top: 2px solid var(--gold); }
+.scorecard .label { color: var(--gold); }
+.scorecard h2, .scorecard h3 { color: var(--board-ink); }
+.scorecard p { color: rgba(240, 236, 228, .8); }
+
+/* ─── Pull quote ──────────────────────────────────────────────────────────── */
+.pull-quote { font: italic 300 26px/1.35 var(--font-display); color: var(--ink); margin: 48px 0; padding: 0 0 0 24px; border-left: 2px solid var(--bronze); }
+.pull-quote p { margin: 0; }
+blockquote.obsidian-quote { font: italic 300 22px/1.4 var(--font-display); margin: 36px 0; padding-left: 22px; border-left: 2px solid var(--bronze); color: var(--ink); }
+blockquote.obsidian-quote p { margin: 0 0 .5em; }
+blockquote.obsidian-quote p:last-child { margin: 0; }
+
+/* ─── Callouts (from ::: containers) ──────────────────────────────────────── */
+.insight-box, .note-box, .warning-box, .tradeoff-panel { background: var(--ledger); padding: 18px 22px; margin: 28px 0; border-left: 3px solid var(--bronze); font-size: 16.5px; line-height: 1.55; }
+.warning-box { border-left-color: var(--ink); }
+.insight-box p:last-child, .note-box p:last-child, .warning-box p:last-child, .tradeoff-content p:last-child { margin-bottom: 0; }
+.insight-box strong:first-child, .note-box strong:first-child, .warning-box strong:first-child { color: var(--bronze); font: 500 11px/1.6 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.tradeoff-content h3 { margin-top: 0; font-size: 19px; }
+
+/* ─── Tables ──────────────────────────────────────────────────────────────── */
+.obsidian-table-wrap { overflow-x: auto; margin: 28px 0; }
+.obsidian-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+.obsidian-table th { font: 500 11px/1.6 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+.obsidian-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.obsidian-table tr:last-child td { border-bottom: 1px solid var(--ink); }
+
+/* ─── Code, rules ─────────────────────────────────────────────────────────── */
+pre { background: var(--ledger); padding: 16px 18px; overflow: auto; font: 400 14px/1.5 var(--font-mono); border: 1px solid var(--rule); margin: 24px 0; }
+code { font-family: var(--font-mono); font-size: .92em; background: var(--ledger); padding: .1em .3em; }
+pre code { background: none; padding: 0; }
+pre.mermaid { background: transparent; border: 0; padding: 0; text-align: center; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 48px 0; }
+
+/* ─── Cards ───────────────────────────────────────────────────────────────── */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin: 28px 0; }
+.card { display: block; background: var(--surface); border: 1px solid var(--rule); padding: 20px 22px; text-decoration: none; color: var(--ink); transition: border-color .2s var(--ease); }
+.card:hover { border-color: var(--bronze); }
+.card .label { display: block; margin-bottom: 8px; }
+.card h3 { margin: 0 0 6px; font-size: 20px; }
+.card p { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.5; }
+.card .rt { display: block; margin-top: 10px; font: 400 12px var(--font-mono); color: var(--ink-3); }
+.board-card { background: var(--board); color: var(--board-ink); border: 0; }
+.board-card h3, .board-card p { color: var(--board-ink); }
+.board-card .label { color: var(--gold); }
+
+/* ─── Board document (proof artifacts) ────────────────────────────────────── */
+.board-document { border: 1px solid var(--rule); background: var(--surface); padding: 24px 28px; margin: 32px 0; }
+.doc-header { display: flex; justify-content: space-between; font: 500 11px/1.6 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); border-bottom: 1px solid var(--rule); padding-bottom: 10px; margin-bottom: 18px; }
+.doc-footer { border-top: 1px solid var(--rule); margin-top: 18px; padding-top: 10px; font: 400 12px var(--font-mono); color: var(--ink-3); }
+.doc-body h2:first-child, .doc-body h3:first-child { margin-top: 0; }
+
+/* ─── Ledger band ─────────────────────────────────────────────────────────── */
+.ledger-band { background: var(--ledger); padding: 40px 0; margin: 48px -28px; }
+.ledger-band > * { max-width: var(--wide); margin-left: auto; margin-right: auto; padding: 0 28px; }
+
+/* ─── Prev/next, related, newsletter, share, actions ──────────────────────── */
+.prevnext { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 56px 0 0; border-top: 1px solid var(--rule); padding-top: 24px; }
+.prevnext a { text-decoration: none; color: var(--ink); font-family: var(--font-display); font-size: 20px; line-height: 1.3; }
+.prevnext .label { display: block; margin-bottom: 6px; font-family: var(--font-mono); }
+.prevnext .next { text-align: right; }
+.related { margin: 40px 0 0; }
+.related .label { display: block; margin-bottom: 8px; }
+.related ul { list-style: none; padding: 0; margin: 0; }
+.related li { margin: 4px 0; }
+.newsletter-cta { border: 1px solid var(--rule); background: var(--surface); padding: 18px 22px; margin: 40px 0 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.newsletter-cta p { margin: 0; font-size: 15px; color: var(--ink-2); }
+.newsletter-cta a.btn { font: 500 14px var(--font-body); color: var(--paper); background: var(--ink); padding: 10px 16px; text-decoration: none; white-space: nowrap; }
+.newsletter-cta a.btn:hover { background: var(--bronze); }
+.page-actions { display: flex; gap: 12px; align-items: center; font-size: 14px; color: var(--ink-3); margin: 8px 0 28px; }
+.page-actions button { background: none; border: 1px solid var(--rule); padding: 6px 10px; font: 500 13px var(--font-body); color: var(--ink-2); cursor: pointer; }
+.page-actions button:hover { border-color: var(--bronze); color: var(--ink); }
+.share { position: relative; display: inline-block; }
+.share-menu { position: absolute; left: 0; top: 100%; background: var(--surface); border: 1px solid var(--rule); min-width: 190px; display: none; z-index: 20; box-shadow: 0 12px 32px rgba(22, 19, 14, .08); }
+.share[aria-expanded="true"] .share-menu { display: block; }
+.share-menu button { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 10px 14px; font: 400 14px var(--font-body); color: var(--ink); cursor: pointer; }
+.share-menu button:hover { background: var(--ledger); }
+.book-strip { border: 1px solid var(--rule); background: var(--surface); padding: 14px 18px; margin: 32px 0 0; font-size: 15px; }
+.error-page { text-align: center; padding: 80px 0; }
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .metric-strip { grid-template-columns: 1fr; }
+  .metric-strip .metric { border-right: 0; border-bottom: 1px solid rgba(200, 180, 140, .18); }
+  .metric-strip .metric:last-child { border-bottom: 0; }
+  .metric-value { font-size: 44px; }
+  .summary-box { grid-template-columns: 1fr; row-gap: 4px; }
+  .summary-box .v { margin-bottom: 10px; }
+  .summary-box .v:last-child { margin-bottom: 0; }
+  .decision-rights { grid-template-columns: 1fr; }
+  .decision-rights > div { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .decision-rights > div:last-child { border-bottom: 0; }
+  .prevnext { grid-template-columns: 1fr; }
+  .prevnext .next { text-align: left; }
+  .ledger-band { margin: 40px -20px; }
+  .ledger-band > * { padding: 0 20px; }
+  .pull-quote { font-size: 22px; }
+}
