@@ -1,9 +1,15 @@
 ---
-title: "Measurement Design"
-description: "Baseline-first measurement frameworks that connect AI activity to business outcomes before deployment begins."
-section: "Measurement"
+title: Measurement Design
+description: Baseline-first measurement frameworks that connect AI activity to business outcomes before deployment begins.
 layout: showcase
-slug: "measurement-design"
+slug: measurement-design
+discipline: operate
+order: 1
+dek: How to build a baseline-first measurement system that produces numbers boards believe and business leaders can act on.
+summary:
+  decide: Which metrics to baseline at each of the three layers, and what threshold defines success, fixed in a measurement charter before the pilot launches.
+  cost: Without a baseline every claim of improvement is an approximation; reconstructed data is always challenged and the investment case is never airtight.
+  metric: Share of active pilots with a documented, signed-off baseline before launch.
 ---
 # Measurement Design
 
@@ -126,7 +132,7 @@ flowchart TD
     C --> C1["Revenue impact<br/>Cost reduction<br/>Margin improvement"]
 ```
 
-The transition from activity to outcome requires workflow instrumentation. You need to know not just that people are using the tool, but what they are doing differently as a result.
+The transition from activity to outcome requires workflow instrumentation. Usage alone tells you little; you need to know what people are doing differently as a result.
 
 The transition from outcome to value requires financial modeling. Time saved must be converted to FTE capacity released, then to cost or revenue impact. This is where most measurement programs stall.
 
@@ -168,7 +174,7 @@ Before any pilot launches, publish a one-page measurement charter that documents
 ## Getting Started
 
 1. Before the next pilot launches, document baselines for the three metrics most directly connected to the target business outcome.
-2. Assign a measurement owner who is distinct from the deployment team. Separation of concerns matters.
+2. Assign a measurement owner who is distinct from the deployment team, so the team that built the pilot is not the team scoring it.
 3. Build the reporting structure before you need it. A dashboard that takes six weeks to build will not be ready when the board asks.
 4. Run a measurement retrospective on your most recent completed pilot. What did you actually measure? What would you measure differently?
 

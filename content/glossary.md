@@ -1,13 +1,15 @@
 ---
-title: "Glossary"
-description: "Definitions of key terms used throughout the Enterprise AI Playbook, from CAIO mandate to shadow AI."
-section: "Glossary"
+title: Glossary
+description: Definitions of key terms used throughout The Enterprise AI Operating System, from CAIO mandate to shadow AI.
 layout: standard
-slug: "glossary"
+slug: glossary
+group: reference
+order: 1
+dek: Definitions of the terms the playbook relies on, from CAIO mandate and decision rights to pilot purgatory, process debt and shadow AI, with cross-references.
 ---
 # Glossary
 
-This glossary defines key terms used throughout the Enterprise AI Transformation playbook. Terms are organized alphabetically. Cross-references point to the relevant sections of the playbook for deeper treatment.
+This glossary defines key terms used throughout The Enterprise AI Operating System. Terms are organized alphabetically. Cross-references point to the relevant sections of the playbook for deeper treatment.
 
 ---
 
@@ -17,14 +19,14 @@ A communication protocol that enables AI agents to interact with other AI agents
 **Agent Governance**
 The set of policies, processes, and controls that define how autonomous AI agents are authorized, deployed, monitored, and constrained in enterprise environments. Agent governance is distinct from AI governance broadly because agents take actions, not just recommendations. See [ADR-003](proof/decision-records.md#adr-003-agent-deployment-authorization-model).
 
+**Agentic AI**
+AI systems that pursue goals autonomously over multiple steps, using tools, making decisions, and taking actions without requiring human confirmation at each step. Agentic AI differs from AI-assisted decision support in that it acts rather than advises. The risk profile is correspondingly higher. See [Agentic Strategy](agentic-strategy/the-shift.md).
+
 **AI Maturity Model**
 A framework for assessing an organization's current state of AI capability across multiple dimensions: strategy, data, process, talent, and governance. Maturity models typically describe four to five levels from "ad hoc" to "optimized." Used in the Foundation phase to establish baseline and prioritize investment. See [Assessment](assessment/ai-readiness.md).
 
 **AI Process Architect**
 A practitioner role responsible for redesigning business processes to capture the value that AI efficiency gains create. Distinct from the AI engineer (who builds the system) and the business analyst (who documents current state). The AI Process Architect designs the future-state workflow that ensures productivity gains appear on the balance sheet rather than evaporating into low-value activity redistribution.
-
-**Agentic AI**
-AI systems that pursue goals autonomously over multiple steps, using tools, making decisions, and taking actions without requiring human confirmation at each step. Agentic AI differs from AI-assisted decision support in that it acts rather than advises. The risk profile is correspondingly higher. See [Agentic Strategy](agentic-strategy/the-shift.md).
 
 **Authorization Framework**
 The documented rules that govern which AI agents or AI systems are permitted to take which actions, under what conditions, and subject to what oversight. An authorization framework for agents typically defines action tiers, approval authorities, human-in-the-loop requirements, and prohibited actions.
@@ -74,11 +76,11 @@ An identity-aware communication protocol for multi-agent LLM systems. LDP expose
 **MCP (Model Context Protocol)**
 A protocol that standardizes how AI models access and interact with external data sources, tools, and services. MCP defines the interface between AI models and the systems they need to use, enabling more reliable and auditable tool use in agentic systems.
 
-**Operating Architecture**
-The team structure and decision ownership model for building and running enterprise AI. Defines platform teams, domain AI teams, governance function, production support, and incident ownership.
-
 **Measurement Stack**
 The three-layer measurement system used to connect AI activity to business value: activity metrics (adoption, usage) feed outcome metrics (time saved, error reduction), which feed value metrics (P&L impact). The measurement stack makes explicit the causal chain from AI usage to financial result. See [Measurement Design](measurement/design.md).
+
+**Operating Architecture**
+The team structure and decision ownership model for building and running enterprise AI. Defines platform teams, domain AI teams, governance function, production support, and incident ownership.
 
 **Phase Gate**
 A structured decision point between transformation phases that determines whether the organization is ready to proceed to the next phase, needs to extend the current phase, or should pause to address gaps. Phase gates prevent problems from early phases from propagating to later ones. See [Phase Gates](transformation/phase-gates.md).

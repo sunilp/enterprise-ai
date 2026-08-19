@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>{{> head}}</head>
-<body class="standard atmosphere{{flagshipClass}}" data-section="{{section}}" data-page="{{slug}}"{{hasMermaidAttr}}>
+<body class="standard" data-layout="standard" data-discipline="{{disciplineKey}}" data-page="{{slug}}"{{hasMermaidAttr}}>
 <a href="#main-content" class="skip-link">Skip to content</a>
 {{> nav}}
-<main id="main-content" class="reading-content">
+<main id="main-content" class="reading">
 <article>
+<nav class="breadcrumb" aria-label="Breadcrumb">{{breadcrumb}}</nav>
 <header class="page-header">
-<div class="section-label">{{section}}</div>
 <h1>{{title}}</h1>
+{{#dek}}<p class="dek">{{dek}}</p>{{/dek}}
+<div class="page-actions"><span class="meta">{{readingTime}}</span><div class="share"><button type="button" class="share-btn" aria-haspopup="true" aria-expanded="false">Share</button><div class="share-menu"></div></div><button type="button" class="print-btn">Print brief</button></div>
 </header>
+{{> summary-box}}
 {{content}}
+{{related}}
+{{> book-strip}}
+{{prevNext}}
+{{> newsletter-cta}}
 </article>
+<aside class="rail" aria-label="In this discipline">{{rail}}</aside>
 </main>
 {{> footer}}
-{{> particles}}
-{{> engagement}}
 </body>
 </html>

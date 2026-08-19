@@ -1,45 +1,47 @@
 ---
-title: "AI for Business Leaders Framework"
-description: "The definitive framework for enterprise AI transformation. Five operating principles, four maturity stages, and the decision architecture that separates the 5% who succeed from the 95% who stall."
-section: "Framework"
-layout: showcase
+title: The operating system on one page
+description: "Seven disciplines, the questions they answer, the decisions they own, and where to read. Plus the five operating principles and four maturity stages that run through them."
 slug: framework
-og_title: "AI for Business Leaders Framework"
-og_description: "Five operating principles and four maturity stages for converting AI capability into enterprise value"
-order: 0
+layout: showcase
+og_title: The operating system on one page
+og_description: "Seven disciplines, the questions they answer, the decisions they own, and where to read."
+group: start
+order: 1
+dek: "Seven disciplines, the questions they answer, the decisions they own, and where to read."
 ---
 
 <section class="showcase-hero">
-  <div class="gold-line"></div>
-  <div class="section-label">The Definitive Takeaway</div>
-  <h1>AI for Business Leaders Framework</h1>
-  <p class="hero-thesis">A single, actionable framework distilled from this entire playbook. Five operating principles. Four maturity stages. The management system that converts AI capability into economic value.</p>
-  <div class="stat-row">
-    <div class="stat">
-      <div class="stat-number shimmer-text" data-count-to="95" data-suffix="%">0%</div>
-      <div class="stat-label">Fail Without This</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number shimmer-text" data-count-to="5" data-suffix="%">0%</div>
-      <div class="stat-label">Succeed With This</div>
-    </div>
-  </div>
-  <div class="scroll-hint">Scroll to explore</div>
+  <span class="label">Start here</span>
+  <h1>The operating system on one page</h1>
+  <p class="hero-thesis">Enterprise AI does not fail because of technology. It fails because organizations deploy AI without the management system to convert capability into results. This page is that system in one view: seven disciplines, each owning a question the leadership team has to answer.</p>
 </section>
 
-## The Core Insight
+## The seven disciplines
 
-Enterprise AI does not fail because of technology. It fails because organizations deploy AI without the management system to convert capability into results.
+Read them in order for a full programme review, or jump to the one where the programme is stuck. Every page under a discipline opens with an executive summary: the decision, the cost of skipping it, the metric that tells you whether you have it right.
 
-The firms in the top 5% do not have better models, larger budgets, or more data scientists. They have five things the other 95% lack: an operating model designed for AI, governance that operates at deployment speed, architecture that connects intelligence to action, measurement that ties AI to the balance sheet, and a workforce designed around human-agent collaboration.
+| Discipline | Core question | Decisions it owns | Read | Tool |
+|---|---|---|---|---|
+| [01 Diagnose](/enterprise-ai/diagnose/) | Where is the AI program actually stuck, and why? | Name the failure modes; stop calling a stalled programme a pilot | [The Problem](/enterprise-ai/position/the-problem/), [Seven Failure Modes](/enterprise-ai/position/failure-modes/), [What Transformation Means](/enterprise-ai/position/what-transformation-means/) | |
+| [02 Prepare](/enterprise-ai/prepare/) | Which foundations have to be in place before scale? | Readiness by dimension; which use cases first; the pilot-to-production bar | [AI Readiness](/enterprise-ai/assessment/ai-readiness/), [Data Readiness](/enterprise-ai/assessment/data-readiness/), [Prioritization](/enterprise-ai/portfolio/prioritization/), [Pilot to Production](/enterprise-ai/portfolio/pilot-to-production/) | [Readiness Diagnostic](/enterprise-ai/assessment/tool/) |
+| [03 Govern](/enterprise-ai/govern/) | How does the enterprise stay in control at deployment speed? | Governance as infrastructure; risk tiers; agent authority; shadow AI; regulatory map | [Governance Architecture](/enterprise-ai/governance/architecture/), [GenAI Model Risk](/enterprise-ai/governance/genai-model-risk/), [Agent Governance](/enterprise-ai/governance/agent-governance/), [Regulatory Readiness](/enterprise-ai/governance/regulatory-readiness/) | |
+| [04 Design](/enterprise-ai/design/) | What system, at what complexity, does the workflow need? | Capability stack; control architecture; deployment pattern; when an agent is warranted | [Capability Stack](/enterprise-ai/architecture/capability-stack/), [Control Architecture](/enterprise-ai/architecture/control-architecture/), [Reference Patterns](/enterprise-ai/architecture/reference-patterns/), [The Agentic Shift](/enterprise-ai/agentic-strategy/the-shift/) | |
+| [05 Operate](/enterprise-ai/operate/) | Is it working in production, and do the economics hold? | Measurement design; financial linkage; what the board sees; cost per outcome | [Measurement Design](/enterprise-ai/measurement/design/), [Financial Linkage](/enterprise-ai/measurement/financial-linkage/), [Board Reporting](/enterprise-ai/measurement/board-reporting/), [FinOps for Agents](/enterprise-ai/agentic-strategy/finops/) | |
+| [06 Organize](/enterprise-ai/organize/) | Who owns AI, and how does adoption spread? | The CAIO mandate; structure; decision rights; the middle-management layer; knowledge | [The CAIO Mandate](/enterprise-ai/operating-model/caio-mandate/), [Decision Rights](/enterprise-ai/operating-model/decision-rights/), [Role Evolution](/enterprise-ai/workforce/role-evolution/), [The Middle Management Gap](/enterprise-ai/workforce/middle-management/) | |
+| [07 Sustain](/enterprise-ai/sustain/) | What survives the next model cycle? | The twelve-month sequence; the gates that keep it honest | [12-Month Roadmap](/enterprise-ai/transformation/roadmap/), [Phase Gates](/enterprise-ai/transformation/phase-gates/) | |
 
-This framework captures those five principles and the maturity path to reach them.
+## What the winners do differently
 
----
+The firms that capture value from AI do not have better models. They make better organizational decisions.
 
-## The Five Operating Principles
+- They design operating models before selecting tools.
+- They build governance into delivery, not around it.
+- They measure AI in business terms, not usage terms.
+- They govern agents as delegated authority, not enhanced software.
 
 <div id="framework-principles" class="interactive-mount content-wide"></div>
+
+## Five operating principles that run through all seven
 
 ### Principle 1: Operating Model Before Technology
 
@@ -50,7 +52,7 @@ The first decision is not which AI to use. It is how the organization will gover
 - Decision rights are documented: who approves AI investments, who can deploy to production, who shuts down a failing system
 - The organizational structure (hub-and-spoke recommended) is chosen deliberately, not inherited from the IT org chart
 
-**The cost of skipping this:** Every function does AI independently. Duplicate investments, incompatible standards, no consolidated risk view. The 42% of enterprises that scrapped most AI initiatives in 2025 overwhelmingly lacked a defined operating model.
+**The cost of skipping this:** Every function does AI independently. Duplicate investments, incompatible standards, no consolidated risk view. When 42% of enterprises scrap most of their AI initiatives in a single year (S&P Global, 2025), the missing piece is rarely the model. It is the operating model.
 
 **Key metric:** Time from approved use case to production deployment. If this exceeds 6 months, the operating model is the bottleneck.
 
@@ -84,7 +86,7 @@ Most AI investment concentrates in the System of Intelligence (models, knowledge
 
 ### Principle 4: Measurement That Reaches the Balance Sheet
 
-The measurement gap is where CFOs lose confidence and AI budgets get cut. 91% of organizations claim AI improved productivity. Only 23% can quantify it.
+The measurement gap is where CFOs lose confidence and AI budgets get cut. 91% of organizations claim AI improved productivity. Only 23% can quantify it (Forbes AI Study, 2025).
 
 **What this means in practice:**
 - Baselines established before deployment, not after. You cannot prove impact without knowing where you started.
@@ -112,7 +114,7 @@ AI does not replace roles. It reshapes the composition of work within roles. Org
 
 ---
 
-## The Four Maturity Stages
+## Four maturity stages
 
 <div id="framework-maturity" class="interactive-mount content-wide"></div>
 
@@ -124,7 +126,7 @@ Organizations move through four stages. Each stage has a defining characteristic
 
 **What to focus on:**
 - Appoint a CAIO or equivalent with real authority
-- Conduct an honest AI readiness assessment (use the tool in this playbook)
+- Conduct an honest AI readiness assessment (use the [Readiness Diagnostic](/enterprise-ai/assessment/tool/))
 - Establish a governance policy framework, even if lightweight
 - Stop starting new pilots until the operating model is defined
 
@@ -176,32 +178,27 @@ Organizations move through four stages. Each stage has a defining characteristic
 
 ---
 
-## Using This Framework
+## The evidence
 
-### For CIOs
-Start with Principle 3 (Architecture). Your first job is building the capability stack and control architecture that platform teams and domain teams will use. Then ensure Principle 2 (Governance) is embedded in the architecture, not bolted on.
+Capital is flowing into AI faster than enterprises are building the management systems required to capture returns.
 
-### For CEOs and Business Leaders
-Start with Principle 1 (Operating Model). The single highest-leverage decision is appointing a CAIO with real authority and choosing the right organizational structure. Then insist on Principle 4 (Measurement) so AI investment is held to the same standard as capital expenditure.
+<div class="metric-strip">
+  <div class="metric"><div class="metric-value">$644B</div><div class="metric-label">Projected GenAI spend, 2025</div><div class="metric-source">Gartner, 2025</div></div>
+  <div class="metric"><div class="metric-value">42%</div><div class="metric-label">Scrapped most AI initiatives</div><div class="metric-source">S&amp;P Global, 2025</div></div>
+  <div class="metric"><div class="metric-value">5%</div><div class="metric-label">Classified as future-built</div><div class="metric-source">BCG, 2025</div></div>
+</div>
 
-### For CAIOs
-This entire framework is your mandate. Start with the AI Readiness Assessment to determine your organization's current maturity stage, then sequence the five principles in the order your readiness gaps indicate.
+- **30%** or more of GenAI proofs of concept abandoned after pilot by the end of 2025, as Gartner predicted. They work in the lab and stall in production. <span class="metric-source">Gartner, 2024</span>
+- **39%** of enterprises report any enterprise-level EBIT impact from AI. Fewer than two in five can trace AI to the income statement. <span class="metric-source">McKinsey, 2025</span>
 
-### For CDOs
-Start with the architecture principle's data foundation layer. Your role is ensuring the data layer is AI-ready, not just analytically adequate. Then connect to Principle 2 (Governance) to ensure data governance covers AI-specific concerns.
+Full source list and methodology: [Sources and Methodology](/enterprise-ai/sources/).
 
----
+## Where to go next
 
-## Assess Your Organization
+- Run the [Readiness Diagnostic](/enterprise-ai/assessment/tool/): twenty-five statements, a tier, a focus area, and the pages that address it.
+- Follow a [role path](/enterprise-ai/reading-paths/): seven or eight pages in the order that builds the picture for your seat.
+- Open the [Proof](/enterprise-ai/proof/case-studies/) shelf: case studies, decision records, and board-ready artifacts.
 
-The [AI Readiness Assessment](/enterprise-ai/assessment/tool/) in this playbook measures your organization across the five dimensions underlying these principles. The assessment produces a maturity tier, identifies your weakest areas, and recommends a reading path through the playbook tailored to your gaps.
+## The operating system in one sentence
 
-[Take the AI Readiness Assessment](/enterprise-ai/assessment/tool/)
-
----
-
-## The Framework in One Sentence
-
-The firms that win with AI are not the ones with the smartest models, but the ones with the strongest operating architecture for deploying, governing, measuring, and evolving AI at enterprise scale.
-
-This is not a technology thesis. It is a management thesis. And it is the difference between the 5% and the 95%.
+The firms that win with AI are not the ones with the smartest models. They are the ones with the strongest operating architecture for deploying, governing, measuring, and evolving AI at enterprise scale. This is not a technology thesis. It is a management thesis.

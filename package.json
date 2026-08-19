@@ -1,11 +1,13 @@
 {
-  "name": "enterprise-ai-obsidian",
+  "name": "enterprise-ai-operating-system",
   "version": "1.0.0",
   "private": true,
-  "description": "Enterprise AI Playbook - Obsidian Framework",
+  "description": "The Enterprise AI Operating System: site generator",
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.js && scripts/check-no-book.sh",
     "serve": "node serve.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "check": "scripts/check-no-book.sh",
     "clean": "rm -rf dist"
   },
   "devDependencies": {

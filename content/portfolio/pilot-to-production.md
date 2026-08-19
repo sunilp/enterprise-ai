@@ -1,9 +1,15 @@
 ---
-title: "Pilot to Production"
-description: "Bridging the pilot-to-production gap with production readiness criteria, scaling frameworks, and leading indicators."
-section: "Portfolio"
+title: Pilot to Production
+description: Bridging the pilot-to-production gap with production readiness criteria, scaling frameworks, and leading indicators.
 layout: standard
-slug: "pilot-to-production"
+slug: pilot-to-production
+discipline: prepare
+order: 7
+dek: A stage-gate framework with decision criteria, artifacts and approvers, and the funding, change and operations capability pilots need to reach production.
+summary:
+  decide: Whether a use case passes each gate from discovery to scale, and which business unit owns the system and its budget once it is in production.
+  cost: Successful pilots that never become anything more; Gartner puts the full-scale production rate at 5%, and most that get there report 2-4 year ROI timelines.
+  metric: Share of AI experiments that reach production; only 25% of organizations have moved 40% or more of theirs (Deloitte, 2026).
 ---
 # From Pilot to Production
 
@@ -274,7 +280,7 @@ Organizations that build this infrastructure before scaling their AI portfolio c
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
 2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

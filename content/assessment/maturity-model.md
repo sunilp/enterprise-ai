@@ -1,9 +1,15 @@
 ---
-title: "Maturity Model"
-description: "Five-level AI maturity model from ad-hoc experimentation to embedded capability, with diagnostic criteria and common traps."
-section: "Assessment"
+title: Maturity Model
+description: Five-level AI maturity model from ad-hoc experimentation to embedded capability, with diagnostic criteria and common traps.
 layout: standard
-slug: "maturity-model"
+slug: maturity-model
+discipline: prepare
+order: 4
+dek: Five levels from Exploring to AI-Native, with indicators per level and the transition triggers that actually move an organization forward.
+summary:
+  decide: Which level you are honestly at across all dimensions, and whether the blockers to the next level are organizational or technical.
+  cost: Deferring operating model, funding and accountability changes keeps organizations at Level 2 for years, producing better pilots with the same structural ceiling.
+  metric: Use cases in production with measured business outcomes; at least one is the trigger from Experimenting to Scaling.
 ---
 # AI Maturity Model
 
@@ -131,7 +137,7 @@ graph LR
 | Dimension | Indicators |
 |-----------|------------|
 | Organizational | AI fluency is an organizational competency, not a specialized skill. Hiring, onboarding, and leadership development reflect AI-native expectations. The AI "program" has dissolved into operational management. Continuous learning is institutionalized. |
-| Technical | Real-time AI across all high-value workflows. Automated model optimization with human governance at defined thresholds. Self-improving systems with robust guardrails. AI capabilities that are proprietary and defensible. |
+| Technical | Real-time AI across all high-value workflows. Automated model optimization with human governance at defined thresholds. Self-improving systems with enforced guardrails. AI capabilities that are proprietary and defensible. |
 | Governance | Governance is embedded in AI systems, not applied to them. Audit is automated. The organization contributes to regulatory frameworks rather than just complying with them. AI risk management is a board-level competency. |
 | Typical Challenges | Competitive commoditization as AI capabilities become available to all. Preventing over-reliance on AI systems for decisions that require human judgment. Maintaining organizational learning capacity as AI handles more cognitive work. Managing talent development when AI is doing an increasing share of work. |
 

@@ -1,9 +1,15 @@
 ---
-title: "GenAI Model Risk"
-description: "Managing generative AI model risk across hallucination, prompt injection, confidence calibration, and model update instability."
-section: "Governance"
+title: GenAI Model Risk
+description: Managing generative AI model risk across hallucination, prompt injection, confidence calibration, and model update instability.
 layout: standard
-slug: "genai-model-risk"
+slug: genai-model-risk
+discipline: govern
+order: 2
+dek: Why traditional model risk management breaks on generative AI, and the five risk categories, validation gates and monitoring that replace it.
+summary:
+  decide: Which validation and monitoring controls each GenAI system needs before and after deployment, and what triggers re-validation.
+  cost: Around 20% of production GenAI outputs contain a meaningful inaccuracy (Gartner, 2024), and the model never signals when it is wrong; unmeasured systems fail silently.
+  metric: Hallucination rate on a domain-specific evaluation set, tracked continuously, with automatic re-evaluation on every model version change.
 ---
 # GenAI Model Risk
 
@@ -187,7 +193,7 @@ The monitoring stack for GenAI must cover what traditional model monitoring miss
 
 The most important monitoring practice: review a random sample of real outputs regularly. Metrics can mask problems that a human reviewer would catch immediately. No dashboard replaces direct observation.
 
-One caution on the injection and PII rows. Flagged is not the same as real. Against a rare attack, a detector with strong recall and a low false positive rate can still be wrong the large majority of times it fires, because precision depends on how rare the attack is in your traffic and not on the quality of the detector. Alerting on raw flagged volume therefore produces a queue that reviewers learn to dismiss. Track the confirmed share alongside the flagged count, and set the alert on movement against a baseline. [ARCH-003 Measuring Detectors](https://agenticlab.sunilprakash.com/architecture/003-measuring-detectors/) works the arithmetic through, and [ARCH-007](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) covers routing low-precision output to automatic mitigation instead of to people.
+One caution on the injection and PII rows. Flagged is not the same as real. Against a rare attack, a detector with strong recall and a low false positive rate can still be wrong the large majority of times it fires, because precision depends on how rare the attack is in your traffic as well as on the quality of the detector. Alerting on raw flagged volume therefore produces a queue that reviewers learn to dismiss. Track the confirmed share alongside the flagged count, and set the alert on movement against a baseline. [ARCH-003 Measuring Detectors](https://agenticlab.sunilprakash.com/architecture/003-measuring-detectors/) works the arithmetic through, and [ARCH-007](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) covers routing low-precision output to automatic mitigation instead of to people.
 
 ## Summary
 

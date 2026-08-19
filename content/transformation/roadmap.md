@@ -1,9 +1,15 @@
 ---
-title: "12-Month Roadmap"
-description: "A four-phase enterprise AI transformation roadmap from foundation through optimization, with phase gates and risk signals."
-section: "Transformation"
+title: 12-Month Roadmap
+description: A four-phase enterprise AI transformation roadmap from foundation through optimization, with phase gates and risk signals.
 layout: showcase
-slug: "roadmap"
+slug: roadmap
+discipline: sustain
+order: 1
+dek: A four-phase, milestone-driven twelve-month plan with owners, deliverables, cadences, risk factors, and a gate before each phase.
+summary:
+  decide: "How to sequence the program: how long Foundation runs before any pilot launches, how many pilots to run, and when to promote, rebalance, and hand over to permanent owners."
+  cost: "Rushing Foundation produces pilots without baselines, governance, or alignment: pilot purgatory, and problems that take 18 months to untangle."
+  metric: "Whether the program is self-sustaining by Month 12: portfolio review, measurement cadence, governance, and workforce development running without central oversight driving every decision."
 ---
 # 12-Month Roadmap
 
@@ -25,7 +31,7 @@ The most common and most expensive sequencing mistake in AI transformation is ru
 gantt
     title 12-Month Enterprise AI Transformation Roadmap
     dateFormat  YYYY-MM
-    axisFormat  %b %Y
+    axisFormat  Month %-m
 
     section Phase 1: Foundation
     Current state assessment         :2025-01, 6w

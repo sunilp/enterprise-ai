@@ -1,9 +1,15 @@
 ---
-title: "Control Architecture"
-description: "The technical control plane for autonomous AI agents, covering delegation boundaries, circuit breakers, and audit infrastructure."
-section: "Architecture"
+title: Control Architecture
+description: The technical control plane for autonomous AI agents, covering delegation boundaries, circuit breakers, and audit infrastructure.
 layout: showcase
-slug: "control-architecture"
+slug: control-architecture
+discipline: design
+order: 3
+dek: The technical control plane that enforces governance at runtime across seven domains, from agent identity and entitlements to override and observability.
+summary:
+  decide: How fine-grained each of the seven control domains runs for a given workload, calibrated to the consequence of a control failure rather than the cost of the control.
+  cost: Policy without a control plane is a document; agents inherit whole service-account permissions, audits become reconstruction, and drift goes unseen until users complain.
+  metric: Share of autonomous actions with a reachable override and a reconstructable audit record of identity, inputs, data accessed and output.
 ---
 # Control Architecture
 

@@ -1,9 +1,15 @@
 ---
-title: "Phase Gates"
-description: "Gate criteria for each transformation phase, with clear go/no-go thresholds and exit decision frameworks."
-section: "Transformation"
+title: Phase Gates
+description: Gate criteria for each transformation phase, with clear go/no-go thresholds and exit decision frameworks.
 layout: standard
-slug: "phase-gates"
+slug: phase-gates
+discipline: sustain
+order: 2
+dek: Go, no-go, or extend criteria for each of the three transition gates, with required artifacts, approval authority, and common failure points.
+summary:
+  decide: Whether the program is ready for the next phase, and at Gate 2 whether each pilot is promoted to production, extended with a deadline, or exited.
+  cost: Without gates, phases blur and early problems carry forward; a weak Gate 2 sends fragile pilots to production, where they fail publicly and damage confidence in the whole program.
+  metric: Every gate decision signed by a named executive with documented rationale; at Gate 3, at least two production deployments with finance-reviewed P&L impact.
 ---
 # Phase Gates
 
@@ -186,7 +192,7 @@ flowchart LR
     D -->|No-Go| F[Remediation Plan<br/>with deadline]
     D -->|Extend| G[Time-bounded<br/>extension with criteria]
     F --> H[Re-review<br/>within 4 weeks]
-    G --> H
+    G --> I[Re-review<br/>at the extension deadline]
 ```
 
 **Two weeks before gate:** All required artifacts submitted by owners.

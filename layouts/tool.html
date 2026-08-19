@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>{{> head}}</head>
+<body class="tool" data-layout="tool" data-discipline="{{disciplineKey}}" data-page="{{slug}}">
+<a href="#main-content" class="skip-link">Skip to content</a>
+{{> nav}}
+<main id="main-content" class="tool-wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb">{{breadcrumb}}</nav>
+<header class="tool-head"><div><h1>{{title}}</h1><p class="dek">{{dek}}</p></div><div class="aside">{{content}}</div></header>
+<div id="tool-app" data-tool="{{slug}}"></div>
+{{> book-strip}}
+{{> newsletter-cta}}
+</main>
+{{> footer}}
+<script src="{{basePath}}/js/vendor/d3.v7.min.js"></script>
+<script src="{{basePath}}/js/core/tool.js"></script>
+<script src="{{basePath}}/js/tools/{{toolScript}}.js"></script>
+</body>
+</html>

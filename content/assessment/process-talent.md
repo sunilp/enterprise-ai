@@ -1,9 +1,15 @@
 ---
-title: "Process and Talent Readiness"
-description: "Evaluating process maturity and talent readiness for AI adoption, including the access-usage gap and workflow redesign requirements."
-section: "Assessment"
+title: Process and Talent Readiness
+description: Evaluating process maturity and talent readiness for AI adoption, including the access-usage gap and workflow redesign requirements.
 layout: standard
-slug: "process-talent"
+slug: process-talent
+discipline: prepare
+order: 3
+dek: "The two readiness dimensions most assessments skip: whether processes are stable enough for AI, and whether the talent portfolio goes beyond data science."
+summary:
+  decide: Whether a candidate process needs 3-9 months of remediation before AI, and which neglected roles (program lead, process architect, governance, translator) to charter.
+  cost: AI trained on fragmented process data automates inconsistency at scale; a technical-only talent portfolio succeeds technically and fails organizationally.
+  metric: Daily usage rate among people with access to AI tools, tracked as a management metric; fewer than 60% of those with access use them daily (PwC, 2026).
 ---
 # Process and Talent Readiness
 
@@ -82,7 +88,7 @@ A process is AI-ready when:
 
 ### The Scale of the Gap
 
-Only 20% of organizations report having the AI talent needed to execute their strategy (Deloitte, 2026). This is not a pipeline problem that will resolve itself in 18 months. It is a structural gap that requires deliberate intervention.
+Only 20% of organizations report being ready on AI talent (Deloitte, 2026). This is not a pipeline problem that will resolve itself in 18 months. It is a structural gap that requires deliberate intervention.
 
 The conventional response is to hire data scientists. This is necessary but insufficient. The talent gap in enterprise AI is broader, and the missing roles are less visible.
 
@@ -190,7 +196,7 @@ The failure mode is treating both as separate workstreams that can be addressed 
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
 2. PwC. "2026 AI Business Predictions." 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

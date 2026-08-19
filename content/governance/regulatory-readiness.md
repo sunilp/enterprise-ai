@@ -1,9 +1,15 @@
 ---
-title: "Regulatory Readiness"
-description: "Navigating AI regulation across the EU AI Act, US executive orders, and emerging frameworks, with practical compliance architecture."
-section: "Governance"
+title: Regulatory Readiness
+description: Navigating AI regulation across the EU AI Act, US executive orders, and emerging frameworks, with practical compliance architecture.
 layout: standard
-slug: "regulatory-readiness"
+slug: regulatory-readiness
+discipline: govern
+order: 5
+dek: The EU AI Act timeline, a readiness checklist, data sovereignty, and the vendor contract terms that now determine regulatory posture.
+summary:
+  decide: How to sequence compliance investment by enforcement date and risk category, and which sovereignty and vendor terms to settle at architecture time.
+  cost: Prohibited practices carry penalties up to EUR 35 million or 7% of global revenue, and missing technical documentation is the most common audit failure point.
+  metric: A complete, current inventory of AI systems in production, each classified by AI Act risk category with a named accountable owner.
 ---
 # Regulatory Readiness
 
@@ -26,10 +32,13 @@ timeline
         Aug 2025 : GPAI provider obligations
                  : Transparency and model evaluation requirements
     section 2026
-        Aug 2026 : High-risk AI system obligations
-                 : Conformity assessment, documentation, human oversight
+        Jul 2026 : AI Omnibus in force, high-risk dates moved
+        Aug 2026 : AI Office and national authority enforcement powers apply
     section 2027
-        Aug 2027 : High-risk AI in Annex I regulated products
+        Dec 2027 : High-risk AI system obligations (Annex III)
+                 : Conformity assessment, documentation, human oversight
+    section 2028
+        Aug 2028 : High-risk AI in Annex I regulated products
 ```
 
 ### What Is Already Enforceable
@@ -51,7 +60,7 @@ If your organization operates AI systems that touch any of these categories, the
 
 General-purpose AI model providers face specific obligations around transparency, capability evaluations, and systemic risk assessment. Organizations deploying GPAI models (GPT-4, Claude, Gemini, and equivalents) need to understand their obligations both as deployers and, if they fine-tune or distribute models, potentially as providers.
 
-### High-Risk AI Obligations (August 2026)
+### High-Risk AI Obligations (December 2027)
 
 The high-risk provisions are the most operationally demanding. High-risk AI systems include AI used in:
 
@@ -63,7 +72,7 @@ The high-risk provisions are the most operationally demanding. High-risk AI syst
 - Migration, asylum, and border control
 - Administration of justice
 
-If you operate in any of these domains, the August 2026 deadline requires:
+If you operate in any of these domains, the December 2027 deadline requires:
 
 - A comprehensive risk management system
 - Data governance documentation
@@ -152,7 +161,7 @@ The EU AI Act gets the most coverage, but enterprise AI operates across multiple
 
 The US does not have a comprehensive federal AI law equivalent to the EU AI Act. The regulatory environment is sector-specific and executive-order-driven. Key elements:
 
-- **Executive Order 14110 (Oct 2023)**: directed NIST to develop AI safety standards, required safety testing reporting for frontier models, initiated sector-specific guidance across federal agencies. Partially rescinded and replaced by subsequent executive orders; the policy environment remains in flux.
+- **Executive Order 14110 (Oct 2023)**: directed NIST to develop AI safety standards, required safety testing reporting for frontier models, initiated sector-specific guidance across federal agencies. Revoked in January 2025 and replaced by subsequent executive orders; the policy environment remains in flux.
 - **NIST AI Risk Management Framework (AI RMF)**: voluntary but widely adopted, increasingly referenced in procurement and sector regulation
 - **Sector-specific AI regulation**: financial services (OCC, FDIC, Federal Reserve guidance), healthcare (FDA AI/ML action plan), federal contracting (FAR AI provisions)
 - **State-level legislation**: Colorado AI Act, California CPPA AI regulations, and active legislation in 30+ states creating a complex compliance patchwork
@@ -173,7 +182,7 @@ China's AI regulatory framework applies to AI services deployed in China, which 
 
 Post-Brexit, the UK has taken a sector-led, voluntary framework approach rather than horizontal legislation:
 
-- The AI Safety Institute focuses on frontier model evaluation
+- The AI Security Institute (formerly the AI Safety Institute) focuses on frontier model evaluation
 - The 2023 AI White Paper established principles without creating immediate legal obligations
 - Sector regulators (FCA, ICO, CMA, Ofcom) are developing sector-specific AI guidance
 - The UK has signaled intent to legislate but has not finalized a framework
@@ -210,7 +219,7 @@ The practical implication for AI architecture: design for portability from the s
 
 The organizations that will navigate the regulatory environment successfully are not the ones with the best lawyers. They are the ones with the cleanest AI systems: well-documented, well-monitored, with clear accountability chains and technically enforced controls.
 
-There is a real tradeoff between compliance investment now and regulatory risk later. Early compliance is expensive, the regulatory guidance is still maturing in several areas, and there is a genuine risk of investing heavily in the wrong controls before requirements are finalized. Late compliance carries different costs: penalty exposure, forced retrofitting of systems not designed for auditability, and the reputational damage of a public enforcement action. Neither extreme is right. The practical answer is to sequence compliance investment by enforcement date and risk category. The prohibited practices provisions are already enforceable. The high-risk system obligations land in August 2026. Build to those deadlines rather than trying to be comprehensively compliant on day one.
+There is a real tradeoff between compliance investment now and regulatory risk later. Early compliance is expensive, the regulatory guidance is still maturing in several areas, and there is a genuine risk of investing heavily in the wrong controls before requirements are finalized. Late compliance carries different costs: penalty exposure, forced retrofitting of systems not designed for auditability, and the reputational damage of a public enforcement action. Neither extreme is right. The practical answer is to sequence compliance investment by enforcement date and risk category. The prohibited practices provisions are already enforceable. The high-risk system obligations now land in December 2027 for Annex III systems and August 2028 for AI in regulated products, after the AI Omnibus pushed them out from the original 2026 and 2027 dates. Build to those deadlines rather than trying to be comprehensively compliant on day one.
 
 Regulatory readiness is a governance architecture problem. The same investment in AI governance architecture that improves operational performance also produces the documentation, audit trails, and monitoring capabilities that regulators require. These are not separate workstreams.
 
@@ -221,7 +230,7 @@ Start with the inventory. Everything else follows from knowing what you have.
 ## Sources
 
 1. Cloud Security Alliance. "EU AI Act High-Risk Compliance Deadline." March 2026.
-2. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+2. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
 3. Gartner. "Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." March 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

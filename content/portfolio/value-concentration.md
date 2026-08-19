@@ -1,9 +1,15 @@
 ---
-title: "Value Concentration"
-description: "Why enterprise AI value concentrates in a small number of use cases and how to identify and double down on the right ones."
-section: "Portfolio"
+title: Value Concentration
+description: Why enterprise AI value concentrates in a small number of use cases and how to identify and double down on the right ones.
 layout: standard
-slug: "value-concentration"
+slug: value-concentration
+discipline: prepare
+order: 6
+dek: Why a few deeply resourced use cases outperform broad experimentation, where AI value sits by function, and how to make the concentration decision.
+summary:
+  decide: Which two or three business outcomes AI will deliver, which 3-5 use cases get deep investment, and what you will stop doing to fund them.
+  cost: Spread produces fragmented capability, diluted expertise and a portfolio of use cases none of which are deep enough to generate transformational value.
+  metric: "The concentration test: leadership names the same three use cases committed to full production in 18 months; more than five, or disagreement, means spread."
 ---
 # Value Concentration
 
@@ -49,11 +55,11 @@ Agentic AI is changing the value concentration calculus. Agents, systems that ac
 
 The data reflects this shift:
 
-- Agents accounted for approximately 17% of total enterprise AI value generated in 2025 (BCG)
-- That share is projected to reach 29% by 2028 (BCG)
+- Agents accounted for approximately 17% of total enterprise AI value generated in 2025 (BCG, 2025)
+- That share is projected to reach 29% by 2028 (BCG, 2025)
 - The compound growth rate of agentic AI value is significantly higher than that of copilot and automation AI
 
-The implication for value concentration: the organizations building depth in agentic capability now are positioning for the majority of AI value growth over the next three years. Organizations that have spread their investment across copilot tools and departmental automation will find themselves needing to rebuild their approach to compete.
+The implication for value concentration: the organizations building depth in agentic capability now are positioning for the majority of AI value growth through 2028. Organizations that have spread their investment across copilot tools and departmental automation will find themselves needing to rebuild their approach to compete.
 
 ```mermaid
 xychart-beta
@@ -157,7 +163,7 @@ flowchart TD
 
 ## What Concentration Looks Like Operationally
 
-Concentration is not just a strategic decision. It has operational implications that most organizations underestimate:
+Concentration is a strategic decision with operational implications that most organizations underestimate:
 
 **Dedicated team.** High-value use cases at concentration-level investment require a dedicated team: data engineers, ML engineers, domain experts, and a program lead who owns nothing else. Shared-resource models produce shared mediocrity.
 

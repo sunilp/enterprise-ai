@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>{{> head}}</head>
-<body class="showcase atmosphere{{flagshipClass}}" data-section="{{section}}" data-page="{{slug}}"{{hasMermaidAttr}}>
+<body class="showcase" data-layout="showcase" data-discipline="{{disciplineKey}}" data-page="{{slug}}"{{hasMermaidAttr}}>
 <a href="#main-content" class="skip-link">Skip to content</a>
 {{> nav}}
-<main id="main-content" class="showcase-content">
+<main id="main-content" class="showcase-content page">
 <article>
+<nav class="breadcrumb" aria-label="Breadcrumb">{{breadcrumb}}</nav>
+{{showcaseHeader}}
+{{> summary-box}}
 {{content}}
 {{interactiveSlot}}
+{{related}}
+{{> book-strip}}
+{{prevNext}}
+{{> newsletter-cta}}
 </article>
 </main>
 {{> footer}}
-{{> particles}}
-{{> engagement}}
 <script src="{{basePath}}/js/vendor/d3.v7.min.js"></script>
-<script src="{{basePath}}/js/pages/{{slug}}.js" type="module"></script>
+<script src="{{basePath}}/js/pages/{{slug}}.js"></script>
 </body>
 </html>

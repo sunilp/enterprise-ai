@@ -1,9 +1,15 @@
 ---
-title: "Board Reporting"
-description: "What boards need to see on AI, covering metrics that matter, shadow AI disclosure, and the two-cadence reporting model."
-section: "Measurement"
+title: Board Reporting
+description: What boards need to see on AI, covering metrics that matter, shadow AI disclosure, and the two-cadence reporting model.
 layout: standard
-slug: "board-reporting"
+slug: board-reporting
+discipline: operate
+order: 3
+dek: "What boards need to see on AI: portfolio health, risk posture, realized value and strategic alignment, on a two-cadence reporting cycle."
+summary:
+  decide: "What goes in front of the board each quarter, including shadow AI exposure, and which portfolio decision each initiative gets: continue, accelerate, redirect or exit."
+  cost: Boards get model performance instead of business performance, lose confidence in pilot-only updates, and learn about shadow AI through a breach or audit finding.
+  metric: Each quarterly review ends in a documented decision per initiative, and every reported value carries a baseline, delta and attribution confidence.
 ---
 # Board Reporting
 
@@ -11,7 +17,7 @@ Less than 30% of AI leaders report that their CEO is satisfied with AI returns, 
 
 Boards do not need to know your model accuracy. They need to know whether the business is better off.
 
-[^1]: Gartner, "AI ROI and CEO Satisfaction Survey," 2025.
+[^1]: Gartner, "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address," November 2025.
 
 ---
 
@@ -51,9 +57,9 @@ quadrantChart
     x-axis Low Investment --> High Investment
     y-axis Low Return --> High Return
     quadrant-1 Scale
-    quadrant-2 Review
+    quadrant-2 Accelerate
     quadrant-3 Exit
-    quadrant-4 Accelerate
+    quadrant-4 Review
     Customer Support AI: [0.3, 0.7]
     Contract Review: [0.6, 0.8]
     Demand Forecasting: [0.7, 0.4]
@@ -91,7 +97,7 @@ For each production use case, report:
 | Use Case | Baseline | Current | Delta | Attribution Confidence |
 |---|---|---|---|---|
 | Contract review | 4.2 hrs/contract | 1.6 hrs/contract | -62% cycle time | High (controlled pilot) |
-| Support resolution | 14.3 min MTTR | 9.1 min MTTR | -36% handle time | Medium (matched cohort) |
+| Support resolution | 14.3 min MTTR | 9.1 min MTTR | -36% resolution time | Medium (matched cohort) |
 | Invoice processing | $11.80/invoice | $4.20/invoice | -64% process cost | High (full deployment) |
 
 When results are not yet visible, report leading indicators explicitly labeled as such. See the section below on pre-result reporting.
@@ -104,7 +110,7 @@ Map each major AI initiative to a named strategic priority. If an initiative can
 
 | AI Initiative | Strategic Priority | Stage | Target Outcome |
 |---|---|---|---|
-| Customer support AI | Improve NPS by 15 points | Production | 36% reduction in handle time |
+| Customer support AI | Improve NPS by 15 points | Production | 36% reduction in resolution time |
 | Contract review AI | Legal cost reduction target | Scaling | $2.1M annual cost avoidance |
 | Demand forecasting AI | Supply chain resilience | Pilot | 8% reduction in forecast error |
 

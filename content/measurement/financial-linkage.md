@@ -1,13 +1,19 @@
 ---
-title: "Financial Linkage"
-description: "Connecting AI outcomes to P&L with attribution methodology, baseline measurement, and the redistribution problem."
-section: "Measurement"
+title: Financial Linkage
+description: Connecting AI outcomes to P&L with attribution methodology, baseline measurement, and the redistribution problem.
 layout: standard
-slug: "financial-linkage"
+slug: financial-linkage
+discipline: operate
+order: 2
+dek: How to turn task-level efficiency gains into P&L impact through workflow redesign, pre-registered attribution and a finance partnership.
+summary:
+  decide: Which financial statement line each use case moves, what the recaptured time will be used for, and which attribution method to agree with finance before measurement begins.
+  cost: Time saved redistributes into scope, review cycles or meetings; the gain is real at task level, invisible in the P&L, and the CFO asks why.
+  metric: "Volume handled, or hires avoided, with the same team: released capacity that was redeployed, not hours saved."
 ---
 # Financial Linkage
 
-A payments network achieved 99% copilot adoption across its engineering organization. Productivity gains never appeared on the balance sheet. The CFO asked why. Nobody had a good answer.
+A payments network achieved 99% copilot adoption across its engineering organization. Productivity gains never appeared in the P&L. The CFO asked why. Nobody had a good answer.
 
 This is the most common failure mode in enterprise AI programs: efficiency gains that are real at the task level but invisible at the financial level. The gap between "AI made us faster" and "AI reduced our costs" is not a measurement gap. It is a workflow redesign gap.
 
@@ -19,7 +25,7 @@ When AI saves time, that time does not automatically convert to value. It redist
 
 This is what researchers call the "productivity paradox" of AI adoption. Tools that demonstrably accelerate individual tasks fail to improve aggregate output because the surrounding system was not redesigned to capture the gain.[^1]
 
-[^1]: McKinsey Global Institute, "The Economic Potential of Generative AI," 2024.
+[^1]: McKinsey Global Institute, "The Economic Potential of Generative AI," 2023.
 
 :::warning
 **The Redistribution Problem**
@@ -123,7 +129,7 @@ The data on AI ROI timelines is sobering:
 
 ```mermaid
 gantt
-    title Typical Enterprise AI ROI Timeline
+    title Enterprise AI ROI Timeline with Disciplined Execution
     dateFormat  YYYY-MM
     section Investment
     Foundation and pilots         :2025-01, 6M

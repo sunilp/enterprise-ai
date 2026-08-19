@@ -1,19 +1,25 @@
 ---
-title: "The Problem"
-description: "$644 billion in generative AI spending with fewer than 40% seeing measurable impact. The gap is organizational, not technological."
-section: "Position"
+title: The Problem
+description: $644 billion in generative AI spending with fewer than 40% seeing measurable impact. The gap is organizational, not technological.
 layout: showcase
-slug: "the-problem"
+slug: the-problem
+discipline: diagnose
+order: 1
+dek: Why $644 billion of generative AI spending has produced measurable impact for fewer than 40% of companies, and why the gap is organizational, not technical.
+summary:
+  decide: Whether your binding constraint is technology selection or the organizational system that converts AI capability into business results.
+  cost: "Pilot purgatory: significant sunk cost, plus the opportunity cost and organizational cynicism that make the next attempt harder."
+  metric: The ratio of AI pilots running to use cases in production. More pilots than production deployments means the system is broken, however good the pilots look.
 ---
 # The Problem
 
 ## $644 Billion and Not Much to Show For It
 
-Global generative AI spending reached $644 billion in 2025 (Gartner). This is not seed-stage experimentation money. This is board-approved capital, deployed by companies that believe AI is a strategic imperative.
+Global generative AI spending was forecast at $644 billion for 2025 (Gartner, 2025). This is not seed-stage experimentation money. This is board-approved capital, deployed by companies that believe AI is a strategic imperative.
 
 The results do not match the investment.
 
-Only 39% of companies report that AI has delivered meaningful impact on EBIT (McKinsey, 2025). S&P Global found that 42% of companies scrapped most of their AI initiatives in 2025, up from 17% the year prior. Gartner projects that 30% of generative AI proof-of-concepts will be abandoned after the pilot phase. And across all of this, only 5% of enterprises qualify as "future-built," meaning AI is embedded in their operating model at a level that creates durable competitive advantage (BCG).
+Only 39% of companies report any enterprise-level EBIT impact from AI (McKinsey, 2025). S&P Global found that 42% of companies scrapped most of their AI initiatives in 2025, up from 17% the year prior. Gartner predicted that 30% of generative AI proof-of-concepts would be abandoned after the pilot phase (Gartner, 2024). And across all of this, only 5% of enterprises qualify as "future-built," meaning AI is embedded in their operating model at a level that creates durable competitive advantage (BCG, 2025).
 
 The gap is not a technology problem. The models work. The platforms work. The gap is between what organizations believe they are doing and what they are actually doing.
 
@@ -89,7 +95,7 @@ The most capable AI tools in history are available right now. The enterprise fai
 
 The explanation is not the technology. The explanation is that AI capability is outpacing organizational readiness. Models can do more than organizations know how to use, govern, or measure. The gap between what is technically possible and what organizations can responsibly deploy at scale is widening.
 
-This is why the 5% who are future-built have such a durable advantage. They are not just ahead on the technology. They are ahead on the organizational infrastructure required to deploy the technology responsibly and at scale. That infrastructure, once built, compounds. Governance frameworks, data infrastructure, workforce capability, and operating model design take years to build. Organizations starting from scratch in 2026 are not catching up by selecting better tools.
+This is why the 5% who are future-built have such a durable advantage. Their lead is not in the technology. It is in the organizational infrastructure required to deploy the technology responsibly and at scale. That infrastructure, once built, compounds. Governance frameworks, data infrastructure, workforce capability, and operating model design take years to build. Organizations starting from scratch in 2026 are not catching up by selecting better tools.
 
 ---
 

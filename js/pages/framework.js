@@ -14,6 +14,8 @@
   // ─── Hero Animation ──────────────────────────────────────────────────────
 
   function initHeroAnimation() {
+    // Hero text is never hidden (site rule); nothing to animate.
+    return;
     var hero = document.querySelector('.showcase-hero');
     if (!hero) return;
 
@@ -86,15 +88,15 @@
     if (!container || typeof d3 === 'undefined') return;
 
     var principles = [
-      { num: 1, title: 'Operating Model', subtitle: 'Before Technology', icon: '&#9670;', color: '#c8b48c',
+      { num: 1, title: 'Operating Model', subtitle: 'Before Technology', icon: '&#9670;', color: '#7a5c1e',
         desc: 'Define how the organization will govern, fund, and scale AI before selecting tools.' },
-      { num: 2, title: 'Governance', subtitle: 'As Infrastructure', icon: '&#9670;', color: '#b8a47c',
+      { num: 2, title: 'Governance', subtitle: 'As Infrastructure', icon: '&#9670;', color: '#7a5c1e',
         desc: 'Build governance that runs at deployment speed, not review-cycle speed.' },
-      { num: 3, title: 'Architecture', subtitle: 'Intelligence to Action', icon: '&#9670;', color: '#a89060',
+      { num: 3, title: 'Architecture', subtitle: 'Intelligence to Action', icon: '&#9670;', color: '#6b5320',
         desc: 'Connect the System of Intelligence to Systems of Engagement and Action.' },
-      { num: 4, title: 'Measurement', subtitle: 'To the Balance Sheet', icon: '&#9670;', color: '#988050',
+      { num: 4, title: 'Measurement', subtitle: 'To the Balance Sheet', icon: '&#9670;', color: '#5c4a22',
         desc: 'Establish baselines before deployment. Tie AI outcomes to EBIT through a traceable chain.' },
-      { num: 5, title: 'Workforce', subtitle: 'Human-Agent Design', icon: '&#9670;', color: '#887040',
+      { num: 5, title: 'Workforce', subtitle: 'Human-Agent Design', icon: '&#9670;', color: '#4d4024',
         desc: 'Design the new composition of work before deploying the AI that changes it.' }
     ];
 
@@ -125,13 +127,13 @@
         .attr('x1', 40).attr('x2', 40)
         .attr('y1', function(d, i) { return i * yStep + 50; })
         .attr('y2', function(d, i) { return (i + 1) * yStep + 10; })
-        .attr('stroke', 'rgba(200,180,140,0.2)')
+        .attr('stroke', 'rgba(122,92,30,0.35)')
         .attr('stroke-width', 1);
 
       // Number circles
       groups.append('circle')
         .attr('r', 16)
-        .attr('fill', 'rgba(200,180,140,0.08)')
+        .attr('fill', 'rgba(122,92,30,0.08)')
         .attr('stroke', function(d) { return d.color; })
         .attr('stroke-width', 1);
 
@@ -147,7 +149,7 @@
       groups.append('text')
         .attr('x', 30)
         .attr('dy', '-0.2em')
-        .attr('fill', '#f0ece4')
+        .attr('fill', '#16130e')
         .attr('font-family', 'IBM Plex Sans, sans-serif')
         .attr('font-size', '13px')
         .attr('font-weight', '500')
@@ -156,7 +158,7 @@
       groups.append('text')
         .attr('x', 30)
         .attr('dy', '1.2em')
-        .attr('fill', '#a09888')
+        .attr('fill', '#4a443a')
         .attr('font-family', 'IBM Plex Sans, sans-serif')
         .attr('font-size', '11px')
         .text(function(d) { return d.desc.substring(0, 70) + '...'; });
@@ -170,7 +172,7 @@
       svg.append('line')
         .attr('x1', 40).attr('x2', width - 40)
         .attr('y1', cy).attr('y2', cy)
-        .attr('stroke', 'rgba(200,180,140,0.15)')
+        .attr('stroke', 'rgba(122,92,30,0.25)')
         .attr('stroke-width', 1);
 
       var groups = svg.selectAll('.principle')
@@ -191,7 +193,7 @@
       // Main circles
       groups.append('circle')
         .attr('r', 22)
-        .attr('fill', 'rgba(10,10,10,0.9)')
+        .attr('fill', '#fbf9f4')
         .attr('stroke', function(d) { return d.color; })
         .attr('stroke-width', 1.5);
 
@@ -208,7 +210,7 @@
       groups.append('text')
         .attr('text-anchor', 'middle')
         .attr('y', -38)
-        .attr('fill', '#f0ece4')
+        .attr('fill', '#16130e')
         .attr('font-family', 'IBM Plex Sans, sans-serif')
         .attr('font-size', '11px')
         .attr('font-weight', '500')
@@ -218,7 +220,7 @@
       groups.append('text')
         .attr('text-anchor', 'middle')
         .attr('y', 42)
-        .attr('fill', '#6b6560')
+        .attr('fill', '#7d766a')
         .attr('font-family', 'IBM Plex Mono, monospace')
         .attr('font-size', '9px')
         .text(function(d) { return d.subtitle; });
@@ -261,13 +263,13 @@
 
     var stages = [
       { num: 1, name: 'Foundational', range: '1.0–2.0', desc: 'Experimental. No shared infrastructure.',
-        color: '#6b6560', focus: 'Appoint CAIO. Assess readiness. Stop starting pilots.' },
+        color: '#7d766a', focus: 'Appoint CAIO. Assess readiness. Stop starting pilots.' },
       { num: 2, name: 'Developing', range: '2.1–3.0', desc: 'Centralized function emerging.',
-        color: '#887040', focus: 'Shared platform. Risk-tiered governance. Baselines.' },
+        color: '#4d4024', focus: 'Shared platform. Risk-tiered governance. Baselines.' },
       { num: 3, name: 'Established', range: '3.1–4.0', desc: 'AI at scale with governed infrastructure.',
-        color: '#a89060', focus: 'Automate governance. Agentic strategy. Board reporting.' },
+        color: '#6b5320', focus: 'Automate governance. Agentic strategy. Board reporting.' },
       { num: 4, name: 'Optimized', range: '4.1–5.0', desc: 'AI is an operating capability.',
-        color: '#c8b48c', focus: 'Continuous optimization. Agentic at scale. Knowledge architecture.' }
+        color: '#7a5c1e', focus: 'Continuous optimization. Agentic at scale. Knowledge architecture.' }
     ];
 
     var width = container.clientWidth;
@@ -280,15 +282,15 @@
       html += '<div class="maturity-stage" style="border-left: 3px solid ' + stage.color + ';">';
       html += '<div class="maturity-header">';
       html += '<span class="maturity-num" style="color:' + stage.color + ';">Stage ' + stage.num + '</span>';
-      html += '<span class="maturity-name" style="color:#f0ece4;">' + stage.name + '</span>';
-      html += '<span class="maturity-range" style="color:#6b6560;">' + stage.range + '</span>';
+      html += '<span class="maturity-name" style="color:#16130e;">' + stage.name + '</span>';
+      html += '<span class="maturity-range" style="color:#7d766a;">' + stage.range + '</span>';
       html += '</div>';
-      html += '<p class="maturity-desc" style="color:#a09888;font-size:13px;margin:8px 0 4px;">' + stage.desc + '</p>';
-      html += '<p class="maturity-focus" style="color:#c8b48c;font-size:12px;font-family:\'IBM Plex Mono\',monospace;margin:0;">' + stage.focus + '</p>';
+      html += '<p class="maturity-desc" style="color:#4a443a;font-size:13px;margin:8px 0 4px;">' + stage.desc + '</p>';
+      html += '<p class="maturity-focus" style="color:#7a5c1e;font-size:12px;font-family:\'IBM Plex Mono\',monospace;margin:0;">' + stage.focus + '</p>';
       html += '</div>';
 
       if (i < stages.length - 1) {
-        html += '<div class="maturity-arrow" style="text-align:center;color:rgba(200,180,140,0.3);font-size:18px;margin:8px 0;">&#8595;</div>';
+        html += '<div class="maturity-arrow" style="text-align:center;color:rgba(122,92,30,0.45);font-size:18px;margin:8px 0;">&#8595;</div>';
       }
     });
 
@@ -296,7 +298,7 @@
 
     // Add styles
     var style = document.createElement('style');
-    style.textContent = '.maturity-path{max-width:600px;margin:0 auto;}.maturity-stage{padding:16px 20px;margin:0;background:rgba(200,180,140,0.02);border-radius:0 4px 4px 0;transition:background 0.3s;}.maturity-stage:hover{background:rgba(200,180,140,0.05);}.maturity-header{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}.maturity-num{font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;}.maturity-name{font-family:"Fraunces",serif;font-size:18px;font-weight:400;}.maturity-range{font-family:"IBM Plex Mono",monospace;font-size:10px;margin-left:auto;}';
+    style.textContent = '.maturity-path{max-width:600px;margin:0 auto;}.maturity-stage{padding:16px 20px;margin:0;background:rgba(122,92,30,0.04);border-radius:0 4px 4px 0;transition:background 0.3s;}.maturity-stage:hover{background:rgba(122,92,30,0.08);}.maturity-header{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}.maturity-num{font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;}.maturity-name{font-family:"Fraunces",serif;font-size:18px;font-weight:400;}.maturity-range{font-family:"IBM Plex Mono",monospace;font-size:10px;margin-left:auto;}';
     document.head.appendChild(style);
 
     container.innerHTML = html;

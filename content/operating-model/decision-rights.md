@@ -1,9 +1,15 @@
 ---
-title: "Decision Rights"
-description: "Mapping AI decision rights across model selection, data access, deployment authority, and vendor procurement."
-section: "Operating Model"
+title: Decision Rights
+description: Mapping AI decision rights across model selection, data access, deployment authority, and vendor procurement.
 layout: standard
-slug: "decision-rights"
+slug: decision-rights
+discipline: organize
+order: 3
+dek: A RACI-style matrix that names one accountable owner for each AI decision, from use case approval to agent action boundaries.
+summary:
+  decide: "Who is accountable for each decision category: strategic fit, risk tier, build vs buy, vendor approval, deployment, budget, and for agents, action boundary, escalation and kill authority."
+  cost: Decisions stall in committee loops or business units deploy anyway; when an agent causes harm, nobody was named as accountable before the incident.
+  metric: Whether every decision category, including the agentic ones, has exactly one accountable owner in the matrix, with rights reviewed quarterly as the portfolio grows.
 ---
 # Decision Rights
 
@@ -47,7 +53,7 @@ The matrix below uses a RACI-derived structure: **R** = Responsible (does the wo
 | AI policy and regulatory compliance | **A** | I | I | C | I | C | I |
 | Workforce impact decisions | C | I | I | I | C | I | **A**\* |
 
-*\*CHRO holds accountability for workforce impact decisions in organizations where the CHRO is included in the AI governance structure. In organizations where CHRO is absent from AI planning (46% of organizations, IBM IBV 2025), Finance or CAIO typically absorbs this by default.*
+*\*CHRO holds accountability for workforce impact decisions in organizations where the CHRO is included in the AI governance structure. In organizations that do not integrate workforce planning into their AI roadmaps (only 46% do, WEF 2025), Finance or CAIO typically absorbs this by default.*
 
 ---
 
@@ -178,10 +184,8 @@ Decision rights define who is accountable. Process defines how the decision is m
 
 ---
 
----
-
 ## Sources
 
-1. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025.
+1. World Economic Forum. "Scaling AI with Strategy, Data and Workforce Readiness." October 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -1,15 +1,21 @@
 ---
-title: "Governance Architecture"
-description: "Designing AI governance as infrastructure rather than policy documents, with three-layer architecture and automated controls."
-section: "Governance"
+title: Governance Architecture
+description: Designing AI governance as infrastructure rather than policy documents, with three-layer architecture and automated controls.
 layout: showcase
-slug: "governance-architecture"
+slug: governance-architecture
+discipline: govern
+order: 1
+dek: Why AI governance has to be built as infrastructure, with policy, process and technical layers that run at deployment speed.
+summary:
+  decide: Which rules live in policy, which in process, and which are enforced in the runtime, and how approval is tiered by risk so safe deployment is fast.
+  cost: Retrofitting governance after deployment costs 3 to 5 times more than building it in, and teams route around any process slower than they ship.
+  metric: Risk assessment turnaround in hours, not weeks. If governance is slower than deployment, teams are already routing around it.
 ---
 # Governance Architecture
 
 AI governance is not a policy document. It is an operating system. Most enterprises have built the document. Almost none have built the operating system.
 
-Fewer than one in five enterprises have fully implemented AI governance frameworks, despite the majority using AI in daily operations. That gap is not a knowledge problem. It is an architectural problem.
+Fewer than one in five enterprises have fully implemented AI governance frameworks (industry research, 2025), despite the majority using AI in daily operations. That gap is not a knowledge problem. It is an architectural problem.
 
 ## Why "Governance as a Document" Fails
 

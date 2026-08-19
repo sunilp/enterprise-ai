@@ -1,9 +1,15 @@
 ---
-title: "The CAIO Mandate"
-description: "Why the CAIO role fails without structural authority, and how to design the mandate for real organizational impact."
-section: "Operating Model"
+title: The CAIO Mandate
+description: Why the CAIO role fails without structural authority, and how to design the mandate for real organizational impact.
 layout: showcase
-slug: "caio-mandate"
+slug: caio-mandate
+discipline: organize
+order: 1
+dek: What the CAIO role has to own, where it should report, and why an advisory CAIO produces governance in appearance only.
+summary:
+  decide: Whether to give the CAIO real authority over use case approval, vendor selection and model standards, or accept an advisory role and the governance gaps that follow.
+  cost: "Every function does AI independently: duplicate investment, incompatible standards, no consolidated view of AI risk, and regulatory gaps discovered under pressure."
+  metric: Share of use cases and vendor AI purchases that pass through CAIO approval; business units bypassing the office is the failure signal the page names first.
 ---
 # The CAIO Mandate
 
@@ -102,7 +108,7 @@ The hub is the CAIO function. It owns the decisions that must be consistent acro
 
 This structure solves the core tension in enterprise AI: the need for consistent governance and the need for domain-specific speed. Centralized control creates bottlenecks. Full decentralization creates fragmentation. Hub-and-spoke creates accountability at both levels.
 
-The 36% ROI advantage translates to real capital. For an enterprise spending $50M annually on AI, that is $18M in additional return, or $18M left on the table by choosing the wrong structure.
+At enterprise AI spending levels, a 36% ROI advantage is real capital, and choosing the wrong structure leaves it on the table.
 
 For a detailed RACI matrix, see [Operating Architecture](../architecture/operating-architecture.md).
 
@@ -171,8 +177,6 @@ The debate about whether the CAIO is transitional reflects a misunderstanding of
 - The CAIO is not in the room when the CFO allocates AI budget
 
 These are not edge cases. They are the default failure modes. Recognizing them early is the difference between course-correcting and rebuilding after a significant failure.
-
----
 
 ---
 

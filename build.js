@@ -29,6 +29,22 @@ const DIST_DIR = path.join(ROOT, 'dist');
 const STATIC_DIRS = ['css', 'js', 'fonts', 'static'];
 const BASE_PATH = '/enterprise-ai';
 const SITE_URL = 'https://sunilprakash.com/enterprise-ai';
+const SITE_CONFIG_PATH = path.join(ROOT, 'site.config.json');
+
+// ─── Site Config (book switch) ─────────────────────────────────────────────
+
+function loadSiteConfig() {
+  const defaults = { book: { enabled: false } };
+  const cfgPath = process.env.SITE_CONFIG_PATH || SITE_CONFIG_PATH;
+  if (!fs.existsSync(cfgPath)) return defaults;
+  try {
+    const parsed = JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
+    return { ...defaults, ...parsed, book: { ...defaults.book, ...(parsed.book || {}) } };
+  } catch (e) {
+    console.warn(`WARN: site.config.json unreadable (${e.message}); using defaults`);
+    return defaults;
+  }
+}
 
 // ─── Template Engine (< 50 lines) ──────────────────────────────────────────
 
@@ -47,9 +63,12 @@ function loadPartial(name) {
 
 function renderTemplate(template, data) {
   // Phase 1: resolve partials {{> partialName}}
-  let result = template.replace(/\{\{>\s*(\w+)\s*\}\}/g, (_, name) => {
+  let result = template.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => {
     return loadPartial(name);
   });
+  // Phase 1b: sections {{#key}}...{{/key}} and {{^key}}...{{/key}}
+  result = result.replace(/\{\{#(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, key, inner) => data[key] ? inner : '');
+  result = result.replace(/\{\{\^(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, key, inner) => data[key] ? '' : inner);
   // Phase 2: replace variables {{variableName}}
   result = result.replace(/\{\{(\w+)\}\}/g, (match, key) => {
     return data[key] !== undefined ? data[key] : '';
@@ -85,6 +104,8 @@ function parseFrontmatter(raw, filePath) {
   if (!meta.layout) meta.layout = 'standard';
   if (!meta.slug) meta.slug = fileName === 'index' ? 'homepage' : fileName;
   if (meta.order === undefined) meta.order = 99;
+  meta.summary = meta.summary || null;
+  meta.dek = meta.dek || '';
   return { meta, body: match[2] };
 }
 
@@ -137,6 +158,20 @@ function configureMarked() {
           return `<div class="warning-box">${inner}</div>\n`;
         case 'note':
           return `<div class="note-box">${inner}</div>\n`;
+        case 'quote':
+          return `<blockquote class="pull-quote">${inner}</blockquote>\n`;
+        case 'decision-rights': {
+          // Three cells from "**Who decides**", "**Who approves**", "**Who can stop**" paragraphs (or any 3 paragraphs in order)
+          const cells = token.text.split(/\n\s*\n/).map(t => t.trim()).filter(Boolean).slice(0, 3);
+          const labels = ['Who decides', 'Who approves', 'Who can stop'];
+          const html = cells.map((c, i) => {
+            const m = c.match(/^\*\*([^*]+)\*\*\s*[:.]?\s*([\s\S]*)$/);
+            const k = m ? m[1] : labels[i];
+            const v = marked.parse(m ? m[2] : c);
+            return `<div><span class="k">${k}</span>${v}</div>`;
+          }).join('');
+          return `<div class="decision-rights">${html}</div>\n`;
+        }
         default:
           return `<div class="${token.containerType}-box">${inner}</div>\n`;
       }
@@ -179,7 +214,9 @@ function configureMarked() {
     code(token) {
       if (token.lang === 'mermaid') {
         hasMermaid = true;
-        return `<pre class="mermaid">${token.text}</pre>\n`;
+        // Strip hard-coded colours so the paper theme paints every diagram consistently
+        const clean = token.text.split('\n').filter(l => !/^\s*(style|classDef|class|linkStyle)\s/.test(l)).join('\n');
+        return `<pre class="mermaid">${clean}</pre>\n`;
       }
       const langClass = token.lang ? ` class="language-${token.lang}"` : '';
       return `<pre><code${langClass}>${token.text}</code></pre>\n`;
@@ -208,121 +245,67 @@ function findMarkdownFiles(dir) {
 
 // ─── Navigation Builder ────────────────────────────────────────────────────
 
-// Editorial section order: follows the executive decision journey
-const SECTION_ORDER = [
-  'Position',
-  'Framework',
-  'Assessment',
-  'Architecture',
-  'Operating Model',
-  'Governance',
-  'Agentic Strategy',
-  'Measurement',
-  'Portfolio',
-  'Transformation',
-  'Workforce',
-  'Proof',
-  'Reading Paths',
-  'Glossary',
-  'Sources',
+// The spine: seven disciplines (names are the book's structure; questions are the site's own wording)
+const DISCIPLINES = [
+  { key: 'diagnose', number: 1, name: 'Diagnose', question: 'Where is the AI program actually stuck, and why?' },
+  { key: 'prepare',  number: 2, name: 'Prepare',  question: 'Which foundations have to be in place before scale?' },
+  { key: 'govern',   number: 3, name: 'Govern',   question: 'How does the enterprise stay in control at deployment speed?' },
+  { key: 'design',   number: 4, name: 'Design',   question: 'What system, at what complexity, does the workflow need?' },
+  { key: 'operate',  number: 5, name: 'Operate',  question: 'Is it working in production, and do the economics hold?' },
+  { key: 'organize', number: 6, name: 'Organize', question: 'Who owns AI, and how does adoption spread?' },
+  { key: 'sustain',  number: 7, name: 'Sustain',  question: 'What survives the next model cycle?' },
+];
+const GROUPS = [
+  { key: 'start',     name: 'Start here' },
+  { key: 'proof',     name: 'Proof' },
+  { key: 'reference', name: 'Reference' },
 ];
 
-// Page order within each section (by slug). Pages not listed sort to end alphabetically.
-const PAGE_ORDER = {
-  'Position': ['the-problem', 'what-transformation-means', 'failure-modes'],
-  'Assessment': ['ai-readiness', 'data-readiness', 'process-talent', 'maturity-model', 'assessment'],
-  'Architecture': ['architecture-index', 'capability-stack', 'systems-model', 'control-architecture', 'operating-architecture', 'reference-patterns'],
-  'Operating Model': ['caio-mandate', 'structural-models', 'decision-rights', 'coordination'],
-  'Governance': ['governance-architecture', 'genai-model-risk', 'agent-governance', 'shadow-ai', 'regulatory-readiness'],
-  'Agentic Strategy': ['the-shift', 'protocol-landscape', 'human-agent-collaboration', 'finops'],
-  'Measurement': ['measurement-design', 'financial-linkage', 'board-reporting'],
-  'Portfolio': ['prioritization', 'value-concentration', 'pilot-to-production'],
-  'Transformation': ['roadmap', 'phase-gates'],
-  'Workforce': ['role-evolution', 'middle-management', 'knowledge-architecture'],
-  'Proof': ['case-studies', 'decision-records', 'decision-artifacts', 'checklists'],
-};
-
 function buildNavigation(pages) {
-  const sections = {};
-  let homePage = null;
-
-  for (const page of pages) {
-    if (page.meta.slug === 'homepage') {
-      homePage = page;
-      continue;
-    }
-    const sec = page.meta.section;
-    if (!sections[sec]) {
-      sections[sec] = [];
-    }
-    sections[sec].push(page);
+  const byDiscipline = Object.fromEntries(DISCIPLINES.map(d => [d.key, []]));
+  const byGroup = Object.fromEntries(GROUPS.map(g => [g.key, []]));
+  const hubs = {};
+  for (const p of pages) {
+    const m = p.meta;
+    if (m.slug === 'homepage' || m.layout === 'cover') continue;
+    if (m.hub) { hubs[m.discipline] = p; continue; }
+    if (m.discipline && byDiscipline[m.discipline]) byDiscipline[m.discipline].push(p);
+    else if (m.group && byGroup[m.group]) byGroup[m.group].push(p);
+    else console.warn(`  WARN: ${p.filePath} has no discipline/group; it will not appear in navigation`);
   }
-
-  // Sort pages within sections by editorial order, then by frontmatter order
-  for (const sec of Object.keys(sections)) {
-    const orderList = PAGE_ORDER[sec] || [];
-    sections[sec].sort((a, b) => {
-      const ai = orderList.indexOf(a.meta.slug);
-      const bi = orderList.indexOf(b.meta.slug);
-      const aOrder = ai >= 0 ? ai : 100 + (a.meta.order || 99);
-      const bOrder = bi >= 0 ? bi : 100 + (b.meta.order || 99);
-      return aOrder - bOrder;
-    });
-  }
-
-  const nav = [];
-  if (homePage) {
-    nav.push({
-      title: 'Home',
-      slug: 'homepage',
-      path: '',
-      section: 'Home',
-    });
-  }
-
-  // Use editorial order, then append any sections not in the list
-  const orderedSections = [...SECTION_ORDER];
-  for (const sec of Object.keys(sections)) {
-    if (!orderedSections.includes(sec)) {
-      orderedSections.push(sec);
-    }
-  }
-
-  for (const sec of orderedSections) {
-    if (!sections[sec] || sections[sec].length === 0) continue;
-    nav.push({
-      title: sec,
-      pages: sections[sec].map(p => ({
-        title: p.meta.title,
-        slug: p.meta.slug,
-        path: p.outputPath,
-        section: sec,
-      })),
-    });
-  }
-
-  return nav;
+  const sortPages = arr => arr.sort((a, b) => ((a.meta.order ?? 99) - (b.meta.order ?? 99)) || String(a.meta.title).localeCompare(String(b.meta.title)));
+  const entry = p => ({ title: p.meta.title, slug: p.meta.slug, path: p.outputPath, dek: p.meta.dek || '', tool: !!p.meta.tool, discipline: p.meta.discipline || null });
+  const disciplines = DISCIPLINES.map(d => ({
+    key: d.key, number: d.number, name: d.name, question: d.question,
+    path: hubs[d.key] ? hubs[d.key].outputPath : d.key,
+    pages: sortPages(byDiscipline[d.key]).map(entry),
+  }));
+  const groups = GROUPS.map(g => ({ key: g.key, name: g.name, pages: sortPages(byGroup[g.key]).map(entry) }));
+  const tools = disciplines.flatMap(d => d.pages.filter(p => p.tool));
+  return { disciplines, groups, tools };
 }
 
-function flattenNav(nav) {
-  const flat = [];
-  for (const item of nav) {
-    if (item.pages) {
-      flat.push(...item.pages);
-    } else {
-      flat.push(item);
-    }
-  }
-  return flat;
+function neighbours(nav, page) {
+  const m = page.meta;
+  const list = m.discipline
+    ? (nav.disciplines.find(d => d.key === m.discipline) || { pages: [] }).pages
+    : (nav.groups.find(g => g.key === m.group) || { pages: [] }).pages;
+  const i = list.findIndex(p => p.slug === m.slug);
+  const pick = p => p ? { title: p.title, path: p.path } : null;
+  return { prev: i > 0 ? pick(list[i - 1]) : null, next: i >= 0 && i < list.length - 1 ? pick(list[i + 1]) : null };
 }
 
 // ─── SEO Generation ────────────────────────────────────────────────────────
 
-function generateOgTags(meta) {
+function pageUrl(outputPath) {
+  return outputPath ? `${SITE_URL}/${outputPath}/` : `${SITE_URL}/`;
+}
+
+function generateOgTags(meta, outputPath) {
   const ogTitle = meta.og_title || meta.title;
   const ogDesc = meta.og_description || meta.description;
   const ogImage = `${SITE_URL}/og/${meta.slug}.png`;
-  const ogUrl = meta.slug === 'homepage' ? SITE_URL + '/' : `${SITE_URL}/${meta.slug}/`;
+  const ogUrl = pageUrl(outputPath);
 
   return [
     `<meta property="og:title" content="${escHtml(ogTitle)}">`,
@@ -330,7 +313,7 @@ function generateOgTags(meta) {
     `<meta property="og:image" content="${ogImage}">`,
     `<meta property="og:url" content="${ogUrl}">`,
     `<meta property="og:type" content="article">`,
-    `<meta property="og:site_name" content="Enterprise AI Playbook">`,
+    `<meta property="og:site_name" content="The Enterprise AI Operating System">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${escHtml(ogTitle)}">`,
     `<meta name="twitter:description" content="${escHtml(ogDesc)}">`,
@@ -338,31 +321,33 @@ function generateOgTags(meta) {
   ].join('\n');
 }
 
-function generateJsonLd(meta) {
-  const url = meta.slug === 'homepage' ? SITE_URL + '/' : `${SITE_URL}/${meta.slug}/`;
-  const ld = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Article',
-        headline: meta.title,
-        description: meta.description,
-        url: url,
-        image: `${SITE_URL}/og/${meta.slug}.png`,
-        author: { '@type': 'Person', name: 'Sunil Prakash' },
-      },
-      {
-        '@type': 'Person',
-        name: 'Sunil Prakash',
-        url: 'https://sunilprakash.com',
-      },
-      {
-        '@type': 'WebSite',
-        name: 'Enterprise AI Playbook',
-        url: SITE_URL,
-      },
-    ],
-  };
+function generateJsonLd(meta, outputPath, cfg) {
+  const url = pageUrl(outputPath);
+  const graph = [
+    {
+      '@type': 'Article',
+      headline: meta.title,
+      description: meta.description,
+      url: url,
+      image: `${SITE_URL}/og/${meta.slug}.png`,
+      author: { '@type': 'Person', name: 'Sunil Prakash', url: 'https://sunilprakash.com' },
+    },
+    {
+      '@type': 'WebSite',
+      name: 'The Enterprise AI Operating System',
+      url: SITE_URL + '/',
+    },
+  ];
+  if (cfg && cfg.book && cfg.book.enabled) {
+    graph.push({
+      '@type': 'Book',
+      name: cfg.book.title || 'The Enterprise AI Operating System',
+      author: { '@type': 'Person', name: 'Sunil Prakash' },
+      publisher: cfg.book.publisher || undefined,
+      url: `${SITE_URL}/book/`,
+    });
+  }
+  const ld = { '@context': 'https://schema.org', '@graph': graph };
   return `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
 }
 
@@ -410,7 +395,8 @@ function convertMdLinks(html, pages) {
 
 // ─── Output Path Helpers ───────────────────────────────────────────────────
 
-function computeOutputPath(filePath) {
+function computeOutputPath(filePath, meta) {
+  if (meta && meta.permalink) return String(meta.permalink).replace(/^\/+|\/+$/g, '');
   const rel = path.relative(CONTENT_DIR, filePath);
   const parts = rel.split(path.sep);
   const fileName = parts.pop().replace('.md', '');
@@ -451,15 +437,41 @@ function copyDirSync(src, dest) {
 
 function generateSitemap(pages) {
   const urls = pages.map(p => {
-    const loc = p.meta.slug === 'homepage'
-      ? SITE_URL + '/'
-      : `${SITE_URL}/${p.outputPath}/`;
+    const loc = pageUrl(p.outputPath);
     return `  <url><loc>${loc}</loc></url>`;
   });
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.join('\n')}
 </urlset>`;
+}
+
+function generateLlmsTxt(nav, pages) {
+  const url = p => pageUrl(p);
+  const lines = [];
+  lines.push('# The Enterprise AI Operating System');
+  lines.push('');
+  lines.push('> The management system for enterprise AI, by Sunil Prakash. Seven disciplines (Diagnose, Prepare, Govern, Design, Operate, Organize, Sustain), each owning a question the leadership team has to answer. Every page opens with an executive summary: the decision, the cost of skipping it, the metric. Includes the Readiness Diagnostic, proof artifacts, and role-based reading paths.');
+  lines.push('');
+  lines.push(`Cover: ${url('')}`);
+  lines.push(`The operating system on one page: ${url('framework')}`);
+  lines.push(`Start by role: ${url('reading-paths')}`);
+  lines.push('');
+  for (const d of nav.disciplines) {
+    lines.push(`## ${pad2(d.number)} ${d.name}: ${d.question}`);
+    lines.push(`- Hub: ${url(d.path)}`);
+    for (const p of d.pages) lines.push(`- ${p.title}: ${url(p.path)}${p.dek ? ' : ' + p.dek : ''}`);
+    lines.push('');
+  }
+  for (const g of nav.groups) {
+    if (g.key === 'start' || !g.pages.length) continue;
+    lines.push(`## ${g.name}`);
+    for (const p of g.pages) lines.push(`- ${p.title}: ${url(p.path)}${p.dek ? ' : ' + p.dek : ''}`);
+    lines.push('');
+  }
+  lines.push('## Author');
+  lines.push('Sunil Prakash, https://sunilprakash.com, sunil@sunilprakash.com. Related: Agent Engineering Lab https://agenticlab.sunilprakash.com, Agent Identity Protocol https://sunilprakash.com/aip/');
+  return lines.join('\n') + '\n';
 }
 
 function generateRobotsTxt() {
@@ -473,34 +485,35 @@ function generateSearchIndex(pages) {
   return pages.map(p => ({
     title: p.meta.title,
     description: p.meta.description,
-    section: p.meta.section,
+    discipline: p.meta.discipline || p.meta.group || '',
     slug: p.meta.slug,
     path: p.outputPath,
     body: p.body.replace(/[#*`>\[\](){}|_~-]/g, ' ').substring(0, 500),
   }));
 }
 
-function generate404(navDataJson) {
+function generate404(common) {
   const layoutPath = path.join(LAYOUTS_DIR, 'standard.html');
   if (!fs.existsSync(layoutPath)) return null;
   const layout = fs.readFileSync(layoutPath, 'utf-8');
-  const data = {
-    title: 'Page Not Found',
+  const data = Object.assign({}, common, {
+    title: 'Page not found',
     description: 'The page you are looking for does not exist.',
-    section: 'Error',
     slug: '404',
-    content: '<div class="error-page"><h1>404</h1><p>This page does not exist. Use the command palette (<kbd>Ctrl+K</kbd>) to navigate.</p></div>',
-    basePath: BASE_PATH,
+    dek: '',
+    content: '<div class="error-page"><p class="label">Error 404</p><p>This page does not exist. Use search (<kbd>⌘K</kbd>) or start from the <a href="' + BASE_PATH + '/">cover</a>.</p></div>',
     ogTags: '',
     jsonLd: '',
-    showcaseCss: '',
     canonicalPath: '404',
-    navDataJson: navDataJson,
     hasMermaidAttr: '',
-    interactiveSlot: '',
-    nextSlug: '',
-    nextTitle: '',
-  };
+    breadcrumb: `<a href="${BASE_PATH}/">Operating System</a><span class="sep">/</span><span>Not found</span>`,
+    rail: '',
+    summaryBox: '',
+    related: '',
+    prevNext: '',
+    readingTime: '',
+    disciplineKey: '',
+  });
   return renderTemplate(layout, data);
 }
 
@@ -508,114 +521,61 @@ function generate404(navDataJson) {
 
 const OG_W = 1200;
 const OG_H = 630;
-const OG_BG = '#0a0a0a';
-const OG_GOLD = '#c8b48c';
-const OG_CREAM = '#f0ece4';
-const OG_MUTED = '#6b6560';
+const OG_PAPER = '#f5f1e8';
+const OG_INK = '#16130e';
+const OG_BRONZE = '#7a5c1e';
+const OG_MUTED = '#7d766a';
+const OG_RULE = '#d9d2c3';
 
-function buildOgSvg({ title, section }) {
-  // Wrap title at ~40 chars per line, max 2 lines
-  const words = title.split(' ');
+function wrapTitle(title, maxChars, maxLines) {
+  const words = String(title).split(' ');
   const lines = [];
-  let current = '';
+  let cur = '';
   for (const w of words) {
-    const test = current ? `${current} ${w}` : w;
-    if (test.length > 40 && current) {
-      lines.push(current);
-      current = w;
-    } else {
-      current = test;
-    }
-    if (lines.length === 2) { current = ''; break; }
+    const t = cur ? `${cur} ${w}` : w;
+    if (t.length > maxChars && cur) { lines.push(cur); cur = w; } else cur = t;
+    if (lines.length === maxLines) { cur = ''; break; }
   }
-  if (current && lines.length < 2) lines.push(current);
-  if (lines.length === 0) lines.push(title.substring(0, 40));
+  if (cur && lines.length < maxLines) lines.push(cur);
+  if (!lines.length) lines.push(String(title).substring(0, maxChars));
+  return lines;
+}
 
-  const titleFontSize = 36;
-  const lineHeight = 52;
-  const totalTitleH = lines.length * lineHeight;
-  const titleStartY = Math.round((OG_H - totalTitleH) / 2) + 10;
-
-  const titleLines = lines.map((line, i) =>
-    `<text x="600" y="${titleStartY + i * lineHeight}" font-family="Georgia, 'Times New Roman', serif" font-size="${titleFontSize}" font-weight="600" fill="${OG_CREAM}" text-anchor="middle" dominant-baseline="middle">${escHtml(line)}</text>`
-  ).join('\n    ');
-
-  // Section label — positioned above title block
-  const sectionY = titleStartY - 70;
-
+function ogFrame(inner) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">
-  <defs>
-    <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="${OG_GOLD}" stop-opacity="1"/>
-      <stop offset="100%" stop-color="${OG_GOLD}" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background -->
-  <rect width="${OG_W}" height="${OG_H}" fill="${OG_BG}"/>
-
-  <!-- Gold gradient bar at top -->
-  <rect x="0" y="0" width="${OG_W}" height="10" fill="url(#goldBar)"/>
-
-  <!-- Corner accents — top-left -->
-  <line x1="40" y1="40" x2="100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="40" x2="40" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Corner accents — top-right -->
-  <line x1="1160" y1="40" x2="1100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="40" x2="1160" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Corner accents — bottom-left -->
-  <line x1="40" y1="590" x2="100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="590" x2="40" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Corner accents — bottom-right -->
-  <line x1="1160" y1="590" x2="1100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="590" x2="1160" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-
-  <!-- Section label -->
-  <text x="600" y="${sectionY}" font-family="'Courier New', Courier, monospace, sans-serif" font-size="14" fill="${OG_GOLD}" text-anchor="middle" dominant-baseline="middle" letter-spacing="3" text-transform="uppercase">${escHtml((section || '').toUpperCase())}</text>
-
-  <!-- Page title -->
-  ${titleLines}
-
-  <!-- Footer -->
-  <text x="600" y="530" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="${OG_MUTED}" text-anchor="middle" dominant-baseline="middle">Enterprise AI Playbook | Sunil Prakash</text>
+  <rect width="${OG_W}" height="${OG_H}" fill="${OG_PAPER}"/>
+  <rect x="0" y="0" width="${OG_W}" height="10" fill="${OG_BRONZE}"/>
+  <line x1="72" y1="548" x2="1128" y2="548" stroke="${OG_RULE}" stroke-width="1"/>
+  <text x="72" y="582" font-family="'Courier New', Courier, monospace" font-size="15" fill="${OG_MUTED}" letter-spacing="1">THE ENTERPRISE AI OPERATING SYSTEM  ·  sunilprakash.com/enterprise-ai</text>
+  ${inner}
 </svg>`;
 }
 
+function buildOgSvg({ title, label, sub }) {
+  const lines = wrapTitle(title, 30, 2);
+  const size = lines.length > 1 ? 56 : 64;
+  const lh = Math.round(size * 1.15);
+  const subLines = sub ? wrapTitle(sub, 78, 2) : [];
+  const startY = (subLines.length ? 270 : 300) - Math.round(((lines.length - 1) * lh) / 2);
+  const subSvg = subLines.map((l, i) => `<text x="72" y="${startY + (lines.length - 1) * lh + 52 + i * 30}" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="${OG_MUTED}">${escHtml(l)}</text>`).join('\n  ');
+  const titleLines = lines.map((line, i) =>
+    `<text x="72" y="${startY + i * lh}" font-family="Georgia, 'Times New Roman', serif" font-size="${size}" font-weight="400" fill="${OG_INK}">${escHtml(line)}</text>`
+  ).join('\n  ');
+  const labelText = label ? `<text x="72" y="${startY - size - 18}" font-family="'Courier New', Courier, monospace" font-size="16" fill="${OG_BRONZE}" letter-spacing="3">${escHtml(String(label).toUpperCase())}</text>` : '';
+  return ogFrame(`${labelText}\n  ${titleLines}\n  ${subSvg}`);
+}
+
 function buildDefaultOgSvg() {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">
-  <defs>
-    <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="${OG_GOLD}" stop-opacity="1"/>
-      <stop offset="100%" stop-color="${OG_GOLD}" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <rect width="${OG_W}" height="${OG_H}" fill="${OG_BG}"/>
-  <rect x="0" y="0" width="${OG_W}" height="10" fill="url(#goldBar)"/>
-  <line x1="40" y1="40" x2="100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="40" x2="40" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="40" x2="1100" y2="40" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="40" x2="1160" y2="100" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="590" x2="100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="40" y1="590" x2="40" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="590" x2="1100" y2="590" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <line x1="1160" y1="590" x2="1160" y2="530" stroke="${OG_GOLD}" stroke-width="1" opacity="0.5"/>
-  <text x="600" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="600" fill="${OG_CREAM}" text-anchor="middle" dominant-baseline="middle">Enterprise AI Playbook</text>
-  <text x="600" y="360" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="${OG_MUTED}" text-anchor="middle" dominant-baseline="middle">sunilprakash.com</text>
-</svg>`;
+  return ogFrame(`
+  <text x="72" y="180" font-family="'Courier New', Courier, monospace" font-size="16" fill="${OG_BRONZE}" letter-spacing="3">THE MANAGEMENT SYSTEM FOR ENTERPRISE AI</text>
+  <text x="72" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="${OG_INK}">The Enterprise AI</text>
+  <text x="72" y="356" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="${OG_INK}">Operating System</text>
+  <text x="72" y="430" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="${OG_MUTED}">Seven disciplines. An executive summary on every page. Diagnostics and proof.</text>`);
 }
 
 async function ensureDefaultOgImage(ogDistDir) {
   const dest = path.join(ogDistDir, 'default.png');
   const staticSrc = path.join(ROOT, 'static', 'og', 'default.png');
-
-  // If a hand-crafted static version exists, use it
-  if (fs.existsSync(staticSrc)) {
-    fs.copyFileSync(staticSrc, dest);
-    return;
-  }
 
   // Generate from SVG using sharp
   if (sharp) {
@@ -657,10 +617,11 @@ async function generateOGImages(pages) {
   const tasks = pages.map(async (page) => {
     const dest = path.join(ogDistDir, `${page.meta.slug}.png`);
     try {
-      const svg = buildOgSvg({
-        title: page.meta.title,
-        section: page.meta.section,
-      });
+      const d = DISCIPLINES.find(x => x.key === page.meta.discipline);
+      const g = GROUPS.find(x => x.key === page.meta.group);
+      const label = page.meta.hub ? `Discipline ${pad2(d.number)}` : d ? `${pad2(d.number)} · ${d.name}` : g ? g.name : '';
+      const sub = page.meta.hub ? page.meta.question : (page.meta.dek || page.meta.og_description || '');
+      const svg = page.meta.slug === 'homepage' ? buildDefaultOgSvg() : buildOgSvg({ title: page.meta.og_title || page.meta.title, label, sub });
       await sharp(Buffer.from(svg)).png().toFile(dest);
     } catch (err) {
       console.warn(`  WARN: OG image failed for "${page.meta.slug}": ${err.message}`);
@@ -672,11 +633,155 @@ async function generateOGImages(pages) {
   console.log(`  Generated: og/ (${pages.length} image(s))`);
 }
 
+// ─── Page data assembly ────────────────────────────────────────────────────
+
+const pad2 = n => String(n).padStart(2, '0');
+const REDIRECTS = { 'architecture/index': 'design' };
+
+function disciplineOf(meta) { return DISCIPLINES.find(d => d.key === meta.discipline) || null; }
+
+function readingTime(body) {
+  const w = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.round(w / 230))} min read`;
+}
+
+function renderBreadcrumb(meta, nav, d) {
+  const home = `<a href="${BASE_PATH}/">Operating System</a>`;
+  if (d) {
+    const hub = nav.disciplines.find(x => x.key === d.key);
+    return `${home}<span class="sep">/</span><a href="${BASE_PATH}/${hub.path}/">${pad2(d.number)} ${d.name}</a><span class="sep">/</span><span>${escHtml(meta.title)}</span>`;
+  }
+  const g = GROUPS.find(x => x.key === meta.group);
+  return `${home}<span class="sep">/</span><span>${g ? g.name : ''}</span>`;
+}
+
+function renderRail(meta, nav) {
+  const d = nav.disciplines.find(x => x.key === meta.discipline);
+  const g = !d && meta.group !== 'start' ? nav.groups.find(x => x.key === meta.group) : null;
+  const src = d || g;
+  if (!src || src.pages.length < 2) return '';
+  const items = src.pages.map(p => `<li class="${p.slug === meta.slug ? 'current' : ''}"><a href="${BASE_PATH}/${p.path}/">${escHtml(p.title)}</a></li>`).join('');
+  return `<span class="label">In ${escHtml(src.name)}</span><ol>${items}</ol>`;
+}
+
+function renderSummaryBox(summary) {
+  if (!summary || !(summary.decide || summary.cost || summary.metric)) return '';
+  const row = (k, v) => v ? `<div class="k">${k}</div><p class="v">${escHtml(v)}</p>` : '';
+  return `<aside class="summary-box" aria-label="Executive summary">${row('The decision', summary.decide)}${row('Cost of skipping', summary.cost)}${row('The metric', summary.metric)}</aside>`;
+}
+
+function renderPrevNext(nb) {
+  if (!nb.prev && !nb.next) return '';
+  const a = (p, cls, label) => p ? `<a class="${cls}" href="${BASE_PATH}/${p.path}/"><span class="label">${label}</span>${escHtml(p.title)}</a>` : '<span></span>';
+  return `<nav class="prevnext" aria-label="Previous and next">${a(nb.prev, 'prev', 'Previous')}${a(nb.next, 'next', 'Next')}</nav>`;
+}
+
+function renderRelated(meta, pagesBySlug) {
+  const slugs = Array.isArray(meta.related) ? meta.related : [];
+  const items = slugs.map(sl => pagesBySlug[sl]).filter(Boolean)
+    .map(p => `<li><a href="${BASE_PATH}/${p.outputPath}/">${escHtml(p.meta.title)}</a></li>`).join('');
+  return items ? `<section class="related"><span class="label">Related</span><ul>${items}</ul></section>` : '';
+}
+
+function renderFooterLists(nav) {
+  const li = (href, text) => `<li><a href="${BASE_PATH}/${href}">${escHtml(text)}</a></li>`;
+  const group = key => (nav.groups.find(g => g.key === key) || { pages: [] }).pages;
+  return {
+    footerDisciplines: nav.disciplines.map(d => li(d.path + '/', `${pad2(d.number)} ${d.name}`)).join(''),
+    footerStart: [li('', 'Cover'), li('framework/', 'The operating system on one page'), li('reading-paths/', 'Start by role'), li('assessment/tool/', 'Readiness Diagnostic')].join(''),
+    footerProof: group('proof').map(p => li(p.path + '/', p.title)).join(''),
+    footerReference: group('reference').map(p => li(p.path + '/', p.title)).join(''),
+  };
+}
+
+function renderBookStrip(meta, cfg) {
+  if (!cfg.book.enabled || !Array.isArray(cfg.book.chapters)) return '';
+  const chs = cfg.book.chapters.filter(c => c.discipline === meta.discipline);
+  if (!chs.length) return '';
+  const list = chs.map(c => `Chapter ${c.n}${c.title ? ': ' + escHtml(c.title) : ''}`).join(', ');
+  return `<aside class="book-strip"><span class="label">In the book</span> ${list}</aside>`;
+}
+
+function renderHubBits(page, nav, pagesBySlug, cfg) {
+  const d = disciplineOf(page.meta);
+  const disc = nav.disciplines.find(x => x.key === d.key);
+  const decisions = Array.isArray(page.meta.decisions) ? page.meta.decisions : [];
+  const hubDecisions = `<ol>${decisions.map(x => `<li>${escHtml(x)}</li>`).join('')}</ol>`;
+  const card = (p, i, label) => {
+    const src = pagesBySlug[p.slug];
+    const rt = src ? readingTime(src.body) : '';
+    return `<a class="card" href="${BASE_PATH}/${p.path}/"><span class="n">${label || pad2(i + 1)}</span><div><h3>${escHtml(p.title)}</h3>${p.dek ? `<p>${escHtml(p.dek)}</p>` : ''}</div><span class="rt">${rt}</span></a>`;
+  };
+  const readPages = disc.pages.filter(p => !p.tool);
+  const toolPages = disc.pages.filter(p => p.tool);
+  const hubPages = readPages.map((p, i) => card(p, i)).join('');
+  const hubTools = toolPages.map(p => card(p, 0, 'Tool')).join('');
+  const proofSlugs = Array.isArray(page.meta.proof) ? page.meta.proof : [];
+  const hubProof = proofSlugs.map(sl => pagesBySlug[sl]).filter(Boolean)
+    .map(p => card({ path: p.outputPath, title: p.meta.title, dek: p.meta.dek, slug: p.meta.slug }, 0, 'Proof')).join('');
+  const nextD = DISCIPLINES[(d.number) % DISCIPLINES.length];
+  const nextDisc = nav.disciplines.find(x => x.key === nextD.key);
+  const nextDiscipline = `<span class="label">Next discipline</span><a href="${BASE_PATH}/${nextDisc.path}/">${pad2(nextD.number)} ${nextD.name}<span class="q">${escHtml(nextD.question)}</span></a>`;
+  return { hubDecisions, hubPages, hubTools, hubProof, nextDiscipline };
+}
+
+function pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common) {
+  const meta = page.meta;
+  const d = disciplineOf(meta);
+  const nb = neighbours(nav, page);
+  const data = Object.assign({}, common, {
+    title: meta.title,
+    description: meta.description || '',
+    dek: meta.dek || '',
+    slug: meta.slug,
+    layoutName,
+    content: contentHtml,
+    ogTags: generateOgTags(meta, page.outputPath),
+    jsonLd: generateJsonLd(meta, page.outputPath, cfg),
+    canonicalPath: page.outputPath === '' ? '' : page.outputPath + '/',
+    hasMermaidAttr: hasMermaid ? ' data-has-mermaid="true"' : '',
+    interactiveSlot: layoutName === 'showcase' ? '<div id="interactive" class="interactive-mount"></div>' : '',
+    showcaseHeader: (layoutName === 'showcase' && !/showcase-hero/.test(contentHtml))
+      ? `<header class="page-header"><h1>${escHtml(meta.title)}</h1>${meta.dek ? `<p class="dek">${escHtml(meta.dek)}</p>` : ''}<div class="page-actions"><span class="meta">${readingTime(page.body)}</span><div class="share"><button type="button" class="share-btn" aria-haspopup="true" aria-expanded="false">Share</button><div class="share-menu"></div></div><button type="button" class="print-btn">Print brief</button></div></header>`
+      : '',
+    disciplineKey: d ? d.key : (meta.group || ''),
+    disciplineName: d ? d.name : '',
+    disciplineNumber: d ? pad2(d.number) : '',
+    disciplineQuestion: d ? d.question : '',
+    disciplinePath: d ? (nav.disciplines.find(x => x.key === d.key) || {}).path || d.key : '',
+    breadcrumb: renderBreadcrumb(meta, nav, d),
+    rail: meta.hub ? '' : renderRail(meta, nav),
+    summaryBox: renderSummaryBox(meta.summary),
+    prevNext: meta.hub ? '' : renderPrevNext(nb),
+    related: renderRelated(meta, pagesBySlug),
+    readingTime: readingTime(page.body),
+    bookStrip: renderBookStrip(meta, cfg),
+    toolScript: meta.tool_script || 'readiness',
+  });
+  if (meta.hub) Object.assign(data, renderHubBits(page, nav, pagesBySlug, cfg));
+  if (meta.discipline && !meta.tool && !meta.hub && !meta.summary) console.warn(`  WARN: no summary: ${path.relative(ROOT, page.filePath)}`);
+  return data;
+}
+
+function writeRedirects() {
+  let n = 0;
+  for (const [from, to] of Object.entries(REDIRECTS)) {
+    const target = `${BASE_PATH}/${to}/`;
+    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${SITE_URL}/${to}/"><title>Redirecting</title></head><body><a href="${target}">${to}</a></body></html>`;
+    const dest = path.join(DIST_DIR, from, 'index.html');
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.writeFileSync(dest, html, 'utf-8');
+    n++;
+  }
+  if (n) console.log(`  Redirects: ${n}`);
+}
+
 // ─── Main Build ────────────────────────────────────────────────────────────
 
 async function build() {
   const startTime = Date.now();
-  console.log('Building Enterprise AI Playbook...\n');
+  console.log('Building The Enterprise AI Operating System...\n');
+  const cfg = loadSiteConfig();
 
   // 1. Clean dist
   if (fs.existsSync(DIST_DIR)) {
@@ -698,14 +803,20 @@ async function build() {
   for (const filePath of mdFiles) {
     const raw = fs.readFileSync(filePath, 'utf-8');
     const { meta, body } = parseFrontmatter(raw, filePath);
-    const outputPath = computeOutputPath(filePath);
+    const outputPath = computeOutputPath(filePath, meta);
     pages.push({ meta, body, filePath, outputPath });
   }
+  const pagesBySlug = Object.fromEntries(pages.map(p => [p.meta.slug, p]));
 
   // 4. Build navigation
   const nav = buildNavigation(pages);
   const navDataJson = JSON.stringify(nav);
-  const flatNav = flattenNav(nav);
+  const common = Object.assign({
+    basePath: BASE_PATH,
+    navDataJson,
+    bookEnabled: !!cfg.book.enabled,
+    year: new Date().getFullYear(),
+  }, renderFooterLists(nav));
 
   // 5. Configure marked
   configureMarked();
@@ -721,12 +832,14 @@ async function build() {
     if (layoutName === 'showcase') {
       const jsPath = path.join(ROOT, 'js', 'pages', `${page.meta.slug}.js`);
       if (!fs.existsSync(jsPath)) {
-        console.warn(`  WARN: Showcase JS not found for "${page.meta.slug}", falling back to standard layout`);
         layoutName = 'standard';
       }
     }
+    if (layoutName === 'book' && !cfg.book.enabled) {
+      console.log(`  Skipped (book disabled): ${page.outputPath}`);
+      continue;
+    }
 
-    // Load layout
     const layoutPath = path.join(LAYOUTS_DIR, `${layoutName}.html`);
     if (!fs.existsSync(layoutPath)) {
       console.error(`  ERROR: Layout "${layoutName}" not found, skipping ${page.filePath}`);
@@ -735,52 +848,15 @@ async function build() {
     }
     const layout = fs.readFileSync(layoutPath, 'utf-8');
 
-    // Convert markdown to HTML
     hasMermaid = false;
-    const contentHtml = marked.parse(page.body);
+    let body = page.body;
+    if (layoutName !== 'cover') body = body.replace(/^\s*#\s+[^\n]+\n+/, '');
+    let contentHtml = marked.parse(body);
+    contentHtml = convertMdLinks(contentHtml, pages);
 
-    // Determine next page
-    const flatIdx = flatNav.findIndex(n => n.slug === page.meta.slug);
-    const nextPage = flatIdx >= 0 && flatIdx < flatNav.length - 1 ? flatNav[flatIdx + 1] : null;
-
-    // Build canonical path
-    const canonicalPath = page.outputPath === '' ? '' : page.outputPath + '/';
-
-    // Showcase CSS
-    const needsShowcaseCss = layoutName === 'showcase' || layoutName === 'assessment';
-    const showcaseCss = needsShowcaseCss
-      ? `<link rel="stylesheet" href="${BASE_PATH}/css/showcase.css">`
-      : '';
-
-    // Build data
-    const data = {
-      title: page.meta.title,
-      description: page.meta.description || '',
-      section: page.meta.section,
-      slug: page.meta.slug,
-      content: contentHtml,
-      basePath: BASE_PATH,
-      ogTags: generateOgTags(page.meta),
-      jsonLd: generateJsonLd(page.meta),
-      showcaseCss: showcaseCss,
-      canonicalPath: canonicalPath,
-      navDataJson: navDataJson,
-      hasMermaidAttr: hasMermaid ? ' data-has-mermaid="true"' : '',
-      interactiveSlot: layoutName === 'showcase'
-        ? '<div id="interactive" class="interactive-mount"></div>'
-        : '',
-      nextSuggestion: nextPage
-        ? `<div class="next-suggestion"><span class="next-label">Continue with</span><a href="${BASE_PATH}/${nextPage.path}/" class="next-link">${nextPage.title}</a></div>`
-        : '',
-      flagshipClass: ['homepage', 'framework', 'governance-architecture', 'measurement-design', 'capability-stack'].includes(page.meta.slug) ? ' flagship' : '',
-    };
-
-    // Post-process: convert .md links to proper HTML paths
-    data.content = convertMdLinks(data.content, pages);
-
+    const data = pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common);
     const html = renderTemplate(layout, data);
 
-    // Write output
     const distPath = computeDistPath(page.outputPath);
     fs.mkdirSync(path.dirname(distPath), { recursive: true });
     fs.writeFileSync(distPath, html, 'utf-8');
@@ -788,46 +864,45 @@ async function build() {
     console.log(`  Rendered: ${page.outputPath || 'index'} (${layoutName})`);
   }
 
-  // 7. Generate sitemap, robots.txt, search index
+  // 7. Sitemap, robots, search index, nav.json, redirects
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), generateSitemap(pages), 'utf-8');
-  console.log('  Generated: sitemap.xml');
-
   fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), generateRobotsTxt(), 'utf-8');
-  console.log('  Generated: robots.txt');
+  fs.writeFileSync(path.join(DIST_DIR, 'search-index.json'), JSON.stringify(generateSearchIndex(pages), null, 2), 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, 'nav.json'), navDataJson, 'utf-8');
+  console.log('  Generated: sitemap.xml, robots.txt, search-index.json, nav.json');
+  writeRedirects();
 
-  const searchIndex = generateSearchIndex(pages);
-  fs.writeFileSync(
-    path.join(DIST_DIR, 'search-index.json'),
-    JSON.stringify(searchIndex, null, 2),
-    'utf-8'
-  );
-  console.log('  Generated: search-index.json');
-
-  // 8. Generate 404
-  const html404 = generate404(navDataJson);
+  // 8. 404
+  const html404 = generate404(common);
   if (html404) {
     fs.writeFileSync(path.join(DIST_DIR, '404.html'), html404, 'utf-8');
     console.log('  Generated: 404.html');
   }
 
-  // 9. Generate OG images
+  // 9. OG images
   await generateOGImages(pages);
 
-  // 10. Copy static assets
+  // 10. Static assets
   for (const dir of STATIC_DIRS) {
     const src = path.join(ROOT, dir);
     const dest = path.join(DIST_DIR, dir);
     copyDirSync(src, dest);
-    console.log(`  Copied: ${dir}/`);
   }
+  console.log(`  Copied: ${STATIC_DIRS.join(', ')}`);
+  fs.mkdirSync(path.join(DIST_DIR, 'static'), { recursive: true });
+  fs.writeFileSync(path.join(DIST_DIR, 'static', 'llms.txt'), generateLlmsTxt(nav, pages), 'utf-8');
+  console.log('  Generated: static/llms.txt');
 
-  // Done
   const elapsed = Date.now() - startTime;
   console.log(`\nBuild complete: ${rendered} page(s), ${errors} error(s) in ${elapsed}ms`);
   if (errors > 0) process.exitCode = 1;
 }
 
-build().catch(err => {
-  console.error('FATAL build error:', err);
-  process.exitCode = 1;
-});
+module.exports = { renderTemplate, parseFrontmatter, buildNavigation, neighbours, computeOutputPath, loadSiteConfig, DISCIPLINES, GROUPS, build };
+
+if (require.main === module) {
+  build().catch(err => {
+    console.error('FATAL build error:', err);
+    process.exitCode = 1;
+  });
+}

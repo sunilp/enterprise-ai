@@ -1,9 +1,15 @@
 ---
-title: "What Transformation Means"
+title: What Transformation Means
 description: "What enterprise AI transformation actually requires beyond strategy documents: portfolio logic, governance infrastructure, and measurement design."
-section: "Position"
 layout: standard
-slug: "what-transformation-means"
+slug: what-transformation-means
+discipline: diagnose
+order: 3
+dek: The difference between optimization, automation, and transformation, the five characteristics of future-built programs, and what done looks like.
+summary:
+  decide: Whether your program is optimizing, automating, or transforming, and which of the five characteristics of high performers it is missing.
+  cost: Declaring victory on task-level automation that never reaches the P&L. Two or three of the five characteristics lands you among the 39% reporting some EBIT impact, not in the 5%.
+  metric: Measurable P&L impact from a focused portfolio of AI capabilities embedded in core operating workflows. Not projected savings, not pilot-phase estimates.
 ---
 # What Transformation Actually Means
 
@@ -33,7 +39,7 @@ A company that has automated 30 tasks has not transformed. A company that has re
 
 ## The Five Characteristics of High-Performing AI Programs
 
-BCG and McKinsey research on the 5% of enterprises that qualify as future-built converges on five structural characteristics. These are not practices in isolation. They form a system. Organizations that adopt two or three but not all five generally perform at the 39% EBIT impact threshold, not above it.
+BCG and McKinsey research on the 5% of enterprises that qualify as future-built (BCG, 2025) converges on five structural characteristics. These are not practices in isolation. They form a system. Organizations that adopt two or three but not all five generally land among the 39% that report any enterprise-level EBIT impact (McKinsey, 2025), not among the 5%.
 
 ### 1. Top-Down Portfolio Logic, Not Bottom-Up Experimentation
 

@@ -1,9 +1,15 @@
 ---
-title: "Structural Models"
-description: "Comparing centralized, federated, and hub-and-spoke AI operating models, with evidence for why hub-and-spoke outperforms."
-section: "Operating Model"
+title: Structural Models
+description: Comparing centralized, federated, and hub-and-spoke AI operating models, with evidence for why hub-and-spoke outperforms.
 layout: standard
-slug: "structural-models"
+slug: structural-models
+discipline: organize
+order: 2
+dek: "Centralized CoE, hub-and-spoke or federated: when each model fits, how each breaks, and how to move between them."
+summary:
+  decide: Which structural model fits your stage now (centralized early, hub-and-spoke at growth, federated only for mature units) and which signal triggers the transition.
+  cost: Staying centralized too long turns the CoE into a bottleneck that business units route around; shadow AI accumulates and has to be remediated later, at higher cost.
+  metric: CoE backlog in weeks and shadow AI prevalence; hub-and-spoke structures produce 36% higher AI ROI than centralized or distributed models (IBM IBV, 2025).
 ---
 # Structural Models for Enterprise AI
 
@@ -154,15 +160,15 @@ The transition requires:
 
 1. Auditing the existing portfolio to identify which capabilities can be productized as shared services vs. which require embedded expertise
 2. Identifying and hiring AI leads within major business units, ideally from people who already understand the domain
-3. Transferring governance accountability while retaining platform ownership in the hub
+3. Transferring execution accountability to the spokes while retaining governance and platform ownership in the hub
 4. Defining the escalation path from spoke to hub for risk decisions, model approvals, and incidents
 
 Expect 9 to 18 months for this transition to stabilize. The governance framework must be ready before spokes go independent, or they will develop local variants that are incompatible with each other.
 
 ```mermaid
 graph LR
-    A["Centralized CoE\n(0-18 months)"]
-    B["Hub-and-Spoke\n(18 months+)"]
+    A["Centralized CoE\n(0-2 years)"]
+    B["Hub-and-Spoke\n(2 years+)"]
     A -- "portfolio growth\nbottleneck signal\nshadow AI emergence" --> B
 ```
 

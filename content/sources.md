@@ -1,15 +1,17 @@
 ---
-title: "Sources and Methodology"
-description: "Primary sources, research methodology, and citations underpinning the Enterprise AI Playbook."
-section: "Sources"
+title: Sources and Methodology
+description: Primary sources, research methodology, and citations underpinning The Enterprise AI Operating System.
 layout: standard
-slug: "sources"
+slug: sources
+group: reference
+order: 2
+dek: "The research behind the playbook: strategy firm, analyst and academic studies, every statistic used and where it comes from, and how the analysis was built."
 ---
 # Sources & Methodology
 
 ## Why This Playbook Exists
 
-Generative AI is a $644 billion market (Gartner) where 95% of pilots fail to deliver measurable business impact (MIT). The gap between "we have an AI strategy" and "AI is generating P&L value" continues to widen. Most transformation playbooks are either vendor marketing disguised as thought leadership, or academic frameworks disconnected from operational reality.
+Generative AI is a $644 billion market (Gartner, 2025) where 95% of pilots fail to deliver measurable business impact (MIT, 2025). The gap between "we have an AI strategy" and "AI is generating P&L value" continues to widen. Most transformation playbooks are either vendor marketing disguised as thought leadership, or academic frameworks disconnected from operational reality.
 
 This playbook was built to fill that gap. It synthesizes primary research from the major strategy firms, regulatory bodies, and enterprise technology analysts with direct experience building AI platforms, governance frameworks, and agent infrastructure at enterprise scale.
 
@@ -26,8 +28,8 @@ Large-scale survey-based studies covering thousands of enterprises across indust
 | Source | Study | Sample | Date |
 |---|---|---|---|
 | McKinsey & Company | The State of AI: Agents, Innovation, and Transformation | Global enterprise survey | November 2025 |
-| Boston Consulting Group | Are You Generating Value from AI? The Widening Gap | 1,800+ executives across 19 industries | September 2025 |
-| Deloitte | State of AI in the Enterprise, 7th Edition | 2,770 global business and technology leaders | March 2026 |
+| Boston Consulting Group | Are You Generating Value from AI? The Widening Gap | 1,250+ companies globally | September 2025 |
+| Deloitte | State of AI in the Enterprise 2026 (7th edition) | 3,235 business and technology leaders across 24 countries | January 2026 |
 | IBM Institute for Business Value | How Chief AI Officers Deliver AI ROI | 2,300 organizations globally | 2025 |
 | PwC | 2026 AI Business Predictions | Enterprise analysis | 2026 |
 | World Economic Forum | Scaling AI with Strategy, Data and Workforce Readiness | Global analysis | October 2025 |
@@ -63,12 +65,12 @@ The following statistics appear throughout the playbook. Each is cited with its 
 
 | Statistic | Source |
 |---|---|
-| 95% of AI pilots fail to deliver measurable P&L impact | MIT GenAI Divide Study, 2025 |
+| 95% of enterprise GenAI pilots deliver no measurable P&L impact | MIT GenAI Divide Study, 2025 |
 | 42% of companies scrapped most AI initiatives in 2025 (up from 17% in 2024) | S&P Global, 2025 |
-| 30% of GenAI projects abandoned after proof of concept | Gartner, 2025 |
+| At least 30% of GenAI projects abandoned after proof of concept by end of 2025 (prediction) | Gartner, July 2024 |
 | Only 5% of organizations qualify as "future-built" for AI | BCG, September 2025 |
 | Only 39% of enterprises report EBIT impact at enterprise level | McKinsey, November 2025 |
-| Only 25% have moved 40%+ of AI experiments to production | Deloitte, March 2026 |
+| Only 25% have moved 40%+ of AI experiments to production | Deloitte, January 2026 |
 
 ### Organizational and Structural
 
@@ -79,15 +81,16 @@ The following statistics appear throughout the playbook. Each is cited with its 
 | Only 46% integrate workforce planning into AI roadmaps | World Economic Forum, 2025 |
 | Only 23% can quantify AI productivity improvements with hard data | Forbes AI Study, 2025 |
 | 89% of workers express concern about AI's impact on job security | Industry survey, 2025 |
-| Only 20% of organizations report AI talent readiness | Deloitte, March 2026 |
+| Only 20% of organizations report AI talent readiness | Deloitte, January 2026 |
+| Highly prepared for broad AI adoption: strategy 42% (up 3 points year over year), technical infrastructure 43%, data management 40%, talent 20% (infrastructure, data and talent all down year over year) | Deloitte, January 2026 |
 
 ### Governance and Risk
 
 | Statistic | Source |
 |---|---|
 | Only 18% have fully implemented AI governance frameworks | Industry research, 2025 |
-| Only 21% have mature governance for autonomous agents | Deloitte, March 2026 |
-| 75% plan to deploy agents within two years | Deloitte, March 2026 |
+| Only 21% have mature governance for autonomous agents | Deloitte, January 2026 |
+| 75% plan to deploy agents within two years | Deloitte, January 2026 |
 | 69% suspect employees using prohibited public GenAI | Gartner survey of 302 cybersecurity leaders, 2025 |
 | 51% report at least one negative AI-related incident in past 12 months | McKinsey, November 2025 |
 | 84% of organizations are not tracking GenAI accuracy metrics | Gartner, 2025 |
@@ -98,8 +101,8 @@ The following statistics appear throughout the playbook. Each is cited with its 
 |---|---|
 | 57% of organizations estimate their data is not AI-ready | Gartner, 2025 |
 | Only 14% of business leaders believe data maturity can support AI at scale | Industry research, 2025 |
-| 60% of agentic AI projects will fail due to poor data foundations | Gartner prediction, 2026 |
-| $644 billion global AI spending in 2025 | Gartner forecast, 2025 |
+| Through 2026, organizations will abandon 60% of AI projects unsupported by AI-ready data | Gartner prediction, February 2025 |
+| $644 billion global generative AI spending in 2025 | Gartner forecast, March 2025 |
 
 ### Agentic AI
 
@@ -107,7 +110,7 @@ The following statistics appear throughout the playbook. Each is cited with its 
 |---|---|
 | Agents represent 17% of total AI value in 2025, projected 29% by 2028 | BCG, September 2025 |
 | 23% of organizations scaling at least one agentic system | McKinsey, November 2025 |
-| Only 11% actively use agents in production | Deloitte, March 2026 |
+| Only 11% actively use agents in production | Deloitte, January 2026 |
 | 40%+ of agentic AI projects will be cancelled by 2027 | Gartner prediction |
 | 15% of day-to-day work decisions will be made autonomously by agents by 2028 | Gartner prediction |
 
@@ -118,7 +121,7 @@ The following statistics appear throughout the playbook. Each is cited with its 
 1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." November 2025.
 2. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
 3. Boston Consulting Group. "AI Leaders Outpace Laggards with Double the Revenue Growth and 40% More Cost Savings." Press release, September 30, 2025.
-4. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+4. Deloitte. "State of AI in the Enterprise, 7th Edition." January 2026.
 5. Deloitte. "From Ambition to Activation: State of AI 2026." Press release, 2026.
 6. Deloitte Insights. "Agentic AI Strategy." Tech Trends 2026.
 7. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025.
@@ -127,31 +130,32 @@ The following statistics appear throughout the playbook. Each is cited with its 
 10. World Economic Forum. "AI's Dual Workforce Challenge: Balancing Overcapacity and Talent Shortages." October 2025.
 11. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
 12. Gartner. "Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." March 2025.
-13. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." February 2025.
-14. Forbes. "AI Productivity Study." 2025.
-15. S&P Global. Enterprise AI adoption survey. 2025.
+13. Gartner. "Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025." Press release, July 29, 2024.
+14. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." February 2025.
+15. Forbes. "AI Productivity Study." 2025.
+16. S&P Global. Enterprise AI adoption survey. 2025.
 
 ### Articles and Analysis
 
-16. Harvard Business Review. "The 'Last Mile' Problem Slowing AI Transformation." March 2026.
-17. Harvard Business Review / Google Cloud. "A Blueprint for Enterprise-Wide Agentic AI Transformation." February 2026.
-18. Harvard Business Review. "Most AI Initiatives Fail. This 5-Part Framework Can Help." November 2025.
-19. MIT Sloan Management Review. "The Emerging Agentic Enterprise: How Leaders Must Navigate a New Age of AI." 2025.
-20. California Management Review. "Bridging the Gaps in AI Transformation: An Evidence-Based Framework for Scalable Adoption." November 2025.
-21. CIO.com. "Why 80% of AI Projects Fail." 2025.
-22. CIO.com. "Shadow AI: The Hidden Agents Beyond Traditional Governance." 2025.
-23. CIO.com. "CDO and CAIO Roles Might Have a Built-in Expiration Date." 2025.
-24. CIO.com. "Fixing the Broken AI Governance Playbook." 2025.
-25. Alation. "The Agentic AI Era: 5 Strategic Shifts Every CIO Must Navigate in 2026." 2026.
-26. Vantedge Search. "The CAIO: Role, Responsibilities, and Why You Need One." 2025.
-27. Cloud Security Alliance. "EU AI Act High-Risk Compliance Deadline: Enterprise Readiness Gap." March 2026.
-28. Aligne.ai. "The AI Governance Crisis Every Executive Must Address in 2025." 2025.
+17. Harvard Business Review. "The 'Last Mile' Problem Slowing AI Transformation." March 2026.
+18. Harvard Business Review / Google Cloud. "A Blueprint for Enterprise-Wide Agentic AI Transformation." February 2026.
+19. Harvard Business Review. "Most AI Initiatives Fail. This 5-Part Framework Can Help." November 2025.
+20. MIT Sloan Management Review. "The Emerging Agentic Enterprise: How Leaders Must Navigate a New Age of AI." 2025.
+21. California Management Review. "Bridging the Gaps in AI Transformation: An Evidence-Based Framework for Scalable Adoption." November 2025.
+22. CIO.com. "Why 80% of AI Projects Fail." 2025.
+23. CIO.com. "Shadow AI: The Hidden Agents Beyond Traditional Governance." 2025.
+24. CIO.com. "CDO and CAIO Roles Might Have a Built-in Expiration Date." 2025.
+25. CIO.com. "Fixing the Broken AI Governance Playbook." 2025.
+26. Alation. "The Agentic AI Era: 5 Strategic Shifts Every CIO Must Navigate in 2026." 2026.
+27. Vantedge Search. "The CAIO: Role, Responsibilities, and Why You Need One." 2025.
+28. Cloud Security Alliance. "EU AI Act High-Risk Compliance Deadline: Enterprise Readiness Gap." March 2026.
+29. Aligne.ai. "The AI Governance Crisis Every Executive Must Address in 2025." 2025.
 
 ### Regulatory Sources
 
-29. European Parliament and Council. Regulation (EU) 2024/1689 (EU Artificial Intelligence Act). August 2024.
-30. European Commission. Proposed delay of Annex III compliance to December 2027. November 2025.
-31. Executive Office of the President (US). Executive Order on Safe, Secure, and Trustworthy AI. October 2023.
+30. European Parliament and Council. Regulation (EU) 2024/1689 (EU Artificial Intelligence Act). August 2024.
+31. European Parliament and Council. Regulation (EU) 2026/1744 (Digital Omnibus on AI), deferring Annex III high-risk obligations to 2 December 2027 and Annex I to 2 August 2028. Official Journal, July 2026.
+32. Executive Office of the President (US). Executive Order 14110 on Safe, Secure, and Trustworthy AI. October 2023; revoked January 2025.
 
 ## About the Author
 

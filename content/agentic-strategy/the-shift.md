@@ -1,9 +1,15 @@
 ---
-title: "The Agentic Shift"
-description: "How agentic AI changes enterprise architecture from request-response to delegated authority, and what organizations must do differently."
-section: "Agentic Strategy"
+title: The Agentic Shift
+description: How agentic AI changes enterprise architecture from request-response to delegated authority, and what organizations must do differently.
 layout: standard
-slug: "the-shift"
+slug: the-shift
+discipline: design
+order: 6
+dek: Why agentic AI is delegated authority rather than a software feature, and what that changes in governance, cost, metrics and the human role.
+summary:
+  decide: Which workflows, redesigned around agent capabilities, produce materially better outcomes, and how much autonomy the oversight you have actually built can support.
+  cost: Agents that mirror the org chart digitize silos; Gartner projects more than 40% of agentic AI projects cancelled by 2027 on cost overruns, unclear ROI and governance failures.
+  metric: Task completion rate and cost-per-outcome, measured through live task audits rather than offline test sets.
 ---
 # The Agentic Shift
 
@@ -73,7 +79,7 @@ Agents are not a future-state curiosity. They are already generating enterprise 
 
 - Agents now account for **17% of total AI value** captured by organizations, up from near zero two years ago. Projected to reach **29% by 2028** (BCG, 2025). That growth trajectory represents hundreds of billions in enterprise value, but only for organizations that deploy agents with the control architecture to sustain them.
 - **23% of organizations** are scaling at least one agentic system into production (McKinsey, 2025).
-- But only **11% of organizations actively use agents in production** (Deloitte, 2025). The gap between those scaling and those actually operating tells you how many pilot projects are stalled.
+- But only **11% of organizations actively use agents in production** (Deloitte, 2026). The gap between those scaling and those actually operating tells you how many pilot projects are stalled.
 - **Gartner projects that more than 40% of agentic AI projects will be cancelled by 2027**, primarily due to cost overruns, unclear ROI, and governance failures.
 
 The window between early mover advantage and commodity availability is narrow. But shipping something broken does not help you.
@@ -116,7 +122,7 @@ Characteristics of good early deployment targets:
 
 High-stakes, irreversible environments are not good starting points regardless of technical readiness. The governance and human oversight infrastructure required for those settings takes time to build correctly.
 
-There is a direct tradeoff between agent autonomy and control overhead. A fully supervised agent that checks with a human at every decision point is safe but slow. A fully autonomous agent that acts without human checkpoints is fast but fragile. More autonomous agents generate higher value potential and require proportionally more governance infrastructure: richer audit trails, tighter permission scopes, faster anomaly detection, and more robust rollback mechanisms. The right autonomy level is not a technical decision. It depends on organizational maturity, risk tolerance, and the quality of the oversight infrastructure you have actually built. Organizations that skip the infrastructure and go straight to full autonomy accumulate risk they cannot see until something goes wrong.
+There is a direct tradeoff between agent autonomy and control overhead. A fully supervised agent that checks with a human at every decision point is safe but slow. A fully autonomous agent that acts without human checkpoints is fast but fragile. More autonomous agents generate higher value potential and require proportionally more governance infrastructure: richer audit trails, tighter permission scopes, faster anomaly detection, and more reliable rollback mechanisms. The right autonomy level is not a technical decision. It depends on organizational maturity, risk tolerance, and the quality of the oversight infrastructure you have actually built. Organizations that skip the infrastructure and go straight to full autonomy accumulate risk they cannot see until something goes wrong.
 
 :::insight
 **Starting Point Criteria**
@@ -146,7 +152,7 @@ The architectural consequence of this shift is that the runtime around the model
 
 1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
 2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
-3. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+3. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
 4. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

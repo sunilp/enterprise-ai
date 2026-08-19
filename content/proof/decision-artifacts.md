@@ -1,9 +1,15 @@
 ---
-title: "Decision Artifacts"
-description: "Templates and frameworks for the key decision artifacts in enterprise AI transformation."
-section: "Proof"
+title: Decision Artifacts
+description: Templates and frameworks for the key decision artifacts in enterprise AI transformation.
 layout: standard
-slug: "decision-artifacts"
+slug: decision-artifacts
+group: proof
+order: 3
+dek: Worked board memo, investment scorecard, model inventory, phase-gate review and risk classification worksheet, each with a downloadable template.
+summary:
+  decide: Decide what goes to the board, which use cases earn pilot funding, what risk tier each system carries, and whether a program clears its phase gate.
+  cost: Without them, board updates blend projections with actuals, no inventory exists to attest against, and governance is discovered after deployment, if at all.
+  metric: Every value figure labelled measured or projected, payback computed on finance-signed actuals only, and every production system in the inventory with a risk tier.
 ---
 # Decision Artifacts
 
@@ -29,7 +35,7 @@ For architectural decision rationale (why we chose this approach), see [Decision
 
 ### Executive Summary
 
-The AI portfolio delivered $18.2M in realized value in Q1 against $11.4M in total program spend year-to-date. Three use cases have been promoted from pilot to production. One use case has been paused pending data quality remediation. Regulatory posture across EU and APAC jurisdictions is compliant; a new obligation under the EU AI Act takes effect in Q3 and requires board ratification of the updated risk classification policy.
+The AI portfolio delivered $18.2M in realized value in Q1 against $11.4M in total program spend year-to-date. Three use cases have been promoted from pilot to production. One use case has been paused pending data quality remediation. Regulatory posture across EU and APAC jurisdictions is compliant; the next EU AI Act obligation for high-risk systems requires board ratification of the updated risk classification policy before its compliance date.
 
 ### Portfolio Status
 
@@ -64,20 +70,20 @@ Projected value figures are excluded from the payback ratio. Only finance-signed
 
 | Jurisdiction | Status | Notes |
 |---|---|---|
-| EU AI Act | Compliant (current obligations) | Q3 obligation for high-risk systems requires updated risk classification policy (see Decisions Required) |
+| EU AI Act | Compliant (current obligations) | Next high-risk obligation requires updated risk classification policy (see Decisions Required) |
 | MAS (Singapore) | Compliant | Annual attestation filed February 2026 |
 | GDPR | Compliant | Data handling agreements in place for all production use cases |
 
 ### Key Decisions Required
 
-1. **Ratify updated AI risk classification policy** to meet Q3 EU AI Act obligations. Legal and compliance have reviewed. Requires board resolution by end of Q2.
+1. **Ratify updated AI risk classification policy** to meet the next EU AI Act high-risk obligations. Legal and compliance have reviewed. Requires board resolution by end of Q2.
 2. **Approve $4.2M incremental investment** for Phase 2 of the credit underwriting program. Business case attached. CFO has reviewed; recommends approval.
 3. **Confirm governance authority** for cross-jurisdictional agent deployments. Current policy is silent on agents operating across regulatory boundaries. CAIO and General Counsel have drafted proposed language for board endorsement.
 
 [Download template](templates/board-memo-template.md)
 
 </div>
-<div class="doc-footer">Enterprise AI Playbook | Decision Artifact</div>
+<div class="doc-footer">The Enterprise AI Operating System | Decision Artifact</div>
 </div>
 
 ---
@@ -122,7 +128,7 @@ Use this scorecard to evaluate and compare AI use case candidates before committ
 [Download template](templates/investment-scorecard-template.md)
 
 </div>
-<div class="doc-footer">Enterprise AI Playbook | Decision Artifact</div>
+<div class="doc-footer">The Enterprise AI Operating System | Decision Artifact</div>
 </div>
 
 ---

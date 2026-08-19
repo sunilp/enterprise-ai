@@ -1,9 +1,15 @@
 ---
-title: "AI Readiness"
-description: "Diagnostic framework for assessing enterprise AI readiness across data, infrastructure, process, and organizational dimensions."
-section: "Assessment"
+title: AI Readiness
+description: Diagnostic framework for assessing enterprise AI readiness across data, infrastructure, process, and organizational dimensions.
 layout: standard
-slug: "ai-readiness"
+slug: ai-readiness
+discipline: prepare
+order: 1
+dek: A four-dimension readiness assessment with scoring bands, red flags, and what to do with the result before you scale.
+summary:
+  decide: Whether to scale AI now, run selective pilots only, or fix strategy, leadership, infrastructure and capacity gaps first.
+  cost: AI surfaces and amplifies existing dysfunction; a score of 16 at launch can fall to 11 within a year if capacity gaps are left alone.
+  metric: Total assessment score out of 20, calibrated against practitioner input; most leadership teams overestimate by 2-3 points.
 ---
 # AI Readiness Assessment
 
@@ -12,7 +18,7 @@ Most organizations believe they are more AI-ready than they actually are. The ga
 :::warning
 **The readiness gap is widening**
 
-Only 40% of organizations report high AI strategy readiness, and that figure is declining year-over-year (Deloitte, 2026). Confidence is not dropping. Readiness is. The gap between what leaders believe and what their organizations can actually execute is growing.
+Fewer than half of organizations rate themselves highly prepared on any dimension: 42% on strategy, 43% on technical infrastructure, 40% on data management, 20% on talent (Deloitte, 2026). Strategy confidence rose three points year over year; data, infrastructure and talent preparedness all fell. Confidence is not dropping. Readiness is.
 :::
 
 ---
@@ -172,6 +178,6 @@ Treating the assessment as a one-time gate rather than a continuous diagnostic. 
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise, 7th Edition." March 2026.
+1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).
