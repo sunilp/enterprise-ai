@@ -62,7 +62,7 @@ function loadPartial(name) {
 
 function renderTemplate(template, data) {
   // Phase 1: resolve partials {{> partialName}}
-  let result = template.replace(/\{\{>\s*(\w+)\s*\}\}/g, (_, name) => {
+  let result = template.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => {
     return loadPartial(name);
   });
   // Phase 1b: sections {{#key}}...{{/key}} and {{^key}}...{{/key}}
@@ -213,7 +213,9 @@ function configureMarked() {
     code(token) {
       if (token.lang === 'mermaid') {
         hasMermaid = true;
-        return `<pre class="mermaid">${token.text}</pre>\n`;
+        // Strip hard-coded colours so the paper theme paints every diagram consistently
+        const clean = token.text.split('\n').filter(l => !/^\s*(style|classDef|class|linkStyle)\s/.test(l)).join('\n');
+        return `<pre class="mermaid">${clean}</pre>\n`;
       }
       const langClass = token.lang ? ` class="language-${token.lang}"` : '';
       return `<pre><code${langClass}>${token.text}</code></pre>\n`;
@@ -865,7 +867,9 @@ async function build() {
     const layout = fs.readFileSync(layoutPath, 'utf-8');
 
     hasMermaid = false;
-    let contentHtml = marked.parse(page.body);
+    let body = page.body;
+    if (layoutName !== 'cover') body = body.replace(/^\s*#\s+[^\n]+\n+/, '');
+    let contentHtml = marked.parse(body);
     contentHtml = convertMdLinks(contentHtml, pages);
 
     const data = pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common);
