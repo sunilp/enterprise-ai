@@ -87,3 +87,19 @@ test('the book switch cannot be turned on by a non-boolean', () => {
   assert.throws(() => execFileSync('node', ['build.js'], { cwd: ROOT, env: { ...process.env, SITE_CONFIG_PATH: bad }, stdio: 'pipe' }),
     /must be a boolean/, 'a string should not be accepted for book.enabled');
 });
+
+test('the newsletter link is the current one, everywhere it appears', () => {
+  const CURRENT = 'https://www.linkedin.com/newsletters/building-ai-systems-7437710572604870656/';
+  const RETIRED = /newsletters\/building-ai-systems-7310391508670377984/;
+  const html = walk(DIST).filter(f => f.endsWith('.html'));
+  let seen = 0;
+  for (const f of html) {
+    const s = fs.readFileSync(f, 'utf-8');
+    assert.ok(!RETIRED.test(s), `retired newsletter link in ${path.relative(DIST, f)}`);
+    for (const m of s.matchAll(/https:\/\/www\.linkedin\.com\/newsletters\/[^"']+/g)) {
+      assert.equal(m[0], CURRENT, `unexpected newsletter URL in ${path.relative(DIST, f)}`);
+      seen++;
+    }
+  }
+  assert.ok(seen > 50, `expected the newsletter link on every page, saw ${seen}`);
+});
