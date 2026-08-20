@@ -1,11 +1,11 @@
 ---
 title: The Problem
-description: $644 billion in generative AI spending, and fewer than 40% of firms can trace any EBIT impact to AI. The gap is organizational, not technological.
+description: $2.59 trillion of AI spending forecast for 2026, and fewer than 40% of firms can trace any EBIT impact to AI. The gap is organizational, not technological.
 layout: showcase
 slug: the-problem
 discipline: diagnose
 order: 1
-dek: Why $644 billion of generative AI spending has produced traceable EBIT impact for fewer than 40% of firms, and why the gap is organizational, not technical.
+dek: Why AI spending heading for $2.59 trillion in 2026 has produced traceable EBIT impact for fewer than 40% of firms, and why the gap is organizational, not technical.
 summary:
   decide: Whether your binding constraint is technology selection or the organizational system that converts AI capability into business results.
   cost: "Pilot purgatory: significant sunk cost, plus the opportunity cost and organizational cynicism that make the next attempt harder."
@@ -13,9 +13,9 @@ summary:
 ---
 # The Problem
 
-## $644 Billion and Not Much to Show For It
+## Two and a Half Trillion Dollars, and Not Much to Show For It
 
-Global generative AI spending was forecast at $644 billion for 2025 (Gartner, 2025). This is not seed-stage experimentation money. This is board-approved capital, deployed by companies that believe AI is a strategic imperative.
+Worldwide AI spending is forecast to reach $2.59 trillion in 2026, a 47% increase on 2025 (Gartner, 2026). Generative AI spending alone was forecast at $644 billion for 2025 (Gartner, 2025). This is not seed-stage experimentation money. This is board-approved capital, deployed by companies that believe AI is a strategic imperative.
 
 The results do not match the investment.
 
@@ -109,10 +109,11 @@ It is: "what organizational system do we need to build to convert AI capability 
 
 ## Sources
 
-1. Gartner. "Gartner Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." Press release, March 31, 2025.
-2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." November 5, 2025. Survey of 1,993 respondents across 105 countries.
-3. S&P Global Market Intelligence. "Voice of the Enterprise: AI & Machine Learning, Use Cases 2025." Survey of 1,006 respondents in North America and Europe, 2025.
-4. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 17, 2025. Study of more than 1,250 companies.
-5. Gartner. "Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025." Press release, July 29, 2024.
+1. Gartner. "Gartner Forecasts Worldwide AI Spending to Grow 47% in 2026." Press release, May 19, 2026.
+2. Gartner. "Gartner Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." Press release, March 31, 2025.
+3. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." November 5, 2025. Survey of 1,993 respondents across 105 countries.
+4. S&P Global Market Intelligence. "Voice of the Enterprise: AI & Machine Learning, Use Cases 2025." Survey of 1,006 respondents in North America and Europe, 2025.
+5. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 17, 2025. Study of more than 1,250 companies.
+6. Gartner. "Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025." Press release, July 29, 2024.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

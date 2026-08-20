@@ -24,11 +24,13 @@
         var to = parseFloat(el.getAttribute('data-count-to'));
         var prefix = el.getAttribute('data-prefix') || '';
         var suffix = el.getAttribute('data-suffix') || '';
+        var decimals = (el.getAttribute('data-count-to').split('.')[1] || '').length;
         var start = null;
         function step(ts) {
           if (start === null) start = ts;
           var p = Math.min(1, (ts - start) / 1200);
-          el.textContent = prefix + Math.round(to * easeOut(p)) + suffix;
+          var v = to * easeOut(p);
+          el.textContent = prefix + (decimals ? v.toFixed(decimals) : Math.round(v)) + suffix;
           if (p < 1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);

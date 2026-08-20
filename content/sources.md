@@ -11,7 +11,7 @@ dek: "The research behind the playbook: strategy firm, analyst and academic stud
 
 ## Why This Playbook Exists
 
-Global generative AI spending was forecast at $644 billion for 2025 (Gartner, 2025), and 95% of enterprise GenAI pilots deliver no measurable P&L impact (MIT NANDA, 2025). The gap between "we have an AI strategy" and "AI is generating P&L value" continues to widen. Most transformation playbooks are either vendor marketing disguised as thought leadership, or academic frameworks disconnected from operational reality.
+Worldwide AI spending is forecast to reach $2.59 trillion in 2026 (Gartner, 2026), and 95% of enterprise GenAI pilots deliver no measurable P&L impact (MIT NANDA, 2025). The gap between "we have an AI strategy" and "AI is generating P&L value" continues to widen. Most transformation playbooks are either vendor marketing disguised as thought leadership, or academic frameworks disconnected from operational reality.
 
 This playbook was built to fill that gap. It synthesizes primary research from the major strategy firms, regulatory bodies, and enterprise technology analysts with direct experience building AI platforms, governance frameworks, and agent infrastructure at enterprise scale.
 
@@ -117,6 +117,9 @@ The following statistics appear throughout the playbook. Each is cited with its 
 | 63% of organizations either do not have or are unsure if they have the right data management practices for AI | Gartner, February 26, 2025 (third-quarter 2024 survey of 248 data management leaders) |
 | Through 2026, organizations will abandon 60% of AI projects unsupported by AI-ready data (prediction) | Gartner, February 26, 2025 (third-quarter 2024 survey of 248 data management leaders) |
 | By 2027, organizations that prioritize semantics in AI-ready data will increase generative AI model accuracy by up to 80% and reduce costs by up to 60% (prediction) | Gartner, Top Data & Analytics Predictions, June 17, 2025 |
+| Worldwide AI spending forecast to total $2.59 trillion in 2026, a 47% increase on 2025, with AI infrastructure more than 45% of it | Gartner forecast, May 19, 2026 |
+| Worldwide end-user spending on AI models and platforms forecast at $64 billion in 2026, up 63.4% from $39 billion in 2025 | Gartner forecast, July 20, 2026 |
+| 94% of CEOs say they will keep investing in AI at current or higher levels even if the investment does not pay off within the year | BCG AI Radar 2026, January 15, 2026 (2,360 executives across 16 markets and nine industries, including 640 CEOs) |
 | $644 billion global generative AI spending forecast for 2025 | Gartner forecast, March 31, 2025 |
 
 ### Agentic AI
@@ -149,45 +152,48 @@ The following statistics appear throughout the playbook. Each is cited with its 
 11. World Economic Forum. "Scaling AI with Strategy, Data and Workforce Readiness." October 8, 2025.
 12. Gartner. "Gartner Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." Press release, November 19, 2025. Source of the 69% shadow AI figure, the 40%-by-2030 incident prediction and the 65%-by-2028 sovereignty prediction.
 13. Gartner. "Gartner Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." Press release, March 31, 2025.
-14. Gartner. "Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025." Press release, July 29, 2024.
-15. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." Press release, February 26, 2025. Based on a third-quarter 2024 survey of 248 data management leaders.
-16. Gartner. "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027." Press release, June 25, 2025.
-17. Gartner. "Gartner Announces the Top Data & Analytics Predictions." Gartner Data & Analytics Summit, June 17, 2025.
-18. Gartner. "The Latest Hype Cycle for Artificial Intelligence Goes Beyond GenAI." Hype Cycle for Artificial Intelligence, August 2025.
-19. Forbes Research. "AI's ROI Reality Check: Are Companies Measuring What Matters?" October 8, 2025. Survey of 1,075 C-suite members.
-20. S&P Global Market Intelligence (451 Research). "Voice of the Enterprise: AI & Machine Learning, Use Cases 2025." Survey of 1,006 respondents in North America and Europe, 2025.
-21. MIT NANDA. "The GenAI Divide: State of AI in Business 2025." 2025.
-22. Wipro. "State of Data4AI Report 2025." 2025.
-23. Delinea. "AI in Identity Security Demands a New Playbook." September 2025. Global survey of 1,758 IT decision-makers.
-24. LEGALFLY. "AI Governance Gap Report." September 2025. Survey of 154 general counsel across the UK, France and Germany.
+14. Gartner. "Gartner Forecasts Worldwide AI Spending to Grow 47% in 2026." Press release, May 19, 2026.
+15. Gartner. "Gartner Forecasts Worldwide AI Platforms and Models Market to Grow 63% in 2026." Press release, July 20, 2026.
+16. Boston Consulting Group. "AI Radar 2026: As AI Investments Surge, CEOs Take the Lead." January 15, 2026. Survey of 2,360 executives across 16 markets and nine industries, including 640 CEOs.
+17. Gartner. "Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025." Press release, July 29, 2024.
+18. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." Press release, February 26, 2025. Based on a third-quarter 2024 survey of 248 data management leaders.
+19. Gartner. "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027." Press release, June 25, 2025.
+20. Gartner. "Gartner Announces the Top Data & Analytics Predictions." Gartner Data & Analytics Summit, June 17, 2025.
+21. Gartner. "The Latest Hype Cycle for Artificial Intelligence Goes Beyond GenAI." Hype Cycle for Artificial Intelligence, August 2025.
+22. Forbes Research. "AI's ROI Reality Check: Are Companies Measuring What Matters?" October 8, 2025. Survey of 1,075 C-suite members.
+23. S&P Global Market Intelligence (451 Research). "Voice of the Enterprise: AI & Machine Learning, Use Cases 2025." Survey of 1,006 respondents in North America and Europe, 2025.
+24. MIT NANDA. "The GenAI Divide: State of AI in Business 2025." 2025.
+25. Wipro. "State of Data4AI Report 2025." 2025.
+26. Delinea. "AI in Identity Security Demands a New Playbook." September 2025. Global survey of 1,758 IT decision-makers.
+27. LEGALFLY. "AI Governance Gap Report." September 2025. Survey of 154 general counsel across the UK, France and Germany.
 
 ### Articles and Analysis
 
-25. Harvard Business Review. "The 'Last Mile' Problem Slowing AI Transformation." March 2026.
-26. Harvard Business Review / Google Cloud. "A Blueprint for Enterprise-Wide Agentic AI Transformation." February 2026.
-27. Harvard Business Review. "Most AI Initiatives Fail. This 5-Part Framework Can Help." November 2025.
-28. MIT Sloan Management Review. "The Emerging Agentic Enterprise: How Leaders Must Navigate a New Age of AI." 2025.
-29. California Management Review. "Bridging the Gaps in AI Transformation: An Evidence-Based Framework for Scalable Adoption." November 2025.
-30. CIO.com. "Why 80% of AI Projects Fail." 2025.
-31. CIO.com. "Shadow AI: The Hidden Agents Beyond Traditional Governance." 2025.
-32. CIO.com. "CDO and CAIO Roles Might Have a Built-in Expiration Date." 2025.
-33. CIO.com. "Fixing the Broken AI Governance Playbook." 2025.
-34. Vantedge Search. "The CAIO: Role, Responsibilities, and Why You Need One." 2025.
-35. Cloud Security Alliance. "EU AI Act's High-Risk Deadline: Deferred, Not Cancelled." 2026.
-36. Aligne.ai. "The AI Governance Crisis Every Executive Must Address in 2025." 2025.
-37. Moderna. Leadership: Tracey Franklin, Chief People and Digital Technology Officer. 2025.
-38. Linux Foundation. "Linux Foundation Launches the Agent2Agent Protocol Project." Press release, June 23, 2025.
-39. Model Context Protocol. "MCP Joins the Agentic AI Foundation." December 9, 2025.
+28. Harvard Business Review. "The 'Last Mile' Problem Slowing AI Transformation." March 2026.
+29. Harvard Business Review / Google Cloud. "A Blueprint for Enterprise-Wide Agentic AI Transformation." February 2026.
+30. Harvard Business Review. "Most AI Initiatives Fail. This 5-Part Framework Can Help." November 2025.
+31. MIT Sloan Management Review. "The Emerging Agentic Enterprise: How Leaders Must Navigate a New Age of AI." 2025.
+32. California Management Review. "Bridging the Gaps in AI Transformation: An Evidence-Based Framework for Scalable Adoption." November 2025.
+33. CIO.com. "Why 80% of AI Projects Fail." 2025.
+34. CIO.com. "Shadow AI: The Hidden Agents Beyond Traditional Governance." 2025.
+35. CIO.com. "CDO and CAIO Roles Might Have a Built-in Expiration Date." 2025.
+36. CIO.com. "Fixing the Broken AI Governance Playbook." 2025.
+37. Vantedge Search. "The CAIO: Role, Responsibilities, and Why You Need One." 2025.
+38. Cloud Security Alliance. "EU AI Act's High-Risk Deadline: Deferred, Not Cancelled." 2026.
+39. Aligne.ai. "The AI Governance Crisis Every Executive Must Address in 2025." 2025.
+40. Moderna. Leadership: Tracey Franklin, Chief People and Digital Technology Officer. 2025.
+41. Linux Foundation. "Linux Foundation Launches the Agent2Agent Protocol Project." Press release, June 23, 2025.
+42. Model Context Protocol. "MCP Joins the Agentic AI Foundation." December 9, 2025.
 
 ### Regulatory Sources
 
-40. European Parliament and Council. Regulation (EU) 2024/1689 (EU Artificial Intelligence Act). Official Journal, 12 July 2024; entered into force 1 August 2024.
-41. European Parliament and Council. Regulation (EU) 2026/1744 (Digital Omnibus on AI), deferring Annex III high-risk obligations to 2 December 2027 and Annex I to 2 August 2028. Official Journal, 24 July 2026; entered into force 27 July 2026.
-42. Executive Office of the President (US). Executive Order 14110 on Safe, Secure, and Trustworthy AI, October 2023, revoked January 2025; Executive Order 14179, Removing Barriers to American Leadership in Artificial Intelligence, January 2025; Executive Order on a national AI policy framework and state-law preemption, December 2025.
-43. Board of Governors of the Federal Reserve System, Office of the Comptroller of the Currency and Federal Deposit Insurance Corporation. Supervisory Letter SR 26-2, "Revised Guidance on Model Risk Management." April 17, 2026. Supersedes SR 11-7 (2011) and SR 21-8.
-44. Infocomm Media Development Authority and AI Verify Foundation (Singapore). Model AI Governance Framework for Generative AI, 2024; Model AI Governance Framework for Agentic AI, January 2026.
-45. Ministry of Electronics and Information Technology (India). Digital Personal Data Protection Rules, 2025, notified 13 November 2025; India AI Governance Guidelines, 5 November 2025 (non-binding).
-46. Monetary Authority of Singapore. Principles to Promote Fairness, Ethics, Accountability and Transparency (FEAT) in the Use of Artificial Intelligence and Data Analytics in Singapore's Financial Sector. November 2018.
+43. European Parliament and Council. Regulation (EU) 2024/1689 (EU Artificial Intelligence Act). Official Journal, 12 July 2024; entered into force 1 August 2024.
+44. European Parliament and Council. Regulation (EU) 2026/1744 (Digital Omnibus on AI), deferring Annex III high-risk obligations to 2 December 2027 and Annex I to 2 August 2028. Official Journal, 24 July 2026; entered into force 27 July 2026.
+45. Executive Office of the President (US). Executive Order 14110 on Safe, Secure, and Trustworthy AI, October 2023, revoked January 2025; Executive Order 14179, Removing Barriers to American Leadership in Artificial Intelligence, January 2025; Executive Order on a national AI policy framework and state-law preemption, December 2025.
+46. Board of Governors of the Federal Reserve System, Office of the Comptroller of the Currency and Federal Deposit Insurance Corporation. Supervisory Letter SR 26-2, "Revised Guidance on Model Risk Management." April 17, 2026. Supersedes SR 11-7 (2011) and SR 21-8.
+47. Infocomm Media Development Authority and AI Verify Foundation (Singapore). Model AI Governance Framework for Generative AI, 2024; Model AI Governance Framework for Agentic AI, January 2026.
+48. Ministry of Electronics and Information Technology (India). Digital Personal Data Protection Rules, 2025, notified 13 November 2025; India AI Governance Guidelines, 5 November 2025 (non-binding).
+49. Monetary Authority of Singapore. Principles to Promote Fairness, Ethics, Accountability and Transparency (FEAT) in the Use of Artificial Intelligence and Data Analytics in Singapore's Financial Sector. November 2018.
 
 ## About the Author
 

@@ -14,7 +14,7 @@ og_description: "The management system for enterprise AI. Seven disciplines, exe
 </section>
 
 <div class="metric-strip reveal">
-  <div class="metric"><div class="metric-value" data-count-to="644" data-prefix="$" data-suffix="B">$644B</div><div class="metric-label">Projected GenAI spend, 2025</div><div class="metric-source">Gartner, 2025</div></div>
+  <div class="metric"><div class="metric-value" data-count-to="2.59" data-prefix="$" data-suffix="T">$2.59T</div><div class="metric-label">Projected AI spend, 2026</div><div class="metric-source">Gartner, 2026</div></div>
   <div class="metric"><div class="metric-value" data-count-to="42" data-suffix="%">42%</div><div class="metric-label">Scrapped most AI initiatives</div><div class="metric-source">S&amp;P Global, 2025</div></div>
   <div class="metric"><div class="metric-value" data-count-to="5" data-suffix="%">5%</div><div class="metric-label">Classified as future-built</div><div class="metric-source">BCG, 2025</div></div>
 </div>

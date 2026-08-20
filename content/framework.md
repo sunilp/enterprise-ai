@@ -180,18 +180,20 @@ Organizations move through four stages. Each stage has a defining characteristic
 
 ## The evidence
 
-Capital is flowing into AI faster than enterprises are building the management systems required to capture returns.
+Capital is scaling faster than the management systems needed to convert it.
 
 <div class="metric-strip">
-  <div class="metric"><div class="metric-value">$644B</div><div class="metric-label">Projected GenAI spend, 2025</div><div class="metric-source">Gartner, 2025</div></div>
+  <div class="metric"><div class="metric-value">$2.59T</div><div class="metric-label">Projected AI spend, 2026</div><div class="metric-source">Gartner, 2026</div></div>
   <div class="metric"><div class="metric-value">42%</div><div class="metric-label">Scrapped most AI initiatives</div><div class="metric-source">S&amp;P Global, 2025</div></div>
   <div class="metric"><div class="metric-value">5%</div><div class="metric-label">Classified as future-built</div><div class="metric-source">BCG, 2025</div></div>
 </div>
 
-- **30%** of generative AI projects abandoned after proof of concept by the end of 2025, at least, as Gartner predicted in 2024. They work in the lab and stall in production. <span class="metric-source">Gartner, 2024</span>
-- **39%** of respondents attribute any enterprise-level EBIT impact to AI, and most of those put it below 5% of EBIT. Fewer than two in five can trace AI to the income statement at all. <span class="metric-source">McKinsey, 2025</span>
+- Worldwide AI spending is forecast to reach **$2.59 trillion in 2026**, a 47% increase on 2025, with AI infrastructure accounting for more than 45% of it. <span class="metric-source">Gartner, May 2026</span>
+- **94%** of CEOs say they will keep investing in AI at current or higher levels even if the investment does not pay off within the year. <span class="metric-source">BCG AI Radar 2026, January 2026</span>
+- **30%** or more of generative AI projects were predicted to be abandoned after proof of concept by the end of 2025. They work in the lab and stall in production. <span class="metric-source">Gartner, 2024</span>
+- **39%** of respondents attribute any enterprise-level EBIT impact to AI, and most of those put it below 5% of EBIT. <span class="metric-source">McKinsey, 2025</span>
 
-Full source list and methodology: [Sources and Methodology](/enterprise-ai/sources/).
+The commitment is not in question. The conversion is. Full source list and methodology: [Sources and Methodology](/enterprise-ai/sources/).
 
 ## Where to go next
 
