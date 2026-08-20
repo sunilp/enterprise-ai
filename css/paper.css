@@ -28,12 +28,9 @@
 /* ─── Fonts (self-hosted) ─────────────────────────────────────────────────── */
 @font-face { font-family: 'Fraunces'; src: url('../fonts/Fraunces-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Fraunces'; src: url('../fonts/Fraunces-Italic-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans'; src: url('../fonts/IBMPlexSans-Light.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans'; src: url('../fonts/IBMPlexSans-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans'; src: url('../fonts/IBMPlexSans-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans'; src: url('../fonts/IBMPlexSans-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'IBM Plex Mono'; src: url('../fonts/IBMPlexMono-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'IBM Plex Mono'; src: url('../fonts/IBMPlexMono-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans'; src: url('../fonts/IBMPlexSans-Variable.woff2') format('woff2'); font-weight: 100 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('../fonts/IBMPlexMono-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('../fonts/IBMPlexMono-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
 
 /* ─── Base ────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -73,7 +70,7 @@ strong { font-weight: 600; }
 .content-wide { max-width: var(--wide); margin-left: auto; margin-right: auto; }
 
 /* ─── Top bar ─────────────────────────────────────────────────────────────── */
-.topbar { position: sticky; top: 0; z-index: 50; background: rgba(245, 241, 232, .94); backdrop-filter: saturate(140%) blur(8px); -webkit-backdrop-filter: saturate(140%) blur(8px); border-bottom: 1px solid var(--rule); }
+.topbar { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--rule); }
 .topbar .inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; gap: 28px; }
 .wordmark { font-family: var(--font-display); font-weight: 500; font-size: 19px; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
 .wordmark img { width: 22px; height: 22px; }
@@ -81,13 +78,13 @@ strong { font-weight: 600; }
 .topnav a, .topnav button { font: 500 14px/1 var(--font-body); color: var(--ink-2); text-decoration: none; background: none; border: 0; padding: 8px 0; cursor: pointer; }
 .topnav a:hover, .topnav button:hover { color: var(--ink); }
 .topnav .has-menu { position: relative; }
-.menu { position: absolute; top: 100%; left: -16px; min-width: 400px; background: var(--surface); border: 1px solid var(--rule); box-shadow: 0 12px 32px rgba(22, 19, 14, .08); padding: 10px 0; display: none; }
+.menu { position: absolute; top: 100%; left: -16px; width: min(400px, calc(100vw - 40px)); background: var(--surface); border: 1px solid var(--ink); padding: 10px 0; display: none; }
 .has-menu.open .menu { display: block; }
 .menu a { display: grid; grid-template-columns: 32px 1fr; gap: 10px; padding: 9px 18px; text-decoration: none; color: var(--ink); font-size: 15px; }
 .menu a:hover { background: var(--ledger); }
 .menu .n { font: 500 12px/1.6 var(--font-mono); color: var(--bronze); }
 .menu .q { display: block; font-size: 13px; color: var(--ink-3); margin-top: 2px; line-height: 1.35; }
-.search-btn { display: flex; align-items: center; gap: 8px; border: 1px solid var(--rule) !important; padding: 6px 10px !important; border-radius: 4px; color: var(--ink-3) !important; }
+.search-btn { display: flex; align-items: center; gap: 8px; border: 1px solid var(--rule) !important; padding: 8px 10px !important; color: var(--ink-3) !important; }
 .search-btn kbd { font: 400 11px var(--font-mono); color: var(--ink-3); }
 .menu-toggle { display: none; }
 .breadcrumb { font: 400 13px/1.4 var(--font-mono); color: var(--ink-3); margin: 0 0 18px; }
@@ -98,7 +95,7 @@ strong { font-weight: 600; }
 .progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: var(--bronze); z-index: 60; transition: width .1s linear; }
 
 /* ─── Footer ──────────────────────────────────────────────────────────────── */
-.site-footer { border-top: 1px solid var(--rule); margin-top: 96px; padding: 48px 28px 40px; background: var(--ledger); }
+.site-footer { border-top: 1px solid var(--rule); margin-top: 40px; padding: 48px 28px 40px; background: var(--ledger); }
 .site-footer .cols { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; font-size: 14px; }
 .site-footer h4 { margin: 0 0 10px; font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
@@ -111,8 +108,9 @@ strong { font-weight: 600; }
 /* ─── Command palette ─────────────────────────────────────────────────────── */
 .palette { position: fixed; inset: 0; background: rgba(22, 19, 14, .35); display: none; z-index: 90; align-items: flex-start; justify-content: center; padding-top: 12vh; }
 .palette[aria-hidden="false"] { display: flex; }
-.palette .box { width: min(640px, 92vw); background: var(--surface); border: 1px solid var(--rule); box-shadow: 0 24px 60px rgba(22, 19, 14, .2); }
-.palette input { width: 100%; border: 0; border-bottom: 1px solid var(--rule); padding: 16px 18px; font: 400 17px var(--font-body); background: transparent; color: var(--ink); outline: none; }
+.palette .box { width: min(640px, 92vw); background: var(--surface); border: 1px solid var(--ink); }
+.palette input { width: 100%; border: 0; border-bottom: 1px solid var(--rule); padding: 16px 18px; font: 400 17px var(--font-body); background: transparent; color: var(--ink); }
+.palette input:focus-visible { outline: 2px solid var(--bronze); outline-offset: -2px; }
 .palette ol { list-style: none; margin: 0; padding: 8px 0; max-height: 50vh; overflow: auto; }
 .palette li { margin: 0; }
 .palette li a { display: block; padding: 10px 18px; text-decoration: none; color: var(--ink); }
@@ -121,22 +119,27 @@ strong { font-weight: 600; }
 .palette .empty { padding: 14px 18px; color: var(--ink-3); font-size: 14px; }
 
 /* ─── Mobile sheet ────────────────────────────────────────────────────────── */
-.sheet { position: fixed; inset: 0; background: var(--paper); z-index: 80; display: none; overflow: auto; padding: 24px; }
+/* Sits below the sticky bar so the Menu button stays reachable and can close it */
+.sheet { position: fixed; inset: 56px 0 0 0; background: var(--paper); z-index: 40; display: none; overflow: auto; padding: 20px 20px 40px; }
 .sheet[aria-hidden="false"] { display: block; }
-.sheet .close { float: right; background: none; border: 1px solid var(--rule); padding: 6px 10px; font: 500 13px var(--font-body); color: var(--ink); }
+.sheet .close { float: right; background: none; border: 1px solid var(--rule); padding: 12px 16px; min-height: 44px; font: 500 14px var(--font-body); color: var(--ink); cursor: pointer; }
 .sheet h4 { margin: 24px 0 8px; font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
 .sheet a { display: block; padding: 9px 0; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); font-size: 16px; }
 .sheet a .q { display: block; font-size: 13px; color: var(--ink-3); }
 
 /* ─── Reveal (opt-in only; never on body text) ────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
-.no-js .reveal { opacity: 1; transform: none; }
+.reveal-ready .reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-ready .reveal.in { opacity: 1; transform: none; }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 1100px) {
   .reading { grid-template-columns: minmax(0, var(--measure)); }
   .rail { display: none; }
+}
+@media (max-width: 900px) {
+  .topnav { display: none; }
+  .menu-toggle { display: inline-flex; align-items: center; margin-left: auto; background: none; border: 1px solid var(--rule); padding: 10px 14px; font: 500 14px var(--font-body); color: var(--ink); cursor: pointer; min-height: 44px; }
+  .menu-toggle[aria-expanded="true"] { border-color: var(--bronze); color: var(--bronze); }
 }
 @media (max-width: 760px) {
   body { font-size: 17px; }
@@ -145,8 +148,6 @@ strong { font-weight: 600; }
   .dek { font-size: 19px; }
   .topbar .inner { height: 56px; gap: 12px; padding: 0 20px; }
   .wordmark { font-size: 17px; }
-  .topnav { display: none; }
-  .menu-toggle { display: inline-flex; margin-left: auto; background: none; border: 1px solid var(--rule); padding: 6px 10px; font: 500 13px var(--font-body); color: var(--ink); cursor: pointer; }
   .site-footer .cols { grid-template-columns: 1fr 1fr; }
   .site-footer { padding: 36px 20px 32px; }
   .reading { padding: 28px 20px 72px; }
@@ -160,3 +161,9 @@ strong { font-weight: 600; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Headings that carry the mono label style but keep document structure */
+.section-h, .foot-h { font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); margin: 0 0 10px; }
+.hub-pages > .section-h { margin-bottom: 4px; }
+.hub-next .section-h { margin-bottom: 8px; }
+.site-footer .foot-h { margin: 0 0 10px; }

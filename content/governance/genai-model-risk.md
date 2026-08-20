@@ -8,7 +8,7 @@ order: 2
 dek: Why traditional model risk management breaks on generative AI, and the five risk categories, validation gates and monitoring that replace it.
 summary:
   decide: Which validation and monitoring controls each GenAI system needs before and after deployment, and what triggers re-validation.
-  cost: Around 20% of production GenAI outputs contain a meaningful inaccuracy (Gartner, 2024), and the model never signals when it is wrong; unmeasured systems fail silently.
+  cost: The model never signals when it is wrong, so a GenAI system whose error rate nobody measures fails silently until a customer or a regulator finds it.
   metric: Hallucination rate on a domain-specific evaluation set, tracked continuously, with automatic re-evaluation on every model version change.
 ---
 # GenAI Model Risk
@@ -38,9 +38,9 @@ The gaps this creates are significant:
 
 ## The Scale of the Problem
 
-GenAI error rates in production deployments hover around 20% (Gartner, 2024). This means roughly one in five outputs contains a meaningful inaccuracy. For a system answering customer questions, writing internal reports, or summarizing contracts, a 20% error rate is not a statistical footnote. It is a material operational and legal risk.
+There is no portable production error rate for GenAI. It moves with the domain, the retrieval corpus, the prompt, the guardrails and the model version, so a rate measured in one deployment tells you almost nothing about another. The only number that governs your risk is the one measured on your own evaluation set, and most organizations do not have it.
 
-The more alarming figure: 84% of organizations are not systematically tracking GenAI accuracy in production (Gartner, 2025). Most organizations have deployed systems they cannot tell you are working correctly.
+That absence is the real finding. Inaccuracy is the AI risk that respondents most often say their organizations have actually experienced, and nearly a third of all respondents report a negative consequence stemming from it (McKinsey, 2025). For a system answering customer questions, writing internal reports, or summarizing contracts, an unmeasured error rate is not a statistical gap. It is a material operational and legal risk carried without a number attached to it.
 
 :::warning
 **The Confidence-Accuracy Gap**
@@ -199,12 +199,12 @@ One caution on the injection and PII rows. Flagged is not the same as real. Agai
 
 GenAI model risk is not a harder version of traditional model risk. It is a different problem. Non-deterministic outputs, emergent capabilities, prompt sensitivity, and the confidence-accuracy gap all require new frameworks, new validation approaches, and new monitoring infrastructure.
 
-The 84% of organizations not tracking GenAI accuracy are not cutting corners. They are applying a traditional monitoring philosophy to a system that breaks its assumptions. The first step is acknowledging the difference.
+The organizations not tracking GenAI accuracy in production are not cutting corners. They are applying a traditional monitoring philosophy to a system that breaks its assumptions. The first step is acknowledging the difference.
 
 ---
 
 ## Sources
 
-1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." November 2025. Survey of 1,993 respondents, fielded 25 June to 29 July 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

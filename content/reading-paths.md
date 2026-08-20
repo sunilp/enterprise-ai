@@ -20,13 +20,13 @@ If you have five minutes, run the [Readiness Diagnostic](/enterprise-ai/assessme
 
 You approve the budget, set the priorities, and carry the outcome. You need to know why most programmes stall, where value concentrates, what to fund, what to stop, and what to ask for each quarter.
 
-1. [The Problem](/enterprise-ai/position/the-problem/) (Diagnose): why spending is scaling faster than management capability.
+1. [The Problem](/enterprise-ai/position/the-problem/) (Diagnose): why the spending has not converted into results, and why the gap is organizational, not technical.
 2. [Seven Failure Modes](/enterprise-ai/position/failure-modes/) (Diagnose): the patterns to recognize before they recur.
 3. [Value Concentration](/enterprise-ai/portfolio/value-concentration/) (Prepare): where the returns actually sit.
-4. [The CAIO Mandate](/enterprise-ai/operating-model/caio-mandate/) (Organize): the single highest-leverage appointment, and the authority it needs.
+4. [The CAIO Mandate](/enterprise-ai/operating-model/caio-mandate/) (Organize): what the role has to own, where it should report, and the authority it needs.
 5. [Financial Linkage](/enterprise-ai/measurement/financial-linkage/) (Operate): how AI reaches the income statement, and how to tell when it has not.
 6. [Board Reporting](/enterprise-ai/measurement/board-reporting/) (Operate): what a board should see, and how often.
-7. [Case Studies](/enterprise-ai/proof/case-studies/) (Proof): patterns from real transformations.
+7. [Case Studies](/enterprise-ai/proof/case-studies/) (Proof): four anonymized composites, and what changed in each.
 8. [12-Month Roadmap](/enterprise-ai/transformation/roadmap/) (Sustain): the sequence, and the gates that keep it honest.
 
 <a id="cio"></a>
@@ -37,7 +37,7 @@ You own the technology organization and the platform. You are building the capab
 
 1. [Structural Models](/enterprise-ai/operating-model/structural-models/) (Organize): choose the structure before the tools.
 2. [Capability Stack](/enterprise-ai/architecture/capability-stack/) (Design): the seven layers and who owns each.
-3. [Control Architecture](/enterprise-ai/architecture/control-architecture/) (Design): identity, entitlements, audit, policy, override, observability.
+3. [Control Architecture](/enterprise-ai/architecture/control-architecture/) (Design): the seven control domains, from identity and entitlements to retention and observability.
 4. [Governance Architecture](/enterprise-ai/governance/architecture/) (Govern): governance that runs at deployment speed.
 5. [Reference Patterns](/enterprise-ai/architecture/reference-patterns/) (Design): four deployment patterns and the controls each needs.
 6. [The Agentic Shift](/enterprise-ai/agentic-strategy/the-shift/) (Design): what changes when software acts.
@@ -51,7 +51,7 @@ You own the technology organization and the platform. You are building the capab
 You own readiness, the portfolio, and the operating model that makes the programme coherent. You need the readiness picture, a prioritization method that survives contact with the business, and governance built into delivery.
 
 1. [AI Readiness](/enterprise-ai/assessment/ai-readiness/) (Prepare): the four dimensions and how to read them.
-2. [Data Readiness](/enterprise-ai/assessment/data-readiness/) (Prepare): AI-ready is not the same as analytically adequate.
+2. [Data Readiness](/enterprise-ai/assessment/data-readiness/) (Prepare): why good enough for reporting is not good enough for AI.
 3. [Use Case Prioritization](/enterprise-ai/portfolio/prioritization/) (Prepare): concentrate investment where it compounds.
 4. [Pilot to Production](/enterprise-ai/portfolio/pilot-to-production/) (Prepare): the bar a pilot has to clear.
 5. [Governance Architecture](/enterprise-ai/governance/architecture/) (Govern): policy, process, and technical layers.
@@ -68,10 +68,10 @@ You hold the numbers and the risk. You need the unit economics, the linkage from
 1. [Financial Linkage](/enterprise-ai/measurement/financial-linkage/) (Operate): the chain from AI outcome to EBIT, and where it breaks.
 2. [FinOps for Agents](/enterprise-ai/agentic-strategy/finops/) (Operate): cost per outcome, not cost per call.
 3. [GenAI Model Risk](/enterprise-ai/governance/genai-model-risk/) (Govern): what model risk means when the model generates.
-4. [Agent Governance](/enterprise-ai/governance/agent-governance/) (Govern): agents as delegated authority.
+4. [Agent Governance](/enterprise-ai/governance/agent-governance/) (Govern): six controls for agents that act rather than recommend.
 5. [Regulatory Readiness](/enterprise-ai/governance/regulatory-readiness/) (Govern): obligations by jurisdiction, mapped and tracked.
 6. [Shadow AI](/enterprise-ai/governance/shadow-ai/) (Govern): the exposure you do not see.
-7. [Decision Records](/enterprise-ai/proof/decision-records/) (Proof): the artifacts a risk committee should expect.
+7. [Decision Records](/enterprise-ai/proof/decision-records/) (Proof): the decisions a risk committee should expect to see recorded.
 
 ---
 

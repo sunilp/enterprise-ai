@@ -49,7 +49,7 @@ blockquote.obsidian-quote p:last-child { margin: 0; }
 
 /* ─── Tables ──────────────────────────────────────────────────────────────── */
 .obsidian-table-wrap { overflow-x: auto; margin: 28px 0; }
-.obsidian-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+.obsidian-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
 .obsidian-table th { font: 500 11px/1.6 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--ink); vertical-align: bottom; }
 .obsidian-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
 .obsidian-table tr:last-child td { border-bottom: 1px solid var(--ink); }
@@ -125,3 +125,20 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 48px 0; }
   .ledger-band > * { padding: 0 20px; }
   .pull-quote { font-size: 22px; }
 }
+
+/* ─── Task lists (printed checklist marks, not form controls) ─────────────── */
+ul:has(> li.task) { list-style: none; padding-left: 0; }
+li.task { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: baseline; margin: .45em 0; }
+li.task .box { width: 13px; height: 13px; border: 1.5px solid var(--ink-3); display: inline-block; position: relative; top: 2px; }
+li.task.done .box { border-color: var(--bronze); background: var(--bronze); }
+li.task.done .box::after { content: ""; position: absolute; left: 3px; top: 0; width: 4px; height: 8px; border: solid var(--surface); border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+.obsidian-table-wrap:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
+
+/* ─── Pre-rendered diagrams ───────────────────────────────────────────────── */
+figure.diagram { margin: 36px 0; text-align: center; }
+figure.diagram .diagram-svg { max-width: 100%; height: auto; display: inline-block; }
+figure.diagram .diagram-svg text { font-family: var(--font-body) !important; }
+/* Figures may break out of the text measure so wide flowcharts stay legible */
+@media (min-width: 1100px) { .reading figure.diagram { width: 820px; margin-left: -70px; } }
+@media (max-width: 760px) { figure.diagram { overflow-x: auto; text-align: left; -webkit-overflow-scrolling: touch; } figure.diagram .diagram-svg { min-width: 520px; } }
+figure.diagram:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }

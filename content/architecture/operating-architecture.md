@@ -98,4 +98,4 @@ A narrow platform -- basic model endpoints, minimal shared tooling -- ships fast
 
 The answer is not architectural purity. It is a deliberate bet on the organization's current constraints. A narrow platform with a documented path to broader coverage is preferable to a broad platform that takes too long and loses organizational credibility before it ships.
 
-The platform team's scope should be set at the start of each planning cycle, not by accumulation. Scope creep in both directions -- platform teams taking on use case delivery, or domain teams building platform components -- is the most reliable predictor of operating model dysfunction.
+The platform team's scope should be set at the start of each planning cycle, not by accumulation. Scope creep in both directions -- platform teams taking on use case delivery, or domain teams building platform components -- is the clearest early warning of operating model dysfunction.

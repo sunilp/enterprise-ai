@@ -1,6 +1,6 @@
 ---
 title: Case Studies
-description: Patterns from real enterprise AI transformations, showing what worked, what failed, and what the 5% do differently.
+description: Four anonymized composites of enterprise AI transformation, showing where programs stalled, what leadership changed, and what happened next.
 layout: showcase
 slug: case-studies
 group: proof
@@ -14,6 +14,8 @@ summary:
 # Case Studies
 
 These case studies are anonymized composites drawn from observed patterns across enterprise AI programs. They are not single-organization accounts. They represent the structural patterns that appear repeatedly across sectors, scales, and geographies.
+
+Read the numbers accordingly. Every figure on this page is illustrative. It sizes the pattern so the decision is legible. It is not a research finding, a benchmark, or a measured result from any one company, and it should not be quoted as one. The measured research this playbook relies on is cited at the claim and listed on the [Sources](/enterprise-ai/sources/) page.
 
 ---
 
@@ -35,11 +37,11 @@ Before any of this could be addressed, the team tried the obvious path: create s
 
 The CAIO's first decision was to impose a 90-day pause on new AI initiative approvals. The pause was controversial. It cost momentum and created internal resistance from business units that had active initiatives in flight. It was also the right call.
 
-During the pause, the team conducted a structured portfolio assessment. Each of the 253 applications was evaluated against four criteria: business value delivered, data and governance compliance, technical sustainability, and strategic alignment. The result was a four-category classification: strategic (continue and invest), maintain (operate but do not grow), consolidate (merge with a strategic application), and exit (decommission).
+During the pause, the team conducted a structured portfolio assessment. Each of the 253 applications was evaluated against four criteria: business value delivered, data and governance compliance, technical sustainability, and strategic alignment. The result was a four-category classification: strategic (continue and invest), maintain (operate but do not grow), consolidate (merge into a smaller number of shared applications), and exit (decommission).
 
 Of the 253 applications: 31 were classified as strategic, 47 as maintain, 88 as candidates for consolidation, and 87 for exit. The exit list included applications that had been running for over a year, some with active users, that had never produced a measurable business outcome. The 87 exits were not failures of technology. They were failures of governance. Teams had lost tools they used daily, and some of the resistance was legitimate: a few of those applications had genuine utility that had simply never been measured.
 
-The exit process was difficult. Business unit leaders defended their applications. The CAIO maintained the criteria and declined to make exceptions. By month six, the portfolio had contracted to 89 applications. By month twelve, a shared model access layer, shared evaluation infrastructure, and a unified intake process were operational. Vendor consolidation, from three overlapping contracts at varying price points to a single negotiated enterprise agreement, generated savings that funded the shared infrastructure build.
+The exit process was difficult. Business unit leaders defended their applications. The CAIO maintained the criteria and declined to make exceptions. By month six the arithmetic had resolved: the 87 exits were decommissioned, the 88 consolidation candidates collapsed into 11 surviving applications, and the 31 strategic and 47 maintain applications carried forward. The portfolio stood at 89. By month twelve, a shared model access layer, shared evaluation infrastructure, and a unified intake process were operational. Vendor consolidation, from three overlapping contracts at varying price points to a single negotiated enterprise agreement, generated savings that funded the shared infrastructure build.
 
 ### Results
 
@@ -154,7 +156,7 @@ The standardization work proceeded in three tranches, prioritized by clinical im
 
 ### Results
 
-- 11 of 23 admission workflow variants consolidated to 3 standard protocols within 9 months
+- First tranche: 11 of the 23 admission workflow variants consolidated into 3 standard protocols within 9 months. The remaining 12 variants were sequenced into the second and third tranches.
 - AI documentation support deployed to consolidated protocols, achieving 94% accuracy compared to 61% in the pre-standardization pilot
 - Clinician time savings from AI: average 22 minutes per shift per provider
 - Cross-facility patient transfer complications declined 14%, a secondary benefit of standardization that had nothing to do with AI

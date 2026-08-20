@@ -13,11 +13,9 @@ summary:
 ---
 # Board Reporting
 
-Less than 30% of AI leaders report that their CEO is satisfied with AI returns, despite average enterprise AI spend of $1.9M per year.[^1] The problem is rarely the technology. It is almost always the reporting. Leadership teams are receiving updates that describe model performance instead of business performance, pilot counts instead of P&L impact, and activity trends instead of strategic progress.
+Less than 30% of AI leaders report that their CEO is happy with the return on AI investment, despite an average spend of $1.9 million on GenAI initiatives in 2024 (Gartner, 2025). The problem is rarely the technology. It is almost always the reporting. Leadership teams are receiving updates that describe model performance instead of business performance, pilot counts instead of P&L impact, and activity trends instead of strategic progress.
 
 Boards do not need to know your model accuracy. They need to know whether the business is better off.
-
-[^1]: Gartner, "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address," November 2025.
 
 ---
 
@@ -150,7 +148,7 @@ Output: an action log with owners and deadlines.
 
 ## Reporting When Results Are Not Yet Visible
 
-Most AI programs spend 12 to 24 months in pre-revenue stages. Boards who receive only "we are still in pilot" updates will lose confidence. The solution is a structured approach to leading indicator reporting.
+Only 6% of respondents report AI payback in under a year, and most report reaching satisfactory ROI on a typical use case in two to four years (Deloitte, 2025). Boards who receive only "we are still in pilot" updates across that span will lose confidence. The solution is a structured approach to leading indicator reporting.
 
 Leading indicators are early signals that the program is on track to deliver results. They do not replace lagging indicators (actual results), but they give boards something to evaluate before results materialize.
 
@@ -188,6 +186,7 @@ A board report that says "results are not yet visible, here is why, here is what
 
 ## Sources
 
-1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. Gartner. "The Latest Hype Cycle for Artificial Intelligence Goes Beyond GenAI." 2025.
+2. Deloitte. "AI ROI: The Paradox of Rising Investment and Elusive Returns." October 2025. Survey of 1,854 executives across Europe and the Middle East.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

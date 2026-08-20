@@ -8,7 +8,7 @@ order: 4
 dek: "Financial operations for agents: per-task cost attribution, budget caps enforced in the runtime, and cost measured per outcome rather than per call."
 summary:
   decide: Where to enforce agent budget caps (the runtime, not the prompt), how to attribute cost by task and business unit, and which outcome each workflow is costed against.
-  cost: A single misbehaving agent can exhaust a monthly budget in hours; uncontrolled spend is one reason Gartner projects over 40% of agentic AI projects will be cancelled by 2027.
+  cost: A single misbehaving agent can exhaust a monthly budget in hours; escalating cost is one of the three reasons Gartner gives for predicting over 40% of agentic AI projects will be cancelled by the end of 2027.
   metric: Cost per completed outcome, reported alongside task completion rate; cost per call is meaningless for agents.
 ---
 # FinOps for Agents
@@ -17,7 +17,7 @@ Traditional AI FinOps is predictable. You run a model. You pay per inference or 
 
 Agent costs are not predictable. An agent receives a goal and decides how to achieve it. That decision includes which tools to call, how many times, how deeply to process results, and whether to spawn sub-agents. The cost of that goal completion is determined at runtime, not at design time.
 
-Without a FinOps framework designed for this unpredictability, operational budgets for agentic systems become uncontrollable. This is not a theoretical concern. It is one of the primary reasons behind Gartner's 2025 forecast that more than 40% of agentic AI projects will be cancelled by 2027.
+Without a FinOps framework designed for this unpredictability, operational budgets for agentic systems become uncontrollable. This is not a theoretical concern. Gartner predicts that over 40% of agentic AI projects will be cancelled by the end of 2027, and names escalating costs first among the three reasons, alongside unclear business value and inadequate risk controls (Gartner, 2025).
 
 ---
 
@@ -38,7 +38,7 @@ A task that costs $0.12 in one execution may cost $1.80 in the next if the agent
 :::warning
 **The Runaway Agent Problem**
 
-Without runtime budget controls, a single misbehaving agent can exhaust a monthly budget in hours. This is not hypothetical. Reported incidents of runaway agent costs in cloud environments increased significantly through 2024-2025 as organizations deployed agents without appropriate FinOps infrastructure.
+Without runtime budget controls, a single misbehaving agent can exhaust a monthly budget in hours. Cloud billing data lags execution, so an agent stuck in a loop runs well past its budget before the spend surfaces in any cost report. By the time the invoice is the alert, the money is gone. The control has to sit where the spend is decided, in the runtime.
 :::
 
 ---
@@ -115,7 +115,7 @@ The choice between showback and chargeback depends on your organization's financ
 Agent FinOps is not a one-time configuration. It is a continuous loop.
 
 ```mermaid
-flowchart LR
+flowchart TD
     M[Measure\nPer-task cost\nattribution] --> A[Attribute\nBy workflow,\nbusiness unit,\noutcome]
     A --> O[Optimize\nTool selection,\nagent routing,\ntask decomposition]
     O --> E[Enforce\nRuntime caps,\napproval gates\nfor expensive paths]
@@ -153,6 +153,6 @@ flowchart LR
 
 ## Sources
 
-1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. Gartner. "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027." Press release, June 25, 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

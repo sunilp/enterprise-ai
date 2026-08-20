@@ -8,14 +8,14 @@ order: 3
 dek: "Six controls for agents that act rather than recommend: authorization, escalation, audit trails, incident response, trust boundaries and cost limits."
 summary:
   decide: What each agent may do unaided, what needs human approval, what it may never do, and whether those limits are enforced in the runtime.
-  cost: An agent governed like a chatbot acts in the world before anyone reviews it; 51% of organizations already report negative AI incidents (McKinsey, 2025).
+  cost: An agent governed like a chatbot acts in the world before anyone reviews it; 51% of respondents at organizations using AI already report at least one negative consequence (McKinsey, 2025).
   metric: "Share of production agents meeting the floor: enforced authorization scope, tested kill switch, full audit trail, escalation path, runtime cost limits."
 ---
 # Agent Governance
 
-Only 21% of organizations have mature governance for autonomous agents (Deloitte, 2026). Meanwhile, 75% plan to deploy agents within two years (Deloitte, 2026). That combination describes the clearest governance crisis in enterprise AI right now.
+Only 21% of respondents say their organization has a mature governance model for agentic AI, while 74% expect their company to be using AI agents at least moderately by 2027 (Deloitte, 2026). That combination describes the clearest governance crisis in enterprise AI right now.
 
-The urgency is already visible in the data. 51% of organizations report negative AI incidents, including unauthorized actions by AI systems (McKinsey, 2025). These are not edge cases. They are early signals of a category of risk that most governance frameworks are not built to handle.
+The urgency is already visible in the data. 51% of respondents at organizations using AI report at least one negative consequence from it, and unauthorized or unintended action by an AI system is one of the categories they report, alongside inaccuracy, compliance breaches, privacy breaches and reputational damage (McKinsey, 2025). These are not edge cases. They are early signals of a category of risk that most governance frameworks are not built to handle.
 
 ## Why Agents Are Categorically Different
 
@@ -176,7 +176,7 @@ The flow above is the decision logic. [ARCH-004](https://agenticlab.sunilprakash
 
 ## Governance Maturity Levels
 
-The 79% of organizations without mature agent governance are not at zero. They are at different stages of the maturity curve. Understanding where you are determines what to build first.
+The roughly four in five organizations without mature agent governance are not at zero. They are at different stages of the maturity curve. Understanding where you are determines what to build first.
 
 | Maturity Level | Characteristics | Priority Action |
 |---|---|---|
@@ -190,7 +190,7 @@ The 79% of organizations without mature agent governance are not at zero. They a
 
 ## Getting Started
 
-The gap between 21% mature and the 75% planning deployment will not close by the time those deployments arrive. That is the governance crisis in concrete terms.
+The gap between the 21% with mature governance and the 74% expecting to use agents by 2027 will not close on its own before those deployments arrive. That is the governance crisis in concrete terms.
 
 For organizations planning agent deployment in the next 12 months, the minimum viable governance posture is:
 
@@ -206,7 +206,7 @@ That is not the complete framework. It is the floor below which no agent should 
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
-2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+1. Deloitte. "State of AI in the Enterprise: The Untapped Edge." January 2026. Survey of 3,235 business and technology leaders across 24 countries, fielded August to September 2025.
+2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." November 2025. Survey of 1,993 respondents, fielded 25 June to 29 July 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

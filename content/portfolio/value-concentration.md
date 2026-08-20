@@ -13,39 +13,47 @@ summary:
 ---
 # Value Concentration
 
-The organizations generating the most value from AI are not the ones doing the most. They are the ones doing the least, with greater depth.
+The organizations generating the most value from AI are not the ones running the most initiatives. They are the ones running the fewest, at far greater depth.
 
 This is counterintuitive to most leadership teams, who associate AI ambition with breadth of deployment. The instinct is to deploy widely: as many tools as possible, across as many functions as possible, as fast as possible. The instinct is wrong. It produces fragmented capability, diluted expertise, and a portfolio of use cases none of which are deep enough to generate transformational value.
 
-The research on this is consistent. BCG identifies a category of "future-built" companies that are outperforming peers on AI returns by a significant margin. Their distinguishing characteristic is not AI budget. It is AI concentration.
+The research on this is consistent. BCG identifies a top 5% of companies it calls "future-built," which already generate 1.7 times more revenue growth and 1.6 times higher EBIT margins than the 60% of companies it classes as stagnating or emerging (BCG, 2025). They do spend more: 120% more on AI than laggards. But spending is not what separates them. It is where the money lands.
 
 :::note
 **The BCG finding**
 
-"Future-built" companies spend 120% more on AI than their peers on average, but they concentrate that investment. They are not running 50 pilots. They are running 3-5 deeply resourced, strategically aligned use cases that they execute with discipline and scale. BCG, 2025.
+Future-built companies invest 120% more in AI than laggards do, but they concentrate that investment. BCG's own contrast is between companies that "experiment too widely, spreading their resources over scores of complex workflows" and those "focusing end-to-end on a few important functions or workflows that can generate value and illustrate the benefits of scale." BCG, 2025.
 :::
 
 ---
 
 ## Where the Value Actually Is
 
-Knowing where to concentrate requires knowing where AI value is generated. The distribution is not uniform across business functions.
+Knowing where to concentrate requires knowing where AI value is generated. The distribution is not uniform across business functions. BCG's 2025 global study puts 70% of AI value potential in core business functions and 30% in support functions, and the core share is rising: it was 62% in the 2024 edition of the same study.
 
-| Function | Share of Total AI Value Potential | Concentration in Most Portfolios |
-|----------|----------------------------------|----------------------------------|
-| Sales and commercial | 22% | Low |
-| Manufacturing and operations | 20% | Low |
-| Supply chain and logistics | 17% | Low |
-| Pricing and revenue management | 11% | Very low |
-| Finance (core, not support) | 9% | Medium |
-| Customer service | 8% | High |
-| HR and talent | 5% | High |
-| IT and infrastructure | 4% | High |
-| Legal and compliance | 4% | Medium |
+| Function | Core or support | Share of AI value potential, 2025 |
+|----------|-----------------|----------------------------------|
+| R&D and innovation | Core | 15% |
+| Digital marketing | Core | 9% |
+| Manufacturing | Core | 9% |
+| Consumer journey | Core | 8% |
+| Sales | Core | 7% |
+| Maintenance | Core | 6% |
+| Digital supply chain | Core | 6% |
+| Pricing | Core | 5% |
+| Core customer service | Core | 5% |
+| **Total core** | | **70%** |
+| IT | Support | 13% |
+| Customer support | Support | 4% |
+| Procurement | Support | 4% |
+| Finance | Support | 4% |
+| HR | Support | 3% |
+| Legal | Support | 2% |
+| **Total support** | | **30%** |
 
-Source: BCG AI value analysis, 2025.
+Source: BCG, "Are You Generating Value from AI? The Widening Gap," September 2025, Exhibit 3. Based on the BCG Build for the Future 2025 Global Study, n = 1,250. BCG notes that customer service is a core function in some industries, such as banking, insurance and real estate, and a support function in others.
 
-The pattern is stark. The functions with the highest AI value potential (sales, manufacturing, supply chain, pricing) are underrepresented in most enterprise AI portfolios. The functions with the lowest AI value potential (HR, IT, legal) are overrepresented. The gap between where AI is concentrated and where value is concentrated explains a large portion of the AI ROI disappointment visible across industries.
+Two things stand out. First, R&D and innovation is the single largest pool at 15%, and it is rarely where an enterprise AI portfolio starts. Second, IT is the largest support function at 13%, and its share rose six points in a year, so the familiar advice to stay out of IT is wrong. The problem is not that IT work has no value. It is that a portfolio weighted toward IT, HR, legal, procurement and finance is fishing in the 30% pool while the 70% pool goes untouched. That gap between where AI is deployed and where value sits explains a large part of the ROI disappointment visible across industries.
 
 ---
 
@@ -53,25 +61,19 @@ The pattern is stark. The functions with the highest AI value potential (sales, 
 
 Agentic AI is changing the value concentration calculus. Agents, systems that act autonomously across tools, systems, and workflows to accomplish multi-step goals, are disproportionately valuable in exactly the functions where human decision-making is most intensive and most consequential.
 
-The data reflects this shift:
+BCG asked respondents to split the AI-driven value that reaches the bottom line across predictive, generative and agentic AI. Agentic is the only one of the three whose share grows:
 
-- Agents accounted for approximately 17% of total enterprise AI value generated in 2025 (BCG, 2025)
-- That share is projected to reach 29% by 2028 (BCG, 2025)
-- The compound growth rate of agentic AI value is significantly higher than that of copilot and automation AI
+| Type of AI | Share of AI value, 2025 | Share of AI value, 2028 (expected) |
+|------------|------------------------|------------------------------------|
+| Predictive | 45% | 37% |
+| Generative | 38% | 35% |
+| Agentic | 17% | 29% |
 
-The implication for value concentration: the organizations building depth in agentic capability now are positioning for the majority of AI value growth through 2028. Organizations that have spread their investment across copilot tools and departmental automation will find themselves needing to rebuild their approach to compete.
+Source: BCG, "Are You Generating Value from AI? The Widening Gap," September 2025, Exhibit 5. Respondent-reported split, n = 1,250. BCG gives 2025 and 2028 only; the path between them is not measured.
 
-```mermaid
-xychart-beta
-    title "AI Value Share by Type (2025-2028 Projection)"
-    x-axis [2025, 2026, 2027, 2028]
-    y-axis "Share of Total AI Value (%)" 0 --> 50
-    line [17, 21, 25, 29]
-    line [43, 40, 37, 35]
-    line [40, 39, 38, 36]
-```
+Two supporting figures from the same study. Future-built companies already allocate 15% of their AI budgets to agents, and a third of them use agents, against 12% of scalers and almost none of the laggards. Meanwhile 72% of companies report unmanaged AI security risks, so the agentic build has to carry guardrails with it.
 
-*Lines represent: Agentic AI (growing), Copilot/Productivity AI (declining share), Process Automation AI (stable). Source: BCG, 2025-2028 projection.*
+The implication for value concentration: the organizations building depth in agentic capability now are positioning for the fastest-growing slice of AI value through 2028. Organizations that have spread their investment across copilot tools and departmental automation are concentrated in the slice that is shrinking.
 
 ---
 
@@ -167,7 +169,7 @@ Concentration is a strategic decision with operational implications that most or
 
 **Dedicated team.** High-value use cases at concentration-level investment require a dedicated team: data engineers, ML engineers, domain experts, and a program lead who owns nothing else. Shared-resource models produce shared mediocrity.
 
-**Executive attention.** The most senior executive accountable for the business outcome (not the AI program) should be reviewing progress monthly. If the CISO or VP of Supply Chain is not in the room, the use case is not truly in the concentrated portfolio.
+**Executive attention.** The most senior executive accountable for the business outcome (not the AI program) should be reviewing progress monthly. If the COO or the VP of Supply Chain is not in the room for a supply chain use case, it is not truly in the concentrated portfolio.
 
 **Data investment upstream.** Concentrated use cases get prioritized data engineering support. The data platform investment is not spread evenly across all use cases. It is directed at the 3-5 that matter most.
 
@@ -187,6 +189,6 @@ Concentration is a strategic decision with operational implications that most or
 
 ## Sources
 
-1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025. Based on the BCG Build for the Future 2025 Global Study, n = 1,250. Exhibit 2 (spending and returns), Exhibit 3 (value potential by function), Exhibit 5 (predictive, generative and agentic value split).
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

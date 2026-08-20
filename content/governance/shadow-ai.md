@@ -8,12 +8,12 @@ order: 4
 dek: Why unsanctioned AI use is a demand signal rather than a discipline problem, and how to channel it onto a sanctioned paved road.
 summary:
   decide: Whether to ban, monitor or channel shadow AI, and what sanctioned tools, approval paths and acceptable use policy the paved road needs.
-  cost: 69% of organizations suspect prohibited GenAI use (Gartner, 2025); bans push it underground, and data already processed through shadow tools is live exposure.
+  cost: 69% of organizations suspect or have evidence of prohibited public GenAI use (Gartner, 2025); bans push it underground, and data already processed through shadow tools is live exposure.
   metric: "Time for an employee to access and start using an approved AI tool: under an hour, or adoption loses to the shadow alternative."
 ---
 # Shadow AI
 
-69% of organizations suspect their employees are using prohibited public GenAI tools (Gartner, 2025). By 2030, more than 40% of enterprises will experience a security or compliance incident linked to unauthorized shadow AI (Gartner, 2025). The second is a forecast. The first describes a condition already in place.
+69% of organizations suspect or have evidence that their employees are using prohibited public GenAI, in a Gartner survey of 302 cybersecurity leaders (Gartner, 2025). Gartner also predicts that by 2030, more than 40% of enterprises will experience a security or compliance incident linked to unauthorized shadow AI. The second is a forecast. The first describes a condition already in place.
 
 Shadow AI is the enterprise AI problem that most leadership teams misframe. They frame it as a behavior problem. It is a demand signal.
 
@@ -27,7 +27,7 @@ Shadow AI is any AI system or tool being used within an organization outside of 
 - Teams using AI coding assistants that upload proprietary code to external servers
 - Individuals using personal AI subscriptions for professional work on company data
 
-44% of organizations report that business units are deploying AI without involving IT or security at all (Gartner, 2024). This is not a few employees bending rules. It is a structural failure of the sanctioned AI offering to meet organizational demand.
+Among organizations with at least some AI usage, the two most commonly cited shadow AI problems are business units deploying AI solutions without involving IT or security (44%) and unauthorized use of generative AI by employees (44%), in a survey of 1,758 IT decision-makers (Delinea, 2025). This is not a few employees bending rules. It is a structural failure of the sanctioned AI offering to meet organizational demand.
 
 :::warning
 **The Compliance Exposure Is Already Live**
@@ -130,7 +130,7 @@ Under the EU AI Act, organizations are accountable for AI systems used in their 
 
 Under GDPR and equivalent data protection regimes, personal data processed through an employee's personal ChatGPT account is still personal data that the organization is responsible for protecting. "We did not know" is not a defense.
 
-Under financial services regulations (SR 11-7 and its 2026 successor SR 26-2, EBA AI guidelines), organizations are responsible for governance of AI systems they use. A trading desk using an unsanctioned AI tool for market analysis is a model risk management failure as much as an IT policy failure.
+Under supervisory model risk management guidance, organizations are responsible for governance of the models they run. In the US that guidance is now SR 26-2, issued jointly by the Federal Reserve, the OCC and the FDIC in April 2026 to supersede SR 11-7. A trading desk using an unsanctioned AI tool for market analysis is a model risk management failure as much as an IT policy failure.
 
 The shadow AI inventory and the acceptable use policy are regulatory requirements as well as operational best practices.
 
@@ -146,6 +146,8 @@ Organizations that treat shadow AI as a behavior problem to be policed will spen
 
 ## Sources
 
-1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. Gartner. "Gartner Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." Press release, 19 November 2025. Survey of 302 cybersecurity leaders, March to May 2025.
+2. Delinea. "AI in Identity Security Demands a New Playbook." September 2025. Global survey of 1,758 IT decision-makers.
+3. Board of Governors of the Federal Reserve System. Supervisory Letter SR 26-2, "Revised Guidance on Model Risk Management." 17 April 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -156,6 +156,8 @@ Three authorization tiers are typical:
 
 **Tier 3: High-impact agents.** Agents that take external actions with financial, legal, or reputational consequences (e.g., send customer communications, execute transactions, modify production systems). Highest risk. Require executive sponsor and CISO approval, continuous monitoring, and human-in-the-loop at defined checkpoints.
 
+These authorization tiers describe action scope only. They are a different scale from the four risk tiers in the [risk classification worksheet](decision-artifacts.md), which score a use case across data sensitivity, decision impact, autonomy, and regulatory exposure. A system can be a Tier 2 agent and a Tier 3 risk. Say which scale you mean whenever a tier appears in an approval document.
+
 ### Consequences
 
 An authorization model that is too restrictive will cause business units to deploy agents outside the framework (shadow AI). An authorization model that is too permissive will result in agent incidents that damage confidence in the entire AI program.

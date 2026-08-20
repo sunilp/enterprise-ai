@@ -13,11 +13,11 @@ This glossary defines key terms used throughout The Enterprise AI Operating Syst
 
 ---
 
-**A2A (Agent-to-Agent Protocol)**
-A communication protocol that enables AI agents to interact with other AI agents in a standardized way. A2A defines how agents discover each other's capabilities, negotiate task handoffs, and coordinate on multi-step workflows. Relevant to multi-agent system design and the enterprise agent deployment authorization model.
+**A2A (Agent2Agent Protocol)**
+An open protocol for agent-to-agent communication. A2A defines how agents discover each other's capabilities, exchange information, and coordinate on multi-step tasks. Created by Google and contributed to the Linux Foundation in June 2025, where it is maintained as the Agent2Agent project under a technical steering committee drawn from AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow. Relevant to multi-agent system design and to the agent deployment authorization model. See [Protocol Landscape](agentic-strategy/protocol-landscape.md).
 
 **Agent Governance**
-The set of policies, processes, and controls that define how autonomous AI agents are authorized, deployed, monitored, and constrained in enterprise environments. Agent governance is distinct from AI governance broadly because agents take actions, not just recommendations. See [ADR-003](proof/decision-records.md#adr-003-agent-deployment-authorization-model).
+The set of policies, processes, and controls that define how autonomous AI agents are authorized, deployed, monitored, and constrained in enterprise environments. Agent governance is distinct from AI governance broadly because agents take actions, not just recommendations. See [ADR-003](/enterprise-ai/proof/decision-records/#adr-003-agent-deployment-authorization-model).
 
 **Agentic AI**
 AI systems that pursue goals autonomously over multiple steps, using tools, making decisions, and taking actions without requiring human confirmation at each step. Agentic AI differs from AI-assisted decision support in that it acts rather than advises. The risk profile is correspondingly higher. See [Agentic Strategy](agentic-strategy/the-shift.md).
@@ -65,16 +65,16 @@ The speed at which the AI governance function can process use case approvals, ri
 The design pattern in which human operators and AI agents work together on tasks, with defined roles for each. Effective human-agent collaboration requires: clear task allocation between human and agent, defined handoff triggers, escalation protocols, and monitoring mechanisms that give humans visibility into agent actions without requiring constant oversight.
 
 **Hub-and-Spoke Model**
-An AI operating model in which a central hub function (typically the CAIO's team or a Center of Excellence) defines standards, governance, and shared infrastructure. Distributed spoke teams embedded in business units operate within hub-defined guardrails. The hub sets the rules; the spokes deploy within them. See [ADR-001](proof/decision-records.md#adr-001-ai-operating-model-selection).
+An AI operating model in which a central hub function (typically the CAIO's team or a Center of Excellence) defines standards, governance, and shared infrastructure. Distributed spoke teams embedded in business units operate within hub-defined guardrails. The hub sets the rules; the spokes deploy within them. See [ADR-001](/enterprise-ai/proof/decision-records/#adr-001-ai-operating-model-selection).
 
 **Knowledge Architecture**
 The design of how organizational knowledge is structured, stored, retrieved, and maintained for use by AI systems, particularly retrieval-augmented generation (RAG) systems. Knowledge architecture decisions affect AI output quality, freshness, and accuracy. Poor knowledge architecture is a primary cause of enterprise AI systems producing stale or inaccurate outputs.
 
 **LDP (LLM Delegate Protocol)**
-An identity-aware communication protocol for multi-agent LLM systems. LDP exposes model identity, negotiates payload formats, maintains governed sessions, tracks provenance, and enforces trust boundaries, so the audit trail can answer who authorized an action, under what conditions, and through what chain of delegation.
+A proposed identity-aware communication protocol for multi-agent LLM systems. LDP exposes delegate identity, negotiates payload formats, maintains governed sessions, tracks provenance, and enforces trust domains at the protocol level, so the audit trail can answer who authorized an action, under what conditions, and through what chain of delegation. LDP is research by this playbook's author, published as an arXiv preprint in March 2026. It is a design proposal with a reference implementation, not a standard, and it has not been through peer review or a standards body. See [Protocol Landscape](agentic-strategy/protocol-landscape.md).
 
 **MCP (Model Context Protocol)**
-A protocol that standardizes how AI models access and interact with external data sources, tools, and services. MCP defines the interface between AI models and the systems they need to use, enabling more reliable and auditable tool use in agentic systems.
+An open protocol that standardizes how AI models and agents access external data sources, tools, and services. MCP defines the interface between the model and the systems it needs to use, so a tool integration written once works across clients. Introduced by Anthropic in November 2024 and contributed in December 2025 to the Agentic AI Foundation, a directed fund of the Linux Foundation, where it is maintained under vendor-neutral governance. See [Protocol Landscape](agentic-strategy/protocol-landscape.md).
 
 **Measurement Stack**
 The three-layer measurement system used to connect AI activity to business value: activity metrics (adoption, usage) feed outcome metrics (time saved, error reduction), which feed value metrics (P&L impact). The measurement stack makes explicit the causal chain from AI usage to financial result. See [Measurement Design](measurement/design.md).
@@ -92,10 +92,10 @@ The condition in which an AI pilot has been running longer than its defined pilo
 The principle that AI investment decisions should be made at the portfolio level, not at the individual use case level. Portfolio logic asks: what is the right mix of use cases across value potential, risk level, time to return, and strategic alignment? It prevents over-investment in low-value use cases and ensures the portfolio balances short-term wins with long-term transformation bets. See [Portfolio](portfolio/prioritization.md).
 
 **Process Debt**
-The accumulated inconsistency, undocumentation, and variation in business processes that makes AI deployment difficult or impossible without prior standardization. Process debt is often invisible until AI deployment makes it visible and consequential. Organizations with high process debt must treat process standardization as a prerequisite for AI scale. See [Case Study 3](proof/case-studies.md#case-study-3-healthcare).
+The accumulated inconsistency, undocumentation, and variation in business processes that makes AI deployment difficult or impossible without prior standardization. Process debt is often invisible until AI deployment makes it visible and consequential. Organizations with high process debt must treat process standardization as a prerequisite for AI scale. See [Case Study 3](/enterprise-ai/proof/case-studies/#case-study-3-healthcare).
 
 **Shadow AI**
-The use of AI tools by employees outside of approved organizational channels, without the knowledge or authorization of the AI governance function. Shadow AI is universal in AI-capable organizations. The appropriate response is not prohibition (which is ineffective) but managed tolerance combined with a fast-track approval process and a competitive approved tool portfolio. See [ADR-005](proof/decision-records.md#adr-005-shadow-ai-response-strategy).
+The use of AI tools by employees outside of approved organizational channels, without the knowledge or authorization of the AI governance function. Shadow AI is universal in AI-capable organizations. The appropriate response is not prohibition (which is ineffective) but managed tolerance combined with a fast-track approval process and a competitive approved tool portfolio. See [ADR-005](/enterprise-ai/proof/decision-records/#adr-005-shadow-ai-response-strategy).
 
 **System of Action**
 The architectural layer where AI executes operations: workflow orchestration, agent execution, automated processes. Distinct from the System of Intelligence (where AI reasons) and System of Engagement (where users interact).

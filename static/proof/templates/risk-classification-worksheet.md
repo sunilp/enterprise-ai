@@ -89,12 +89,14 @@ _What is the organisation's exposure to regulatory enforcement or compliance obl
 
 | Raw Score | Risk Tier | Governance Requirement |
 |---|---|---|
-| 4-6 | **Tier 4 -- Low** | Register in model inventory. Annual review. Standard change management. |
-| 7-9 | **Tier 3 -- Moderate** | Register in model inventory. Semi-annual review. Risk assessment on deployment. Change approval required. |
-| 10-12 | **Tier 2 -- High** | Full model risk management lifecycle. Quarterly review. Independent validation before production. CISO and risk committee sign-off. |
-| 13-16 | **Tier 1 -- Critical** | Highest governance controls. Board-level awareness. Pre-deployment independent audit. Continuous monitoring. Regulatory notification where required. |
+| 4-6 | **Tier 1: Standard** | Standard data handling, documented use case, named owner. Annual review. |
+| 7-10 | **Tier 2: Enhanced** | Tier 1 plus: monitoring dashboard, defined metrics, quarterly review. Change approval required. |
+| 11-13 | **Tier 3: Senior Approval and Audit** | Tier 2 plus: CAIO sign-off, CISO review, documented audit trail, annual external review. Independent validation before production. CISO and risk committee sign-off. |
+| 14-16 | **Tier 4: Board Oversight** | Tier 3 plus: board-level reporting, external audit before production, legal opinion. Continuous monitoring. Regulatory notification where required. |
 
-**Assigned tier:** _[ Tier 1 / Tier 2 / Tier 3 / Tier 4 ]_
+**Assigned tier:** _[ Tier 1 Standard / Tier 2 Enhanced / Tier 3 Senior Approval and Audit / Tier 4 Board Oversight ]_
+
+_Tiers ascend with risk: Tier 1 is the lightest treatment, Tier 4 the heaviest. This matches the scale used in Decision Artifacts on the site._
 
 ---
 

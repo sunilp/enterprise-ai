@@ -159,14 +159,7 @@ graph LR
 
 ## Where Most Organizations Actually Are
 
-```mermaid
-pie title Distribution of Enterprise AI Maturity (Estimated 2026)
-    "Level 1: Exploring" : 25
-    "Level 2: Experimenting" : 45
-    "Level 3: Scaling" : 22
-    "Level 4: Transforming" : 7
-    "Level 5: AI-Native" : 1
-```
+No published study maps enterprises onto these five levels, so treat any distribution you are shown, including one you build internally, as a judgment rather than a measurement. What the survey data does establish is that the population is bunched near the bottom of the model. Only 25% of respondents have moved 40% or more of their AI experiments into production, and only 23% use agentic AI at least moderately today, with 3% using it extensively or as a fully integrated part of operations (Deloitte, 2026). Portfolio-in-production is the Level 3 marker and agents in production is the Level 4 marker. On that evidence the great majority of organizations are still at Level 1 or Level 2, and the number that clear Level 3 is small.
 
 The concentration at Level 2 reflects a structural challenge: the transition from Experimenting to Scaling requires governance, operating model, and funding changes that are organizationally difficult, not technically difficult. Organizations that cannot make these changes stay at Level 2 indefinitely, accumulating pilot experience with no production outcomes.
 
@@ -196,3 +189,11 @@ The answer to question 4 is usually: organizational change comes before technica
 - [AI Readiness Assessment](ai-readiness.md): Dimensional scoring that maps to this maturity model
 - [Data Readiness Assessment](data-readiness.md): Data maturity as a specific dimension within the broader model
 - [Process and Talent Readiness](process-talent.md): The organizational dimensions that most often determine maturity level transitions
+
+---
+
+## Sources
+
+1. Deloitte AI Institute. "State of AI in the Enterprise: The Untapped Edge." January 2026. Survey of 3,235 leaders across 24 countries. Figure 1 (proportion of AI experiments deployed) and Figure 7 (extent of agentic AI usage).
+
+For the complete source list and methodology, see [Sources & Methodology](../sources.md).

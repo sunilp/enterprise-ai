@@ -119,7 +119,6 @@
 .showcase-content article { max-width: var(--wide); margin: 0 auto; padding-top: 28px; }
 .showcase-content article > p, .showcase-content article > ul, .showcase-content article > ol, .showcase-content article > h2, .showcase-content article > h3, .showcase-content article > h4, .showcase-content article > blockquote, .showcase-content article > .insight-box, .showcase-content article > .warning-box, .showcase-content article > .note-box, .showcase-content article > .summary-box, .showcase-content article > pre, .showcase-content article > .newsletter-cta, .showcase-content article > .prevnext, .showcase-content article > .related, .showcase-content article > .page-header, .showcase-content article > .breadcrumb { max-width: var(--measure); }
 .showcase-content article > .metric-strip, .showcase-content article > .path-cards, .showcase-content article > .content-wide, .showcase-content article > .interactive-mount, .showcase-content article > .obsidian-table-wrap { max-width: var(--wide); }
-.showcase-hero { padding-top: 32px; }
 .path-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin: 24px 0; }
 .path-card { display: block; background: var(--surface); border: 1px solid var(--rule); padding: 20px; text-decoration: none; color: var(--ink); transition: border-color .2s var(--ease); }
 .path-card:hover { border-color: var(--bronze); }
@@ -127,12 +126,14 @@
 .path-desc { font-size: 15px; color: var(--ink-2); line-height: 1.5; }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .hub-body { grid-template-columns: 1fr; gap: 28px; }
+}
 @media (max-width: 900px) {
   .cover-hero h1 { font-size: 48px; }
   .cover-hero .thesis { font-size: 21px; }
   .role-cards { grid-template-columns: 1fr 1fr; }
   .proof-object { grid-template-columns: 1fr; padding: 28px; }
-  .hub-body { grid-template-columns: 1fr; gap: 28px; }
   .tool-head { grid-template-columns: 1fr; gap: 16px; }
   .tool-head h1 { font-size: 38px; }
   .result { grid-template-columns: 1fr; }

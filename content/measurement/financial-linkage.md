@@ -13,7 +13,7 @@ summary:
 ---
 # Financial Linkage
 
-A payments network achieved 99% copilot adoption across its engineering organization. Productivity gains never appeared in the P&L. The CFO asked why. Nobody had a good answer.
+An engineering organization rolls out a coding copilot. Adoption climbs to near-universal. The productivity gain never appears in the P&L. The CFO asks why, and nobody has a good answer.
 
 This is the most common failure mode in enterprise AI programs: efficiency gains that are real at the task level but invisible at the financial level. The gap between "AI made us faster" and "AI reduced our costs" is not a measurement gap. It is a workflow redesign gap.
 
@@ -23,9 +23,7 @@ This is the most common failure mode in enterprise AI programs: efficiency gains
 
 When AI saves time, that time does not automatically convert to value. It redistributes. Employees fill recaptured time with the next item on their queue, with meetings, with lower-priority tasks, or with nothing at all. The efficiency gain exists. The financial benefit does not.
 
-This is what researchers call the "productivity paradox" of AI adoption. Tools that demonstrably accelerate individual tasks fail to improve aggregate output because the surrounding system was not redesigned to capture the gain.[^1]
-
-[^1]: McKinsey Global Institute, "The Economic Potential of Generative AI," 2023.
+This is the productivity paradox of AI adoption. Tools that demonstrably accelerate individual tasks fail to improve aggregate output because the surrounding system was not redesigned to capture the gain.
 
 :::warning
 **The Redistribution Problem**
@@ -121,26 +119,25 @@ One of the most common causes of AI program failure is misaligned ROI expectatio
 
 The data on AI ROI timelines is sobering:
 
-- Only 6% of organizations see AI payoff in under 1 year.[^2]
-- The majority of enterprise AI programs require 2 to 4 years to reach meaningful ROI.
+- Only 6% of respondents reported payback in under a year (Deloitte, 2025).
+- Most reported reaching satisfactory ROI on a typical AI use case in two to four years, against the seven to twelve months usually expected of a technology investment (Deloitte, 2025).
 - Organizations that invest in workflow redesign and change management alongside technology deployment reach ROI faster than those that treat AI as a technology-only initiative.
-
-[^2]: Gartner, "AI Investment Sentiment Survey," 2025.
 
 ```mermaid
 gantt
-    title Enterprise AI ROI Timeline with Disciplined Execution
+    title Illustrative AI ROI Timeline at the Fast End of the Range
     dateFormat  YYYY-MM
+    axisFormat  %b %Y
     section Investment
-    Foundation and pilots         :2025-01, 6M
-    Scale and optimization        :2025-07, 6M
+    Foundation and pilots         :2026-09, 6M
+    Scale and optimization        :2027-03, 12M
     section Returns
-    First measurable outcomes     :milestone, 2025-07, 0d
-    Positive ROI threshold        :milestone, 2026-01, 0d
-    Full payback                  :milestone, 2026-07, 0d
+    First measurable outcomes     :milestone, 2027-03, 0d
+    Positive ROI threshold        :milestone, 2027-09, 0d
+    Full payback                  :milestone, 2028-09, 0d
 ```
 
-This timeline assumes disciplined execution. Programs with poor measurement design, weak workflow redesign, or low adoption take longer.
+Two years to full payback sits at the fast end of the two-to-four-year range above, and it assumes disciplined execution. Programs with poor measurement design, weak workflow redesign, or low adoption take longer.
 
 ---
 
@@ -182,7 +179,6 @@ This conversation is uncomfortable for AI teams that are not certain of results.
 
 ## Sources
 
-1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
-2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. Deloitte. "AI ROI: The Paradox of Rising Investment and Elusive Returns." October 2025. Survey of 1,854 executives across Europe and the Middle East.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -8,7 +8,7 @@ order: 6
 dek: Why agentic AI is delegated authority rather than a software feature, and what that changes in governance, cost, metrics and the human role.
 summary:
   decide: Which workflows, redesigned around agent capabilities, produce materially better outcomes, and how much autonomy the oversight you have actually built can support.
-  cost: Agents that mirror the org chart digitize silos; Gartner projects more than 40% of agentic AI projects cancelled by 2027 on cost overruns, unclear ROI and governance failures.
+  cost: Agents that mirror the org chart digitize silos; Gartner predicts over 40% of agentic AI projects cancelled by the end of 2027 on escalating costs, unclear business value and inadequate risk controls.
   metric: Task completion rate and cost-per-outcome, measured through live task audits rather than offline test sets.
 ---
 # The Agentic Shift
@@ -77,10 +77,10 @@ When a human uses a BI tool, they direct every step. When a human collaborates w
 
 Agents are not a future-state curiosity. They are already generating enterprise value.
 
-- Agents now account for **17% of total AI value** captured by organizations, up from near zero two years ago. Projected to reach **29% by 2028** (BCG, 2025). That growth trajectory represents hundreds of billions in enterprise value, but only for organizations that deploy agents with the control architecture to sustain them.
-- **23% of organizations** are scaling at least one agentic system into production (McKinsey, 2025).
-- But only **11% of organizations actively use agents in production** (Deloitte, 2026). The gap between those scaling and those actually operating tells you how many pilot projects are stalled.
-- **Gartner projects that more than 40% of agentic AI projects will be cancelled by 2027**, primarily due to cost overruns, unclear ROI, and governance failures.
+- Agents were hardly spoken of in 2024. They account for about **17% of total AI value** reported by companies in 2025 and are expected to reach **29% by 2028** (BCG, 2025). That value goes to the organizations that deploy agents with the control architecture to sustain them.
+- **23% of respondents** say their organization is scaling an agentic AI system in at least one business function (McKinsey, 2025).
+- But only **11% are actively using agentic systems in production**, against 38% piloting and 30% still exploring (Deloitte, 2025). The gap between piloting and operating tells you how many agent projects are stalled.
+- **Gartner predicts that over 40% of agentic AI projects will be cancelled by the end of 2027**, citing escalating costs, unclear business value and inadequate risk controls (Gartner, 2025).
 
 The window between early mover advantage and commodity availability is narrow. But shipping something broken does not help you.
 
@@ -150,9 +150,9 @@ The architectural consequence of this shift is that the runtime around the model
 
 ## Sources
 
-1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
-2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
-3. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
-4. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025. Build for the Future 2025 Global Study, 1,250 CxOs and senior executives.
+2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." November 2025. 1,993 respondents across 105 nations.
+3. Deloitte. "Agentic AI Strategy." Tech Trends 2026, December 2025, reporting Deloitte's 2025 Emerging Technology Trends survey.
+4. Gartner. "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027." Press release, June 25, 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

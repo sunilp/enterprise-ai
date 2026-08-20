@@ -11,14 +11,14 @@
 <p class="dek">{{disciplineQuestion}}</p>
 </header>
 <section class="hub-body">
-<div class="intro">{{content}}</div>
-<aside class="hub-decisions"><span class="label">Decisions this discipline owns</span>{{hubDecisions}}</aside>
+<div class="intro">{{{content}}}</div>
+<aside class="hub-decisions"><h2 class="section-h">Decisions this discipline owns</h2>{{{hubDecisions}}}</aside>
 </section>
-<section class="hub-pages"><span class="label">Read</span>{{hubPages}}</section>
-{{#hubTools}}<section class="hub-pages"><span class="label">Tools</span>{{hubTools}}</section>{{/hubTools}}
-{{#hubProof}}<section class="hub-pages"><span class="label">Proof</span>{{hubProof}}</section>{{/hubProof}}
+<section class="hub-pages"><h2 class="section-h">Read</h2>{{{hubPages}}}</section>
+{{#hubTools}}<section class="hub-pages"><h2 class="section-h">Tools</h2>{{{hubTools}}}</section>{{/hubTools}}
+{{#hubProof}}<section class="hub-pages"><h2 class="section-h">Proof</h2>{{{hubProof}}}</section>{{/hubProof}}
 {{> book-strip}}
-<section class="hub-next">{{nextDiscipline}}</section>
+<section class="hub-next">{{{nextDiscipline}}}</section>
 </main>
 {{> footer}}
 </body>

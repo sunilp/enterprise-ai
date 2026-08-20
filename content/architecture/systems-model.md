@@ -8,7 +8,7 @@ order: 2
 dek: How AI fits across the four systems every enterprise already runs, record, engagement, intelligence and action, and where value leaks between them.
 summary:
   decide: How tightly to couple the four systems, as a deliberate bet on pace of change rather than a choice made by default.
-  cost: Budget concentrates in the intelligence layer, about 20% of the problem, while the integration work that realizes value goes unfunded; undocumented tight coupling compounds into rewrites.
+  cost: Budget concentrates in the intelligence layer while the integration work that realizes value goes unfunded; undocumented tight coupling compounds into rewrites.
   metric: Share of the AI budget going to integration work (data engineering, APIs, engagement design, governance) versus model selection.
 ---
 # Systems Model
@@ -93,7 +93,7 @@ The flow reads as: records feed intelligence, engagement surfaces intelligence t
 Most enterprise AI investment concentrates in the System of Intelligence. New models, better embeddings, more sophisticated RAG pipelines. That investment is necessary but not sufficient. Value is realized only when intelligence connects to Systems of Engagement and Action, grounded in a System of Record that can support it. The architecture challenge is integration, not intelligence. You do not have an AI problem. You have a systems integration problem with an AI component inside it.
 :::
 
-The implication is budget and team structure. Organizations that treat AI architecture as a model selection exercise will underfund the data engineering, API development, engagement design, and governance work that integration actually requires. The intelligence layer is 20% of the problem.
+The implication is budget and team structure. Organizations that treat AI architecture as a model selection exercise will underfund the data engineering, API development, engagement design, and governance work that integration actually requires. Model selection is the smallest part of the work and the largest part of most budgets.
 
 ---
 

@@ -15,7 +15,7 @@ summary:
 
 Data is the most common blocker of enterprise AI transformation and the least honestly assessed. Organizations invest in models, platforms, and talent while the underlying data remains inconsistent, inaccessible, ungoverned, and untraced. The result is predictable: AI initiatives stall, timelines extend, and leadership confidence erodes.
 
-The numbers are unambiguous. Fifty-seven percent of organizations say their data is not AI-ready (Gartner, 2025). Only 14% of leaders believe their data maturity can support AI at scale (Gartner). And Gartner predicts that through 2026 organizations will abandon 60% of AI projects that are not supported by AI-ready data (Gartner, 2025). These are not edge cases. They are the norm.
+The numbers are unambiguous. Fifty-seven percent of organizations estimate their data is not AI-ready (Gartner, 2025). Only 14% have the data maturity to fully exploit AI's potential, against 79% who see AI as critical to their future (Wipro, 2025). And Gartner predicts that through 2026, organizations will abandon 60% of AI projects that are not supported by AI-ready data (Gartner, February 2025). These are not edge cases. They are the norm.
 
 :::warning
 **The stakes are higher for agentic AI**
@@ -204,6 +204,8 @@ The three investments that move the needle most, in order of impact:
 
 ## Sources
 
-1. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." February 2025.
+1. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." Press release, February 26, 2025. Source of the prediction that organizations will abandon 60% of AI projects unsupported by AI-ready data through 2026.
+2. Gartner. "The Latest Hype Cycle for Artificial Intelligence Goes Beyond GenAI." Hype Cycle for Artificial Intelligence, 2025. August 2025. Source of the 57% figure.
+3. Wipro. "State of Data4AI Report 2025." 2025. Source of the 14% data maturity figure.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

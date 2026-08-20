@@ -10,7 +10,11 @@
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #444; }
   .summary-box { border-left: 2pt solid #000; background: #fff; page-break-inside: avoid; }
   .metric-strip, .scorecard, .proof-object, .board-card { background: #fff !important; color: #000 !important; border: 1pt solid #000; }
-  .metric-value, .scorecard .label, .board-card .label, .metric-label { color: #000 !important; }
+  .metric-strip *, .scorecard *, .proof-object *, .board-card * { color: #000 !important; background: transparent !important; }
+  .metric-strip svg text, .scorecard svg text, .proof-object svg text { fill: #000 !important; }
+  .metric-strip svg [stroke], .scorecard svg [stroke], .proof-object svg [stroke] { stroke: #000 !important; }
+  figure.diagram { page-break-inside: avoid; }
+  figure.diagram .diagram-svg { max-width: 100% !important; }
   h1 { font-size: 24pt; } h2 { font-size: 16pt; page-break-after: avoid; } h3 { page-break-after: avoid; }
   .hub-pages .card, .card, .obsidian-table-wrap, .insight-box, .note-box, .warning-box { page-break-inside: avoid; }
   .insight-box, .note-box, .warning-box { background: #fff; border-left: 2pt solid #000; }

@@ -53,7 +53,7 @@ The matrix below uses a RACI-derived structure: **R** = Responsible (does the wo
 | AI policy and regulatory compliance | **A** | I | I | C | I | C | I |
 | Workforce impact decisions | C | I | I | I | C | I | **A**\* |
 
-*\*CHRO holds accountability for workforce impact decisions in organizations where the CHRO is included in the AI governance structure. In organizations that do not integrate workforce planning into their AI roadmaps (only 46% do, WEF 2025), Finance or CAIO typically absorbs this by default.*
+*\*CHRO holds accountability for workforce impact decisions in organizations where the CHRO is included in the AI governance structure. In organizations that do not integrate workforce planning into their AI roadmaps (only 46% currently do, WEF, 2025), Finance or CAIO typically absorbs this by default.*
 
 ---
 
@@ -186,6 +186,6 @@ Decision rights define who is accountable. Process defines how the decision is m
 
 ## Sources
 
-1. World Economic Forum. "Scaling AI with Strategy, Data and Workforce Readiness." October 2025.
+1. World Economic Forum. "How we can balance AI overcapacity and talent shortages." 3 October 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

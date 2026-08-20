@@ -122,6 +122,7 @@
   // --- State -----------------------------------------------------------------
 
   var appEl = null;
+  var keepFocus = false;
   var answers = [];
   var currentQ = 0;
   var advanceTimer = null;
@@ -198,7 +199,19 @@
         var b = el('button', '');
         b.type = 'button';
         b.setAttribute('role', 'radio');
-        b.setAttribute('aria-checked', answers[currentQ] === rating ? 'true' : 'false');
+        var checked = answers[currentQ] === rating;
+        b.setAttribute('aria-checked', checked ? 'true' : 'false');
+        // Roving tabindex: the group is one tab stop, arrows move within it.
+        b.setAttribute('tabindex', (checked || (!answers[currentQ] && rating === 1)) ? '0' : '-1');
+        b.addEventListener('keydown', function (e) {
+          var move = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : (e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0);
+          if (!move) return;
+          e.preventDefault();
+          e.stopPropagation();
+          var next = Math.min(5, Math.max(1, rating + move));
+          var target = scale.children[next - 1];
+          if (target) { target.focus(); selectRating(next); }
+        });
         b.appendChild(el('span', 'k', String(rating)));
         b.appendChild(document.createTextNode(SCALE_LABELS[rating]));
         b.addEventListener('click', function () { selectRating(rating); });
@@ -220,11 +233,16 @@
       nav.appendChild(next);
     }
     appEl.appendChild(nav);
-    appEl.appendChild(el('p', 'q-hint', 'Keys 1 to 5 answer. Arrow keys move between questions. Progress is saved in this browser.'));
-    appEl.focus();
+    appEl.appendChild(el('p', 'q-hint', 'Keys 1 to 5 answer. Arrow keys move between ratings. Progress is saved in this browser.'));
+    if (keepFocus) {
+      var active = scale.querySelector('[tabindex="0"]');
+      if (active) active.focus();
+    }
+    keepFocus = false;
   }
 
   function selectRating(rating) {
+    keepFocus = document.activeElement && document.activeElement.getAttribute && document.activeElement.getAttribute('role') === 'radio';
     var first = currentQ === 0 && answers[0] === 0;
     answers[currentQ] = rating;
     saveProgress();
@@ -239,11 +257,15 @@
 
   function handleKeyboard(e) {
     if (!appEl || !appEl.querySelector('.q-card')) return;
-    if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;   // Cmd/Ctrl+1..5 switches browser tabs
     var k = e.key;
     if (k >= '1' && k <= '5') { e.preventDefault(); selectRating(parseInt(k, 10)); return; }
-    if (k === 'ArrowLeft' && currentQ > 0) { e.preventDefault(); currentQ--; saveProgress(); renderQuestion(); return; }
-    if (k === 'ArrowRight' && currentQ < TOTAL_QUESTIONS - 1 && answers[currentQ] > 0) { e.preventDefault(); currentQ++; saveProgress(); renderQuestion(); }
+    // Arrow keys move between ratings when focus is inside the group; page
+    // navigation is on the Back and Next buttons and on Page Up/Down.
+    if (e.target && e.target.getAttribute && e.target.getAttribute('role') === 'radio') return;
+    if (k === 'PageUp' && currentQ > 0) { e.preventDefault(); currentQ--; saveProgress(); renderQuestion(); return; }
+    if (k === 'PageDown' && currentQ < TOTAL_QUESTIONS - 1 && answers[currentQ] > 0) { e.preventDefault(); currentQ++; saveProgress(); renderQuestion(); }
   }
 
   // --- Results phase ---------------------------------------------------------
@@ -282,7 +304,12 @@
     li.addEventListener('click', function () { T.fireEvent('assessment_shared', { method: 'linkedin' }); window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl()), '_blank', 'noopener,noreferrer'); });
     var rt = el('button', 'ghost', 'Retake'); rt.type = 'button';
     rt.addEventListener('click', function () {
-      clearProgress(); answers = []; for (var i = 0; i < TOTAL_QUESTIONS; i++) answers.push(0); currentQ = 0;
+      clearProgress();
+      try {
+        var check = loadProgress();
+        if (check && check.answers && check.answers.some(function (a) { return a > 0; })) localStorage.removeItem(STORAGE_KEY);
+      } catch (e) { /* storage unavailable; in-memory reset below still applies */ }
+      answers = []; for (var i = 0; i < TOTAL_QUESTIONS; i++) answers.push(0); currentQ = 0;
       T.setHashState(HASH_KEY, null); renderQuestion();
     });
     actions.appendChild(dl); actions.appendChild(cp); actions.appendChild(li); actions.appendChild(rt);
@@ -393,9 +420,12 @@
     if (fromHash) { answers = fromHash; showResults(true); return; }
 
     var saved = loadProgress();
-    if (saved && saved.answers && saved.answers.length === TOTAL_QUESTIONS) {
-      answers = saved.answers; currentQ = saved.currentQuestion || 0;
-      if (answers.every(function (a) { return a > 0; })) { showResults(false); return; }
+    var validSaved = saved && Array.isArray(saved.answers) && saved.answers.length === TOTAL_QUESTIONS &&
+      saved.answers.every(function (a) { return a === 0 || (a >= 1 && a <= 5); });
+    if (validSaved) {
+      answers = saved.answers.slice();
+      currentQ = Math.min(TOTAL_QUESTIONS - 1, Math.max(0, parseInt(saved.currentQuestion, 10) || 0));
+      if (answers.every(function (a) { return a > 0; })) { showResults(true); return; }   // restored, not newly completed
     }
     renderQuestion();
   }

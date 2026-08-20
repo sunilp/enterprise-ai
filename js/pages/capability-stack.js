@@ -4,40 +4,43 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const LAYERS = [
+  ,
   {
     num: 1,
-    name: 'Infrastructure',
-    desc: 'Compute, networking, cost management',
-    buildPct: 20,
+    name: 'Applications & Use Cases',
+    desc: 'Where business value is realized',
+    buildPct: 80,
     detail: {
-      does: 'Provides compute, networking, storage, and cost management for AI workloads. Includes GPU clusters, model serving infrastructure, and development environments.',
-      owns: 'Platform team (or cloud provider for managed services)',
-      without: 'Teams provision ad-hoc compute, costs spiral without visibility, and production workloads compete with experiments for resources.',
+      does: 'Delivers business value through AI-powered products, internal tools, and process automation built on the layers below.',
+      owns: 'Domain AI teams and business units',
+      without: 'The entire stack exists without purpose. Value is only realized when capability reaches users and changes how work is done.',
     },
   },
+  ,
   {
     num: 2,
-    name: 'Governance & Control Plane',
-    desc: 'Policy enforcement, audit, identity, entitlements, observability',
-    buildPct: 70,
-    crossCutting: true,
-    detail: {
-      does: 'Enforces policy, manages identity and access, maintains audit trails, monitors drift, and provides observability across all AI systems.',
-      owns: 'Governance function and platform team (shared)',
-      without: 'No visibility into what AI systems are running, no incident response capability, and regulatory exposure accumulates silently.',
-    },
-  },
-  {
-    num: 3,
-    name: 'Data Foundation',
-    desc: 'Data products, quality, lineage, cataloging',
+    name: 'Orchestration & Agents',
+    desc: 'Workflow coordination, agent frameworks, human-in-loop',
     buildPct: 50,
     detail: {
-      does: 'Manages data products, quality pipelines, lineage tracking, cataloging, and access controls. Makes data AI-ready.',
-      owns: 'CDO organization and domain data teams (shared)',
-      without: 'Models train on inconsistent data, quality issues propagate through AI outputs, and no one can trace which data influenced which decisions.',
+      does: 'Coordinates multi-step AI workflows, manages agent lifecycles, handles human-in-loop patterns, and routes tasks to appropriate models.',
+      owns: 'Platform team builds framework, domain teams build workflows',
+      without: 'Complex AI tasks require custom integration code per use case, agents operate without coordination, and human oversight has no systematic entry point.',
     },
   },
+  ,
+  {
+    num: 3,
+    name: 'Model Services',
+    desc: 'Model access, fine-tuning, evaluation, versioning',
+    buildPct: 30,
+    detail: {
+      does: 'Provides unified access to models (internal and vendor), evaluation frameworks, versioning, and fine-tuning infrastructure.',
+      owns: 'Platform team',
+      without: 'Each team selects and integrates models independently, creating vendor lock-in, inconsistent evaluation, and no ability to compare or swap models.',
+    },
+  },
+  ,
   {
     num: 4,
     name: 'Knowledge Layer',
@@ -49,39 +52,42 @@ const LAYERS = [
       without: 'AI systems operate without organizational context, producing generic outputs that lack institutional relevance.',
     },
   },
+  ,
   {
     num: 5,
-    name: 'Model Services',
-    desc: 'Model access, fine-tuning, evaluation, versioning',
-    buildPct: 30,
-    detail: {
-      does: 'Provides unified access to models (internal and vendor), evaluation frameworks, versioning, and fine-tuning infrastructure.',
-      owns: 'Platform team',
-      without: 'Each team selects and integrates models independently, creating vendor lock-in, inconsistent evaluation, and no ability to compare or swap models.',
-    },
-  },
-  {
-    num: 6,
-    name: 'Orchestration & Agents',
-    desc: 'Workflow coordination, agent frameworks, human-in-loop',
+    name: 'Data Foundation',
+    desc: 'Data products, quality, lineage, cataloging',
     buildPct: 50,
     detail: {
-      does: 'Coordinates multi-step AI workflows, manages agent lifecycles, handles human-in-loop patterns, and routes tasks to appropriate models.',
-      owns: 'Platform team builds framework, domain teams build workflows',
-      without: 'Complex AI tasks require custom integration code per use case, agents operate without coordination, and human oversight has no systematic entry point.',
+      does: 'Manages data products, quality pipelines, lineage tracking, cataloging, and access controls. Makes data AI-ready.',
+      owns: 'CDO organization and domain data teams (shared)',
+      without: 'Models train on inconsistent data, quality issues propagate through AI outputs, and no one can trace which data influenced which decisions.',
+    },
+  },
+  ,
+  {
+    num: 6,
+    name: 'Governance & Control Plane',
+    desc: 'Policy enforcement, audit, identity, entitlements, observability',
+    buildPct: 70,
+    crossCutting: true,
+    detail: {
+      does: 'Enforces policy, manages identity and access, maintains audit trails, monitors drift, and provides observability across all AI systems.',
+      owns: 'Governance function and platform team (shared)',
+      without: 'No visibility into what AI systems are running, no incident response capability, and regulatory exposure accumulates silently.',
     },
   },
   {
     num: 7,
-    name: 'Applications & Use Cases',
-    desc: 'Where business value is realized',
-    buildPct: 80,
+    name: 'Infrastructure',
+    desc: 'Compute, networking, cost management',
+    buildPct: 20,
     detail: {
-      does: 'Delivers business value through AI-powered products, internal tools, and process automation built on the layers below.',
-      owns: 'Domain AI teams and business units',
-      without: 'The entire stack exists without purpose. Value is only realized when capability reaches users and changes how work is done.',
+      does: 'Provides compute, networking, storage, and cost management for AI workloads. Includes GPU clusters, model serving infrastructure, and development environments.',
+      owns: 'Platform team (or cloud provider for managed services)',
+      without: 'Teams provision ad-hoc compute, costs spiral without visibility, and production workloads compete with experiments for resources.',
     },
-  },
+  }
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -380,7 +386,8 @@ function init() {
 
   const stack = el('div', { className: 'layer-stack' });
 
-  // Build layers bottom-to-top (Infrastructure first, Applications last)
+  // Rendered top-to-bottom as the page numbers them: Layer 1 Applications first,
+  // Layer 7 Infrastructure last. Delivery reads down; dependency reads up.
   const layerEls = [];
   for (const layer of LAYERS) {
     const item = createLayerItem(layer);

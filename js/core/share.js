@@ -6,7 +6,8 @@
 (function () {
   'use strict';
 
-  function currentUrl() { return window.location.href.split('#')[0]; }
+  // Keep the fragment: on the diagnostic, results live in #results=
+  function currentUrl() { return window.location.href; }
   function currentTitle() {
     var og = document.querySelector('meta[property="og:title"]');
     return og ? og.getAttribute('content') : document.title;
@@ -15,7 +16,9 @@
 
   function initShare() {
     var wraps = document.querySelectorAll('.share');
-    if (!wraps.length) return;
+    if (!wraps.length || initShare.done) return;
+    initShare.done = true;
+    var closers = [];
     wraps.forEach(function (wrap) {
       var btn = wrap.querySelector('.share-btn');
       var menu = wrap.querySelector('.share-menu');
@@ -35,15 +38,25 @@
         if (act === 'linkedin') window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank', 'noopener');
         if (act === 'x') window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank', 'noopener');
         if (act === 'copy') {
-          var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy link'; close(); }, 1500); };
-          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(currentUrl()).then(done, done);
-          else done();
+          var reset = function () { setTimeout(function () { b.textContent = 'Copy link'; close(); }, 1600); };
+          var ok = function () { b.textContent = 'Copied'; reset(); };
+          var fail = function () { b.textContent = 'Press ' + (navigator.platform.indexOf('Mac') === 0 ? 'Cmd' : 'Ctrl') + '+C'; window.prompt('Copy this link', currentUrl()); reset(); };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(currentUrl()).then(ok, fail);
+          else fail();
         }
         ga('share', { method: act, page: document.body.dataset.page || '' });
         if (act !== 'copy') close();
       });
-      document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      closers.push({ wrap: wrap, close: close });
+    });
+    document.addEventListener('click', function (e) {
+      closers.forEach(function (c) { if (!c.wrap.contains(e.target)) c.close(); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      closers.forEach(function (c) {
+        if (c.wrap.classList.contains('open')) { c.close(); var btn = c.wrap.querySelector('.share-btn'); if (btn) btn.focus(); }
+      });
     });
   }
   window.initShare = initShare;

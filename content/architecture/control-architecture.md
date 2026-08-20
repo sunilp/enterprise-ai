@@ -27,7 +27,7 @@ The control plane spans seven domains. Each operates continuously, not at review
 
 **What it does:** Identity and access management establishes who and what can reach which models, data sources, and executable actions. This includes human identities (employees, contractors, third parties) and non-human ones: agents, service accounts, orchestration pipelines, and API integrations. In agentic architectures, the non-human identity problem is larger than the human one.
 
-**Why it matters:** Unauthorized access is the entry point for most AI incidents, including data exposure, model misuse, and privilege escalation through agent tool calls.
+**Why it matters:** Unauthorized access is what turns an AI component into an incident. Data exposure, model misuse, and privilege escalation through agent tool calls all run through it.
 
 **Failure mode:** Without agent identity, an orchestration pipeline running with a shared service account has effectively inherited every permission ever granted to that account. Blast radius is unlimited.
 
@@ -89,7 +89,7 @@ The control plane spans seven domains. Each operates continuously, not at review
 
 **Why it matters:** AI systems accumulate sensitive data across their lifecycle in ways that differ from traditional applications -- inference logs contain reconstructible user inputs; training data may include personal data subject to deletion obligations under GDPR, CCPA, and related frameworks.
 
-**Failure mode:** Retention and disposal is the most commonly neglected control domain until a regulatory inquiry arrives. Organizations then discover they are holding AI artifacts they did not know existed, cannot locate, and cannot demonstrate were used appropriately. Remediation at that point is expensive and adversarial.
+**Failure mode:** Retention and disposal is easy to defer, and it usually stays deferred until a regulatory inquiry arrives. Organizations then discover they are holding AI artifacts they did not know existed, cannot locate, and cannot demonstrate were used appropriately. Remediation at that point is expensive and adversarial.
 
 **Blueprint anchor:** [ARCH-007 Telemetry, Audit and the Review Loop](https://agenticlab.sunilprakash.com/architecture/007-telemetry-audit-and-review/) sets retention per store rather than per system: evidence of a decision is kept on the records-retention rule, and the prompts and responses that decision was about are kept only as long as their purpose requires. Those two obligations point in opposite directions, which is why they cannot share a store.
 

@@ -8,7 +8,7 @@ order: 5
 dek: Four deployment patterns, assistive, workflow automation, agentic and regulated human-in-loop, with the control, governance and maturity each requires.
 summary:
   decide: Which deployment pattern each use case fits, and therefore how much control and governance overhead it carries.
-  cost: Uniform controls either under-control autonomous systems or bury low-risk tools in overhead; agents deployed before the control architecture exists are the most common source of serious incidents.
+  cost: Uniform controls either under-control autonomous systems or bury low-risk tools in overhead; agents deployed before the control architecture exists turn recoverable errors into serious incidents.
   metric: Share of production deployments classified to a pattern whose controls match its autonomy, with no agentic system running ahead of its control architecture.
 ---
 # Reference Patterns
@@ -67,7 +67,7 @@ Autonomous agents executing multi-step tasks with tool use. High autonomy. The a
 
 **Governance:** Agent-specific risk assessment before deployment. Bounded autonomy definition -- a documented statement of what the agent is authorized to do and what falls outside its scope. Incident playbook for failure modes specific to that agent's toolset and action space. Review cycle defined at deployment for ongoing monitoring.
 
-**Maturity required:** Level 3-4. Deploying agentic systems without the control architecture in place is the most common source of serious AI incidents. The autonomy that makes agents valuable is the same autonomy that amplifies the consequences of control failures.
+**Maturity required:** Level 3-4. Deploying agentic systems without the control architecture in place is how a recoverable error becomes a serious incident. The autonomy that makes agents valuable is the same autonomy that amplifies the consequences of control failures.
 
 For the strategic implications of the agentic shift, see [The Agentic Shift](../agentic-strategy/the-shift.md).
 

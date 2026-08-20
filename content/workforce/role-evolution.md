@@ -8,8 +8,8 @@ order: 5
 dek: Which roles shrink, which grow, which emerge, and why workforce planning belongs inside the AI roadmap rather than beside it.
 summary:
   decide: Which roles to reskill and which to hire for, and how to attach a role impact analysis and transition path to every agent deployment decision.
-  cost: AI that works technically but is rejected operationally; 89% of workers worry about job security (WEF, 2025) and generic AI training unconnected to real role changes does not resolve it.
-  metric: Whether people from shrinking roles land in new ones, tracked per deployment; only 46% of organizations integrate workforce planning into AI roadmaps (WEF, 2025).
+  cost: AI that works technically but is rejected operationally; worker anxiety about job security is widespread, and generic AI training unconnected to real role changes does not resolve it.
+  metric: Whether people from shrinking roles land in new ones, tracked per deployment; only 46% of organizations currently integrate workforce planning into AI roadmaps (WEF, 2025).
 ---
 # Role Evolution
 
@@ -17,9 +17,9 @@ AI does not eliminate all jobs. That framing is both wrong and unhelpful. What i
 
 The organizations that navigate this well are not the ones that either ignore the change or catastrophize it. They are the ones that plan for it specifically: which roles shrink, which roles grow, which new roles emerge, and how do people move between them.
 
-**89% of workers express concern about AI's impact on job security** (WEF, 2025). That anxiety is not irrational. The appropriate organizational response is not reassurance. It is specificity: here is what is changing, here is what you will do next, here is the support available.
+Worker anxiety about what AI does to job security is widespread and well documented across employee surveys. That anxiety is not irrational. The appropriate organizational response is not reassurance. It is specificity: here is what is changing, here is what you will do next, here is the support available.
 
-Only **46% of organizations integrate workforce planning into their AI roadmaps** (WEF, 2025). That gap is where transformation programs fail. You cannot deploy agents that change how work gets done without simultaneously changing how work is organized and who does it.
+Only **46% of organizations currently integrate workforce planning into their AI roadmaps** (WEF, 2025). That gap is where transformation programs fail. You cannot deploy agents that change how work gets done without simultaneously changing how work is organized and who does it.
 
 Organizations that integrate workforce planning into their AI roadmap avoid the most expensive transformation failure: deploying AI that works technically but is rejected operationally. The technology succeeds. The adoption fails. The business case evaporates.
 
@@ -67,7 +67,7 @@ This role requires a hybrid of business process expertise and technical fluency.
 
 ### AI Program Lead / AI Generalist
 
-PwC's 2026 workforce research identifies the AI Generalist as one of the highest-demand emerging roles across professional services. The core function is translation: between technical teams building agents and business teams who need to specify what those agents should accomplish and evaluate whether they succeed.
+PwC's 2026 AI business predictions name the rise of the AI generalist: across functions, demand may grow for people who understand a wide enough range of tasks to oversee agents and align their work with business goals (PwC, 2026). Treat that as a prediction about where demand is heading, not a measured hiring trend. The core function is translation: between technical teams building agents and business teams who need to specify what those agents should accomplish and evaluate whether they succeed.
 
 AI Program Leads understand enough about how agents work to identify what is technically feasible. They understand enough about business operations to identify what is actually valuable. They manage the program of agent deployments across a business unit or function.
 
@@ -110,7 +110,7 @@ The following capabilities become more valuable, not less, as agents handle more
 Role evolution is not self-managing. It requires explicit planning, investment, and accountability.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[AI Roadmap\nWhich use cases,\nwhich timelines] --> B[Role Impact Analysis\nWhich roles change,\nby how much, when]
     B --> C[Reskilling Plan\nTargeted programs,\nnot generic AI training]
     C --> D[Transition Support\nCareer paths,\ntime to transition,\ninternal mobility]
@@ -133,7 +133,7 @@ The second approach is the default. The first approach is the one that works.
 
 ## Sources
 
-1. World Economic Forum. "Scaling AI with Strategy, Data and Workforce Readiness." October 2025.
-2. PwC. "2026 AI Business Predictions." 2026.
+1. World Economic Forum. "How we can balance AI overcapacity and talent shortages." 3 October 2025.
+2. PwC. "2026 AI Business Predictions," prediction 3: "Rise of the AI generalist: A new workforce emerges." 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

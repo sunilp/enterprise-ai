@@ -9,7 +9,7 @@ dek: "Centralized CoE, hub-and-spoke or federated: when each model fits, how eac
 summary:
   decide: Which structural model fits your stage now (centralized early, hub-and-spoke at growth, federated only for mature units) and which signal triggers the transition.
   cost: Staying centralized too long turns the CoE into a bottleneck that business units route around; shadow AI accumulates and has to be remediated later, at higher cost.
-  metric: CoE backlog in weeks and shadow AI prevalence; hub-and-spoke structures produce 36% higher AI ROI than centralized or distributed models (IBM IBV, 2025).
+  metric: CoE backlog in weeks and shadow AI prevalence; where the CAIO drives a centralized or hub-and-spoke model, IBM reports up to 36% higher AI ROI than in decentralized structures (IBM IBV, 2025).
 ---
 # Structural Models for Enterprise AI
 
@@ -41,14 +41,14 @@ A centralized CoE that cannot process use case demand fast enough becomes the pr
 
 A central governance and capability function (the hub) sets standards, owns the platform, manages the model inventory, and coordinates across functions. Embedded AI teams within each business unit or major function (the spokes) own execution within the governance framework.
 
-**When it works:** At mid-to-large scale, where the portfolio is too large for centralized delivery but too complex for distributed ownership without governance guardrails. This is the structure IBM recommends based on analysis of 2,300 organizations, and it produces 36% higher AI ROI than the alternatives (IBM IBV, 2025).
+**When it works:** At mid-to-large scale, where the portfolio is too large for centralized delivery but too complex for distributed ownership without governance guardrails. IBM's survey of more than 600 CAIOs found that where the CAIO drives a centralized or hub-and-spoke operating model, ROI on AI initiatives can be up to 36% higher than in decentralized structures (IBM IBV, 2025). IBM groups centralized and hub-and-spoke together in that comparison, so the finding argues for a central point of control rather than for hub-and-spoke over a CoE.
 
 **When it breaks:** When the hub becomes administrative rather than enabling, issuing checklists instead of accelerators. When spoke teams lack sufficient AI expertise to execute without excessive hub involvement. When the governance framework is so heavy that spoke teams treat it as overhead rather than infrastructure.
 
 :::note
-**Why Hub-and-Spoke Outperforms**
+**Why Hub-and-Spoke Outperforms Decentralized Ownership**
 
-The 36% ROI advantage (IBM IBV, 2025) comes from three compounding effects: shared infrastructure reduces duplication costs; governance consistency reduces rework from non-compliant deployments; embedded spoke expertise reduces the time from use case identification to production deployment.
+The measured advantage over decentralized structures (IBM IBV, 2025) comes from three compounding effects: shared infrastructure reduces duplication costs; governance consistency reduces rework from non-compliant deployments; embedded spoke expertise reduces the time from use case identification to production deployment. The first two are the reason a centralized CoE scores well on the same comparison. The third is what hub-and-spoke adds once the portfolio outgrows a single team.
 :::
 
 ---
@@ -76,7 +76,9 @@ AI ownership is distributed across business units with minimal central coordinat
 | Bottleneck risk | High | Moderate | Low |
 | Regulatory readiness | High | High | Low to moderate |
 | Best stage | Early (0-2 years) | Growth (2+ years) | Specialized/mature BUs |
-| IBM ROI data | Baseline | +36% (IBM IBV, 2025) | Below baseline |
+| IBM ROI finding | Up to +36% vs decentralized | Up to +36% vs decentralized | Decentralized baseline |
+
+IBM's survey measured centralized and hub-and-spoke operating models together against decentralized ownership, so the two left-hand columns share one finding (IBM IBV, 2025). Every other row in this table is a judgement about how each model behaves, not a survey result.
 
 ---
 
@@ -228,6 +230,6 @@ For team roles and decision ownership within these structures, see [Operating Ar
 
 ## Sources
 
-1. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025.
+1. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025. Survey of more than 600 CAIOs across 22 countries and 21 industries, conducted Q1 2025 with Oxford Economics and the Dubai Future Foundation.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -43,7 +43,7 @@
     return h.indexOf(prefix) === 0 ? h.substring(prefix.length) : null;
   }
   function setHashState(key, value) {
-    try { root.history.replaceState(null, '', value ? '#' + key + '=' + value : root.location.pathname); } catch (e) { /* ignore */ }
+    try { root.history.replaceState(null, '', value ? '#' + key + '=' + value : root.location.pathname + root.location.search); } catch (e) { /* ignore */ }
   }
 
   function fireEvent(name, params) {

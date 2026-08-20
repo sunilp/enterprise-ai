@@ -8,7 +8,7 @@ order: 5
 dek: The EU AI Act timeline, a readiness checklist, data sovereignty, and the vendor contract terms that now determine regulatory posture.
 summary:
   decide: How to sequence compliance investment by enforcement date and risk category, and which sovereignty and vendor terms to settle at architecture time.
-  cost: Prohibited practices carry penalties up to EUR 35 million or 7% of global revenue, and missing technical documentation is the most common audit failure point.
+  cost: Prohibited practices carry penalties up to EUR 35 million or 7% of global annual turnover, and missing technical documentation is the most common audit failure point.
   metric: A complete, current inventory of AI systems in production, each classified by AI Act risk category with a named accountable owner.
 ---
 # Regulatory Readiness
@@ -28,12 +28,14 @@ timeline
         Aug 2024 : Act enters into force
     section 2025
         Feb 2025 : Prohibited AI practices enforceable
-                 : Penalties up to €35M or 7% global revenue
+                 : Penalties up to €35M or 7% global turnover
         Aug 2025 : GPAI provider obligations
                  : Transparency and model evaluation requirements
     section 2026
-        Jul 2026 : AI Omnibus in force, high-risk dates moved
-        Aug 2026 : AI Office and national authority enforcement powers apply
+        Jul 2026 : Digital Omnibus on AI in force, high-risk dates moved
+        Aug 2026 : Remainder of the AI Act applies
+                 : Article 50 transparency obligations
+        Dec 2026 : New prohibition on AI generating NCII and CSAM
     section 2027
         Dec 2027 : High-risk AI system obligations (Annex III)
                  : Conformity assessment, documentation, human oversight
@@ -43,22 +45,25 @@ timeline
 
 ### What Is Already Enforceable
 
-Since February 2025, the prohibited AI practices provisions are enforceable. Penalties reach up to €35 million or 7% of global annual revenue, whichever is higher.
+Since February 2025, the prohibited AI practices provisions have applied, and since August 2025 the penalty provisions have applied with them. Penalties reach up to €35 million or 7% of total worldwide annual turnover, whichever is higher.
 
 Prohibited practices include:
 
 - Subliminal manipulation of behavior that causes or is likely to cause harm
 - Exploitation of vulnerabilities of specific groups (children, persons with disabilities)
-- Social scoring by public authorities
-- Real-time biometric identification in public spaces by law enforcement (with narrow exceptions)
-- Emotion recognition in workplaces and educational institutions
-- Biometric categorization from sensitive characteristics
+- Social scoring leading to detrimental or disproportionate treatment, by public or private actors
+- Real-time remote biometric identification in public spaces by law enforcement (with narrow exceptions)
+- Untargeted scraping of facial images to build facial recognition databases
+- Emotion inference in workplaces and educational institutions
+- Biometric categorization to infer sensitive characteristics
+
+The Digital Omnibus on AI added one more: AI systems that generate or manipulate non-consensual intimate imagery or child sexual abuse material, prohibited from 2 December 2026.
 
 If your organization operates AI systems that touch any of these categories, the review should have already happened.
 
 ### GPAI Provider Obligations (August 2025)
 
-General-purpose AI model providers face specific obligations around transparency, capability evaluations, and systemic risk assessment. Organizations deploying GPAI models (GPT-4, Claude, Gemini, and equivalents) need to understand their obligations both as deployers and, if they fine-tune or distribute models, potentially as providers.
+General-purpose AI model providers face specific obligations around transparency, capability evaluations, and systemic risk assessment. Organizations deploying frontier general-purpose models from the major providers need to understand their obligations both as deployers and, if they fine-tune or distribute models, potentially as providers themselves.
 
 ### High-Risk AI Obligations (December 2027)
 
@@ -133,7 +138,7 @@ The following checklist covers the minimum readiness requirements for organizati
 
 The EU AI Act is one dimension of regulatory pressure. Data sovereignty is a parallel and rapidly growing dimension.
 
-A significant share of enterprises are building AI stacks that favor local or regional vendors, driven by regulatory and sovereignty concerns. Vendor country-of-origin is now a factor in infrastructure selection decisions for a majority of enterprise AI decision-makers, according to survey data from Deloitte (2024). Gartner projected in 2024 that by 2028, a majority of national governments will have introduced explicit technological sovereignty requirements -- the trend is directionally clear even where exact figures vary by survey methodology.
+Enterprises are already building AI stacks that favor local or regional vendors. 77% of companies now factor country of origin into vendor selection, and nearly three in five build their AI stacks primarily with local vendors (Deloitte, 2026). Gartner predicts that by 2028, 65% of governments worldwide will have introduced some technological sovereignty requirement, to improve independence and limit exposure to extraterritorial regulatory interference (Gartner, 2025).
 
 This is not just European. It spans every major economy:
 
@@ -142,7 +147,7 @@ This is not just European. It spans every major economy:
 | European Union | Data localization, processing restrictions | GDPR, Data Act, AI Act, proposed Data Sovereignty requirements |
 | United States | Supply chain security, foreign adversary access | CLOUD Act, FedRAMP, executive orders on AI |
 | China | Data localization, algorithmic regulation | PIPL, Algorithm Recommendation Regulation, Generative AI Measures |
-| India | Data localization, model fine-tuning on Indian data | Digital Personal Data Protection Act, forthcoming AI policy |
+| India | Data localization, model fine-tuning on Indian data | Digital Personal Data Protection Act; DPDP Rules notified November 2025, full compliance due May 2027; India AI Governance Guidelines (non-binding), November 2025 |
 | Saudi Arabia / UAE | Strategic autonomy, domestic AI investment | National AI strategies, data residency requirements |
 
 For enterprise AI architects, sovereignty requirements translate directly into infrastructure decisions: where data is stored, where models run, which vendors can be in the stack, and what contractual data handling commitments are required.
@@ -161,12 +166,12 @@ The EU AI Act gets the most coverage, but enterprise AI operates across multiple
 
 The US does not have a comprehensive federal AI law equivalent to the EU AI Act. The regulatory environment is sector-specific and executive-order-driven. Key elements:
 
-- **Executive Order 14110 (Oct 2023)**: directed NIST to develop AI safety standards, required safety testing reporting for frontier models, initiated sector-specific guidance across federal agencies. Revoked in January 2025 and replaced by subsequent executive orders; the policy environment remains in flux.
+- **Executive orders**: Executive Order 14110 (October 2023) directed NIST to develop AI safety standards and required safety testing reports for frontier models. It was revoked in January 2025 and replaced by Executive Order 14179, "Removing Barriers to American Leadership in Artificial Intelligence," which reframed federal policy around removing regulatory barriers. A December 2025 executive order set out a national AI policy framework intended to limit the effect of conflicting state laws. The federal posture is deregulatory and still moving.
 - **NIST AI Risk Management Framework (AI RMF)**: voluntary but widely adopted, increasingly referenced in procurement and sector regulation
-- **Sector-specific AI regulation**: financial services (OCC, FDIC, Federal Reserve guidance), healthcare (FDA AI/ML action plan), federal contracting (FAR AI provisions)
-- **State-level legislation**: Colorado AI Act, California CPPA AI regulations, and active legislation in 30+ states creating a complex compliance patchwork
+- **Sector-specific supervision**: financial services (SR 26-2, the revised interagency model risk management guidance issued by the Federal Reserve, OCC and FDIC in April 2026 to supersede SR 11-7), healthcare (FDA guidance on AI-enabled device software), federal contracting (FAR AI provisions)
+- **State-level legislation**: Colorado repealed its 2024 AI Act before it took effect and replaced it in May 2026 with a disclosure and rights framework for automated decision-making technology, effective January 2027. California's CPPA rules on automated decision-making technology, risk assessments and cybersecurity audits were finalized in 2025, with ADMT compliance required from January 2027. Dozens of states have active AI legislation, and the resulting patchwork is now itself a federal policy question.
 
-The US approach favors sector-specific voluntary frameworks over horizontal mandatory regulation, but enforcement actions through existing FTC, CFPB, and EEOC authority are active.
+The US approach favors sector-specific supervision over horizontal mandatory regulation, but enforcement actions through existing FTC, CFPB, and EEOC authority are active.
 
 ### China
 
@@ -185,13 +190,13 @@ Post-Brexit, the UK has taken a sector-led, voluntary framework approach rather 
 - The AI Security Institute (formerly the AI Safety Institute) focuses on frontier model evaluation
 - The 2023 AI White Paper established principles without creating immediate legal obligations
 - Sector regulators (FCA, ICO, CMA, Ofcom) are developing sector-specific AI guidance
-- The UK has signaled intent to legislate but has not finalized a framework
+- As of mid-2026 no comprehensive AI bill is before Parliament, and the government has kept to the principles-based, regulator-led approach
 
 The UK's approach creates lower immediate compliance burden but higher uncertainty about future requirements.
 
 ### Singapore
 
-Singapore has published the Model AI Governance Framework and the AI Verify testing toolkit. Compliance is currently voluntary but the frameworks are technically sophisticated and widely referenced in Asia-Pacific. Singapore is positioning itself as an AI governance laboratory, and enterprise compliance with Singapore frameworks provides useful preparation for stricter requirements elsewhere.
+Singapore's IMDA and the AI Verify Foundation published the Model AI Governance Framework for Generative AI in 2024 and a Model AI Governance Framework for Agentic AI in January 2026, alongside the AI Verify testing toolkit. Compliance is voluntary, but the frameworks are technically detailed, widely referenced across Asia-Pacific, and increasingly cited in procurement and contracting. Building to them is useful preparation for stricter requirements elsewhere.
 
 ## The Vendor Lock-in Dimension
 
@@ -201,7 +206,7 @@ The risks compound:
 
 **Regulatory arbitrage risk**: if your entire AI stack runs through a single cloud provider or model vendor, that vendor's regulatory standing becomes your regulatory risk. A model ban, a data handling enforcement action, or a sanction against a foreign technology company can make your AI stack non-compliant overnight.
 
-**Data portability risk**: under GDPR, the EU AI Act, and analogous data protection laws, organizations have data portability obligations. If your AI system cannot export its data, models, and logs in a usable format, you may be unable to fulfill these obligations or to migrate to a compliant alternative when required.
+**Data extraction risk**: GDPR Article 20 gives an individual the right to receive the personal data they provided, in a structured, machine-readable format, where processing rests on consent or a contract. It does not require you to export models or logs, and neither does the AI Act. The operational risk is the wider one. If your AI stack cannot export its data, prompts, and logs in a usable format, you cannot answer subject access and erasure requests cleanly, you cannot hand a regulator a reconstructible record, and you cannot migrate to a compliant alternative when you need to.
 
 **Audit right risk**: AI regulations increasingly require organizations to be able to audit the AI systems they deploy. If you are deploying a black-box model from a vendor that does not provide audit documentation, and a regulator requires an audit, you face a gap you cannot close without vendor cooperation.
 
@@ -219,7 +224,7 @@ The practical implication for AI architecture: design for portability from the s
 
 The organizations that will navigate the regulatory environment successfully are not the ones with the best lawyers. They are the ones with the cleanest AI systems: well-documented, well-monitored, with clear accountability chains and technically enforced controls.
 
-There is a real tradeoff between compliance investment now and regulatory risk later. Early compliance is expensive, the regulatory guidance is still maturing in several areas, and there is a genuine risk of investing heavily in the wrong controls before requirements are finalized. Late compliance carries different costs: penalty exposure, forced retrofitting of systems not designed for auditability, and the reputational damage of a public enforcement action. Neither extreme is right. The practical answer is to sequence compliance investment by enforcement date and risk category. The prohibited practices provisions are already enforceable. The high-risk system obligations now land in December 2027 for Annex III systems and August 2028 for AI in regulated products, after the AI Omnibus pushed them out from the original 2026 and 2027 dates. Build to those deadlines rather than trying to be comprehensively compliant on day one.
+There is a real tradeoff between compliance investment now and regulatory risk later. Early compliance is expensive, the regulatory guidance is still maturing in several areas, and there is a genuine risk of investing heavily in the wrong controls before requirements are finalized. Late compliance carries different costs: penalty exposure, forced retrofitting of systems not designed for auditability, and the reputational damage of a public enforcement action. Neither extreme is right. The practical answer is to sequence compliance investment by enforcement date and risk category. The prohibited practices provisions are already enforceable. The high-risk system obligations now land in December 2027 for Annex III systems and August 2028 for AI in Annex I regulated products, after the Digital Omnibus on AI pushed them out from the original 2026 and 2027 dates. Build to those deadlines rather than trying to be comprehensively compliant on day one.
 
 Regulatory readiness is a governance architecture problem. The same investment in AI governance architecture that improves operational performance also produces the documentation, audit trails, and monitoring capabilities that regulators require. These are not separate workstreams.
 
@@ -229,8 +234,12 @@ Start with the inventory. Everything else follows from knowing what you have.
 
 ## Sources
 
-1. Cloud Security Alliance. "EU AI Act High-Risk Compliance Deadline." March 2026.
-2. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
-3. Gartner. "Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025." March 2025.
+1. European Parliament and Council. Regulation (EU) 2024/1689 (EU Artificial Intelligence Act). Official Journal, 12 July 2024; entered into force 1 August 2024.
+2. European Parliament and Council. Regulation (EU) 2026/1744 (Digital Omnibus on AI). Official Journal, 24 July 2026; entered into force 27 July 2026. Defers Annex III high-risk obligations to 2 December 2027 and Annex I to 2 August 2028.
+3. Cloud Security Alliance. "EU AI Act's High-Risk Deadline: Deferred, Not Cancelled." 2026.
+4. Deloitte. "State of AI in the Enterprise: The Untapped Edge." January 2026. Survey of 3,235 business and technology leaders across 24 countries.
+5. Gartner. "Gartner Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." Press release, 19 November 2025.
+6. Board of Governors of the Federal Reserve System. Supervisory Letter SR 26-2, "Revised Guidance on Model Risk Management." 17 April 2026.
+7. Infocomm Media Development Authority and AI Verify Foundation (Singapore). Model AI Governance Framework for Generative AI, 2024; Model AI Governance Framework for Agentic AI, January 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

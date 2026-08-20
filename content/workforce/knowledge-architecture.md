@@ -9,7 +9,7 @@ dek: Why agents fail at the boundary of what is written down, and the four compo
 summary:
   decide: Whether to run knowledge capture as executive-sponsored change management with protected time and recognition, or as an IT requirements exercise that misses the judgment calls.
   cost: Agents handle documented cases and fail on the non-standard ones where expert judgment matters; experts then cite those failures as proof AI cannot handle their domain.
-  metric: Agent accuracy on real-world tasks versus benchmark; many organizations see 70-80% in practice, with the gap explained by uncaptured tribal knowledge.
+  metric: Agent accuracy on real-world tasks versus benchmark performance, with the gap tracked back to uncaptured tribal knowledge.
 ---
 # Knowledge Architecture
 
@@ -38,9 +38,9 @@ Agents cannot sit next to an expert. They can only work with what is made explic
 The consequence: agents trained on documented processes handle the standard cases well and fail on exactly the non-standard cases where the tribal knowledge is most relevant. The experts observe these failures and conclude that AI cannot handle their domain. Both observations are correct. The actual problem is that the knowledge needed to handle the non-standard cases was never made available.
 
 :::note
-**The 80% Accuracy Floor**
+**The Benchmark Gap**
 
-Many organizations observe their agents performing at 70-80% accuracy on real-world tasks even when benchmark performance looks much higher. The gap is almost always explained by tribal knowledge: the 20-30% of cases where undocumented expert judgment is required.
+Agents routinely score well on benchmarks and then underperform on the same organization's real work. Measure both and treat the gap as your knowledge architecture backlog. It concentrates in the cases where undocumented expert judgment is required, which is also where the cost of a wrong answer is highest.
 :::
 
 ---
@@ -126,15 +126,15 @@ graph TD
 
 The diagram illustrates the flow: institutional knowledge (tribal knowledge and organizational reality) is the raw material. Knowledge architecture converts it into structured forms. Agent systems consume those forms to execute tasks reliably.
 
-Skipping the middle layer means agents operate directly on whatever documentation exists, which is typically the official process and formal policies. That is a foundation for 70% accuracy, not 90%.
+Skipping the middle layer means agents operate directly on whatever documentation exists, which is typically the official process and formal policies. That is a foundation for handling the standard case, not the case that matters.
 
 ---
 
 ## The Accuracy Impact
 
-Alation's enterprise data intelligence analysis suggests that a well-built knowledge layer increases agent accuracy by up to 80% on knowledge-intensive tasks. That number should be treated as a directional indicator rather than a universal guarantee: the actual improvement depends heavily on the task type, the quality of knowledge capture, and the baseline accuracy without it.
+Gartner predicts that by 2027, organizations that prioritize semantics in AI-ready data will increase their generative AI model accuracy by up to 80% and reduce costs by up to 60% (Gartner, 2025). Read that as a forecast with a ceiling, not a guarantee: it is an upper bound, it covers model accuracy rather than end-to-end task success, and the actual improvement depends on task type, the quality of knowledge capture, and the baseline you start from.
 
-The directional insight is credible and consistent with what most organizations observe: agent performance on knowledge-intensive tasks is bounded by the quality of the knowledge they can access, and most organizations have significant room to improve that knowledge infrastructure.
+The directional insight is what matters and it is consistent with what most organizations observe: agent performance on knowledge-intensive tasks is bounded by the quality of the knowledge they can access, and most organizations have significant room to improve that infrastructure.
 
 ---
 
@@ -175,6 +175,6 @@ Knowledge architecture is how you convert your organization's accumulated instit
 
 ## Sources
 
-1. Alation. "The Agentic AI Era: 5 Strategic Shifts Every CIO Must Navigate in 2026." 2026.
+1. Gartner. "Gartner Announces the Top Data & Analytics Predictions." Gartner Data & Analytics Summit, 17 June 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

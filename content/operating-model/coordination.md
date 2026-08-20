@@ -9,7 +9,7 @@ dek: "How CIO, CDO, CISO, Legal, Finance and CHRO actually align: steering commi
 summary:
   decide: "Which coordination mechanisms to run with binding authority: a steering committee that decides, shared OKRs no single function can hit alone, a CFO-protected joint fund, one integrated roadmap."
   cost: Each function does its job and nobody coordinates; Legal engages late and becomes a bottleneck, CHRO is absent from AI planning, and shadow AI grows as a demand signal nobody reads.
-  metric: Time from approved use case to production deployment, tracked as a shared OKR; 69% of organizations suspect employees use prohibited AI tools (Gartner, 2025).
+  metric: Time from approved use case to production deployment, tracked as a shared OKR; 69% of organizations suspect or have evidence that employees use prohibited public GenAI tools (Gartner, 2025).
 ---
 # Cross-Functional Coordination
 
@@ -47,7 +47,7 @@ The isolation risk: the CAIO produces strategy documents and governance framewor
 
 Business units are closest to the problems AI can solve and most motivated to move quickly. In the absence of a functioning central process, they sign vendor agreements for AI-enabled SaaS tools, run pilots with minimal oversight, and build local data science capability that duplicates work happening elsewhere.
 
-The isolation risk: 69% of organizations suspect their employees are using prohibited AI tools (Gartner, 2025). This is not a security failure. It is a demand signal. Business units are telling the organization that the central process is not meeting their needs. Treating it as a security problem without addressing the underlying demand guarantees continued shadow AI growth.
+The isolation risk: 69% of organizations suspect or have evidence that their employees are using prohibited public GenAI tools (Gartner, 2025). This is not a security failure. It is a demand signal. Business units are telling the organization that the central process is not meeting their needs. Treating it as a security problem without addressing the underlying demand guarantees continued shadow AI growth.
 
 ### Legal and Compliance: Late Engagement, Bottleneck Role
 
@@ -71,7 +71,7 @@ The isolation risk: AI investments are approved based on projected ROI that nobo
 
 ### CHRO: Absent from AI Planning
 
-This is the most consistent and consequential coordination gap in enterprise AI. Only 46% of organizations integrate workforce planning into their AI roadmaps (WEF, 2025). The CHRO is responsible for the people dimension of the transformation: role redesign, reskilling investment, change management, and workforce planning as AI changes the demand for specific skills.
+This is the most consistent and consequential coordination gap in enterprise AI. Only 46% of organizations currently integrate workforce planning into their AI roadmaps (WEF, 2025). The CHRO is responsible for the people dimension of the transformation: role redesign, reskilling investment, change management, and workforce planning as AI changes the demand for specific skills.
 
 Without CHRO involvement, AI projects are deployed without considering how they change workflows, what happens to the people whose tasks are automated, and what new skills are required to operate AI-assisted processes. The result is resistance, attrition, and adoption failure that technology teams attribute to "change management problems" rather than to the structural absence of the function that owns change management.
 
@@ -156,7 +156,7 @@ Integrated roadmaps require a governance process to maintain. They need a quarte
 
 ## Shadow AI as a Demand Signal
 
-69% of organizations suspect that their employees are using AI tools that are prohibited by policy (Gartner, 2025). The instinct is to treat this as a security and compliance problem, to tighten access controls, increase monitoring, and communicate policy more aggressively.
+69% of organizations suspect or have evidence that their employees are using public GenAI tools that are prohibited by policy, in a Gartner survey of 302 cybersecurity leaders (Gartner, 2025). The instinct is to treat this as a security and compliance problem, to tighten access controls, increase monitoring, and communicate policy more aggressively.
 
 This approach will not work. It does not address the reason employees are using prohibited tools.
 
@@ -207,7 +207,7 @@ Use this table to assess the current coordination state of your organization and
 
 ## Sources
 
-1. World Economic Forum. "Scaling AI with Strategy, Data and Workforce Readiness." October 2025.
-2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. World Economic Forum. "How we can balance AI overcapacity and talent shortages." 3 October 2025.
+2. Gartner. "Gartner Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." Press release, 19 November 2025. Survey of 302 cybersecurity leaders, March to May 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

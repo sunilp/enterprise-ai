@@ -8,14 +8,14 @@ order: 1
 dek: Why AI governance has to be built as infrastructure, with policy, process and technical layers that run at deployment speed.
 summary:
   decide: Which rules live in policy, which in process, and which are enforced in the runtime, and how approval is tiered by risk so safe deployment is fast.
-  cost: Retrofitting governance after deployment costs 3 to 5 times more than building it in, and teams route around any process slower than they ship.
+  cost: Governance retrofitted after deployment covers less and costs more than governance built in, and teams route around any process slower than they ship.
   metric: Risk assessment turnaround in hours, not weeks. If governance is slower than deployment, teams are already routing around it.
 ---
 # Governance Architecture
 
 AI governance is not a policy document. It is an operating system. Most enterprises have built the document. Almost none have built the operating system.
 
-Fewer than one in five enterprises have fully implemented AI governance frameworks (industry research, 2025), despite the majority using AI in daily operations. That gap is not a knowledge problem. It is an architectural problem.
+In a 2025 survey of 154 general counsel across the UK, France and Germany, 90% of organizations were already using AI and only 18% had a fully implemented AI governance framework (LEGALFLY, 2025). That gap is not a knowledge problem. It is an architectural problem.
 
 ## Why "Governance as a Document" Fails
 
@@ -37,7 +37,7 @@ This is not a failure of intent. It is a failure of architecture.
 :::warning
 **The Retrofit Tax**
 
-Retrofitting governance after deployment costs 3 to 5 times more than building it in from the start. Auditing undocumented systems, negotiating with teams that have built workflows on ungoverned tools, and renegotiating vendor contracts compounds quickly. This is technical debt with regulatory and reputational dimensions. The organizations that paid the upfront cost are now deploying faster, not slower.
+Governance retrofitted after deployment is more expensive than governance built in, and the costs are the kind that compound: auditing undocumented systems, negotiating with teams that have already built workflows on ungoverned tools, and reopening vendor contracts signed without audit or data handling terms. This is technical debt with regulatory and reputational dimensions. The organizations that paid the upfront cost are deploying faster, not slower.
 :::
 
 ## The Three-Layer Governance Architecture
@@ -129,7 +129,7 @@ An organization deploying 20 AI systems can govern them manually. An organizatio
 
 For autonomous agents, the technical layer increasingly relies on a dedicated identity and policy protocol rather than ad hoc tokens. The [Agent Identity Protocol](https://sunilprakash.com/aip/) defines signed agent identity, cryptographically chained delegation, and hook-level policy verification that runs inside the agent runtime before a tool call or task handoff executes. Treat it as a primitive of the technical layer, not as a separate workstream.
 
-For the full technical control plane -- identity, entitlements, audit, policy enforcement, observability -- see [Control Architecture](../architecture/control-architecture.md).
+For the full technical control plane, covering identity, entitlements, audit, policy enforcement and observability, see [Control Architecture](../architecture/control-architecture.md).
 
 ## Governance Velocity Must Match Deployment Velocity
 
@@ -176,10 +176,12 @@ If you are building this from scratch, start with the technical layer, not the p
 
 Governance architecture is an engineering problem as much as it is a policy problem. The three-layer model separates concerns clearly: policy sets the rules, process operationalizes them, and technology enforces them at scale. Any organization treating governance as a document is not governing its AI. It is hoping nothing goes wrong.
 
-The majority of enterprises without fully implemented governance frameworks are not lacking principles. They are lacking architecture.
+The organizations without fully implemented governance frameworks are not lacking principles. They are lacking architecture.
 
 ---
 
 ## Sources
+
+1. LEGALFLY. "AI Governance Gap Report." September 2025. Survey of 154 general counsel across the UK, France and Germany.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

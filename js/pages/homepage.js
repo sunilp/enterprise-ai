@@ -67,7 +67,7 @@
   function initSpine() {
     var host = document.getElementById('spine');
     if (!host || !NAV.disciplines.length) return;
-    var narrow = window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
+    var narrow = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
     if (narrow || typeof d3 === 'undefined') { renderSpineList(host); return; }
     var W = 960, H = 250, n = NAV.disciplines.length;
     var gap = 10, segW = (W - gap * (n - 1)) / n, top = 36, segH = 184;
@@ -84,6 +84,7 @@
       .append('a').attr('class', 'seg').attr('role', 'listitem')
       .attr('href', function (d) { return BASE + '/' + d.path + '/'; })
       .attr('aria-label', function (d) { return pad2(d.number) + ' ' + d.name + ': ' + d.question; })
+      .attr('tabindex', 0)
       .attr('transform', function (d, i) { return 'translate(' + (i * (segW + gap)) + ',' + top + ')'; })
       .style('opacity', reduced ? 1 : 0);
 

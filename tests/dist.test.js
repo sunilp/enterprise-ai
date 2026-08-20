@@ -43,3 +43,22 @@ test('every discipline page has an executive summary and every hub has decisions
     }
   }
 });
+
+test('in-page anchors resolve, code fences are escaped, and diagrams are inlined', () => {
+  const html = walk(DIST).filter(f => f.endsWith('.html'));
+  const broken = [];
+  for (const f of html) {
+    const s = fs.readFileSync(f, 'utf-8');
+    // every #fragment link into this site points at an id that exists somewhere
+    for (const m of s.matchAll(/href="\/enterprise-ai\/([^"#]*)#([^"]+)"/g)) {
+      const target = m[1] ? path.join(DIST, m[1], 'index.html') : path.join(DIST, 'index.html');
+      if (!fs.existsSync(target)) { broken.push(`${path.relative(DIST, f)} -> ${m[1]} (missing page)`); continue; }
+      const t = fs.readFileSync(target, 'utf-8');
+      if (!t.includes(`id="${m[2]}"`)) broken.push(`${path.relative(DIST, f)} -> #${m[2]} (no such id)`);
+    }
+    assert.ok(!/<pre><code[^>]*><script/.test(s), `unescaped code fence in ${f}`);
+    assert.ok(!s.includes('cdn.jsdelivr.net/npm/mermaid'), `client-side mermaid still loaded in ${f}`);
+    assert.ok(!/\.md"/.test(s.replace(/href="[^"]*static\/proof[^"]*"/g, '')), `unconverted .md link in ${f}`);
+  }
+  assert.deepEqual(broken, [], 'broken in-page anchors');
+});

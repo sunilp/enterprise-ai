@@ -18,9 +18,9 @@
     var bar = document.querySelector('.progress');
     if (!bar) return;
     var ticking = false;
+    var max = 0;
+    function measure() { max = document.documentElement.scrollHeight - window.innerHeight; }
     function update() {
-      var doc = document.documentElement;
-      var max = doc.scrollHeight - window.innerHeight;
       var pct = max > 0 ? Math.min(100, Math.max(0, (window.pageYOffset / max) * 100)) : 0;
       bar.style.width = pct + '%';
       bar.setAttribute('aria-valuenow', Math.round(pct));
@@ -29,6 +29,9 @@
     window.addEventListener('scroll', function () {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
+    window.addEventListener('resize', measure, { passive: true });
+    window.addEventListener('load', measure);
+    measure();
     update();
   }
 
@@ -36,6 +39,9 @@
   function initReveal() {
     var els = document.querySelectorAll('.reveal');
     if (!els.length) return;
+    // Only opt into the hidden start state once this code is running, so a
+    // failed or blocked script can never leave content invisible.
+    document.documentElement.classList.add('reveal-ready');
     if (reduced || !('IntersectionObserver' in window)) {
       els.forEach(function (el) { el.classList.add('in'); });
       return;

@@ -5,9 +5,10 @@
 <a href="#main-content" class="skip-link">Skip to content</a>
 {{> nav}}
 <main id="main-content" class="tool-wrap">
-<nav class="breadcrumb" aria-label="Breadcrumb">{{breadcrumb}}</nav>
-<header class="tool-head"><div><h1>{{title}}</h1><p class="dek">{{dek}}</p></div><div class="aside">{{content}}</div></header>
+<nav class="breadcrumb" aria-label="Breadcrumb">{{{breadcrumb}}}</nav>
+<header class="tool-head"><div><h1>{{title}}</h1><p class="dek">{{dek}}</p></div><div class="aside">{{{content}}}</div></header>
 <div id="tool-app" data-tool="{{slug}}"></div>
+<noscript><p class="note-box">This diagnostic runs in your browser and needs JavaScript. The same ground is covered in writing under <a href="{{basePath}}/prepare/">Prepare</a>, starting with <a href="{{basePath}}/assessment/ai-readiness/">AI Readiness</a>.</p></noscript>
 {{> book-strip}}
 {{> newsletter-cta}}
 </main>

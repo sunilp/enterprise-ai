@@ -25,7 +25,7 @@ Four protocols have emerged as the foundation of enterprise multi-agent infrastr
 
 ### MCP: Model Context Protocol
 
-Developed by Anthropic, donated to the Linux Foundation's Agentic AI Foundation in December 2025 and now broadly adopted, MCP defines how agents access tools and share context. It is the interface layer between an agent and the resources it needs: databases, APIs, file systems, code execution environments.
+Developed by Anthropic and donated in December 2025 to the Agentic AI Foundation, a directed fund under the Linux Foundation co-founded with Block and OpenAI, MCP defines how agents access tools and share context. It is the interface layer between an agent and the resources it needs: databases, APIs, file systems, code execution environments.
 
 **What MCP handles:**
 - Tool discovery and invocation
@@ -37,7 +37,7 @@ Developed by Anthropic, donated to the Linux Foundation's Agentic AI Foundation 
 
 ### A2A: Agent-to-Agent Protocol
 
-Developed by Google, donated to the Linux Foundation in June 2025 and supported by a growing ecosystem, A2A defines how agents communicate with each other, delegate tasks, and coordinate on multi-step workflows.
+Developed by Google and donated to the Linux Foundation in June 2025, where it runs as the Agent2Agent project with backing from AWS, Cisco, Microsoft, Salesforce, SAP and ServiceNow, A2A defines how agents communicate with each other, delegate tasks, and coordinate on multi-step workflows.
 
 **What A2A handles:**
 - Task delegation between agents
@@ -62,7 +62,7 @@ Developed by Google, donated to the Linux Foundation in June 2025 and supported 
 
 **How AIP composes with MCP and A2A:** The three protocols sit at different layers and are designed to compose, not compete. MCP defines the tool and resource interface. A2A defines the agent-to-agent task interface. AIP defines the identity and policy layer that runs underneath both. An agent issuing an MCP tool call carries an AIP identity that the runtime can verify before the call reaches the tool. An agent sending an A2A task attaches a delegation chain that the receiving agent's middleware verifies before accepting the work. Identity and policy are concerns AIP handles once, instead of being re-invented inside each protocol.
 
-**Implementation maturity:** Reference implementations exist across the major agent ecosystems. Python (`agent-identity-protocol`, `aip-agents`), Rust (the `aip` crate), and TypeScript (`@aip-sdk/*`) cover the SDK surface. An OpenClaw plugin and a Claude Code plugin demonstrate the hook-level policy verification model inside real agent runtimes. A separate policy gateway (`aip-gateway`) acts as a drop-in MCP and A2A proxy that enforces YAML-defined policy, which is the pattern most useful for retrofitting existing deployments without changing application code.
+**Implementation maturity:** Reference implementations cover the three languages enterprise agent work lands in. Python (`agent-identity-protocol` and `aip-agents` on PyPI) and TypeScript (`@aip-sdk/*` on npm) are published; the Rust crates (`aip-core`, `aip-token`, `aip-mcp`) ship in the protocol repository. An OpenClaw plugin and a Claude Code plugin demonstrate the hook-level policy verification model inside real agent runtimes. A separate policy gateway (`aip-gateway`) acts as a drop-in MCP and A2A proxy that enforces YAML-defined policy, which is the pattern most useful for retrofitting existing deployments without changing application code.
 
 **Standards path:** AIP is published as an individual Internet-Draft at the IETF (the `draft-prakash-aip-NN` series), with the specification developed in the open. That matters for enterprise adoption because the identity and authorization layer for autonomous systems is the part of the stack least tolerable as a proprietary dependency. An identity protocol that one vendor controls is not a trust layer; it is a single point of failure.
 

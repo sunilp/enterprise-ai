@@ -15,6 +15,8 @@ summary:
 
 Strategy is expressed through decisions. These artifacts are the working documents of an AI transformation office. Each is shown inline as a worked example and available as a downloadable template.
 
+Every company, name, figure and date in the worked examples below is invented. They are sized to look realistic so the format is legible on the page. None of them is a research finding, a benchmark, or a result from any real program. Take the structure, not the numbers.
+
 For architectural decision rationale (why we chose this approach), see [Decision Records](decision-records.md). This page provides operational templates for executing and governing the approach.
 
 ---
@@ -42,7 +44,7 @@ The AI portfolio delivered $18.2M in realized value in Q1 against $11.4M in tota
 | Use Case | Status | Value Delivered (YTD) | Risk Level |
 |---|---|---|---|
 | Credit underwriting assist | Production | $9.1M (measured, finance-signed) | High |
-| Claims triage automation | Production | $5.6M (measured, finance-signed) | Medium |
+| Claims triage automation | Production | $5.6M (measured, finance-signed) | High |
 | Procurement spend analysis | Production | $3.5M (measured, finance-signed) | Low |
 | Customer churn prediction | Pilot | $0 (not yet promoted) | Medium |
 | Contract review assist | Paused (data quality) | $0 | High |
@@ -71,7 +73,7 @@ Projected value figures are excluded from the payback ratio. Only finance-signed
 | Jurisdiction | Status | Notes |
 |---|---|---|
 | EU AI Act | Compliant (current obligations) | Next high-risk obligation requires updated risk classification policy (see Decisions Required) |
-| MAS (Singapore) | Compliant | Annual attestation filed February 2026 |
+| MAS (Singapore) | Compliant | Internal self-assessment against the MAS FEAT principles completed February 2026 |
 | GDPR | Compliant | Data handling agreements in place for all production use cases |
 
 ### Key Decisions Required
@@ -85,6 +87,8 @@ Projected value figures are excluded from the payback ratio. Only finance-signed
 </div>
 <div class="doc-footer">The Enterprise AI Operating System | Decision Artifact</div>
 </div>
+
+**On the regulatory row.** The sample above is set in Q1 2026, when the high-risk obligations of the EU AI Act were still expected to apply from 2 August 2026. They no longer do. Regulation (EU) 2026/1744, the AI Omnibus, entered into force on 27 July 2026 and moved the high-risk obligations for Annex III systems to 2 December 2027 and for AI embedded in regulated products under Annex I to 2 August 2028. The Article 50 transparency duties and the Article 4 AI literacy duty were not moved. Use the current dates when you build your own version, and re-check them each quarter: the board is ratifying a policy against a deadline, and the deadline moved once already.
 
 ---
 
@@ -137,6 +141,8 @@ Use this scorecard to evaluate and compare AI use case candidates before committ
 
 The model inventory is a living register of all AI systems in production or active pilot. It is the foundation for governance coverage reporting, regulatory attestation, and incident tracking. Every AI system the organization operates should have an entry. The inventory owner is the CAIO's office; business owners are responsible for keeping their entries current.
 
+The four rows below are sample entries, filled in to show the level of detail an entry needs.
+
 | Model / System | Business Owner | Technical Owner | Data Sources | Risk Tier | Deployment Status | Last Evaluated | Incidents (12 mo) | Regulatory Scope |
 |---|---|---|---|---|---|---|---|---|
 | Credit underwriting assist | VP Credit Risk | ML Engineering Lead | Core banking, bureau feeds, CRM | Tier 3 | Production | 2026-02-15 | 1 (resolved) | EU AI Act (high-risk), sector-specific (EBA) |
@@ -148,8 +154,8 @@ The model inventory is a living register of all AI systems in production or acti
 
 - Tier 1: Low impact, reversible decisions, no personal data
 - Tier 2: Moderate impact, human review in workflow, limited personal data
-- Tier 3: High impact or consequential decisions affecting individuals
-- Tier 4: Autonomous action with financial, legal, or safety consequences
+- Tier 3: High impact or consequential decisions affecting individuals, including autonomous action inside a bounded, pre-approved envelope
+- Tier 4: Autonomous action outside a bounded envelope, with financial, legal, or safety consequences
 
 [Download template](templates/model-inventory-template.md)
 
@@ -157,7 +163,9 @@ The model inventory is a living register of all AI systems in production or acti
 
 ## Phase-Gate Review Template
 
-**Program:** Enterprise Credit Intelligence
+A completed gate review is one page of evidence and one decision. The example below is a sample: the program, the dates, the percentages and the findings are all invented, and they are there to show what a reviewer should be able to see before signing.
+
+**Program:** Enterprise Credit Intelligence (sample)
 **Gate:** Phase 1 to Phase 2
 **Review Date:** 2026-02-20
 **Reviewers:** CAIO, VP Credit Risk, CFO representative, CISO
@@ -238,6 +246,8 @@ A proposed system will automatically classify incoming insurance claims by sever
 | Autonomy level | 3 | Auto-approves within defined bounds; human adjuster reviews everything above threshold |
 | Regulatory scope | 3 | Insurance sector regulations apply; not EU AI Act high-risk category under current guidance |
 | **Total** | **12** | **Tier 3: Senior Approval + Audit** |
+
+**Why this lands at Tier 3 and not Tier 4:** the $5,000 ceiling is what holds the autonomy score at 3. The system acts on its own only inside a bounded, pre-approved envelope, and every claim outside that envelope goes to a human adjuster. Raise the ceiling, or drop the human backstop above it, and autonomy scores 4 and decision impact scores 4. The total reaches 14 and the system moves into Tier 4 board oversight. The threshold is a governance control, not a product setting, and it should be changed through the same approval path that set it.
 
 **Outcome:** CAIO and CISO sign-off required before pilot launch. Annual external audit required as a condition of continued production operation. Monitoring dashboard must be operational on day one of pilot.
 

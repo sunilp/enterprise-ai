@@ -83,7 +83,7 @@ Platform teams. Orchestration patterns need to be reusable, not rebuilt per use 
 
 Each use case becomes a bespoke integration, unmaintainable at scale. Agents built without shared orchestration infrastructure cannot share memory, tools, or control surfaces. Security controls are applied inconsistently because there is no central execution path to instrument.
 
-**Build vs. buy:** Buy the framework (LangGraph, LlamaIndex, semantic kernel), build the enterprise integration layer on top. Organizations that try to build orchestration frameworks from scratch systematically underestimate the maintenance overhead.
+**Build vs. buy:** Buy the framework (LangGraph, LlamaIndex, Microsoft Agent Framework), build the enterprise integration layer on top. Organizations that try to build orchestration frameworks from scratch systematically underestimate the maintenance overhead.
 
 ---
 

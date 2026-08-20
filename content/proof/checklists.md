@@ -100,7 +100,7 @@ Use this checklist at Gate 2 to determine whether a pilot is ready to promote to
 
 ## 4. Agent Deployment Readiness
 
-Use this checklist before deploying any agentic AI system. The higher the agent's action tier (see [ADR-003](decision-records.md#adr-003-agent-deployment-authorization-model)), the more rigorously each item must be validated.
+Use this checklist before deploying any agentic AI system. The higher the agent's action tier (see [ADR-003](/enterprise-ai/proof/decision-records/#adr-003-agent-deployment-authorization-model)), the more rigorously each item must be validated.
 
 - [ ] The agent's action scope is explicitly documented: what can the agent do, what can it not do, and what are the hard limits?
 - [ ] Trust boundaries are defined and technically enforced: which systems, data stores, and external services can the agent access?

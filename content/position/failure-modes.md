@@ -73,7 +73,7 @@ graph LR
 
 **What it looks like:** Leadership announces an AI initiative. Individual contributors are trained. Tooling is deployed. Adoption is low. When investigated, the blocker is middle management: they are not reinforcing the new behavior, not measuring with the new tools, not changing team rituals, and in some cases actively discouraging use.
 
-**Root cause:** 89% of employees express concern about job security in the context of AI (McKinsey, 2024). Middle managers face a specific version of this concern: AI that increases individual contributor productivity reduces the number of people a manager needs to manage, and in many organizations, span of control is the primary basis for compensation and status. Resistance is rational given the incentive structure.
+**Root cause:** Middle managers face a sharper version of the job-security anxiety AI creates across the workforce: AI that increases individual contributor productivity reduces the number of people a manager needs to manage, and in many organizations, span of control is the primary basis for compensation and status. Resistance is rational given the incentive structure.
 
 **The structural tell:** Adoption metrics look fine at the team level (accounts created, trainings completed, licenses activated) but behavioral change is not visible in how work is reviewed, reported, or rewarded. The AI tool is available but not integrated into the workflow that managers actually govern.
 
@@ -103,7 +103,7 @@ If managers are not involved in designing the workflow change, they will not rei
 
 **What it looks like:** Use cases are identified. Business cases are approved. Technical teams begin implementation. Then the data problems surface: fragmented sources, inconsistent schemas, missing labels, governance gaps that prevent data sharing across business units, and quality issues that were not visible until AI started making decisions based on the data.
 
-**Root cause:** 57% of organizations say their data is not AI-ready (Gartner, 2025). Most organizations know this abstractly but underestimate it concretely. A data warehouse that supports excellent reporting can be completely inadequate for AI. Reporting tolerates stale, incomplete, and inconsistently defined data in ways that AI cannot. AI surfaces data quality problems that existed for years but were never visible because humans were filling in the gaps.
+**Root cause:** A Gartner survey of data management leaders found that 63% of organizations either do not have, or are unsure whether they have, the right data management practices for AI (Gartner, 2025). Most organizations know this abstractly but underestimate it concretely. A data warehouse that supports excellent reporting can be completely inadequate for AI. Reporting tolerates stale, incomplete, and inconsistently defined data in ways that AI cannot. AI surfaces data quality problems that existed for years but were never visible because humans were filling in the gaps.
 
 **The structural tell:** Use cases stall in the data preparation phase. Data engineering becomes the bottleneck for every AI initiative. The same data problems appear in different forms across multiple use cases. Each initiative builds its own data preparation layer rather than fixing the underlying issue.
 
@@ -148,7 +148,6 @@ This is why technology-first approaches to AI transformation systematically unde
 
 ## Sources
 
-1. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
-2. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." February 2025.
+1. Gartner. "Lack of AI-Ready Data Puts AI Projects at Risk." Press release, February 26, 2025. Based on a third-quarter 2024 survey of 248 data management leaders.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

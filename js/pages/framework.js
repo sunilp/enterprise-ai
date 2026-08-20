@@ -220,7 +220,7 @@
       groups.append('text')
         .attr('text-anchor', 'middle')
         .attr('y', 42)
-        .attr('fill', '#7d766a')
+        .attr('fill', '#6a6357')
         .attr('font-family', 'IBM Plex Mono, monospace')
         .attr('font-size', '9px')
         .text(function(d) { return d.subtitle; });
@@ -263,7 +263,7 @@
 
     var stages = [
       { num: 1, name: 'Foundational', range: '1.0–2.0', desc: 'Experimental. No shared infrastructure.',
-        color: '#7d766a', focus: 'Appoint CAIO. Assess readiness. Stop starting pilots.' },
+        color: '#6a6357', focus: 'Appoint CAIO. Assess readiness. Stop starting pilots.' },
       { num: 2, name: 'Developing', range: '2.1–3.0', desc: 'Centralized function emerging.',
         color: '#4d4024', focus: 'Shared platform. Risk-tiered governance. Baselines.' },
       { num: 3, name: 'Established', range: '3.1–4.0', desc: 'AI at scale with governed infrastructure.',
@@ -283,7 +283,7 @@
       html += '<div class="maturity-header">';
       html += '<span class="maturity-num" style="color:' + stage.color + ';">Stage ' + stage.num + '</span>';
       html += '<span class="maturity-name" style="color:#16130e;">' + stage.name + '</span>';
-      html += '<span class="maturity-range" style="color:#7d766a;">' + stage.range + '</span>';
+      html += '<span class="maturity-range" style="color:#6a6357;">' + stage.range + '</span>';
       html += '</div>';
       html += '<p class="maturity-desc" style="color:#4a443a;font-size:13px;margin:8px 0 4px;">' + stage.desc + '</p>';
       html += '<p class="maturity-focus" style="color:#7a5c1e;font-size:12px;font-family:\'IBM Plex Mono\',monospace;margin:0;">' + stage.focus + '</p>';

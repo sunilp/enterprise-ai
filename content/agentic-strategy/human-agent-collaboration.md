@@ -163,7 +163,7 @@ Correct calibration requires:
 
 ## The Moderna Reference: Structural Redesign Around Collaboration
 
-Moderna's decision to create a combined Chief People and Digital Technology Officer role is not primarily a story about efficiency. It is a story about recognizing that workforce design and technology design are the same problem when agents are involved.
+Moderna merged HR and IT in 2025 under a single Chief People and Digital Technology Officer. That is not primarily a story about efficiency. It is a story about recognizing that workforce design and technology design are the same problem when agents are involved.
 
 You cannot design how agents and humans collaborate if the people accountable for your workforce and the people accountable for your technology stack are optimizing independently. The seam between those two functions is exactly where collaboration patterns break down.
 
@@ -173,7 +173,7 @@ Organizations that keep HR and technology in separate silos will design agent sy
 
 ## What Is Coming
 
-By 2028, **15% of day-to-day work decisions will be made autonomously by agents** without human review (Gartner, 2025). That is not a distant projection.
+Gartner forecasts that by 2028, **at least 15% of day-to-day work decisions will be made autonomously through agentic AI**, up from 0% in 2024 (Gartner, 2025). The same forecast puts 33% of enterprise software applications on agentic AI by 2028, and predicts that over 40% of agentic AI projects will be cancelled by the end of 2027 on cost, unclear value or weak risk controls. Both halves matter: autonomy is coming, and most of the projects reaching for it now will not survive.
 
 The organizations that will handle that well are the ones building the collaboration infrastructure now: defining patterns, establishing trust criteria, designing exception boundaries, and creating the governance mechanisms that make autonomous decision-making auditable.
 
@@ -185,6 +185,7 @@ Human-agent collaboration is a design discipline. It requires the same intention
 
 ## Sources
 
-1. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. Gartner. "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027." Press release, 25 June 2025.
+2. Moderna. Leadership: Tracey Franklin, Chief People and Digital Technology Officer. 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

@@ -9,7 +9,7 @@ dek: "The two readiness dimensions most assessments skip: whether processes are 
 summary:
   decide: Whether a candidate process needs 3-9 months of remediation before AI, and which neglected roles (program lead, process architect, governance, translator) to charter.
   cost: AI trained on fragmented process data automates inconsistency at scale; a technical-only talent portfolio succeeds technically and fails organizationally.
-  metric: Daily usage rate among people with access to AI tools, tracked as a management metric; fewer than 60% of those with access use them daily (PwC, 2026).
+  metric: Daily usage rate among people with access to AI tools, tracked as a management metric; fewer than 60% of those with access use them in their daily workflow (Deloitte, 2026).
 ---
 # Process and Talent Readiness
 
@@ -88,7 +88,7 @@ A process is AI-ready when:
 
 ### The Scale of the Gap
 
-Only 20% of organizations report being ready on AI talent (Deloitte, 2026). This is not a pipeline problem that will resolve itself in 18 months. It is a structural gap that requires deliberate intervention.
+Only 20% of companies rate their talent as highly prepared for broad AI adoption, down two points on the previous year and the lowest score of any readiness dimension Deloitte measures (Deloitte, 2026). This is not a pipeline problem that will resolve itself in 18 months. It is a structural gap that requires deliberate intervention.
 
 The conventional response is to hire data scientists. This is necessary but insufficient. The talent gap in enterprise AI is broader, and the missing roles are less visible.
 
@@ -113,15 +113,15 @@ Organizations tend to underinvest in the roles that determine whether AI program
 
 ### The Emerging AI Generalist
 
-PwC (2026) identifies the emergence of the "AI generalist" as a defining talent trend. These are professionals with broad AI fluency and deep domain expertise in a specific business function. They are not AI specialists in the technical sense. They are domain experts who can identify, scope, evaluate, and adopt AI tools within their function without depending on a central AI team for every decision.
+PwC calls it the "rise of the generalist": a move toward broader, outcome-focused roles, creating demand for people who understand a wide enough range of tasks to oversee agents and align their work with business goals (PwC, 2026). PwC expects the shape of the workforce to change with it, toward an hourglass in knowledge work, with strong junior and senior tiers and fewer middle roles, and toward a diamond in frontline work, where more mid-level people are needed to orchestrate agents.
 
-The AI generalist is what happens when AI literacy programs work. Organizations that have invested in structured upskilling over 18-24 months are seeing AI generalists emerge in their finance, operations, and commercial functions. These practitioners are disproportionately valuable because they reduce the bottleneck on the central AI team and accelerate use case adoption in the business units.
+Read that as a talent specification, not a forecast. The generalist role it describes is a domain expert who can identify, scope, evaluate and supervise AI within their own function without routing every decision through a central AI team. That is what a working AI literacy program produces, and it is where the leverage is: generalists reduce the bottleneck on the central team and accelerate adoption inside the business units.
 
 ### The Access vs. Usage Gap
 
 A critical distinction that most talent readiness assessments miss: access to AI tools is not the same as effective use of AI tools.
 
-Approximately 60% of knowledge workers now have access to enterprise AI tools. Fewer than 60% of those with access use them daily (PwC, 2026). The gap between access and daily usage is where AI adoption programs fail.
+Workforce access to sanctioned AI tools grew by 50% in a single year, from under 40% to just under 60% of workers. Among those with access, fewer than 60% use AI in their daily workflow, a pattern essentially unchanged on the previous year (Deloitte, 2026). Access widened. Usage did not. The gap between the two is where AI adoption programs fail.
 
 The reasons for the gap are consistent across organizations:
 
@@ -196,7 +196,7 @@ The failure mode is treating both as separate workstreams that can be addressed 
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
-2. PwC. "2026 AI Business Predictions." 2026.
+1. Deloitte AI Institute. "State of AI in the Enterprise: The Untapped Edge." January 2026. Survey of 3,235 leaders across 24 countries. Figure 12 (preparedness by dimension) and the worker access and pilot expansion findings.
+2. PwC. "2026 AI Business Predictions." 2026. Prediction on the rise of the generalist and agent orchestration.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

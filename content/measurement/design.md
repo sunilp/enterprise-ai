@@ -13,13 +13,11 @@ summary:
 ---
 # Measurement Design
 
-91% of organizations report that AI has "improved productivity." Only 23% can quantify it with hard data.[^1] That gap is where CFOs lose confidence and AI budgets get cut. It is not a communication problem. It is a measurement failure. Organizations deployed AI first and tried to prove value afterward. That approach does not work.
+Most organizations report that AI has improved productivity. Far fewer can quantify it with hard data. That gap is where CFOs lose confidence and AI budgets get cut. It is not a communication problem. It is a measurement failure. Organizations deployed AI first and tried to prove value afterward. That approach does not work.
 
 This section explains how to build a measurement system that produces numbers boards will believe and business leaders can act on.
 
 For a sample board-level scorecard and KPI tree, see [Decision Artifacts](../proof/decision-artifacts.md).
-
-[^1]: Forbes AI Study 2025.
 
 ---
 
@@ -125,7 +123,7 @@ The three layers connect in one direction: activity feeds outcome, outcome feeds
 flowchart TD
     A[Activity Metrics] -->|"Adoption + usage patterns"| B[Outcome Metrics]
     B -->|"Time saved + quality delta"| C[Value Metrics]
-    C -->|"P&amp;L impact"| D[Board Reporting]
+    C -->|"P&L impact"| D[Board Reporting]
 
     A --> A1["Adoption rate<br/>Session frequency<br/>Feature utilization"]
     B --> B1["Time saved per task<br/>Error rate delta<br/>Throughput change"]
@@ -191,7 +189,5 @@ The right calibration: apply full rigor to your first two or three pilots. This 
 ---
 
 ## Sources
-
-1. Forbes. "AI Productivity Study." 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

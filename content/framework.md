@@ -52,7 +52,7 @@ The first decision is not which AI to use. It is how the organization will gover
 - Decision rights are documented: who approves AI investments, who can deploy to production, who shuts down a failing system
 - The organizational structure (hub-and-spoke recommended) is chosen deliberately, not inherited from the IT org chart
 
-**The cost of skipping this:** Every function does AI independently. Duplicate investments, incompatible standards, no consolidated risk view. When 42% of enterprises scrap most of their AI initiatives in a single year (S&P Global, 2025), the missing piece is rarely the model. It is the operating model.
+**The cost of skipping this:** Every function does AI independently. Duplicate investments, incompatible standards, no consolidated risk view. When the share of businesses scrapping most of their AI initiatives jumps to 42% in a single year (S&P Global Market Intelligence, 2025), the missing piece is rarely the model. It is the operating model.
 
 **Key metric:** Time from approved use case to production deployment. If this exceeds 6 months, the operating model is the bottleneck.
 
@@ -86,7 +86,7 @@ Most AI investment concentrates in the System of Intelligence (models, knowledge
 
 ### Principle 4: Measurement That Reaches the Balance Sheet
 
-The measurement gap is where CFOs lose confidence and AI budgets get cut. 91% of organizations claim AI improved productivity. Only 23% can quantify it (Forbes AI Study, 2025).
+The measurement gap is where CFOs lose confidence and AI budgets get cut. In a 2025 survey of 1,075 C-suite executives, 85% said AI had improved decision-making, yet fewer than 1% reported a significant return, defined as a 20% or greater increase in profitability or cost savings (Forbes Research, 2025).
 
 **What this means in practice:**
 - Baselines established before deployment, not after. You cannot prove impact without knowing where you started.
@@ -188,8 +188,8 @@ Capital is flowing into AI faster than enterprises are building the management s
   <div class="metric"><div class="metric-value">5%</div><div class="metric-label">Classified as future-built</div><div class="metric-source">BCG, 2025</div></div>
 </div>
 
-- **30%** or more of GenAI proofs of concept abandoned after pilot by the end of 2025, as Gartner predicted. They work in the lab and stall in production. <span class="metric-source">Gartner, 2024</span>
-- **39%** of enterprises report any enterprise-level EBIT impact from AI. Fewer than two in five can trace AI to the income statement. <span class="metric-source">McKinsey, 2025</span>
+- **30%** of generative AI projects abandoned after proof of concept by the end of 2025, at least, as Gartner predicted in 2024. They work in the lab and stall in production. <span class="metric-source">Gartner, 2024</span>
+- **39%** of respondents attribute any enterprise-level EBIT impact to AI, and most of those put it below 5% of EBIT. Fewer than two in five can trace AI to the income statement at all. <span class="metric-source">McKinsey, 2025</span>
 
 Full source list and methodology: [Sources and Methodology](/enterprise-ai/sources/).
 

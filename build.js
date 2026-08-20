@@ -8,6 +8,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const YAML = require('yaml');
 const { marked } = require('marked');
 
@@ -30,6 +31,8 @@ const STATIC_DIRS = ['css', 'js', 'fonts', 'static'];
 const BASE_PATH = '/enterprise-ai';
 const SITE_URL = 'https://sunilprakash.com/enterprise-ai';
 const SITE_CONFIG_PATH = path.join(ROOT, 'site.config.json');
+const DIAGRAM_DIR = path.join(ROOT, 'static', 'diagrams');
+const DIAGRAM_THEME = 'paper-v3';
 
 // ─── Site Config (book switch) ─────────────────────────────────────────────
 
@@ -69,9 +72,14 @@ function renderTemplate(template, data) {
   // Phase 1b: sections {{#key}}...{{/key}} and {{^key}}...{{/key}}
   result = result.replace(/\{\{#(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, key, inner) => data[key] ? inner : '');
   result = result.replace(/\{\{\^(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, key, inner) => data[key] ? '' : inner);
-  // Phase 2: replace variables {{variableName}}
+  // Phase 2a: trusted HTML {{{variableName}}} (markup this build generated)
+  result = result.replace(/\{\{\{(\w+)\}\}\}/g, (match, key) => {
+    return data[key] !== undefined ? String(data[key]) : '';
+  });
+  // Phase 2b: text {{variableName}}, escaped. Page titles, deks and descriptions
+  // come from author frontmatter and must never be able to open a tag.
   result = result.replace(/\{\{(\w+)\}\}/g, (match, key) => {
-    return data[key] !== undefined ? data[key] : '';
+    return data[key] !== undefined ? escHtml(data[key]) : '';
   });
   return result;
 }
@@ -125,6 +133,8 @@ function inferSection(filePath) {
 // ─── Custom Marked Extensions ──────────────────────────────────────────────
 
 let hasMermaid = false;
+let resetHeadingIds = () => {};
+const missingDiagrams = new Set();
 
 function configureMarked() {
   hasMermaid = false;
@@ -133,7 +143,9 @@ function configureMarked() {
     name: 'container',
     level: 'block',
     start(src) {
-      return src.match(/^:::/)?.index;
+      if (src.startsWith(':::')) return 0;
+      const i = src.indexOf('\n:::');
+      return i === -1 ? undefined : i + 1;
     },
     tokenizer(src) {
       const rule = /^:::(\w+)\r?\n([\s\S]*?)\r?\n:::\r?\n?/;
@@ -178,7 +190,24 @@ function configureMarked() {
     },
   };
 
+  const usedHeadingIds = new Set();
+
   const renderer = {
+    heading(token) {
+      const text = this.parser.parseInline(token.tokens);
+      const plain = String(text)
+        .replace(/<[^>]*>/g, '')
+        .replace(/&(?:quot|#39|amp|lt|gt|nbsp);/g, ' ');
+      let id = plain.toLowerCase().trim()
+        .replace(/^\d+[.)]?\s+/, '')          // "3. Production Deployment Gate" -> production-deployment-gate
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'section';
+      let unique = id, n = 2;
+      while (usedHeadingIds.has(unique)) unique = `${id}-${n++}`;
+      usedHeadingIds.add(unique);
+      return `<h${token.depth} id="${unique}">${text}</h${token.depth}>\n`;
+    },
     table(token) {
       let header = '';
       let body = '';
@@ -205,7 +234,7 @@ function configureMarked() {
       }
       body = bodyRows ? `<tbody>${bodyRows}</tbody>` : '';
 
-      return `<div class="obsidian-table-wrap"><table class="obsidian-table">${header}${body}</table></div>\n`;
+      return `<div class="obsidian-table-wrap" tabindex="0" role="group" aria-label="Table, scrollable"><table class="obsidian-table">${header}${body}</table></div>\n`;
     },
     blockquote(token) {
       const body = this.parser.parse(token.tokens);
@@ -213,17 +242,61 @@ function configureMarked() {
     },
     code(token) {
       if (token.lang === 'mermaid') {
+        const clean = normalizeMermaid(token.text);
+        const inlined = inlineDiagram(diagramHash(clean));
+        if (inlined) return inlined;
         hasMermaid = true;
-        // Strip hard-coded colours so the paper theme paints every diagram consistently
-        const clean = token.text.split('\n').filter(l => !/^\s*(style|classDef|class|linkStyle)\s/.test(l)).join('\n');
+        missingDiagrams.add(diagramHash(clean));
         return `<pre class="mermaid">${clean}</pre>\n`;
       }
-      const langClass = token.lang ? ` class="language-${token.lang}"` : '';
-      return `<pre><code${langClass}>${token.text}</code></pre>\n`;
+      const lang = /^[\w+-]{1,24}$/.test(token.lang || '') ? token.lang : '';
+      const langClass = lang ? ` class="language-${lang}"` : '';
+      return `<pre><code${langClass}>${escHtml(token.text)}</code></pre>\n`;
     },
   };
 
+  resetHeadingIds = () => usedHeadingIds.clear();
   marked.use({ extensions: [containerExtension], renderer });
+}
+
+
+// ─── Mermaid pre-rendering ─────────────────────────────────────────────────
+
+// Hard-coded colours in a diagram are stripped so the paper theme paints every
+// diagram the same way. The stripped source is what gets hashed and rendered.
+function normalizeMermaid(src) {
+  return src.split('\n').filter(l => !/^\s*(style|classDef|class|linkStyle)\s/.test(l)).join('\n').trim();
+}
+
+function diagramHash(src) {
+  return crypto.createHash('sha1').update(DIAGRAM_THEME + '\n' + normalizeMermaid(src)).digest('hex').slice(0, 16);
+}
+
+function extractMermaidBlocks(markdown) {
+  const out = [];
+  const re = /```mermaid\r?\n([\s\S]*?)```/g;
+  let m;
+  while ((m = re.exec(markdown)) !== null) out.push(normalizeMermaid(m[1]));
+  return out;
+}
+
+// Inline a pre-rendered SVG, made responsive and given a figure wrapper.
+// Mermaid scopes the diagram's own CSS by the svg element id, so the id has to
+// survive; it is renamed to the content hash so two diagrams on one page cannot
+// collide, and every reference to it inside the embedded stylesheet is rewritten.
+function inlineDiagram(hash) {
+  const file = path.join(DIAGRAM_DIR, hash + '.svg');
+  if (!fs.existsSync(file)) return null;
+  let svg = fs.readFileSync(file, 'utf-8').trim();
+  const idMatch = svg.match(/<svg[^>]*\sid="([^"]+)"/);
+  const newId = 'diagram-' + hash;
+  if (idMatch) svg = svg.split(idMatch[1]).join(newId);
+  svg = svg.replace(/<svg([^>]*)>/, (all, attrs) => {
+    let a = attrs.replace(/\s(width|height)="[^"]*"/g, '');
+    if (!/\sid="/.test(a)) a += ` id="${newId}"`;
+    return `<svg${a} class="diagram-svg">`;
+  });
+  return `<figure class="diagram" tabindex="0" role="group" aria-label="Diagram, scrollable">${svg}</figure>\n`;
 }
 
 // ─── File Discovery ────────────────────────────────────────────────────────
@@ -348,22 +421,34 @@ function generateJsonLd(meta, outputPath, cfg) {
     });
   }
   const ld = { '@context': 'https://schema.org', '@graph': graph };
-  return `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
+  return `<script type="application/ld+json">${safeJson(ld)}</script>`;
 }
 
 function escHtml(str) {
   return String(str)
     .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// JSON that is safe to inline inside a <script> element.
+function safeJson(value) {
+  return JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
 }
 
 // ─── Markdown Link Converter ──────────────────────────────────────────────
 
 function convertMdLinks(html, pages) {
-  // Convert href="...something.md" and href="../something.md" to proper paths
-  return html.replace(/href="([^"]*\.md)"/g, function(match, mdLink) {
+  // Convert href="...something.md" (with an optional #fragment) to a site path
+  return html.replace(/href="([^"#]*\.md)(#[^"]*)?"/g, function(match, mdLink, fragment) {
+    var frag = fragment || '';
     // Strip ../ prefixes and normalize
     var cleaned = mdLink.replace(/^(\.\.\/)+/, '');
     // Remove .md extension
@@ -371,8 +456,8 @@ function convertMdLinks(html, pages) {
     // Try to find matching page by output path or filename
     for (var i = 0; i < pages.length; i++) {
       var p = pages[i];
-      if (p.outputPath === withoutExt || p.outputPath.endsWith('/' + withoutExt) || p.outputPath.endsWith(withoutExt)) {
-        return 'href="' + BASE_PATH + '/' + (p.outputPath || '') + '/"';
+      if (p.outputPath === withoutExt || p.outputPath.endsWith('/' + withoutExt)) {
+        return 'href="' + BASE_PATH + '/' + (p.outputPath || '') + '/' + frag + '"';
       }
     }
     // Try matching just the filename part
@@ -380,12 +465,12 @@ function convertMdLinks(html, pages) {
     for (var j = 0; j < pages.length; j++) {
       var pg = pages[j];
       if (pg.meta.slug === fileName || pg.outputPath.split('/').pop() === fileName) {
-        return 'href="' + BASE_PATH + '/' + (pg.outputPath || '') + '/"';
+        return 'href="' + BASE_PATH + '/' + (pg.outputPath || '') + '/' + frag + '"';
       }
     }
     // Template download links -> static path
     if (mdLink.indexOf('templates/') !== -1) {
-      return 'href="' + BASE_PATH + '/static/proof/' + cleaned + '"';
+      return 'href="' + BASE_PATH + '/static/proof/' + cleaned + frag + '"';
     }
     // If no match found, return as-is but log warning
     console.log('  WARN: Could not resolve .md link: ' + mdLink);
@@ -393,10 +478,27 @@ function convertMdLinks(html, pages) {
   });
 }
 
+
+// Markdown task lists render as bare <input type="checkbox">, which is a form control
+// with no accessible name. These are printed checklist marks, so render them as a
+// decorative box and keep the item text as the readable content.
+function convertTaskCheckboxes(html) {
+  return html
+    .replace(/<li><input checked(?:="")? disabled(?:="")? type="checkbox">\s*/g, '<li class="task done"><span class="box" aria-hidden="true"></span><span class="task-text">')
+    .replace(/<li><input disabled(?:="")? type="checkbox">\s*/g, '<li class="task"><span class="box" aria-hidden="true"></span><span class="task-text">')
+    .replace(/(<li class="task(?: done)?"><span class="box" aria-hidden="true"><\/span><span class="task-text">)([\s\S]*?)<\/li>/g, '$1$2</span></li>');
+}
+
 // ─── Output Path Helpers ───────────────────────────────────────────────────
 
 function computeOutputPath(filePath, meta) {
-  if (meta && meta.permalink) return String(meta.permalink).replace(/^\/+|\/+$/g, '');
+  if (meta && meta.permalink) {
+    const clean = String(meta.permalink).replace(/^\/+|\/+$/g, '');
+    if (!/^[a-z0-9][a-z0-9\-\/]*$/i.test(clean) || clean.includes('..')) {
+      throw new Error(`Invalid permalink "${meta.permalink}" (letters, numbers, hyphens and slashes only)`);
+    }
+    return clean;
+  }
   const rel = path.relative(CONTENT_DIR, filePath);
   const parts = rel.split(path.sep);
   const fileName = parts.pop().replace('.md', '');
@@ -722,7 +824,7 @@ function renderHubBits(page, nav, pagesBySlug, cfg) {
     .map(p => card({ path: p.outputPath, title: p.meta.title, dek: p.meta.dek, slug: p.meta.slug }, 0, 'Proof')).join('');
   const nextD = DISCIPLINES[(d.number) % DISCIPLINES.length];
   const nextDisc = nav.disciplines.find(x => x.key === nextD.key);
-  const nextDiscipline = `<span class="label">Next discipline</span><a href="${BASE_PATH}/${nextDisc.path}/">${pad2(nextD.number)} ${nextD.name}<span class="q">${escHtml(nextD.question)}</span></a>`;
+  const nextDiscipline = `<h2 class="section-h">Next discipline</h2><a href="${BASE_PATH}/${nextDisc.path}/">${pad2(nextD.number)} ${nextD.name}<span class="q">${escHtml(nextD.question)}</span></a>`;
   return { hubDecisions, hubPages, hubTools, hubProof, nextDiscipline };
 }
 
@@ -743,6 +845,8 @@ function pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common) 
     canonicalPath: page.outputPath === '' ? '' : page.outputPath + '/',
     hasMermaidAttr: hasMermaid ? ' data-has-mermaid="true"' : '',
     interactiveSlot: layoutName === 'showcase' ? '<div id="interactive" class="interactive-mount"></div>' : '',
+    pageScript: (layoutName === 'showcase' && fs.existsSync(path.join(ROOT, 'js', 'pages', `${meta.slug}.js`)))
+      ? `<script src="${BASE_PATH}/js/vendor/d3.v7.min.js"></script>\n<script src="${BASE_PATH}/js/pages/${meta.slug}.js"></script>` : '',
     showcaseHeader: (layoutName === 'showcase' && !/showcase-hero/.test(contentHtml))
       ? `<header class="page-header"><h1>${escHtml(meta.title)}</h1>${meta.dek ? `<p class="dek">${escHtml(meta.dek)}</p>` : ''}<div class="page-actions"><span class="meta">${readingTime(page.body)}</span><div class="share"><button type="button" class="share-btn" aria-haspopup="true" aria-expanded="false">Share</button><div class="share-menu"></div></div><button type="button" class="print-btn">Print brief</button></div></header>`
       : '',
@@ -795,8 +899,7 @@ async function build() {
   // 2. Find markdown files
   const mdFiles = findMarkdownFiles(CONTENT_DIR);
   if (mdFiles.length === 0) {
-    console.warn('WARN: No markdown files found in content/');
-    return;
+    throw new Error('No markdown files found in content/; refusing to publish an empty site');
   }
   console.log(`  Found ${mdFiles.length} content file(s)`);
 
@@ -808,11 +911,22 @@ async function build() {
     const outputPath = computeOutputPath(filePath, meta);
     pages.push({ meta, body, filePath, outputPath });
   }
+  const dupSlugs = pages.map(p => p.meta.slug).filter((v, i, a) => a.indexOf(v) !== i);
+  const dupPaths = pages.map(p => p.outputPath).filter((v, i, a) => a.indexOf(v) !== i);
+  if (dupSlugs.length || dupPaths.length) {
+    throw new Error(`Route collision: duplicate slug(s) ${[...new Set(dupSlugs)].join(', ') || 'none'}; duplicate path(s) ${[...new Set(dupPaths)].join(', ') || 'none'}`);
+  }
+  for (const [from] of Object.entries(REDIRECTS)) {
+    if (pages.some(p => p.outputPath === from)) throw new Error(`Redirect "${from}" collides with a real page`);
+  }
   const pagesBySlug = Object.fromEntries(pages.map(p => [p.meta.slug, p]));
 
-  // 4. Build navigation
-  const nav = buildNavigation(pages);
-  const navDataJson = JSON.stringify(nav);
+  // 4. Build navigation. Pages the switch turns off are excluded everywhere,
+  //    not just from the render loop, so they cannot leak into sitemap, search
+  //    index, navigation data, llms.txt or OG images.
+  const activePages = pages.filter(p => !(p.meta.layout === 'book' && !cfg.book.enabled));
+  const nav = buildNavigation(activePages);
+  const navDataJson = safeJson(nav);
   const common = Object.assign({
     basePath: BASE_PATH,
     navDataJson,
@@ -827,7 +941,7 @@ async function build() {
   let rendered = 0;
   let errors = 0;
 
-  for (const page of pages) {
+  for (const page of activePages) {
     let layoutName = page.meta.layout;
 
     // Showcase JS fallback
@@ -836,10 +950,6 @@ async function build() {
       if (!fs.existsSync(jsPath)) {
         layoutName = 'standard';
       }
-    }
-    if (layoutName === 'book' && !cfg.book.enabled) {
-      console.log(`  Skipped (book disabled): ${page.outputPath}`);
-      continue;
     }
 
     const layoutPath = path.join(LAYOUTS_DIR, `${layoutName}.html`);
@@ -851,10 +961,12 @@ async function build() {
     const layout = fs.readFileSync(layoutPath, 'utf-8');
 
     hasMermaid = false;
+    resetHeadingIds();
     let body = page.body;
     if (layoutName !== 'cover') body = body.replace(/^\s*#\s+[^\n]+\n+/, '');
     let contentHtml = marked.parse(body);
-    contentHtml = convertMdLinks(contentHtml, pages);
+    contentHtml = convertMdLinks(contentHtml, activePages);
+    contentHtml = convertTaskCheckboxes(contentHtml);
 
     const data = pageData(page, nav, cfg, pagesBySlug, contentHtml, layoutName, common);
     const html = renderTemplate(layout, data);
@@ -867,9 +979,9 @@ async function build() {
   }
 
   // 7. Sitemap, robots, search index, nav.json, redirects
-  fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), generateSitemap(pages), 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), generateSitemap(activePages), 'utf-8');
   fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), generateRobotsTxt(), 'utf-8');
-  fs.writeFileSync(path.join(DIST_DIR, 'search-index.json'), JSON.stringify(generateSearchIndex(pages), null, 2), 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, 'search-index.json'), JSON.stringify(generateSearchIndex(activePages), null, 2), 'utf-8');
   fs.writeFileSync(path.join(DIST_DIR, 'nav.json'), navDataJson, 'utf-8');
   console.log('  Generated: sitemap.xml, robots.txt, search-index.json, nav.json');
   writeRedirects();
@@ -882,7 +994,7 @@ async function build() {
   }
 
   // 9. OG images
-  await generateOGImages(pages);
+  await generateOGImages(activePages);
 
   // 10. Static assets
   for (const dir of STATIC_DIRS) {
@@ -892,15 +1004,21 @@ async function build() {
   }
   console.log(`  Copied: ${STATIC_DIRS.join(', ')}`);
   fs.mkdirSync(path.join(DIST_DIR, 'static'), { recursive: true });
-  fs.writeFileSync(path.join(DIST_DIR, 'static', 'llms.txt'), generateLlmsTxt(nav, pages), 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, 'static', 'llms.txt'), generateLlmsTxt(nav, activePages), 'utf-8');
   console.log('  Generated: static/llms.txt');
+
+  if (missingDiagrams.size) {
+    console.warn(`  WARN: ${missingDiagrams.size} diagram(s) not pre-rendered; those pages load the client-side renderer. Run: node scripts/prerender-mermaid.js`);
+  } else {
+    console.log('  Diagrams: all pre-rendered (no client-side renderer loaded)');
+  }
 
   const elapsed = Date.now() - startTime;
   console.log(`\nBuild complete: ${rendered} page(s), ${errors} error(s) in ${elapsed}ms`);
   if (errors > 0) process.exitCode = 1;
 }
 
-module.exports = { renderTemplate, parseFrontmatter, buildNavigation, neighbours, computeOutputPath, loadSiteConfig, DISCIPLINES, GROUPS, build };
+module.exports = { renderTemplate, parseFrontmatter, buildNavigation, neighbours, computeOutputPath, loadSiteConfig, DISCIPLINES, GROUPS, build, diagramHash, extractMermaidBlocks, normalizeMermaid, DIAGRAM_DIR };
 
 if (require.main === module) {
   build().catch(err => {

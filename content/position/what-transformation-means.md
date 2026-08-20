@@ -5,10 +5,10 @@ layout: standard
 slug: what-transformation-means
 discipline: diagnose
 order: 3
-dek: The difference between optimization, automation, and transformation, the five characteristics of future-built programs, and what done looks like.
+dek: The difference between optimization, automation, and transformation, the five characteristics of programs that reach the P&L, and what done looks like.
 summary:
-  decide: Whether your program is optimizing, automating, or transforming, and which of the five characteristics of high performers it is missing.
-  cost: Declaring victory on task-level automation that never reaches the P&L. Two or three of the five characteristics lands you among the 39% reporting some EBIT impact, not in the 5%.
+  decide: Whether your program is optimizing, automating, or transforming, and which of the five characteristics it is missing.
+  cost: Declaring victory on task-level automation that never reaches the P&L. Only 39% of respondents attribute any enterprise-level EBIT impact to AI, and only 5% of companies generate value from AI at scale.
   metric: Measurable P&L impact from a focused portfolio of AI capabilities embedded in core operating workflows. Not projected savings, not pilot-phase estimates.
 ---
 # What Transformation Actually Means
@@ -39,7 +39,9 @@ A company that has automated 30 tasks has not transformed. A company that has re
 
 ## The Five Characteristics of High-Performing AI Programs
 
-BCG and McKinsey research on the 5% of enterprises that qualify as future-built (BCG, 2025) converges on five structural characteristics. These are not practices in isolation. They form a system. Organizations that adopt two or three but not all five generally land among the 39% that report any enterprise-level EBIT impact (McKinsey, 2025), not among the 5%.
+The outcome is rare. Only 5% of companies generate value from AI at scale, the group BCG calls "future-built" (BCG, 2025), and only 39% of respondents attribute any enterprise-level EBIT impact to AI (McKinsey, 2025).
+
+The five characteristics below are this playbook's account of what separates a program that reaches the P&L from one that stalls. They are not practices in isolation. They form a system, and adopting two or three of them is not the same as running all five.
 
 ### 1. Top-Down Portfolio Logic, Not Bottom-Up Experimentation
 
@@ -137,7 +139,7 @@ graph TD
     J --> K[Structural competitive advantage]
 ```
 
-The 5% who are future-built have reached J on this diagram. The 95% are distributed across C, F, and I. Each position requires different interventions, and the path from each position to transformation is different.
+The 5% who are future-built have reached J on this diagram. The other 95% are distributed across C, F, and I. Each position requires different interventions, and the path from each position to transformation is different.
 
 The first step is being honest about where you are.
 
@@ -145,7 +147,7 @@ The first step is being honest about where you are.
 
 ## Sources
 
-1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
-2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." 2025.
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 17, 2025. Study of more than 1,250 companies.
+2. McKinsey & Company. "The State of AI in 2025: Agents, Innovation, and Transformation." November 5, 2025. Survey of 1,993 respondents across 105 countries.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

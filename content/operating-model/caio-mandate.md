@@ -13,7 +13,7 @@ summary:
 ---
 # The CAIO Mandate
 
-The Chief AI Officer role is no longer experimental. As of 2025, 26% of organizations have appointed a CAIO, up from single digits two years prior (IBM Institute for Business Value, 2025, n=2,300). That number is accelerating. But the role is widely misunderstood, and organizations that get it wrong pay for it in fragmentation, rework, and governance failure.
+The Chief AI Officer role is no longer experimental. 76% of surveyed organizations had a CAIO in 2026, up from 26% a year earlier (IBM Institute for Business Value, 2026, survey of 2,000 CEOs). The role went from uncommon to near-standard in a single year. But it is widely misunderstood, and organizations that get it wrong pay for it in fragmentation, rework, and governance failure.
 
 ---
 
@@ -33,7 +33,7 @@ Many organizations hire a CAIO and then treat the role as advisory. The CAIO par
 
 ## Board-Level Positioning
 
-More than half of CAIOs report directly to the CEO or board (IBM, 2025). This is not a coincidence. It reflects the nature of the mandate.
+57% of CAIOs report directly to the CEO or the board (IBM Institute for Business Value, 2025). This is not a coincidence. It reflects the nature of the mandate.
 
 AI strategy intersects with risk, capital allocation, regulatory exposure, and workforce transformation simultaneously. These are not IT decisions. They are enterprise decisions. A CAIO buried three levels below the CIO will be outranked by every business unit head who wants to move faster, and outmaneuvered by every vendor relationship the procurement team manages independently.
 
@@ -102,20 +102,20 @@ The CAIO tracks the regulatory environment: EU AI Act, US executive orders, sect
 
 ## The Hub-and-Spoke Model
 
-IBM's research across 2,300 organizations found that a hub-and-spoke CAIO structure produces 36% higher AI ROI compared to centralized or fully distributed models (IBM Institute for Business Value, 2025).
+IBM surveyed more than 600 CAIOs across 22 countries and 21 industries and found that where the CAIO drives a centralized or hub-and-spoke AI operating model, ROI on AI initiatives can be up to 36% higher than in decentralized structures (IBM Institute for Business Value, 2025). Note what that comparison actually is: IBM groups centralized and hub-and-spoke together and contrasts both against decentralized ownership. The evidence supports having a central point of control. It does not, on its own, rank hub-and-spoke above centralized.
 
 The hub is the CAIO function. It owns the decisions that must be consistent across the enterprise: use case approval gates, governance standards, model inventory policy, tooling selection, and incident classification. The spokes are embedded AI leads within each business unit who own the decisions that must be local: implementation sequencing, domain-specific data sourcing, and execution trade-offs within their context. Spokes operate within the governance framework the hub sets. They do not redefine it.
 
-This structure solves the core tension in enterprise AI: the need for consistent governance and the need for domain-specific speed. Centralized control creates bottlenecks. Full decentralization creates fragmentation. Hub-and-spoke creates accountability at both levels.
+This structure solves the core tension in enterprise AI: the need for consistent governance and the need for domain-specific speed. Centralized control creates bottlenecks. Full decentralization creates fragmentation. Hub-and-spoke creates accountability at both levels. That case rests on the mechanism, not on the IBM number.
 
-At enterprise AI spending levels, a 36% ROI advantage is real capital, and choosing the wrong structure leaves it on the table.
+At enterprise AI spending levels, a return gap of that size is real capital, and leaving AI ownership decentralized by default leaves it on the table.
 
 For a detailed RACI matrix, see [Operating Architecture](../architecture/operating-architecture.md).
 
 :::note
 **Hub-and-Spoke Outcome**
 
-Organizations with hub-and-spoke CAIO structures report 36% higher AI ROI than those with purely centralized or distributed models (IBM IBV, 2025). The mechanism is coordination efficiency: less rework, faster approvals for pre-cleared use case patterns, and shared infrastructure that business units do not have to rebuild independently.
+Where the CAIO drives a centralized or hub-and-spoke operating model, IBM reports up to 36% higher ROI on AI initiatives than in decentralized structures (IBM IBV, 2025). The mechanism is coordination efficiency: less rework, faster approvals for pre-cleared use case patterns, and shared infrastructure that business units do not have to rebuild independently.
 :::
 
 ---
@@ -182,6 +182,7 @@ These are not edge cases. They are the default failure modes. Recognizing them e
 
 ## Sources
 
-1. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025.
+1. IBM Institute for Business Value. "How Chief AI Officers Deliver AI ROI." 2025. Survey of more than 600 CAIOs across 22 countries and 21 industries, conducted Q1 2025 with Oxford Economics and the Dubai Future Foundation.
+2. IBM Institute for Business Value. "IBM Study: CEOs are Reshaping C-suite Roles for the AI Era." Press release, 4 May 2026. Survey of 2,000 CEOs across 33 geographies and 21 industries, February to April 2026.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

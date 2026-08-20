@@ -49,7 +49,7 @@ One to two sentences describing what decision or process the model supports. Be 
 Where the model runs. Values: `Production`, `Staging`, `Pilot`, `Development`, `Decommissioned`.
 
 **Risk Tier**
-The organisation's internal risk classification. Align to your risk classification framework. Typical values: `Tier 1 (Critical)`, `Tier 2 (High)`, `Tier 3 (Moderate)`, `Tier 4 (Low)`. See the Risk Classification Worksheet for scoring guidance.
+The organisation's internal risk classification. Align to your risk classification framework. Typical values: `Tier 1 (Standard)`, `Tier 2 (Enhanced)`, `Tier 3 (Senior Approval and Audit)`, `Tier 4 (Board Oversight)`, `Tier 2 (High)`, `Tier 3 (Moderate)`, `Tier 4 (Low)`. See the Risk Classification Worksheet for scoring guidance.
 
 **Regulatory Exposure**
 List applicable regulations or frameworks. Examples: `EU AI Act (High-Risk)`, `SR 11-7`, `GDPR`, `FCA`, `HIPAA`, `None`. Record "None" explicitly rather than leaving blank.
@@ -80,10 +80,10 @@ _Set review frequency based on risk tier. Adjust to fit your organisation's gove
 
 | Risk Tier | Minimum Review Frequency | Trigger for Immediate Review |
 |---|---|---|
-| Tier 1 (Critical) | Quarterly | Any performance degradation, regulatory change, or material incident |
-| Tier 2 (High) | Semi-annually | Performance degradation exceeding defined thresholds, or regulatory change |
-| Tier 3 (Moderate) | Annually | Material change to the business process the model supports |
-| Tier 4 (Low) | Annually | Significant change in deployment context |
+| Tier 4 (Board Oversight) | Quarterly | Any performance degradation, regulatory change, or material incident |
+| Tier 3 (Senior Approval and Audit) | Semi-annually | Performance degradation exceeding defined thresholds, or regulatory change |
+| Tier 2 (Enhanced) | Annually | Material change to the business process the model supports |
+| Tier 1 (Standard) | Annually | Significant change in deployment context |
 
 _A "material incident" includes: model output causing customer harm, regulatory inquiry, significant accuracy degradation, or identification of bias affecting a protected characteristic._
 

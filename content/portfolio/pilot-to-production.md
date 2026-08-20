@@ -8,21 +8,21 @@ order: 7
 dek: A stage-gate framework with decision criteria, artifacts and approvers, and the funding, change and operations capability pilots need to reach production.
 summary:
   decide: Whether a use case passes each gate from discovery to scale, and which business unit owns the system and its budget once it is in production.
-  cost: Successful pilots that never become anything more; Gartner puts the full-scale production rate at 5%, and most that get there report 2-4 year ROI timelines.
-  metric: Share of AI experiments that reach production; only 25% of organizations have moved 40% or more of theirs (Deloitte, 2026).
+  cost: Successful pilots that never become anything more; most organizations that reach production report ROI timelines of two to four years.
+  metric: Share of AI experiments that reach production; only 25% of respondents have moved 40% or more of theirs (Deloitte, 2026).
 ---
 # From Pilot to Production
 
 The most common failure mode in enterprise AI is not a failed proof of concept. It is a successful one that never becomes anything more.
 
-Only 25% of organizations have moved 40% or more of their AI experiments to production (Deloitte, 2026). Gartner puts the full-scale production rate at 5%. Five percent. The rest are pilots: technically successful, organizationally stranded, consuming resources and generating no sustained business value.
+Only 25% of respondents say their organization has moved 40% or more of its AI experiments into production (Deloitte, 2026). Another 54% expect to reach that level within three to six months, which tells you how many are still on the wrong side of the line today. The rest are pilots: technically successful, organizationally stranded, consuming resources and generating no sustained business value.
 
 This is the "missing middle": the space between a POC that works in a controlled environment and an enterprise system that runs in production, is maintained, is adopted by the people it was built for, and delivers measurable outcomes at scale. Most organizations have not built the organizational infrastructure to cross it.
 
 :::warning
-**The production rate reality**
+**The payback reality**
 
-Only 6% of organizations see AI ROI payoff in under a year. Most organizations that achieve production-grade deployment report ROI timelines of 2-4 years (Gartner). This is not because AI does not work. It is because production deployment, adoption, and optimization take time that most AI business cases do not account for.
+Only 6% of executives report AI payback in under a year, and most report achieving satisfactory ROI on a typical AI use case within two to four years (Deloitte, 2025). This is not because AI does not work. It is because production deployment, adoption, and optimization take time that most AI business cases do not account for.
 :::
 
 ---
@@ -62,7 +62,7 @@ MLOps as a discipline is well understood in organizations with mature AI program
 A stage-gate framework makes the path from idea to production explicit. Each stage has a defined purpose. Each gate has explicit decision criteria, required artifacts, and named approvers. Nothing proceeds without a gate decision.
 
 ```mermaid
-flowchart LR
+flowchart TD
     D[Discovery] -->|Gate 1| P[POC]
     P -->|Gate 2| PI[Pilot]
     PI -->|Gate 3| PR[Production]
@@ -219,23 +219,25 @@ The ROI timeline for production AI is longer than most business cases project. S
 
 ```mermaid
 gantt
-    title Typical AI ROI Timeline
+    title Illustrative AI ROI timeline, program starting January of year one
     dateFormat YYYY-MM
     section Investment
-        Discovery and POC        :2024-01, 3M
-        Pilot development        :2024-04, 4M
-        Production deployment    :2024-08, 3M
-        Scale and optimization   :2024-11, 6M
+        Discovery and POC        :2026-01, 3M
+        Pilot development        :2026-04, 4M
+        Production deployment    :2026-08, 3M
+        Scale and optimization   :2026-11, 6M
     section Returns
-        Early indicators         :2024-10, 3M
-        Measurable ROI           :2025-01, 6M
-        Full value realization   :2025-07, 12M
+        Early indicators         :2026-10, 3M
+        Measurable ROI           :2027-01, 6M
+        Full value realization   :2027-07, 12M
 ```
 
+*Illustrative sequencing, not survey data. Substitute your own program start date.*
+
 **The realistic timeline distribution:**
-- 6% of organizations see AI ROI payoff in under one year (Gartner)
-- The majority of organizations that achieve production report ROI timelines of 2-4 years
-- ROI timelines for agentic AI systems are longer than for copilot or automation AI due to the complexity of production deployment
+- 6% of executives report AI payback in under one year (Deloitte, 2025)
+- Most report achieving satisfactory ROI on a typical AI use case within two to four years (Deloitte, 2025), against the seven to twelve months they expect from a standard technology investment
+- Only 10% say they are currently realizing significant ROI from agentic AI (Deloitte, 2025), so agentic timelines should be planned as longer, not shorter, than copilot or automation timelines
 
 The implications for business case construction:
 
@@ -280,7 +282,7 @@ Organizations that build this infrastructure before scaling their AI portfolio c
 
 ## Sources
 
-1. Deloitte. "State of AI in the Enterprise 2026: The Untapped Edge." January 2026.
-2. Gartner. "Identifies Critical GenAI Blind Spots That CIOs Must Urgently Address." November 2025.
+1. Deloitte AI Institute. "State of AI in the Enterprise: The Untapped Edge." January 2026. Survey of 3,235 leaders across 24 countries. Figure 1, proportion of AI experiments deployed.
+2. Deloitte. "AI ROI: The Paradox of Rising Investment and Elusive Returns." October 22, 2025. Survey of 1,854 senior executives across Europe and the Middle East, fielded August to September 2025.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).

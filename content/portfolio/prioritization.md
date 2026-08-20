@@ -9,7 +9,7 @@ dek: A weighted scoring framework, kill criteria and a three-horizon portfolio s
 summary:
   decide: Which use cases enter the active portfolio by value first, which get killed or deferred, and how investment splits across three horizons.
   cost: Deploying where it is easiest rather than where it matters most; the gap between where AI is deployed and where value is generated is the largest driver of disappointing AI ROI.
-  metric: Share of the portfolio in core revenue functions versus support functions; BCG puts 70% of AI value potential in sales, manufacturing, supply chain and pricing.
+  metric: Share of the portfolio in core business functions versus support functions; BCG puts 70% of AI value potential in the core.
 ---
 # Use Case Prioritization
 
@@ -20,7 +20,7 @@ The structural bias is predictable: IT, HR, and legal functions are better organ
 :::warning
 **The supporting function trap**
 
-BCG research shows that 70% of AI value potential is concentrated in sales, manufacturing, supply chain, and pricing (BCG, 2025). Most organizations have their AI investments concentrated in the opposite direction: HR, IT, legal, and finance support. The gap between where AI is deployed and where value is generated is the single largest driver of disappointing AI ROI.
+BCG research shows that 70% of AI value potential is concentrated in core business functions such as sales and marketing, manufacturing, supply chain, and pricing, leaving 30% across all support functions combined (BCG, 2025). Most organizations weight their AI portfolios toward that 30%: IT, HR, legal, procurement, and finance support. The gap between where AI is deployed and where value is generated is the single largest driver of disappointing AI ROI.
 :::
 
 ---
@@ -193,6 +193,6 @@ Review the portfolio quarterly. Use case scores change as organizational conditi
 
 ## Sources
 
-1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025.
+1. Boston Consulting Group. "Are You Generating Value from AI? The Widening Gap." September 2025. Based on the BCG Build for the Future 2025 Global Study, n = 1,250. Exhibit 3, distribution of AI value potential across functions.
 
 For the complete source list and methodology, see [Sources & Methodology](../sources.md).
