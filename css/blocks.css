@@ -69,9 +69,6 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 48px 0; }
 .card h3 { margin: 0 0 6px; font-size: 20px; }
 .card p { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.5; }
 .card .rt { display: block; margin-top: 10px; font: 400 12px var(--font-mono); color: var(--ink-3); }
-.board-card { background: var(--board); color: var(--board-ink); border: 0; }
-.board-card h3, .board-card p { color: var(--board-ink); }
-.board-card .label { color: var(--gold); }
 
 /* ─── Board document (proof artifacts) ────────────────────────────────────── */
 .board-document { border: 1px solid var(--rule); background: var(--surface); padding: 24px 28px; margin: 32px 0; }

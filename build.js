@@ -40,13 +40,18 @@ function loadSiteConfig() {
   const defaults = { book: { enabled: false } };
   const cfgPath = process.env.SITE_CONFIG_PATH || SITE_CONFIG_PATH;
   if (!fs.existsSync(cfgPath)) return defaults;
+  let parsed;
   try {
-    const parsed = JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
-    return { ...defaults, ...parsed, book: { ...defaults.book, ...(parsed.book || {}) } };
+    parsed = JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
   } catch (e) {
-    console.warn(`WARN: site.config.json unreadable (${e.message}); using defaults`);
-    return defaults;
+    // A malformed config must not silently decide what the site publishes.
+    throw new Error(`site.config.json is not valid JSON: ${e.message}`);
   }
+  const book = { ...defaults.book, ...(parsed.book || {}) };
+  if (typeof book.enabled !== 'boolean') {
+    throw new Error(`site.config.json: book.enabled must be a boolean, got ${JSON.stringify(book.enabled)}`);
+  }
+  return { ...defaults, ...parsed, book };
 }
 
 // ─── Template Engine (< 50 lines) ──────────────────────────────────────────
@@ -411,7 +416,7 @@ function generateJsonLd(meta, outputPath, cfg) {
       url: SITE_URL + '/',
     },
   ];
-  if (cfg && cfg.book && cfg.book.enabled) {
+  if (cfg && cfg.book && cfg.book.enabled === true) {
     graph.push({
       '@type': 'Book',
       name: cfg.book.title || 'The Enterprise AI Operating System',
@@ -736,6 +741,43 @@ async function generateOGImages(pages) {
   console.log(`  Generated: og/ (${pages.length} image(s))`);
 }
 
+// ─── Frontmatter contract ──────────────────────────────────────────────────
+
+const LAYOUTS = ['cover', 'hub', 'standard', 'showcase', 'tool', 'book'];
+
+// Every page must declare where it sits and what layout renders it. A page that
+// declares neither would build fine and then be unreachable, so this is fatal.
+function validateFrontmatter(pages) {
+  const errors = [];
+  const disciplineKeys = DISCIPLINES.map(d => d.key);
+  const groupKeys = GROUPS.map(g => g.key);
+  for (const p of pages) {
+    const m = p.meta;
+    const where = path.relative(ROOT, p.filePath);
+    if (!m.title) errors.push(`${where}: missing title`);
+    if (!m.slug) errors.push(`${where}: missing slug`);
+    if (!LAYOUTS.includes(m.layout)) errors.push(`${where}: unknown layout "${m.layout}" (expected one of ${LAYOUTS.join(', ')})`);
+    const isCover = m.layout === 'cover';
+    if (!isCover) {
+      if (m.discipline && !disciplineKeys.includes(m.discipline)) errors.push(`${where}: unknown discipline "${m.discipline}"`);
+      if (m.group && !groupKeys.includes(m.group)) errors.push(`${where}: unknown group "${m.group}"`);
+      if (!m.discipline && !m.group) errors.push(`${where}: needs a discipline or a group, or it will not appear in navigation`);
+    }
+    if (m.hub) {
+      if (!m.permalink) errors.push(`${where}: hub page needs a permalink`);
+      if (!Array.isArray(m.decisions) || m.decisions.length === 0) errors.push(`${where}: hub page needs decisions`);
+      if (!m.question) errors.push(`${where}: hub page needs a question`);
+    }
+    if (m.summary) {
+      if (typeof m.summary !== 'object' || Array.isArray(m.summary)) errors.push(`${where}: summary must be a mapping of decide, cost, metric`);
+      else for (const k of Object.keys(m.summary)) {
+        if (!['decide', 'cost', 'metric'].includes(k)) errors.push(`${where}: unexpected summary key "${k}"`);
+      }
+    }
+  }
+  if (errors.length) throw new Error('Frontmatter errors:\n  ' + errors.join('\n  '));
+}
+
 // ─── Page data assembly ────────────────────────────────────────────────────
 
 const pad2 = n => String(n).padStart(2, '0');
@@ -798,7 +840,7 @@ function renderFooterLists(nav) {
 }
 
 function renderBookStrip(meta, cfg) {
-  if (!cfg.book.enabled || !Array.isArray(cfg.book.chapters)) return '';
+  if (cfg.book.enabled !== true || !Array.isArray(cfg.book.chapters)) return '';
   const chs = cfg.book.chapters.filter(c => c.discipline === meta.discipline);
   if (!chs.length) return '';
   const list = chs.map(c => `Chapter ${c.n}${c.title ? ': ' + escHtml(c.title) : ''}`).join(', ');
@@ -919,18 +961,19 @@ async function build() {
   for (const [from] of Object.entries(REDIRECTS)) {
     if (pages.some(p => p.outputPath === from)) throw new Error(`Redirect "${from}" collides with a real page`);
   }
+  validateFrontmatter(pages);
   const pagesBySlug = Object.fromEntries(pages.map(p => [p.meta.slug, p]));
 
   // 4. Build navigation. Pages the switch turns off are excluded everywhere,
   //    not just from the render loop, so they cannot leak into sitemap, search
   //    index, navigation data, llms.txt or OG images.
-  const activePages = pages.filter(p => !(p.meta.layout === 'book' && !cfg.book.enabled));
+  const activePages = pages.filter(p => !(p.meta.layout === 'book' && cfg.book.enabled !== true));
   const nav = buildNavigation(activePages);
   const navDataJson = safeJson(nav);
   const common = Object.assign({
     basePath: BASE_PATH,
     navDataJson,
-    bookEnabled: !!cfg.book.enabled,
+    bookEnabled: cfg.book.enabled === true,
     year: new Date().getFullYear(),
   }, renderFooterLists(nav));
 

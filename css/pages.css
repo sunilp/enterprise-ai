@@ -111,19 +111,10 @@
 .showcase-hero .label, .showcase-hero .section-label { display: block; font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); margin-bottom: 16px; }
 .showcase-hero h1 { font-size: 56px; }
 .showcase-hero .hero-thesis { font-size: 22px; line-height: 1.45; color: var(--ink-2); font-weight: 300; max-width: var(--measure); }
-.showcase-hero .gold-line, .scroll-hint, .hero-support { display: none; }
-.stat-row { display: flex; gap: 40px; margin: 24px 0 0; }
-.stat-number { font: 300 44px/1 var(--font-display); color: var(--ink); }
-.stat-label { font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); margin-top: 8px; }
 .interactive-mount { margin: 36px 0; }
 .showcase-content article { max-width: var(--wide); margin: 0 auto; padding-top: 28px; }
 .showcase-content article > p, .showcase-content article > ul, .showcase-content article > ol, .showcase-content article > h2, .showcase-content article > h3, .showcase-content article > h4, .showcase-content article > blockquote, .showcase-content article > .insight-box, .showcase-content article > .warning-box, .showcase-content article > .note-box, .showcase-content article > .summary-box, .showcase-content article > pre, .showcase-content article > .newsletter-cta, .showcase-content article > .prevnext, .showcase-content article > .related, .showcase-content article > .page-header, .showcase-content article > .breadcrumb { max-width: var(--measure); }
-.showcase-content article > .metric-strip, .showcase-content article > .path-cards, .showcase-content article > .content-wide, .showcase-content article > .interactive-mount, .showcase-content article > .obsidian-table-wrap { max-width: var(--wide); }
-.path-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin: 24px 0; }
-.path-card { display: block; background: var(--surface); border: 1px solid var(--rule); padding: 20px; text-decoration: none; color: var(--ink); transition: border-color .2s var(--ease); }
-.path-card:hover { border-color: var(--bronze); }
-.path-role { font: 500 11px/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); margin-bottom: 8px; }
-.path-desc { font-size: 15px; color: var(--ink-2); line-height: 1.5; }
+.showcase-content article > .metric-strip, .showcase-content article > .content-wide, .showcase-content article > .interactive-mount, .showcase-content article > .obsidian-table-wrap { max-width: var(--wide); }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 1100px) {
@@ -152,7 +143,6 @@
   .q-card { padding: 20px; }
   .tool-wrap { padding: 28px 20px 56px; }
   .hub-pages .card h3 { font-size: 21px; }
-  .stat-row { gap: 24px; flex-wrap: wrap; }
 }
 
 /* ─── Capability stack interactive (layer list) ───────────────────────────── */

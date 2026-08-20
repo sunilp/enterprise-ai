@@ -156,8 +156,10 @@ function resolveFilePath(reqUrl) {
   // Resolve to dist/
   const candidate = path.join(DIST_DIR, stripped);
 
-  // Guard against path traversal
-  if (!candidate.startsWith(DIST_DIR)) {
+  // Guard against path traversal. A prefix test alone would also accept a
+  // sibling directory such as dist-private, so compare on the relative path.
+  const rel = path.relative(DIST_DIR, candidate);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) {
     return null;
   }
 
@@ -248,8 +250,8 @@ watcher.on('all', (event, filePath) => {
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 
-server.listen(PORT, () => {
-  console.log(`[Obsidian] Serving at http://localhost:${PORT}`);
+server.listen(PORT, '127.0.0.1', () => {
+  console.log(`[Obsidian] Serving at http://127.0.0.1:${PORT} (loopback only)`);
   console.log(`[Obsidian] Base path: ${BASE_PATH} -> dist/`);
   console.log(`[Obsidian] Watching: ${WATCH_DIRS.join(', ')}`);
 });

@@ -62,3 +62,28 @@ test('in-page anchors resolve, code fences are escaped, and diagrams are inlined
   }
   assert.deepEqual(broken, [], 'broken in-page anchors');
 });
+
+test('every navigation entry points at a page that was actually rendered', () => {
+  const nav = JSON.parse(fs.readFileSync(path.join(DIST, 'nav.json'), 'utf-8'));
+  const missing = [];
+  const check = (p, where) => {
+    const target = p.path ? path.join(DIST, p.path, 'index.html') : path.join(DIST, 'index.html');
+    if (!fs.existsSync(target)) missing.push(`${where}: ${p.title} -> ${p.path}`);
+  };
+  for (const d of nav.disciplines) {
+    check({ path: d.path, title: d.name }, 'hub');
+    d.pages.forEach(p => check(p, `discipline ${d.key}`));
+  }
+  for (const g of nav.groups) g.pages.forEach(p => check(p, `group ${g.key}`));
+  nav.tools.forEach(p => check(p, 'tools'));
+  assert.deepEqual(missing, [], 'navigation points at unrendered pages');
+});
+
+test('the book switch cannot be turned on by a non-boolean', () => {
+  const { execFileSync } = require('child_process');
+  const os = require('os');
+  const bad = path.join(os.tmpdir(), 'eaios-book-bad.json');
+  fs.writeFileSync(bad, JSON.stringify({ book: { enabled: 'false' } }));
+  assert.throws(() => execFileSync('node', ['build.js'], { cwd: ROOT, env: { ...process.env, SITE_CONFIG_PATH: bad }, stdio: 'pipe' }),
+    /must be a boolean/, 'a string should not be accepted for book.enabled');
+});
